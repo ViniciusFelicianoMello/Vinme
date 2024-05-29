@@ -1,0 +1,119 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    padding: 0 5vw;
+}
+
+/* HEADER LOGO */
+.header_logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    position: relative;
+}
+
+.header_logo_svg {
+    margin: 0.5em 0;
+    height: 3rem;
+    transition: 0.5s;
+}
+
+.header_logo_title {
+    color: var(--cor-principal);
+    font-size: 1.8rem;
+    font-weight: 400;
+    white-space: nowrap;
+    opacity: 0;
+    position: absolute;
+    left: 110%;
+    transform: translateX(-50%);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.header_logo:hover .header_logo_title {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.header_logo:hover .header_logo_svg {
+    transform: rotateY(180deg);
+}
+
+/* HEADER NAV */
+.options_list {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    width: 60vw;
+    gap: 4em;
+}
+
+.option_link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-family: var(--fonte-2);
+    color: var(--cor-fonte-1);
+    transition: 0.5s;
+}
+.option_icon {
+    transition: 0.5s;
+}
+.option_title {
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.option_active {
+    color: var(--cor-principal);
+    transform: translateY(-0.7rem);
+    transition: 0.5s;
+} 
+
+.option_active + .option_title {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0.5rem);
+    color: var(--cor-principal);
+}
+
+/* DARK MODE */
+.header_controls {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    position: relative;
+}
+
+.dark_chk {
+    display: none;
+}
+
+.icon-moon {
+    position: absolute;
+    margin-top: 0.15em;
+}
+.icon-sun,
+.icon-moon {
+    visibility: hidden;
+    cursor: pointer;
+    color: var(--cor-principal);
+    font-size: 1.5rem;
+}
+
+.icon-sun.visible,
+.icon-moon.visible {
+    visibility: visible;
+}
