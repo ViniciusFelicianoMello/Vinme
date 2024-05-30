@@ -44,3 +44,16 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.observe(section);
     });
 });
+
+// menu hamburguer fechar
+document.addEventListener("DOMContentLoaded", function() {
+    var menuCheckbox = document.getElementById("check-icon");
+    var menuItens = document.querySelectorAll(".options_list");
+
+    // Adiciona evento de clique a todos os itens do menu
+    menuItens.forEach(function(item) {
+        item.addEventListener("click", function() {
+            menuCheckbox.checked = false;
+        });
+    });
+});

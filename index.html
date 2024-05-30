@@ -7,7 +7,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
     <!-- CDN FONTE AWESOME -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -78,14 +78,80 @@
                 <input id="dark-mode" name="dark-mode" class="dark_chk" type="checkbox" role="switch" value="on">
                 <label for="dark-mode" class="dark_label"></label>
 
-                    <label for="dark-mode" class="dark-mode_icon">
-                        <i class="fa-solid fa-moon icon-moon"></i>
-                    </label>
+                <label for="dark-mode" class="dark-mode_icon">
+                    <i class="fa-solid fa-moon icon-moon"></i>
+                </label>
             
-                    <label for="dark-mode" class="dark-mode_icon">
-                        <i class="fa-solid fa-sun icon-sun"></i>
-                    </label>
+                <label for="dark-mode" class="dark-mode_icon">
+                    <i class="fa-solid fa-sun icon-sun"></i>
+                </label>
             </div>
+        </div>
+    </header>
+    <header>
+        <!-- HAMBURGUER MENU -->
+        <div class="header_menu">
+            <input hidden="" class="check-icon" id="check-icon" name="check-icon" type="checkbox">
+            <label class="icon-menu" for="check-icon">
+                <div class="bar bar--1"></div>
+                <div class="bar bar--2"></div>
+                <div class="bar bar--3"></div>
+            </label>
+            <!-- NAV MENU HAMBURGUER -->
+            <nav class="menu_options">
+                <ul class="options_list">
+                    <!-- ITEM DA LISTA -->
+                    <li class="options_item">
+                        <a href="#home" class="option_link">
+                            <i class="fas fa-house option_icon"></i>
+                            <span class="option_title">HOME</span>
+                        </a>
+                    </li>
+                    <!-- ITEM DA LISTA -->
+                    <li class="options_item">
+                        <a href="#sobre" class="option_link">
+                            <i class="fas fa-user option_icon"></i>
+                            <span class="option_title">SOBRE</span>
+                        </a>
+                    </li>
+                    <!-- ITEM DA LISTA -->
+                    <li class="options_item">
+                        <a href="#servicos" class="option_link">
+                            <i class="fas fa-computer option_icon"></i>
+                            <span class="option_title">SERVIÇOS</span>
+                        </a>
+                    </li>
+                    <!-- ITEM DA LISTA -->
+                    <li class="options_item">
+                        <a href="#projetos" class="option_link">
+                            <i class="fas fa-file-lines option_icon"></i>
+                            <span class="option_title">PROJETOS</span>
+                        </a>
+                    </li>
+                    <!-- ITEM DA LISTA -->
+                    <li class="options_item">
+                        <a href="#membros" class="option_link">
+                            <i class="fas fa-users option_icon"></i>
+                            <span class="option_title">MEMBROS</span>
+                        </a>
+                    </li>
+                    <!-- ITEM DA LISTA -->
+                    <li class="options_item">
+                        <a href="#blog" class="option_link">
+                            <i class="fas fa-blog option_icon"></i>
+                            <span class="option_title">BLOG</span>
+                        </a>
+                    </li>
+                    <!-- ITEM DA LISTA -->
+                    <li class="options_item">
+                        <a href="#contato" class="option_link">
+                            <i class="fas fa-phone option_icon"></i>
+                            <span class="option_title">CONTATO</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </nav>
         </div>
     </header>
 
