@@ -1,0 +1,36 @@
+@keyframes header {
+    0% { 
+        transform: translateY(-10em);
+        opacity: 0;
+    }
+    100% { 
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bannerBox {
+    0% { 
+        transform: translateY(-100em);
+        opacity: 0;
+    }
+    30% { 
+        transform: translateY(-50em);
+        opacity: 0;
+    }
+    100% { 
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOUT {
+    30% { 
+        transform: translateX(-30em);
+        opacity: 0;
+    }
+    100% { 
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
