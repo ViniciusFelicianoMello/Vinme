@@ -36,7 +36,7 @@
     --cor-fonte-2: #dde7f4; 
 
     --cor-fundo-1: #091424;
-    --cor-fundo-2: #0e1e34;
+    --cor-fundo-2: #0b1a32;
     --cor-fundo-3: #0b1c34;
 
     --cor-shadow-1: #000c1e;
@@ -63,6 +63,7 @@ body {
 /* SCROLL */
 ::-webkit-scrollbar {
     width: 5px;
+    height: 5px;
 }
   
 ::-webkit-scrollbar-track {

@@ -64,26 +64,49 @@
     font-weight: 400;
     position: absolute;
     margin-top: -12vw;
+    white-space: nowrap;
+    display: inline-block;
+    overflow: hidden;
+}
+.banner_text h2:nth-of-type(1) {
+    animation: typing 4s steps(60, end);
+}
+.banner_text h2:nth-of-type(2) {
+    top: 2.5em;
+    animation: typing 6.5s steps(60, end);
 }
 .banner_text p {
     font-family: var(--fonte-2);
     font-size: 1.5vw;
+    white-space: nowrap;
+    display: inline-block;
+    overflow: hidden;
 }
+.banner_text p:nth-of-type(1) { 
+    animation: typing 9.5s steps(60, end);
+}
+.banner_text p:nth-of-type(2) { 
+    animation: typing 15s steps(60, end), write 1s step-end infinite;
+}
+
 .banner_text span {
     color: var(--cor-principal);
     font-weight: 700;
 }
-.banner_text a {
-    background: var(--cor-principal);
-    padding: 1em 2em;
+.banner_text_btn {
     position: absolute;
-    margin-top: 10em;
+    margin-top: 8em;
+    transition: 0.5s;
+    animation: downUp 5.2s ease-in;
+}
+.banner_text_btn a {
+    background: var(--cor-principal);
+    padding: 1em 3em;
+    border-radius: 1em;
     color: var(--cor-fundo-3);
     text-decoration: none;
-    border-radius: 1em;
-    transition: 0.5s;
 }
-.banner_text a:hover {
+.banner_text_btn:hover a {
     box-shadow: var(--box-shadow-2);
     background: linear-gradient(90deg, var(--cor-principal) 0%, var(--cor-principal-2) 50%, var(--cor-principal) 75%, var(--cor-principal) 100%);
     animation: btnHoverUm 6.3s linear infinite;
@@ -97,4 +120,73 @@
 }
 .banner_svg img {
     height: 50vw;
+}
+
+/* BANNER INFOS */
+.banner_infos {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    width: 100%;
+    overflow: hidden;
+    margin-top: -8rem;
+    height: 15em;
+}
+
+.banner_infos_box {
+    height: 11em;
+    width: 20em;
+    background: var(--cor-fundo-3);
+    box-shadow: var(--box-shadow-1); 
+    border-radius: 1em;
+    overflow: hidden;
+    padding: 0.5em;
+    transition: 0.3s;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+.banner_infos_ovl {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+}
+
+.bannner_infos_icon {
+    border: 1px solid var(--cor-fonte-1);
+    padding: 0.5em;
+    border-radius: 0.5em;
+}
+
+.banner_infos_ovl h3 {
+    margin-top: 3em;
+    font-size: 1.5em;   
+}
+
+/* BANNER INFOS HOVER */
+.banner_infos_box:hover {
+    background: var(--cor-fundo-2);
+    box-shadow: var(--box-shadow-2); 
+    color: var(--cor-principal);
+}
+.banner_infos_box:hover .bannner_infos_icon {
+    border: 1px solid var(--cor-principal);
+    transform: rotate(360deg);
+    transition: 1s;
+}
+
+/* BANNER INFOS ANIMAÇÂO */
+.banner_infos_box:nth-of-type(1) {
+    animation: downUp 6s ease-in;
+}
+.banner_infos_box:nth-of-type(2) {
+    animation: downUp 6.3s ease-in;
+}
+.banner_infos_box:nth-of-type(3) {
+    animation: downUp 6.5s ease-in;
 }
