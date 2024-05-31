@@ -7,7 +7,7 @@
 
 :root {
     --cor-principal:#006aff;
-    --cor-principal-2:#00b3ff;
+    --cor-principal-2:#52efff;
 
     --cor-fonte-1: #0c1829; 
     --cor-fonte-2: #0f1d31; 
@@ -49,10 +49,6 @@ body {
     font-weight: 400;
     font-family: var(--fonte-1);
     transition: 0.5s;
-}
-   
-.container {
-    height: 100vh;
 }
 
 /* SCROLL */
