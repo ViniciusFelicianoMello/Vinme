@@ -25,7 +25,7 @@
 }
 
 @keyframes slideOUT {
-    30% { 
+    0% { 
         transform: translateX(-30em);
         opacity: 0;
     }
@@ -33,4 +33,23 @@
         transform: translateX(0);
         opacity: 1;
     }
+}
+@keyframes slideIN {
+    0% { 
+        transform: translateX(50em);
+        opacity: 0.3;
+    }
+    70% { 
+        transform: translateX(50em);
+        opacity: 0.3;
+    }
+    100% { 
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes btnHoverUm {
+    to {
+        background-position: 24.3vw;
+       }
 }

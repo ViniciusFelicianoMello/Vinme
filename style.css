@@ -20,7 +20,8 @@
 
     --cor-shadow-1: #95b6e5;
 
-    --box-shadow-1: 0px 0px 8px var(--cor-shadow-1), 0 0 8px var(--cor-shadow-1);
+    --box-shadow-1: 0px 0px 6px var(--cor-shadow-1), 0 0 6px var(--cor-shadow-1);
+    --box-shadow-2: 0px 0px 6px var(--cor-principal-2), 0 0 6px var(--cor-principal-2);
 
     --fonte-1: "Orbitron", sans-serif;
     --fonte-2: "Share Tech", sans-serif;
@@ -40,7 +41,8 @@
 
     --cor-shadow-1: #000c1e;
 
-    --box-shadow-1: 0px 0px 8px var(--cor-shadow-1), 0 0 8px var(--cor-shadow-1);
+    --box-shadow-1: 0px 0px 6px var(--cor-shadow-1), 0 0 6px var(--cor-shadow-1);
+    --box-shadow-2: 0px 0px 6px var(--cor-principal-2), 0 0 6px var(--cor-principal-2);
 }
 
 *{ /*reset margem */

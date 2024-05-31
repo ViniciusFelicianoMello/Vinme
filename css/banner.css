@@ -29,7 +29,7 @@
     gap: 2em;
 }
 .banner_link i {
-    color: var(--cor-princpal);
+    color: var(--cor-principal);
     font-size: 1.3em;
     transition: 0.3s;
 }
@@ -49,15 +49,51 @@
     animation: slideOUT 3.5s ease-in;
 }
 .banner_link:nth-of-type(4) {
-    animation: slideOUT 4s ease-in;
+    animation: slideOUT 4s ease-in;   
 }
 
 /* BANNER TEXT */
-
+.banner_text {
+    position: relative;
+    padding: 4em;
+    width: 60vw;
+}
+.banner_text h2 {
+    font-family: var(--fonte-1);
+    font-size: 2.8vw;
+    font-weight: 400;
+    position: absolute;
+    margin-top: -12vw;
+}
+.banner_text p {
+    font-family: var(--fonte-2);
+    font-size: 1.5vw;
+}
+.banner_text span {
+    color: var(--cor-principal);
+    font-weight: 700;
+}
+.banner_text a {
+    background: var(--cor-principal);
+    padding: 1em 2em;
+    position: absolute;
+    margin-top: 10em;
+    color: var(--cor-fundo-3);
+    text-decoration: none;
+    border-radius: 1em;
+    transition: 0.5s;
+}
+.banner_text a:hover {
+    box-shadow: var(--box-shadow-2);
+    background: linear-gradient(90deg, var(--cor-principal) 0%, var(--cor-principal-2) 50%, var(--cor-principal) 75%, var(--cor-principal) 100%);
+    animation: btnHoverUm 6.3s linear infinite;
+    transform: translateX(1rem);
+}
 /* BANNER SVG */
 .banner_svg {
     position: absolute;
     right: -7vw;
+    animation: slideIN 5s linear;
 }
 .banner_svg img {
     height: 50vw;
