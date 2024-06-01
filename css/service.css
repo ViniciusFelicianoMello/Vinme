@@ -1,0 +1,212 @@
+.services {
+    width: 100%;
+    height: 100vh;
+    padding: 5vw 0;
+    position: relative;
+    overflow: hidden;
+    margin-top: 5em;
+}
+
+/* SERVICOS FAIXA AZUL */
+.services_bg {
+    position: absolute;
+    height: 30vh;
+    width: 100%;
+    align-self: center;
+    z-index: -1;
+    margin-top: 25vh;
+    display: flex;
+}
+
+.services_bg span {
+    background: var(--cor-principal);
+    height: 30vh;
+    width: 55vw;
+}
+.services_bg span:nth-of-type(1).visible {
+    animation: slideLeft 1s linear forwards;
+}
+.services_bg span:nth-of-type(2).visible {
+    animation: slideRight 1s linear forwards;
+}
+
+/* SERVICOS TITULO */
+.services_title {
+    position: relative;
+    padding: 0 0 0 5vw;
+    white-space: nowrap;
+    display: inline-block;
+    overflow: hidden;
+    width: 0;
+}
+.services_title.visible {
+    display: inline-block;
+    animation: typing2 2.5s steps(80, end) forwards, write 1s step-end infinite;
+    border-right: 2px solid var(--cor-fonte-1);
+}
+
+.services_title h2 {
+    font-size: 2.3vw;
+}
+.services_title span {
+    color: var(--cor-principal);
+}
+
+/* SERVICOS INFOS */
+.services_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 5vw;
+    width: 100%;
+    gap: 3em;
+    margin-top: 4%;
+}
+
+.services_box {
+    background: var(--cor-fundo-3);
+    height: 10em;
+    width: 25vw;
+    box-shadow: var(--box-shadow-1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1em;
+    opacity: 0;
+}
+.services_box_icon {
+    position: absolute;
+    border: 1px solid var(--cor-fonte-1);
+    padding: 0.5em;
+    border-radius: 0.5em;
+    top: -1em;
+    background: var(--cor-fundo-3);
+    box-shadow: var(--box-shadow-1);
+    font-size: 1.2vw;
+}
+.services_box h3 {
+    margin-top: 2vw;
+    font-size: 1.4em;
+}
+.vermais {
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+    background: var(--cor-principal);
+    padding: 0.2vw 1vw;
+    border-radius: 0.3em;
+    cursor: pointer;
+    box-shadow: var(--box-shadow-1);
+    overflow: hidden;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+/* BOX HOVER */
+.services_box:hover {
+    background: var(--cor-fundo-2);
+    box-shadow: var(--box-shadow-2);
+}
+.services_box:hover .services_box_icon {
+    color: var(--cor-principal);
+    border: 1px solid var(--cor-principal);
+    transform: rotateZ(180deg);
+    box-shadow: var(--box-shadow-2);
+    transition: 0.5s;
+}
+.services_box:hover h3 {
+    color: var(--cor-principal);
+    scale: 1.05;
+    transition: 0.5s;
+}
+.vermais:hover {
+    color: var(--cor-principal);
+    background: var(--cor-fonte-1);
+    transform: translateX(0.3em);
+}
+/* INFOS ANIMAÇÔES */
+.services_box:nth-of-type(1).visible {
+    animation: slideLeft 1s 1s ease-out forwards, opacity 1s 1s ease-out forwards;
+}
+.services_box:nth-of-type(3).visible {
+    animation: slideDown 1s 1.5s ease-out forwards, opacity 1s 1.5s ease-out forwards;
+}
+.services_box:nth-of-type(5).visible {
+    animation: slideRight 1s 2s ease-out forwards, opacity 1s 2s ease-out forwards;
+}
+.services_box:nth-of-type(7).visible {
+    animation: slideLeft 1s 3.5s ease-out forwards, opacity 1s 3.5s ease-out forwards;
+}
+.services_box:nth-of-type(9).visible {
+    animation: slideUp 1s 3s ease-out forwards, opacity 1s 3s ease-out forwards;
+}
+.services_box:nth-of-type(11).visible {
+    animation: slideRight 1s 2.5s ease-out forwards, opacity 1s 2.5s ease-out forwards;
+}
+
+
+/* MODAL */
+.modal.active-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.modal {
+    display: grid;
+    position: fixed;
+    inset: 0;
+    backdrop-filter: blur(10px);
+    padding: 2rem 1rem;
+    place-items: center;
+    z-index: 1000;
+    cursor: auto;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+.modal_card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--cor-fundo-3);
+    padding: 1rem;
+    border-radius: 2rem;
+    border: 2px solid var(--cor-fonte-1);
+    width: 50vw;
+    height: 20vh;
+    margin-top: -10em;
+    overflow: hidden;
+}
+
+.modal_close {
+    align-self: flex-end;
+    font-size: 2vw;
+    margin-top: -1.8vh;
+    color: var(--cor-principal);
+    cursor: pointer;
+}
+.modal_close:hover {
+    color: var(--cor-principal-2);
+}
+
+.modal_card h3 {
+    font-size: 1.5vw;
+    letter-spacing: 0.1em;
+}
+
+.modal_card p {
+    font-family: var(--fonte-2);
+    letter-spacing: 0.08em;
+    font-size: 1.2vw;
+}
+
+.modal_card i {
+    position: absolute;
+    opacity: 0.1;
+    color: var(--cor-principal);
+    margin-top: -3vh;
+    font-size: 23vh;
+}
