@@ -9,7 +9,6 @@
 .banner_box {
     position: relative;
     display: flex;
-    align-items: center;
     height: 90%;
     padding: 4vw;
     background: var(--cor-fundo-3);
@@ -60,20 +59,19 @@
 }
 .banner_text h2 {
     font-family: var(--fonte-1);
-    font-size: 2.8vw;
+    font-size: 2.5vw;
     font-weight: 400;
-    position: absolute;
-    margin-top: -12vw;
     white-space: nowrap;
     display: inline-block;
     overflow: hidden;
+    width: 0;
 }
 .banner_text h2:nth-of-type(1) {
-    animation: typing 4s steps(60, end);
+    animation: typing 4s steps(40, end) forwards;
 }
 .banner_text h2:nth-of-type(2) {
-    top: 2.5em;
-    animation: typing 6.5s steps(60, end);
+    animation: typing 4s 1.3s steps(40, end) forwards,  write 1s step-end infinite;
+    border-right: 2px solid var(--cor-fonte-1);
 }
 .banner_text p {
     font-family: var(--fonte-2);
@@ -81,18 +79,23 @@
     white-space: nowrap;
     display: inline-block;
     overflow: hidden;
+    width: 0;
 }
 .banner_text p:nth-of-type(1) { 
-    animation: typing 9.5s steps(60, end);
+    animation: typing 4s 2.6s steps(40, end) forwards;
+    margin-top: 1.5em;
 }
 .banner_text p:nth-of-type(2) { 
-    animation: typing 15s steps(60, end), write 1s step-end infinite;
+    animation: typing 4s 4.3s steps(40, end) forwards, write 1s step-end infinite;
+    border-right: 2px solid var(--cor-fonte-1);
 }
 
 .banner_text span {
     color: var(--cor-principal);
     font-weight: 700;
 }
+
+/* BANNER BTN */
 .banner_text_btn {
     position: absolute;
     margin-top: 8em;
@@ -117,6 +120,7 @@
     position: absolute;
     right: -7vw;
     animation: slideIN 5s linear;
+    align-self: center;
 }
 .banner_svg img {
     height: 50vw;
@@ -189,4 +193,125 @@
 }
 .banner_infos_box:nth-of-type(3) {
     animation: downUp 6.5s ease-in;
+}
+
+@media screen and (max-width:1024px) {
+    .banner {
+        height: 80vh;
+        padding: 1rem 1vw;
+    }
+    
+    /* BANNER BOX */
+    .banner_box {
+        display: flex;
+        height: 90%;
+        padding: 1vw;
+        border-radius: 1.5em;
+    }
+
+    /* BANNER LINKS */
+    .banner_links{
+        justify-content: start;
+        margin-top: 3em;
+        gap: 4em;
+    }
+    .banner_link i {
+        font-size: 2em;
+    }
+    /* BANNER TEXT */
+    .banner_text {
+        padding: 2em 4em;
+        width: 100%;
+    }
+    .banner_text h2 {
+        font-size: 4.3vw;
+    }
+    .banner_text p {
+        font-size: 2.4vw;
+    }
+    .banner_text p:nth-of-type(1) { 
+        margin-top: 4em;
+    }
+    /* BANNER BTN */
+    .banner_text_btn {
+        margin-top: 4em;
+        scale: 1.2;
+        align-self: center;
+        margin-left: 15vw;
+    }
+    .banner_text_btn a {
+        padding: 1em 3em;
+        border-radius: 0.8em;
+    }
+    /* BANNER SVG */
+    .banner_svg {
+        right: -8vw;
+        bottom: -10vw;
+    }
+    .banner_svg img {
+        height: 63vw;
+    }
+    /* BANNER INFOS */
+    .banner_infos {
+        gap: 2vw;
+    }
+
+    .banner_infos_box {
+        height: 11em;
+        width: 13em;
+    }
+}
+@media screen and (max-width:600px) {
+    .banner {
+        height: 80vh;
+        padding: 1rem 1vw;
+    }
+    
+    /* BANNER BOX */
+    .banner_box {
+        padding: 0;
+        border-radius: 1em;
+    }
+
+    /* BANNER LINKS */
+    .banner_link i {
+        font-size: 1.8em;
+    }
+    /* BANNER TEXT */
+    .banner_text {
+        padding: 2em 1em;
+    }
+    /* BANNER BTN */
+    .banner_text_btn {
+        margin-top: 2em;
+        align-self: center;
+        margin-left: 11vw;
+        scale: 1.2;
+    }
+    .banner_text_btn a {
+        padding: 1em 3em;
+        border-radius: 0.8em;
+        font-size: 0.5em;
+    }
+    /* BANNER SVG */
+    .banner_svg {
+        right: -8vw;
+        bottom: -10vw;
+    }
+    .banner_svg img {
+        height: 70vw;
+    }
+    /* BANNER INFOS */
+    .banner_infos_box {
+        height: 7em;
+        width: 7em;
+    }
+    .bannner_infos_icon {
+        font-size: 0.8em;
+        margin-top: -1.5em;
+    }
+    
+    .banner_infos_ovl h3 {
+        display: none;
+    }
 }
