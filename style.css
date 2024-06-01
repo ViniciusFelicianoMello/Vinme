@@ -6,19 +6,19 @@
 @import url(css/keyframes.css);
 @import url(css/header.css);
 @import url(css/banner.css);
+@import url(css/about.css);
 
 :root {
     --cor-principal:#006aff;
     --cor-principal-2:#52efff;
 
-    --cor-fonte-1: #0c1829; 
-    --cor-fonte-2: #0f1d31; 
+    --cor-fonte-1: #091424; 
 
     --cor-fundo-1: #e1edff;
     --cor-fundo-2: #eaf3ff;
     --cor-fundo-3: #eef5ff;
 
-    --cor-shadow-1: #95b6e5;
+    --cor-shadow-1: #1b56aa70;
 
     --box-shadow-1: 0px 0px 6px var(--cor-shadow-1), 0 0 6px var(--cor-shadow-1);
     --box-shadow-2: 0px 0px 6px var(--cor-principal-2), 0 0 6px var(--cor-principal-2);
@@ -32,14 +32,13 @@
     --cor-principal:#006aff;
     --cor-principal-2:#52efff;
 
-    --cor-fonte-1: #e6f0ff; 
-    --cor-fonte-2: #dde7f4; 
+    --cor-fonte-1: #eef5ff; 
 
     --cor-fundo-1: #091424;
     --cor-fundo-2: #0b1a32;
     --cor-fundo-3: #0b1c34;
 
-    --cor-shadow-1: #000c1e;
+    --cor-shadow-1: #558fe170;
 
     --box-shadow-1: 0px 0px 6px var(--cor-shadow-1), 0 0 6px var(--cor-shadow-1);
     --box-shadow-2: 0px 0px 6px var(--cor-principal-2), 0 0 6px var(--cor-principal-2);

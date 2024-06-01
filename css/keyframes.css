@@ -1,99 +1,86 @@
 /* HEADER */
 @keyframes header {
     0% { 
-        transform: translateY(-10em);
-        opacity: 0;
+        transform: translateY(-10em); opacity: 0;
     }
     100% { 
-        transform: translateY(0);
-        opacity: 1;
+        transform: translateY(0); opacity: 1;
     }
 }
 /* BANNER BOX */
 @keyframes bannerBox {
     0% { 
-        transform: translateY(-100em);
-        opacity: 0;
+        transform: translateY(-100em); opacity: 0;
     }
     30% { 
-        transform: translateY(-50em);
-        opacity: 0;
+        transform: translateY(-50em); opacity: 0;
     }
     100% { 
-        transform: translateY(0);
-        opacity: 1;
+        transform: translateY(0); opacity: 1;
     }
 }
 /* BANNER LINKS */
 @keyframes slideOUT {
     0% { 
-        transform: translateX(-30em);
-        opacity: 0;
+        transform: translateX(-30em); opacity: 0;
     }
     100% { 
-        transform: translateX(0);
-        opacity: 1;
+        transform: translateX(0); opacity: 1;
     }
 }
 
 /* BANNER SVG */
 @keyframes slideIN {
     0% { 
-        transform: translateX(50em);
-        opacity: 0.3;
+        transform: translateX(50em); opacity: 0.3;
     }
     70% { 
-        transform: translateX(50em);
-        opacity: 0.3;
+        transform: translateX(50em); opacity: 0.3;
     }
     100% { 
-        transform: translateX(0);
-        opacity: 1;
+        transform: translateX(0); opacity: 1;
     }
 }
 
 /* BANNER BUTTON */
 @keyframes downUp {
     0% { 
-        transform: translateY(10em);
-        opacity: 0;
+        transform: translateY(10em); opacity: 0;
     }
     90% {
-        transform: translateY(10em);
-        opacity: 0;
+        transform: translateY(10em); opacity: 0;
     }
     100% { 
-        transform: translateY(0);
-        opacity: 1;
+        transform: translateY(0); opacity: 1;
     }
 }
 
 @keyframes btnHoverUm {
-    to {
-        background-position: 24.3vw;
-       }
+    to {background-position: 24.3vw; }
 }
 
 /* BANNER TYPING */
 @keyframes typing {
-    0% {
-        width: 0%;
-    }
-    60% {
-        width: 0%;
-    }
-    99% {
-        width: 100%;
-    }
-    100% {
-        width: max-content;
-    }
+    0% {width: 0%;}
+    60% {width: 0%;}
+    99% {width: 100%;}
+    100% {width: max-content;}
 }
 @keyframes write {
-    0%, 50%, 100% {
-        border-color: transparent;
-    }
-    25%, 75% {
-        border-color: var(--cor-fonte-1);
-    }
+    0%, 50%, 100% {border-color: transparent;}
+    25%, 75% { border-color: var(--cor-fonte-1);}
+}
+
+/* ABOUT */
+/* TITLE */
+@keyframes aboutTitle {
+    0% { transform: translateY(-10em); }
+
+    100% { transform: translateY(0); opacity: 1;}
+}
+
+@keyframes slideRight {
+    0% {transform: translateX(15em);}
+
+    100% { transform: translateX(0); opacity: 1;}
 }
