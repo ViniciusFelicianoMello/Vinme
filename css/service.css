@@ -10,17 +10,17 @@
 /* SERVICOS FAIXA AZUL */
 .services_bg {
     position: absolute;
-    height: 30vh;
+    height: 40vh;
     width: 100%;
     align-self: center;
     z-index: -1;
-    margin-top: 25vh;
+    margin-top: 20vh;
     display: flex;
 }
 
 .services_bg span {
     background: var(--cor-principal);
-    height: 30vh;
+    height: 40vh;
     width: 55vw;
 }
 .services_bg span:nth-of-type(1).visible {
@@ -187,6 +187,7 @@
     margin-top: -1.8vh;
     color: var(--cor-principal);
     cursor: pointer;
+    z-index: 3;
 }
 .modal_close:hover {
     color: var(--cor-principal-2);
@@ -209,4 +210,140 @@
     color: var(--cor-principal);
     margin-top: -3vh;
     font-size: 23vh;
+}
+
+@media screen and (max-width:1024px) {
+    /* SERVICOS TITULO */
+    .services_title {
+        padding: 0 0 0 2vw;
+    }
+    .services_title h2 {
+        font-size: 4vw;
+    }
+    
+    /* SERVICOS INFOS */
+    .services_content {
+        padding: 0 2vw;
+        margin-top: 11%;
+    }
+    
+    .services_box {
+        height: 12em;
+        width: 40vw;
+        border-radius: 0.8em;
+    }
+    .services_box_icon {
+        font-size: 4vw;
+    }
+    .services_box h3 {
+        margin-top: 8vw;
+        font-size: 2em;
+    }
+    .vermais {
+        font-size: 2.5vw;
+    }
+    /* INFOS ANIMAÇÔES */
+    .services_box:nth-of-type(1).visible {
+        animation: slideDown 1s 1s ease-out forwards, opacity 1s 1s ease-out forwards;
+    }
+    .services_box:nth-of-type(3).visible {
+        animation: slideDown 1s 1.5s ease-out forwards, opacity 1s 1.5s ease-out forwards;
+    }
+    .services_box:nth-of-type(5).visible {
+        animation: slideLeft 1s 3.5s ease-out forwards, opacity 1s 3.5s ease-out forwards;
+    }
+    .services_box:nth-of-type(7).visible {
+        animation: slideRight 1s 2s ease-out forwards, opacity 1s 2s ease-out forwards;
+    }
+    .services_box:nth-of-type(9).visible {
+        animation: slideUp 1s 3s ease-out forwards, opacity 1s 3s ease-out forwards;
+    }
+    .services_box:nth-of-type(11).visible {
+        animation: slideUp 1s 2.5s ease-out forwards, opacity 1s 2.5s ease-out forwards;
+    }
+    
+    /* MODAL */
+    .modal_card {
+        border-radius: 1.2rem;
+        width: 60vw;
+    }
+    
+    .modal_close {
+        font-size: 5vw;
+        margin-top: -1.8vh;
+    }
+    .modal_card h3 {
+        font-size: 3.5vw;
+    }
+    
+    .modal_card p {
+        font-size: 3vw;
+    }
+}
+
+@media screen and (max-width:600px) {
+    /* SERVICOS TITULO */
+    .services_title {
+        padding: 0 0 0 1vw;
+    }
+    /* SERVICOS INFOS */
+    .services_content {
+        padding: 0 1vw;
+        margin-top: 11%;
+        gap: 1em;
+    }
+    .services_box {
+        height: 8em;
+        width: 40vw;
+        border-radius: 0.5em;
+    }
+    .services_box_icon {
+        font-size: 4vw;
+    }
+    .services_box h3 {
+        margin-top: 8vw;
+        font-size: 3.5vw;
+    }
+    .vermais {
+        font-size: 4vw;
+        right: 1em;
+        left: 1em;
+    }
+    /* INFOS ANIMAÇÔES */
+    .services_box:nth-of-type(1).visible {
+        animation: slideDown 1s 1s ease-out forwards, opacity 1s 1s ease-out forwards;
+    }
+    .services_box:nth-of-type(3).visible {
+        animation: slideDown 1s 1.5s ease-out forwards, opacity 1s 1.5s ease-out forwards;
+    }
+    .services_box:nth-of-type(5).visible {
+        animation: slideLeft 1s 3.5s ease-out forwards, opacity 1s 3.5s ease-out forwards;
+    }
+    .services_box:nth-of-type(7).visible {
+        animation: slideRight 1s 2s ease-out forwards, opacity 1s 2s ease-out forwards;
+    }
+    .services_box:nth-of-type(9).visible {
+        animation: slideUp 1s 3s ease-out forwards, opacity 1s 3s ease-out forwards;
+    }
+    .services_box:nth-of-type(11).visible {
+        animation: slideUp 1s 2.5s ease-out forwards, opacity 1s 2.5s ease-out forwards;
+    }
+    
+    /* MODAL */
+    .modal_card {
+        border-radius: 1.2rem;
+        width: 60vw;
+    }
+    
+    .modal_close {
+        font-size: 5vw;
+        margin-top: -1.8vh;
+    }
+    .modal_card h3 {
+        font-size: 3.5vw;
+    }
+    
+    .modal_card p {
+        font-size: 3vw;
+    }
 }
