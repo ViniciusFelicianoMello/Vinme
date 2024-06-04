@@ -28,3 +28,10 @@ const modalView = document.querySelectorAll(".modal"),
                 fecharModal();
             });
         });
+
+        // Adiciona o ouvinte de evento para fechar o modal ao pressionar "Esc"
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape" || event.key === "Esc") {
+                fecharModal();
+            }
+        });

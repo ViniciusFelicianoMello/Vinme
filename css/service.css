@@ -4,7 +4,6 @@
     padding: 5vw 0;
     position: relative;
     overflow: hidden;
-    margin-top: 5em;
 }
 
 /* SERVICOS FAIXA AZUL */
@@ -172,6 +171,7 @@
     flex-direction: column;
     align-items: center;
     background-color: var(--cor-fundo-3);
+    box-shadow: var(--box-shadow-1);
     padding: 1rem;
     border-radius: 2rem;
     border: 2px solid var(--cor-fonte-1);

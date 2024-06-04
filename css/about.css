@@ -1,6 +1,6 @@
 .about {
     width: 100%;
-    height: 100vh;
+    height: max-content;
     padding: 5vw 5vw;
     position: relative;
     overflow: hidden;
@@ -88,6 +88,7 @@
     box-shadow: var(--box-shadow-1);
     border-radius: 1em;
     opacity: 0;
+    padding: 1em;
 }
 
 .about_infos_box i {
@@ -105,14 +106,13 @@
 .about_infos_box span {
     color: var(--cor-principal);
     font-weight: 700;
-    font-size: 1.6vw;
     margin-bottom: 0.5em;
 }
 
 .about_infos_box p {
     font-family: var(--fonte-2);
     letter-spacing: 0.1em;
-    font-size: 1.3vw;
+    font-size: 1vw;
 }
 /* SOBRE INFOS HOVER */
 .about_infos_box:hover {
@@ -141,6 +141,15 @@
 }
 .about_infos_box:nth-of-type(3).visible {
     animation: slideRight 1s 3.2s ease-out forwards, opacity 1s 3.2s ease-out forwards;   
+}
+
+/* SOBRE PARALLAX BACKGROUND */
+.about_parallax {
+    background: url("../assets/img/spaceship.png") no-repeat center center / cover;
+    background-attachment: fixed;
+    height: 60vh;
+    width: 120%;
+    margin: 5em 0 0 -5em;
 }
 
 @media screen and (max-width:1024px) {
@@ -194,14 +203,8 @@
         font-size: 4vw;
     }
 
-    .about_infos_box span {
-        font-size: 4vw;
-        margin-top: 1em;
-    }
-
     .about_infos_box p {
-        margin-top: 2em;
-        font-size: 2.5vw;
+        font-size: 2vw;
     }
 }
 @media screen and (max-width:600px) {
@@ -238,13 +241,7 @@
         border-radius: 0.5em;
     }
 
-    .about_infos_box span {
-        font-size: 6vw;
-        margin-top: 0;
-    }
-
     .about_infos_box p {
-        margin-top: 0;
-        font-size: 6vw;
+        font-size: 4vw;
     }
 }
