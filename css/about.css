@@ -4,7 +4,7 @@
     padding: 5vw 5vw;
     position: relative;
     overflow: hidden;
-    margin-top: 5em;
+    margin-top: 8em;
 }
 /* SOBRE TITULO */
 .about_title {
@@ -147,9 +147,30 @@
 .about_parallax {
     background: url("../assets/img/spaceship.png") no-repeat center center / cover;
     background-attachment: fixed;
-    height: 60vh;
-    width: 120%;
+    height: 80vh;
+    width: 140%;
     margin: 5em 0 0 -5em;
+}
+.about_parallax_frase {
+    background: var(--cor-fundo-1);
+    width: max-content;
+    margin-left: 5vw;
+    padding: 1em 2em;
+    font-family: var(--fonte-2);
+    letter-spacing: 0.1em;
+    font-size: 1.3vw;
+}
+.about_parallax_frase p {
+    border-right: 2px solid var(--cor-fonte-1);
+    white-space: nowrap;
+    display: inline-block;
+    overflow: hidden;
+    width: 0;
+}
+
+.about_parallax_frase p.visible{
+    display: inline-block;
+    animation: typing2 2.5s 3s steps(80, end) forwards, write 2s step-end infinite;
 }
 
 @media screen and (max-width:1024px) {
@@ -206,6 +227,10 @@
     .about_infos_box p {
         font-size: 2vw;
     }
+    .about_parallax_frase {
+        margin-left: 2vw;
+        font-size: 2vw;
+    }
 }
 @media screen and (max-width:600px) {
     .about {
@@ -243,5 +268,9 @@
 
     .about_infos_box p {
         font-size: 4vw;
+    }
+    .about_parallax_frase {
+        margin-left: 1vw;
+        font-size: 2.5vw;
     }
 }

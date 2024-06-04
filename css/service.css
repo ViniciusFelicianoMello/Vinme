@@ -32,11 +32,11 @@
 /* SERVICOS TITULO */
 .services_title {
     position: relative;
-    padding: 0 0 0 5vw;
-    white-space: nowrap;
-    display: inline-block;
-    overflow: hidden;
-    width: 0;
+        padding: 0 0 0 5vw;
+        white-space: nowrap;
+        display: inline-block;
+        overflow: hidden;
+        width: 0;
 }
 .services_title.visible {
     display: inline-block;

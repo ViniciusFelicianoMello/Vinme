@@ -6,7 +6,7 @@
     z-index: 1000;
     width: 100%;
     padding: 0 5vw;
-
+    background: var(--cor-fundo-1);
     animation: header 0.5s ease-in-out;
 }
 
