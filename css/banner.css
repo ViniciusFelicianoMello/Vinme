@@ -15,7 +15,7 @@
     border-radius: 2em;
     box-shadow: var(--box-shadow-1);
     overflow: hidden;
-    margin: 4em;
+    margin: 4em 0;
     animation: bannerBox 2s ease-out;
 }
 
@@ -135,7 +135,7 @@
     gap: 5rem;
     width: 100%;
     overflow: hidden;
-    margin-top: -8rem;
+    margin-top: -12rem;
     height: 15em;
 }
 
@@ -210,8 +210,9 @@
     .banner_box {
         display: flex;
         height: 90%;
-        padding: 1vw;
+        padding: 0vw;
         border-radius: 1.5em;
+        margin: 0;
     }
 
     /* BANNER LINKS */
@@ -259,6 +260,7 @@
     /* BANNER INFOS */
     .banner_infos {
         gap: 2vw;
+        margin-top: -8rem;
     }
 
     .banner_infos_box {

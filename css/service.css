@@ -289,11 +289,11 @@
     /* SERVICOS INFOS */
     .services_content {
         padding: 0 1vw;
-        margin-top: 11%;
+        margin-top: 9vh;
         gap: 1em;
     }
     .services_box {
-        height: 8em;
+        height: 18vh;
         width: 40vw;
         border-radius: 0.5em;
     }
@@ -309,26 +309,6 @@
         right: 1em;
         left: 1em;
     }
-    /* INFOS ANIMAÇÔES */
-    .services_box:nth-of-type(1).visible {
-        animation: slideDown 1s 1s ease-out forwards, opacity 1s 1s ease-out forwards;
-    }
-    .services_box:nth-of-type(3).visible {
-        animation: slideDown 1s 1.5s ease-out forwards, opacity 1s 1.5s ease-out forwards;
-    }
-    .services_box:nth-of-type(5).visible {
-        animation: slideLeft 1s 3.5s ease-out forwards, opacity 1s 3.5s ease-out forwards;
-    }
-    .services_box:nth-of-type(7).visible {
-        animation: slideRight 1s 2s ease-out forwards, opacity 1s 2s ease-out forwards;
-    }
-    .services_box:nth-of-type(9).visible {
-        animation: slideUp 1s 3s ease-out forwards, opacity 1s 3s ease-out forwards;
-    }
-    .services_box:nth-of-type(11).visible {
-        animation: slideUp 1s 2.5s ease-out forwards, opacity 1s 2.5s ease-out forwards;
-    }
-    
     /* MODAL */
     .modal_card {
         border-radius: 1.2rem;
