@@ -151,12 +151,6 @@
     width: 140%;
     margin: 5em 0 0 -5em;
 }
-.about_parallax_fundo {
-    height: 100em;
-    width: 100em;
-    background: var(--cor-fundo-tpt);
-    position: absolute;
-}
 .about_parallax_frase {
     background: var(--cor-fundo-1);
     width: max-content;
@@ -165,6 +159,7 @@
     font-family: var(--fonte-2);
     letter-spacing: 0.1em;
     font-size: 1.3vw;
+    z-index: 1;
 }
 .about_parallax_frase p {
     border-right: 2px solid var(--cor-fonte-1);
