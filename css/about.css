@@ -151,6 +151,12 @@
     width: 140%;
     margin: 5em 0 0 -5em;
 }
+.about_parallax_fundo {
+    height: 100em;
+    width: 100em;
+    background: var(--cor-fundo-tpt);
+    position: absolute;
+}
 .about_parallax_frase {
     background: var(--cor-fundo-1);
     width: max-content;
