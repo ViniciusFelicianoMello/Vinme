@@ -1,0 +1,76 @@
+.project {
+    position: relative;
+    width: 100%;
+    height: max-content;
+    padding: 5vw 5vw;
+    overflow: hidden;
+}
+/* PROJETOS TITULO */
+.project_title {
+    position: relative;
+}
+
+.project_title h2 {
+    font-size: 2.3vw;   
+    white-space: nowrap;
+    display: inline-block;
+    overflow: hidden;
+    width: 0;
+}
+.project_title span {
+    color: var(--cor-principal);
+}
+.project_title h2.visible {
+    display: inline-block;
+    animation: typing2 2.5s steps(80, end) forwards, write 1s step-end infinite;
+    border-right: 2px solid var(--cor-fonte-1);
+}
+
+.project_title p {
+    font-size: 1vw;
+    white-space: nowrap;
+    display: inline-block;
+    overflow: hidden;
+    width: 0;
+}
+.project_title p.visible {
+    display: inline-block;
+    animation: typing2 2.5s 2s steps(80, end) forwards, write 1s step-end infinite;
+    border-right: 2px solid var(--cor-fonte-1);
+}
+/* PROJETOS ABAS */
+.project_tabs {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.tab-buttons {
+    display: flex;
+    cursor: pointer;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 10px 20px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    text-align: center;
+}
+
+.tab-button.active {
+    background-color: #fff;
+    border-top: 2px solid #007BFF;
+    border-right: 2px solid #007BFF;
+    border-left: 2px solid #007BFF;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+.tab-content.active {
+    display: block;
+}
