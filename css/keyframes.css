@@ -90,6 +90,10 @@
     0% {}
     100% {opacity: 1;}
 }
+@keyframes opacity2 {
+    0% {}
+    100% {opacity: 0.5;}
+}
 
 @keyframes slideRight {
     0% {transform: translateX(100%);}

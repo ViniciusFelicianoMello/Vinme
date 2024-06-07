@@ -21,7 +21,6 @@
     color: var(--cor-principal);
 }
 .project_title h2.visible {
-    display: inline-block;
     animation: typing2 2.5s steps(80, end) forwards, write 1s step-end infinite;
     border-right: 2px solid var(--cor-fonte-1);
 }
@@ -42,6 +41,10 @@
 .project_tabs {
     width: 100%;
     margin: 2em auto;
+    opacity: 0;
+}
+.project_tabs {
+    animation: slideUp 3s 1s ease forwards, opacity 3s 1s ease forwards;
 }
 
 .tab-buttons {
@@ -77,6 +80,7 @@
     color: var(--cor-fundo-3);
     box-shadow: var(--box-shadow-2);
     opacity: 1;
+    transition: 0.5s;
 }
 /* TAB CONTEUDO */
 .tab-content {
@@ -104,7 +108,7 @@
 
 .project_img {
     width: 100%;
-    height: 25vh;
+    height: 100%;
     background-size: cover;
     background-position: 100% 0%;
     transition: 5s;
@@ -167,4 +171,71 @@
 .project_img a:hover + span {
     opacity: 1;
     transition: 0.5s;
+}
+
+@media screen and (max-width:1024px) {
+    .project {
+        padding: 5vw 2vw;
+    }
+    /* PROJETOS TITULO */
+    .project_title h2 {
+        font-size: 4vw;   
+    }
+    .project_title p {
+        font-size: 1.05vw;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+    }
+    /* PROJETOS ABAS */
+    .tab-buttons {
+        gap: 2em;
+    }
+
+    .tab-button {
+        width: 20vw;
+        border-radius: 0.7em;
+        font-size: 2vw;
+    }
+    /* ABA CONTEUDO ITEM */
+    .project_content {
+        width: 40vw;
+        height: 15vh;
+        background-size: cover;
+        background-position: 100% 0%;
+        transition: 5s;
+        position: relative;
+    }
+
+    .project_img {
+        width: 100%;
+        height: 100%;
+        border-radius: 0.7em;
+    }
+    .project_img h3 {
+        font-size: 3vw;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .project {
+        padding: 5vw 1vw;
+    }
+    /* ABA CONTEUDO ITEM */
+    .project_content {
+        width: 45vw;
+    }
+    .tab-content.active {
+        gap: 1em;
+    }
+    .project_img {
+        width: 100%;
+        height: 100%;
+        border-radius: 0.5em;
+    }
+    .project_content {
+        margin-bottom: 1em;
+    }
+    .project_img h3 {
+        font-size: 4vw;
+    }
 }
