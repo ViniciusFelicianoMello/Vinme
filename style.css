@@ -9,6 +9,7 @@
 @import url(css/about.css);
 @import url(css/service.css);
 @import url(css/projects.css);
+@import url(css/members.css);
 
 :root {
     --cor-principal:#006aff;
