@@ -1,47 +1,198 @@
+.members {
+    position: relative;
+    width: 100%;
+    height: max-content;
+    padding: 5vw 5vw;
+    overflow: hidden;
+}
+.members_title {
+    position: relative;
+}
+.members_title h2 {
+    font-size: 2.3vw;   
+    white-space: nowrap;
+    display: inline-block;
+    overflow: hidden;
+    width: 0;
+}
+.members_title span {
+    color: var(--cor-principal);
+}
+.members_title h2.visible {
+    animation: typing2 2.5s steps(80, end) forwards, write 1s step-end infinite;
+    border-right: 2px solid var(--cor-fonte-1);
+}
+
+/* SLIDER */
 .slider-container {
     position: relative;
-    width: 80%;
-    max-width: 600px;
+    width: 100%;
+    height: 38vh;
+    margin: 2em auto;
+    opacity: 0;
     overflow: hidden;
+}
+.slider-container.visible {
+    animation: slideRight 3s 1s ease forwards, opacity 3s 1s ease forwards;
 }
 
 .slider-wrapper {
     display: flex;
     transition: transform 0.5s ease-in-out;
 }
-
+/* SLIDE ITEM */
 .slide {
-    min-width: 25%;
+    width: 25%;
+    height: 30vh;
     box-sizing: border-box;
+    margin: 0 2em;
+    box-shadow: var(--box-shadow-1);  
+    border-radius: 0.8em;
+}
+.slide_card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background: var(--cor-fundo-3);
+    border-radius: 0.8em;
+    overflow: hidden;
+}
+/* SLIDE PROFILE */
+.slide_profile {
+    position: relative;
+    width: 100%;
+    height: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--cor-principal);
+}
+
+.slide_profile img{
+    position: absolute;
+    width: 6vw;
+    height: 6vw;
+    background: var(--cor-fonte-1);
+    border-radius: 100%;
+    left: 1em;
+    border: 3px solid var(--cor-principal-2);
+    box-shadow: var(--box-shadow-1);
+}
+.slide_profile span {
     text-align: center;
-    padding: 20px;
-    background: white;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    margin: 0 10px;
+    font-size: 1.5vw;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-left: 5em;
+    margin-top: -1em;
+    color: var(--cor-fundo-3);
+}
+.slide_profile p {
+    position: absolute;
+    margin-top: 2vw;
+    letter-spacing: 0.01em;
+    font-family: var(--fonte-2);
+    font-size: 1.3vw;
 }
 
-.slide img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 50%;
+/* SLIDE SKILLS */
+.slide_skills {
+    margin-top: 0.8em;
+    position: relative;
+    width: max-content;
+    cursor: context-menu;
 }
-
+.slide_skills ul {
+    list-style: none;
+    display: flex;
+}
+.slide_skills ul:nth-of-type(1) {
+    position: absolute;
+    left: 100%;
+}
+.slide_skills li {
+    margin: 0 1em;
+    background: var(--cor-principal-tpt);
+    box-shadow: var(--box-shadow-1);
+    padding: 0.2em 1em ;
+    border-radius: 0.8em;
+    font-size: 1.2vw;
+    letter-spacing: 0.1em;
+    font-family: var(--fonte-2);
+}
+.slide_skills ul {
+    animation: infiniteScroll 15s 2s linear infinite;
+}
+.slide_skills span {
+    position: absolute;
+    display: flex;
+    height: 100%;
+    width: 5%;
+    z-index: 1;
+}
+.slide_skills span:nth-of-type(1) {
+    background: linear-gradient(to right, var(--cor-fundo-3), transparent);
+}
+.slide_skills span:nth-of-type(2) {
+    background: linear-gradient(to left, var(--cor-fundo-3), transparent);
+    right: 52.5%;
+}
+/* SLIDER LINKS */
+.slide_links {
+    position: relative;
+    margin-top: 3em;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+.slide_links a {
+    text-decoration: none;
+}
+.slide_links i {
+    opacity: 0.5;
+    color: var(--cor-principal);
+    font-size: 1.5vw;
+    transition: 0.2s;
+}
+.slide_links i:hover {
+    opacity: 1;
+    transform: translateY(-0.2em);
+}
+.slide_links span {
+    position: absolute;
+    left: 35%;
+    top: -1.5em;
+    color: var(--cor-principal);
+    font-family: var(--fonte-2);
+    font-size: 1.5vw;
+    letter-spacing: 0.1em;
+    opacity: 0;
+    transition: 0.5s;
+}
+.slide_links a:hover span {
+    opacity: 1;
+}
+/* BULLETS */
 .bullets {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 2em;
 }
 
 .bullet {
-    width: 15px;
-    height: 15px;
-    margin: 0 5px;
-    background: #ddd;
+    width: 10px;
+    height: 10px;
+    margin: 0 0.5em;
+    background: var(--cor-fonte-1);
     border-radius: 50%;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: 0.5s;   
+    box-shadow: var(--box-shadow-1);
 }
 
 .bullet.active {
-    background: #4CAF50;
+    background: var(--cor-principal);
+    scale: 1.1;
 }

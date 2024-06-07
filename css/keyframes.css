@@ -115,3 +115,10 @@
 
     100% { transform: translateY(0);}
 }
+
+
+/* INFINITE SCROLL */
+@keyframes infiniteScroll {
+    0% {transform: translateX(0);}
+    100% {transform: translateX(-100%);}
+}

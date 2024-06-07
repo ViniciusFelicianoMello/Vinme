@@ -43,8 +43,8 @@
     margin: 2em auto;
     opacity: 0;
 }
-.project_tabs {
-    animation: slideUp 3s 1s ease forwards, opacity 3s 1s ease forwards;
+.project_tabs.visible {
+    animation: slideLeft 3s 1s ease forwards, opacity 3s 1s ease forwards;
 }
 
 .tab-buttons {
