@@ -31,6 +31,10 @@
     margin: 0em auto;
     opacity: 0;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
 }
 .slider-container.visible {
     animation: slideRight 3s 1s ease forwards, opacity 3s 1s ease forwards;

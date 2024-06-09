@@ -26,7 +26,8 @@
 }
 
 .project_title p {
-    font-size: 1vw;
+    font-family: var(--fonte-2);
+    font-size: 1.5vw;
     white-space: nowrap;
     display: inline-block;
     overflow: hidden;
@@ -182,9 +183,8 @@
         font-size: 4vw;   
     }
     .project_title p {
-        font-size: 1.05vw;
+        font-size: 1.7vw;
         font-weight: 700;
-        letter-spacing: 0.1em;
     }
     /* PROJETOS ABAS */
     .tab-buttons {
@@ -219,6 +219,9 @@
 @media screen and (max-width:600px) {
     .project {
         padding: 5vw 1vw;
+    }   
+    .project_title p {
+        opacity: 0;
     }
     /* ABA CONTEUDO ITEM */
     .project_content {
