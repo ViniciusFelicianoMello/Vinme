@@ -1,5 +1,5 @@
 /*PARALLAX BACKGROUND */
-.paralax_frase {
+.parallax_frase {
     background: var(--cor-fundo-1);
     width: max-content;
     margin-left: 5vw;
@@ -9,7 +9,7 @@
     font-size: 1.3vw;
     z-index: 1;
 }
-.paralax_frase p {
+.parallax_frase p {
     border-right: 2px solid var(--cor-fonte-1);
     white-space: nowrap;
     display: inline-block;
@@ -17,7 +17,7 @@
     width: 0;
 }
 
-.paralax_frase p.visible{
+.parallax_frase p.visible{
     display: inline-block;
     animation: typing2 2.5s 3s steps(80, end) forwards, write 2s step-end infinite;
 }
@@ -38,19 +38,32 @@
     margin: 5em 0 0 -5em;
 }
 
+.pjc_prlx {
+    background: url('') no-repeat center center / cover;
+    background-attachment: fixed;
+    height: 80vh;
+    width: 140%;
+    margin: 5em 0 0 -5em;
+}
+
+.mbr_prlx {
+    background: url('') no-repeat center center / cover;
+    background-attachment: fixed;
+    height: 80vh;
+    width: 140%;
+    margin: 5em 0 0 -5em;
+}
 
 @media screen and (max-width:1024px) {
     /*PARALLAX BACKGROUND */
-    .paralax_frase {
+    .parallax_frase {
         font-size: 2vw;
         z-index: 1;
     }
-    .abt_prlx {
-        height: 60vh;
-        width: 140%;
-    }
-
-    .svc_prlx {
+    .abt_prlx,
+    .svc_prlx,
+    .pjc_prlx,
+    .mbr_prlx {
         height: 60vh;
         width: 140%;
     }
@@ -58,15 +71,13 @@
 
 @media screen and (max-width:600px) {
     /*PARALLAX BACKGROUND */
-    .paralax_frase {
+    .parallax_frase {
         display: none;
     }
-    .abt_prlx {
-        height: 40vh;
-        width: 140%;
-    }
-
-    .svc_prlx {
+    .abt_prlx,
+    .svc_prlx,
+    .pjc_prlx,
+    .mbr_prlx {
         height: 40vh;
         width: 140%;
     }
