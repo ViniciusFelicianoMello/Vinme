@@ -172,8 +172,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--cor-fonte-1);
-    font-family: var(--fonte-1);
+    color: var(--cor-fundo-1);
     background: var(--cor-principal);
     border: none;
     border-radius: 50%;

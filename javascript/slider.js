@@ -49,6 +49,7 @@ prev.onclick = function () {
     loadShow();
 };
 
+// função para atualizar os bullets
 function updateBullets() {
     const bulletsContainer = document.querySelector('.bullets');
     bulletsContainer.innerHTML = '';

@@ -179,8 +179,8 @@
     margin-top: 4.7em;
     font-size: 1.5em;   
     z-index: 1;
-    text-shadow: 1px 1px 3px var(--cor-fundo-2), -1px -1px 3px var(--cor-fundo-2);
-    color: var(--cor-principal);
+    text-shadow: 1px 1px 3px var(--cor-fundo-2) , -1px -1px 3px var(--cor-fundo-2);
+    color: var(--cor-fonte-1);
 }
 
 /* BANNER INFOS HOVER */
@@ -196,7 +196,7 @@
     transition: 0.5s;
 }
 .banner_infos_box:hover h3 {
-    color: var(--cor-principal-2);
+    color: var(--cor-principal);
     transition: 0.5s;
 }
 .banner_infos_box:hover img {
