@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+@import url(css/keyFrames.css);
+@import url(css/header.css);
+
+:root {
+    --cor-principal:#006aff;
+    --cor-principal-tpt:#006aff36;
+    --cor-principal-2:#52efff;
+
+    --cor-fonte-1: #001437; 
+
+    
+    --cor-fundo-tpt: #e1edff4e;
+    --cor-fundo-1: #e1edff;
+    --cor-fundo-2: #eaf3ff;
+    --cor-fundo-3: #eef5ff;
+
+    --cor-shadow-1: #00275d5d;
+
+    --box-shadow-1: 0px 0px 6px var(--cor-shadow-1), 0 0 6px var(--cor-shadow-1);
+    --box-shadow-2: 0px 0px 6px var(--cor-principal-2), 0 0 6px var(--cor-principal-2);
+
+    --fonte-1: "Orbitron", sans-serif;
+    --fonte-2: "Share Tech", sans-serif;
+    --fonte-3: "Audiowide", sans-serif;
+}
+
+[data-theme="dark"] {
+    --cor-principal:#006aff;
+    --cor-principal-2:#52efff;
+
+    --cor-fonte-1: #eef5ff; 
+
+    --cor-fundo-tpt: #0014374e;
+    --cor-fundo-1: #001437;
+    --cor-fundo-2: #001842;
+    --cor-fundo-3: #001d50;
+
+    --cor-shadow-1: #000c1d87;
+
+    --box-shadow-1: 0px 0px 6px var(--cor-shadow-1), 0 0 6px var(--cor-shadow-1);
+    --box-shadow-2: 0px 0px 6px var(--cor-principal-2), 0 0 6px var(--cor-principal-2);
+}
+
+*{ /*reset margem */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* SCROLL */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+  
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+  
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, var(--cor-principal) 0%, var(--cor-principal) 60%, var(--cor-principal-2) 100%) !important;
+    border-radius: 2rem;
+    transition: 0.5s;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, var(--cor-principal-2) 0%, var(--cor-principal-2) 60%, var(--cor-principal) 100%) !important;
+    transition: 0.5s;
+}
+
+body {
+    background: var(--cor-fundo-1);
+    color: var(--cor-fonte-1);
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: var(--fonte-1);
+    transition: 0.5s;
+}
+
+/* PAGINA */
+.container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    max-height: max-content;
+    padding: 5vw 5vw;
+    overflow: hidden;
+}
+
+@media screen and (max-width:1024px) {
+    .container {
+        min-height: 100vh;
+        max-height: max-content;
+        padding: 0 2vw;
+    }
+
+    .header_logo_title {
+        display: none;
+    }
+}
