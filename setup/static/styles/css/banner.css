@@ -233,3 +233,140 @@
 .banner_infos_box:nth-of-type(3).visible {
     animation: slideLeft 1s 7.8s ease-in forwards, opacity 1s 7.8s ease-in forwards;
 }
+
+@media screen and (max-width:1024px) {
+    .banner {
+        height: 80vh;
+        padding: 1rem 1vw;
+    }
+    
+    /* BANNER BOX */
+    .banner_box {
+        display: flex;
+        height: 90%;
+        padding: 0vw;
+        border-radius: 1em;
+        margin: 0;
+    }
+
+    /* BANNER LINKS */
+    .banner_links{
+        justify-content: start;
+        margin-top: 7vh;
+    }
+    .banner_link i {
+        font-size: 2em;
+    }
+    /* BANNER TEXT */
+    .banner_text {
+        padding: 5em 4em;
+        width: 100%;
+    }
+    .banner_text h2 {
+        font-size: 4.3vw;
+    }
+    .banner_text p {
+        font-size: 2.4vw;
+    }
+    .banner_text p:nth-of-type(1) { 
+        margin-top: 4em;
+    }
+    /* BANNER BTN */
+    .banner_text_btn {
+        margin-top: 4em;
+        scale: 1.2;
+        align-self: center;
+        margin-left: 15vw;
+    }
+    .banner_text_btn a {
+        padding: 1em 3em;
+        border-radius: 0.8em;
+    }
+    /* BANNER SVG */
+    .banner_svg {
+        right: 0;
+        bottom: -10vw;
+    }
+    .banner_svg img {
+        height: 53vh;
+    }
+    /* BANNER INFOS */
+    .banner_infos {
+        gap: 2vw;
+        margin-top: -8rem;
+    }
+
+    .banner_infos_box {
+        height: 11em;
+        width: 13em;
+    }
+    .bannner_infos_icon {
+        margin-left: 0;
+        top: -1.3vw;
+    }
+    .banner_infos_ovl h3 {
+        display: none;
+    }
+    .banner_infos_ovl img {
+        position: absolute;
+        margin-top: 7em;
+        width: 20em;
+    }
+}
+@media screen and (max-width:600px) {
+    .banner {
+        height: 80vh;
+        padding: 1rem 1vw;
+    }
+    
+    /* BANNER BOX */
+    .banner_box {
+        padding: 0;
+        border-radius: 1em;
+    }
+
+    /* BANNER LINKS */
+    .banner_link i {
+        font-size: 1.8em;
+    }
+    /* BANNER TEXT */
+    .banner_text {
+        padding: 2em 1em;
+    }
+    /* BANNER BTN */
+    .banner_text_btn {
+        margin-top: 2em;
+        align-self: center;
+        margin-left: 11vw;
+        scale: 1.2;
+    }
+    .banner_text_btn a {
+        padding: 1em 3em;
+        border-radius: 0.8em;
+        font-size: 0.5em;
+    }
+    /* BANNER SVG */
+    .banner_svg {
+        right: -8vw;
+        bottom: -10vw;
+    }
+    .banner_svg img {
+        height: 50vh;
+    }
+    /* BANNER INFOS */
+    .banner_infos_box {
+        height: 7em;
+        width: 7em;
+    }
+    .bannner_infos_icon {
+        font-size: 0.8em;
+        margin-top: -1em;
+    }
+    .banner_infos_ovl img {
+        margin-top: 3.8em;
+        height: 8em;
+    }
+    .banner_infos_ovl h3 {
+        display: none;
+    }
+}

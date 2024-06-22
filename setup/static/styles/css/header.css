@@ -98,8 +98,7 @@
     gap: 0;
     border-top: 3px solid var(--cor-principal);
     visibility: hidden;
-    opacity: 0.4;
-    transition: 2s;
+    transition: 1s;
     z-index: 900;
     border-radius: 0 0 1em 1em;
     box-shadow: var(--box-shadow-1);
@@ -108,7 +107,6 @@
 }
 .options_item:hover .dropdown_list {
     visibility: visible;
-    opacity: 1;
     max-height: 50vh;
 }
 
