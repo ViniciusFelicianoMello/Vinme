@@ -9,6 +9,9 @@
     padding: 0 5vw;
     background: var(--cor-fundo-1);
     box-shadow: var(--box-shadow-1);
+    opacity: 0;
+
+    animation: slideDown1 1s forwards, opacity 1s forwards;
 }
 .header_menu {
     display: none;
@@ -95,8 +98,8 @@
     gap: 0;
     border-top: 3px solid var(--cor-principal);
     visibility: hidden;
-    opacity: 0;
-    transition: opacity 1.5s, max-height 2s;
+    opacity: 0.4;
+    transition: 2s;
     z-index: 900;
     border-radius: 0 0 1em 1em;
     box-shadow: var(--box-shadow-1);
@@ -155,6 +158,7 @@
 
 .dark-mode_icon:hover i{
     transform: translateY(-0.2rem);
+    color: var(--cor-principal-2);
 }
 
 @media screen and (max-width:1024px) {

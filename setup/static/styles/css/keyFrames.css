@@ -31,6 +31,27 @@
 
     100% { transform: translateX(0);}
 }
+/* SLIDES EM */
+@keyframes slideDown1 {
+    0% {transform: translateY(-10em);}
+
+    100% { transform: translateY(0);}
+}
+@keyframes slideLeft1 {
+    0% {transform: translateX(10em);}
+
+    100% { transform: translateX(0);}
+}
+@keyframes slideUp1 {
+    0% {transform: translateY(10em);}
+
+    100% { transform: translateY(0);}
+}
+@keyframes slideRight1 {
+    0% {transform: translateX(-10em);}
+
+    100% { transform: translateX(0);}
+}
 
 /* INFINITE SCROLL */
 @keyframes infiniteScroll {
@@ -40,11 +61,15 @@
 
 /* TYPING AND BLINK */
 @keyframes typing {
-    0% {width: 0%;}
-    99% {width: 100%;}
-    100% {width: max-content;}
+    0% {max-width: 0;}
+    100% {max-width: 40em;}
 }
 @keyframes blink {
     0%, 50%, 100% {border-color: transparent;}
     25%, 75% { border-color: var(--cor-fonte-1);}
+}
+
+/* BUTTON HOVER */
+@keyframes btnHoverUm {
+    to {background-position: 26vw; }
 }

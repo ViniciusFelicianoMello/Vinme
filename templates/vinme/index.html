@@ -3,7 +3,85 @@
 
 {% block content %}
 <!-- Banner -->
-    <section class="container banner" id="banner"></section>
+    <section class="banner" id="banner">
+        <!-- BOX -->
+        <div class="banner_box viewport">
+            <!-- LINKS -->
+            <div class="banner_links">
+                <!-- LINK ITEM -->
+                <a href="#" class="banner_link viewport">
+                    <i class="fa-brands fa-instagram banner_link_logo"></i>
+                </a>
+                <!-- LINK ITEM -->
+                <a href="#" class="banner_link viewport">
+                    <i class="fa-brands fa-linkedin-in banner_link_logo"></i>
+                </a>
+                <!-- LINK ITEM -->
+                <a href="#" class="banner_link viewport">
+                    <i class="fa-brands fa-youtube banner_link_logo"></i>
+                </a>
+                <!-- LINK ITEM -->
+                <a href="#" class="banner_link viewport">
+                    <i class="fa-brands fa-behance banner_link_logo"></i>
+                </a>
+            </div>
+            <!-- TEXT -->
+            <div class="banner_text">
+                <h2>Transformamos grandes histórias</h2>
+                <h2>em <span class="typing">artes e experiencias</span> unicas.</h2>
+
+                <p>Seu sucesso é nossa melhor <span class="typing">arte</span>, cada projeto que assumimos é uma tela em branco,</p>
+                <p>onde cada pixel conta para <span   class="typing">desenvolver</span> uma obra-prima única.</p>
+
+                <div class="banner_text_btn viewport">
+                    <a href="#">Eleve seu negócio ao próximo nível</a>
+                </div>             
+            </div>
+            <!-- ROBOT -->
+            <div class="banner_svg viewport">
+                <img src="{% static 'assets/SVG/Vinme 1.svg' %}" alt="Vinme">
+            </div>
+        </div>
+        <!-- INFOS -->
+        <div class="banner_infos">
+            <!-- INFO BOX -->
+            <div class="banner_infos_box viewport">
+                <div class="banner_infos_img">
+                    <div class="banner_infos_ovl">
+                        <img src="{% static 'assets/SVG/VINMEFRONT.svg' %}" alt="DESIGN">
+                        <div class="bannner_infos_icon">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <h3>Front-End</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- INFO BOX -->
+            <div class="banner_infos_box viewport">
+                <div class="banner_infos_img">
+                    <div class="banner_infos_ovl">
+                        <img src="{% static 'assets/SVG/VINMEDESIGN.svg' %}" alt="DESIGN">
+                        <div class="bannner_infos_icon">
+                            <i class="fa-solid fa-pen-nib"></i>
+                        </div>
+                        <h3>Design</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- INFO BOX -->
+            <div class="banner_infos_box viewport">
+                <div class="banner_infos_img">
+                    <div class="banner_infos_ovl">
+                        <img src="{% static 'assets/SVG/VINMEBACK.svg' %}" alt="BACK END">
+                        <div class="bannner_infos_icon">
+                            <i class="fa-solid fa-keyboard"></i>
+                        </div>
+                        <h3>Back-End</h3>
+                    </div>
+                </div>
+            </div>             
+        </div>
+    </section>
 <!-- sobre -->
     <section class="container about" id="about"></section>
 <!-- serviços -->

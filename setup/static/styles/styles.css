@@ -4,11 +4,12 @@
 
 @import url(css/keyFrames.css);
 @import url(css/header.css);
+@import url(css/banner.css);
 
 :root {
     --cor-principal:#006aff;
     --cor-principal-tpt:#006aff36;
-    --cor-principal-2:#52efff;
+    --cor-principal-2:#00a6ff;
 
     --cor-fonte-1: #001437; 
 
