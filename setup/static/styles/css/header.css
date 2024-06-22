@@ -10,7 +10,9 @@
     background: var(--cor-fundo-1);
     box-shadow: var(--box-shadow-1);
 }
-
+.header_menu {
+    display: none;
+}
 /* HEADER LOGO */
 .header_logo {
     display: flex;
@@ -58,13 +60,13 @@
 
 .option_link {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-decoration: none;
     font-family: var(--fonte-2);
     color: var(--cor-fonte-1);
     transition: 0.5s;
+    font-size: 1.1vw;
 }
 .option_title {
     position: absolute;
@@ -94,18 +96,17 @@
     border-top: 3px solid var(--cor-principal);
     visibility: hidden;
     opacity: 0;
-    transition: 0.5s;
+    transition: opacity 1.5s, max-height 2s;
     z-index: 900;
     border-radius: 0 0 1em 1em;
     box-shadow: var(--box-shadow-1);
-    height: 0;
+    max-height: 0;
     overflow: hidden;
 }
 .options_item:hover .dropdown_list {
     visibility: visible;
     opacity: 1;
-    transition: 0.5s;
-    height: max-content;
+    max-height: 50vh;
 }
 
 .dropdown_link {
@@ -187,5 +188,105 @@
 
     .dark-mode_icon:hover i{
         transform: translateY(-0.2rem);
+    }
+    /* MENU HAMBURGUER */
+    .header_menu {
+        display: block;
+        position: fixed;
+        z-index: 1000;
+        right: 1em;
+        top: 1em;
+    }
+    .bar {
+        position: relative;
+        margin-top: 0.5vh;
+        height: 0.6vh;
+        width: 8vw;
+        background: var(--cor-fonte-1);
+        border-radius: 1em;
+        transition: 0.5s;
+    }
+
+    .check-icon:checked + .icon-menu > .bar-1{
+        transform: translateY(1.5vh) rotate(45deg);
+        background: var(--cor-principal);
+    }
+    .check-icon:checked + .icon-menu > .bar-2{
+        display: none;
+    }
+    .check-icon:checked + .icon-menu > .bar-3{
+        transform: translateY(.3vh) rotate(-45deg);
+        background: var(--cor-principal);
+    }
+    /* MENU OPÇÔES */
+    .menu_options {
+        position: absolute;
+        top: -1em;
+        margin: 0 0 0 -91vw;
+        height: 100vh;
+        width: 40vw;
+        background: var(--cor-fundo-1);
+        box-shadow: var(--box-shadow-1);
+        transition: 1s;
+        transform: translateX(-100%);
+    }
+    .check-icon:checked ~ .menu_options {
+        transform: translateX(0);
+    }
+    .options_list {
+        display: flex;
+        flex-direction: column;
+        max-width: max-content;
+        gap: 0;
+    }
+    .option_link {
+        display: flex;
+        justify-content: start;
+        position: relative;
+        margin: 1.5em 0 0 1em;
+        font-size: 3vw;
+        width: 100%;
+    }
+    .option_title {
+        position:absolute ;
+        top: 0;
+        visibility: visible;
+        opacity: 1;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        margin-left: 2em;
+    }
+    .option_link:hover .option_title,
+    .option_link:hover .option_icon {
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width:600px) {
+    .header {
+        height: 15vw;
+        padding: 0 1vw;
+    }
+
+    .header_logo_svg {
+        height: 10vw;
+    }
+    /* DARK MODE */
+    .icon-sun,
+    .icon-moon {
+        font-size: 9vw;
+    }
+    /* MENU HAMBURGUER */
+    .check-icon:checked + .icon-menu > .bar-3{
+        transform: translateY(.5vh) rotate(-45deg);
+    }
+    /* MENU OPÇÔES */
+    .menu_options {
+        width: 80vw;
+    }
+    .option_link {
+        margin: 2em 0 0 2em;
+        font-size: 5vw;
+        width: 100%;
     }
 }

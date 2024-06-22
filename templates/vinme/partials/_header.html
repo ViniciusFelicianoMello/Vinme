@@ -1,5 +1,5 @@
 {% load static %}
-
+<!-- HEADER DESKTOP -->
 <header class="header">
     <!-- LOGO CABEÇALHO -->
     <a class="header_logo" href="{% url 'index' %}">
@@ -11,7 +11,7 @@
         <ul class="options_list">
             <!-- ITEM DA LISTA -->
             <li class="options_item">
-                <a href="#" class="option_link">
+                <a href="{% url 'index' %}" class="option_link">
                     <i class="fas fa-house option_icon"></i>
                     <span class="option_title">HOME</span>
                 </a>
@@ -137,3 +137,59 @@
         </div>
     </div>
 </header>
+<!-- HEADER MENU -->
+<div class="header_menu">
+    <input hidden="" class="check-icon" id="check-icon" name="check-icon" type="checkbox">
+    <label class="icon-menu" for="check-icon">
+        <div class="bar bar-1"></div>
+        <div class="bar bar-2"></div>
+        <div class="bar bar-3"></div>
+    </label>
+    <!-- NAV MENU -->
+    <nav class="menu_options">
+        <ul class="options_list">
+            <!-- ITEM DA LISTA -->
+            <li class="options_item">
+                <a href="{% url 'index' %}" class="option_link">
+                    <i class="fas fa-house option_icon"></i>
+                    <span class="option_title">HOME</span>
+                </a>
+            </li>
+            <!-- ITEM DA LISTA -->
+            <li class="options_item">
+                <a href="#" class="option_link">
+                    <i class="fas fa-user option_icon"></i>
+                    <span class="option_title">SOBRE NÓS</span>
+                </a>
+            </li>
+            <!-- ITEM DA LISTA -->
+            <li class="options_item">
+                <a href="#" class="option_link">
+                    <i class="fas fa-computer option_icon"></i>
+                    <span class="option_title">SERVIÇOS</span>
+                </a>
+            </li>
+            <!-- ITEM DA LISTA -->
+            <li class="options_item">
+                <a href="#" class="option_link">
+                    <i class="fas fa-file-lines option_icon"></i>
+                    <span class="option_title">Projetos</span>
+                </a>
+            </li>
+            <!-- ITEM DA LISTA -->
+            <li class="options_item">
+                <a href="#" class="option_link">
+                    <i class="fas fa-blog option_icon"></i>
+                    <span class="option_title">Blog</span>
+                </a>
+            </li>
+            <!-- ITEM DA LISTA -->
+            <li class="options_item">
+                <a href="#" class="option_link">
+                    <i class="fas fa-phone option_icon"></i>
+                    <span class="option_title">Contate</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>

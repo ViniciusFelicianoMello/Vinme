@@ -89,7 +89,7 @@
         --pos-y-bar-three: 0;
         --scale-bar: 1;
         --rotate-bar-one: 0;
-        --rotate-bar-three: 0;
+        --rotate-bar-three: 0; 
         width: 25px;
         display: flex;
         flex-direction: column;
@@ -124,7 +124,7 @@
         transition: bottom 200ms 100ms, transform 100ms;
     }
       
-      .check-icon:checked + .icon-menu > .bar--1 {
+    .check-icon:checked + .icon-menu > .bar--1 {
         transition: top 200ms, transform 200ms 100ms;
         background: var(--cor-principal);
     }
