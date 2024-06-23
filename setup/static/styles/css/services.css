@@ -9,7 +9,7 @@
 /* SERVICOS FAIXA AZUL */
 .services_bg {
     position: absolute;
-    height: 40vh;
+    height: 50vh;
     width: 100%;
     align-self: center;
     z-index: -1;
@@ -19,36 +19,19 @@
 
 .services_bg span {
     background: var(--cor-principal);
-    height: 40vh;
+    height: 100%;
     width: 55vw;
 }
 .services_bg span:nth-of-type(1).visible {
-    animation: slideLeft 1s linear forwards;
+    animation: slideRight 1s linear forwards;
 }
 .services_bg span:nth-of-type(2).visible {
-    animation: slideRight 1s linear forwards;
+    animation: slideLeft 1s linear forwards;
 }
 
 /* SERVICOS TITULO */
 .services_title {
-    position: relative;
-        padding: 0 0 0 5vw;
-        white-space: nowrap;
-        display: inline-block;
-        overflow: hidden;
-        width: 0;
-}
-.services_title.visible {
-    display: inline-block;
-    animation: typing2 2.5s steps(80, end) forwards, write 1s step-end infinite;
-    border-right: 2px solid var(--cor-fonte-1);
-}
-
-.services_title h2 {
-    font-size: 2.3vw;
-}
-.services_title span {
-    color: var(--cor-principal);
+    padding: 0 0 0 5vw;
 }
 
 /* SERVICOS INFOS */
@@ -60,12 +43,12 @@
     padding: 0 5vw;
     width: 100%;
     gap: 3em;
-    margin-top: 4%;
+    margin-top: 5vh;
 }
 
 .services_box {
     background: var(--cor-fundo-3);
-    height: 10em;
+    height: 25vh;
     width: 25vw;
     box-shadow: var(--box-shadow-1);
     position: relative;
@@ -87,7 +70,7 @@
 }
 .services_box h3 {
     margin-top: 2vw;
-    font-size: 1.4em;
+    font-size: 2vw;
 }
 .vermais {
     position: absolute;
@@ -125,22 +108,22 @@
 }
 /* INFOS ANIMAÇÔES */
 .services_box:nth-of-type(1).visible {
-    animation: slideLeft 1s 1s ease-out forwards, opacity 1s 1s ease-out forwards;
+    animation: slideRight 1s 1s ease-out forwards, opacity 1s 1s ease-out forwards;
 }
 .services_box:nth-of-type(3).visible {
     animation: slideDown 1s 1.5s ease-out forwards, opacity 1s 1.5s ease-out forwards;
 }
 .services_box:nth-of-type(5).visible {
-    animation: slideRight 1s 2s ease-out forwards, opacity 1s 2s ease-out forwards;
+    animation: slideLeft 1s 2s ease-out forwards, opacity 1s 2s ease-out forwards;
 }
 .services_box:nth-of-type(7).visible {
-    animation: slideLeft 1s 3.5s ease-out forwards, opacity 1s 3.5s ease-out forwards;
+    animation: slideRight 1s 3.5s ease-out forwards, opacity 1s 3.5s ease-out forwards;
 }
 .services_box:nth-of-type(9).visible {
     animation: slideUp 1s 3s ease-out forwards, opacity 1s 3s ease-out forwards;
 }
 .services_box:nth-of-type(11).visible {
-    animation: slideRight 1s 2.5s ease-out forwards, opacity 1s 2.5s ease-out forwards;
+    animation: slideLeft 1s 2.5s ease-out forwards, opacity 1s 2.5s ease-out forwards;
 }
 
 
@@ -217,9 +200,6 @@
     .services_title {
         padding: 0 0 0 2vw;
     }
-    .services_title h2 {
-        font-size: 4vw;
-    }
     
     /* SERVICOS INFOS */
     .services_content {
@@ -228,7 +208,7 @@
     }
     
     .services_box {
-        height: 12em;
+        height: 20vh;
         width: 40vw;
         border-radius: 0.8em;
     }
@@ -237,7 +217,7 @@
     }
     .services_box h3 {
         margin-top: 8vw;
-        font-size: 2em;
+        font-size: 3.5vw;
     }
     .vermais {
         font-size: 2.5vw;
@@ -250,10 +230,10 @@
         animation: slideDown 1s 1.5s ease-out forwards, opacity 1s 1.5s ease-out forwards;
     }
     .services_box:nth-of-type(5).visible {
-        animation: slideLeft 1s 3.5s ease-out forwards, opacity 1s 3.5s ease-out forwards;
+        animation: slideRight 1s 3.5s ease-out forwards, opacity 1s 3.5s ease-out forwards;
     }
     .services_box:nth-of-type(7).visible {
-        animation: slideRight 1s 2s ease-out forwards, opacity 1s 2s ease-out forwards;
+        animation: slideLeft 1s 2s ease-out forwards, opacity 1s 2s ease-out forwards;
     }
     .services_box:nth-of-type(9).visible {
         animation: slideUp 1s 3s ease-out forwards, opacity 1s 3s ease-out forwards;
@@ -265,7 +245,7 @@
     /* MODAL */
     .modal_card {
         border-radius: 1.2rem;
-        width: 60vw;
+        width: 70vw;
     }
     
     .modal_close {
@@ -311,8 +291,8 @@
     }
     /* MODAL */
     .modal_card {
-        border-radius: 1.2rem;
-        width: 60vw;
+        border-radius: .5rem;
+        width: 80vw;
     }
     
     .modal_close {
@@ -320,10 +300,10 @@
         margin-top: -1.8vh;
     }
     .modal_card h3 {
-        font-size: 3.5vw;
+        font-size: 5vw;
     }
     
     .modal_card p {
-        font-size: 3vw;
+        font-size: 4vw;
     }
 }

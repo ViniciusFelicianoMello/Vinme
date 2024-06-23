@@ -6,6 +6,7 @@
 @import url(css/header.css);
 @import url(css/banner.css);
 @import url(css/about.css);
+@import url(css/services.css);
 
 :root {
     --cor-principal:#006aff;
@@ -87,16 +88,51 @@ body {
 .container {
     position: relative;
     width: 100%;
-    min-height: 100vh;
+    min-height: 80vh;
     max-height: max-content;
     padding: 5vw 5vw;
     overflow: hidden;
 }
 
+/* TITLE */
+.section_title {
+    position: relative;
+    white-space: nowrap;
+    display: inline-block;
+    overflow: hidden;
+    max-width: 0;
+    font-size: 2.5vw;
+    font-weight: 400;
+    margin-top: 1em;
+}
+.section_title.visible {
+    display: inline-block;
+    animation: typing 3s steps(80, end) forwards, blink 1.5s step-end infinite;
+    border-right: 2px solid var(--cor-fonte-1);
+}
+
+.section_title h2 {
+    font-size: 2.3vw;
+}
+.section_title span {
+    color: var(--cor-principal);
+}
+
+
 @media screen and (max-width:1024px) {
     .container {
-        min-height: 100vh;
+        min-height: 90vh;
         max-height: max-content;
-        padding: 0 2vw;
+        padding: 2vw 2vw;
+    }
+    .section_title h2 {
+        font-size: 4vw;
+    }
+}
+@media screen and (max-width:600px) {
+    .container {
+        min-height: 90vh;
+        max-height: max-content;
+        padding: 1vw 1vw;
     }
 }

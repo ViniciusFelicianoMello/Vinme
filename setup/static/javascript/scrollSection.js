@@ -23,7 +23,10 @@ function setActiveLink() {
 
     sections.forEach(section => {
         const rect = section.getBoundingClientRect();
-        if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
+        const height = rect.height;
+        const visiblePart = Math.max(0, Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, -1000));
+        
+        if (visiblePart / height >= 0.8) {
             currentActive = section.id;
         }
     });
@@ -37,10 +40,9 @@ function setActiveLink() {
     });
 }
 
-// Adiciona um EventListener para o evento de rolagem
+// Adiciona o evento de scroll para chamar a função setActiveLink
 window.addEventListener('scroll', setActiveLink);
-
-// Chama a função uma vez ao carregar a página
+// Chama a função inicialmente para definir o link ativo ao carregar a página
 setActiveLink();
 
 // menu hamburguer fechar
