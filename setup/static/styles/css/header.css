@@ -162,6 +162,7 @@
 @media screen and (max-width:1024px) {
     .header {
         bottom: 0;
+        animation: slideUp1 1s forwards, opacity 1s forwards;
     }
 
     .header_options {

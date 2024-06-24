@@ -8,22 +8,12 @@
         <div class="banner_box viewport">
             <!-- LINKS -->
             <div class="banner_links">
+                {% for link in social_links %}
                 <!-- LINK ITEM -->
-                <a href="#" class="banner_link viewport">
-                    <i class="fa-brands fa-instagram banner_link_logo"></i>
+                <a href="{{ link.url }}" class="banner_link viewport" target="_blank" rel="noopener noreferrer">
+                    <i class="{{ link.icon }} banner_link_logo"></i>
                 </a>
-                <!-- LINK ITEM -->
-                <a href="#" class="banner_link viewport">
-                    <i class="fa-brands fa-linkedin-in banner_link_logo"></i>
-                </a>
-                <!-- LINK ITEM -->
-                <a href="#" class="banner_link viewport">
-                    <i class="fa-brands fa-youtube banner_link_logo"></i>
-                </a>
-                <!-- LINK ITEM -->
-                <a href="#" class="banner_link viewport">
-                    <i class="fa-brands fa-behance banner_link_logo"></i>
-                </a>
+                {% endfor %}
             </div>
             <!-- TEXT -->
             <div class="banner_text">
@@ -44,42 +34,20 @@
         </div>
         <!-- INFOS -->
         <div class="banner_infos">
+            {% for info in info_boxes %}
             <!-- INFO BOX -->
             <div class="banner_infos_box viewport">
                 <div class="banner_infos_img">
                     <div class="banner_infos_ovl">
-                        <img src="{% static 'assets/SVG/VINMEFRONT.svg' %}" alt="DESIGN">
+                        <img src="{% static info.img_src %}" alt="{{ info.alt_text }}">
                         <div class="bannner_infos_icon">
-                            <i class="fa-solid fa-code"></i>
+                            <i class="{{ info.icon }}"></i>
                         </div>
-                        <h3>Front-End</h3>
+                        <h3>{{ info.title }}</h3>
                     </div>
                 </div>
             </div>
-            <!-- INFO BOX -->
-            <div class="banner_infos_box viewport">
-                <div class="banner_infos_img">
-                    <div class="banner_infos_ovl">
-                        <img src="{% static 'assets/SVG/VINMEDESIGN.svg' %}" alt="DESIGN">
-                        <div class="bannner_infos_icon">
-                            <i class="fa-solid fa-pen-nib"></i>
-                        </div>
-                        <h3>Design</h3>
-                    </div>
-                </div>
-            </div>
-            <!-- INFO BOX -->
-            <div class="banner_infos_box viewport">
-                <div class="banner_infos_img">
-                    <div class="banner_infos_ovl">
-                        <img src="{% static 'assets/SVG/VINMEBACK.svg' %}" alt="BACK END">
-                        <div class="bannner_infos_icon">
-                            <i class="fa-solid fa-keyboard"></i>
-                        </div>
-                        <h3>Back-End</h3>
-                    </div>
-                </div>
-            </div>             
+            {% endfor %}
         </div>
     </section>
 <!-- sobre -->
@@ -128,96 +96,23 @@
         </div>
         <!-- SERVICOS CONTEUDO -->
         <div class="services_content">
-            <!-- SERVICOS BOX -->
-            <div class="services_box viewport">
-                <i class="fa-solid fa-laptop-code services_box_icon"></i>
-                <h3>Web Design</h3>
-                <span class="vermais">Ver mais <i class="fa-solid fa-circle-right"></i></span>
+        {% for service in services %}
+        <!-- SERVICOS BOX -->
+        <div class="services_box viewport">
+            <i class="{{ service.icon }} services_box_icon"></i>
+            <h3>{{ service.title }}</h3>
+            <span class="vermais">Ver mais <i class="fa-solid fa-circle-right"></i></span>
+        </div>
+        <!-- MODAL -->
+        <div class="modal">
+            <div class="modal_card">
+                <span class="modal_close">&times;</span>
+                <h3>{{ service.title }}</h3>
+                <p>{{ service.description }}</p>
+                <i class="{{ service.icon }}"></i>
             </div>
-            <!-- MODAL -->
-            <div class="modal">
-                <div class="modal_card">
-                    <span class="modal_close">&times;</span>
-                    <h3>Web Design</h3>
-                    <p>Sites personalizados e responsivos, com diversas animações e interações</p>
-                    <i class="fa-solid fa-laptop-code"></i>
-                </div>
-            </div>
-            <!-- SERVICOS BOX -->
-            <div class="services_box viewport">
-                <i class="fa-solid fa-window-restore services_box_icon"></i>
-                <h3>Ui / Ux</h3>
-                <span class="vermais">Ver mais <i class="fa-solid fa-circle-right"></i></span>
-            </div>
-            <!-- MODAL -->
-            <div class="modal">
-                <div class="modal_card">
-                    <span class="modal_close">&times;</span>
-                    <h3>Ui / Ux</h3>
-                    <p>Desenvolvimento de interfaces intuitivas e atraentes para web e aplicativos</p>
-                    <i class="fa-solid fa-window-restore"></i>
-                </div>
-            </div>
-            <!-- SERVICOS BOX -->
-            <div class="services_box viewport">
-                <i class="fa-solid fa-paintbrush services_box_icon"></i>
-                <h3>Design Gráfico</h3>
-                <span class="vermais">Ver mais <i class="fa-solid fa-circle-right"></i></span>
-            </div>
-            <!-- MODAL -->
-            <div class="modal">
-                <div class="modal_card">
-                    <span class="modal_close">&times;</span>
-                    <h3>Design Gráfico</h3>
-                    <p>Criação da identidade visual completa da sua marca, alem de banners, panfletos ou qualquer outro material gráfico.</p>
-                    <i class="fa-solid fa-paintbrush"></i>
-                </div>
-            </div>
-            <!-- SERVICOS BOX -->
-            <div class="services_box viewport">
-                <i class="fa-solid fa-server services_box_icon"></i>
-                <h3>Programação</h3>
-                <span class="vermais">Ver mais <i class="fa-solid fa-circle-right"></i></span>
-            </div>
-            <!-- MODAL -->
-            <div class="modal">
-                <div class="modal_card">
-                    <span class="modal_close">&times;</span>
-                    <h3>Programação</h3>
-                    <p>Manutenção e atualizações, com extrema segurança, desempenho e otimização, sempre implementando melhorias contínuas</p>
-                    <i class="fa-solid fa-server"></i>
-                </div>
-            </div>
-            <!-- SERVICOS BOX -->
-            <div class="services_box viewport">
-                <i class="fa-solid fa-database services_box_icon"></i>
-                <h3>Banco de dados</h3>
-                <span class="vermais">Ver mais <i class="fa-solid fa-circle-right"></i></span>
-            </div>
-            <!-- MODAL -->
-            <div class="modal">
-                <div class="modal_card">
-                    <span class="modal_close">&times;</span>
-                    <h3>Banco de dados</h3>
-                    <p>implementação e manutenção de banco de dados seguros e eficientes</p>
-                    <i class="fa-solid fa-database"></i>
-                </div>
-            </div>
-            <!-- SERVICOS BOX -->
-            <div class="services_box viewport">
-                <i class="fa-solid fa-robot services_box_icon"></i>
-                <h3>Desenvolvimento</h3>
-                <span class="vermais">Ver mais <i class="fa-solid fa-circle-right"></i></span>
-            </div>
-            <!-- MODAL -->
-            <div class="modal">
-                <div class="modal_card">
-                    <span class="modal_close">&times;</span>
-                    <h3>Desenvolvimento</h3>
-                    <p>Criação de plataformas completas com diversos sistemas integrados </p>
-                    <i class="fa-solid fa-robot"></i>
-                </div>
-            </div>
+        </div>
+        {% endfor %}
         </div> <!-- DIV SERVICES CONTENT-->
     </section>
 <!-- projetos -->

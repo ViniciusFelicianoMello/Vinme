@@ -6,119 +6,33 @@
         <img src="{% static '/assets/SVG/VinMe LOGO.svg' %}" alt="VM Logo" class="header_logo_svg">
         <span class="header_logo_title">Vinme</span>
     </a>
-      <!-- NAVEGAÇÃO -->
+    <!-- NAVEGAÇÃO -->
     <nav class="header_options">
         <ul class="options_list">
+            {% for item in navigation %}
             <!-- ITEM DA LISTA -->
             <li class="options_item">
-                <a href="{% url 'index' %}" class="option_link">
-                    <i class="fas fa-house option_icon"></i>
-                    <span class="option_title">HOME</span>
+                {% if item.url != '#' %}
+                <a href="{% url item.url %}" class="option_link">
+                {% else %}
+                <a href="{{ item.url }}" class="option_link">
+                {% endif %}
+                    <i class="{{ item.icon }} option_icon"></i>
+                    <span class="option_title">{{ item.title }}</span>
                 </a>
+                {% if item.dropdown %}
                 <!-- DROPDOWN -->
-                 <ul class="dropdown_list">
-                    <!-- DROPDOWN ITEM -->
-                    <li class="dropdown_item">
-                        <a class="dropdown_link" href="#banner">Banner</a>
-                    </li>
-                    <!-- DROPDOWN ITEM -->
-                    <li class="dropdown_item">
-                        <a class="dropdown_link" href="#about">Sobre</a>
-                    </li>
-                    <!-- DROPDOWN ITEM -->
-                    <li class="dropdown_item">
-                        <a class="dropdown_link" href="#services">Serviços</a>
-                    </li>
-                    <!-- DROPDOWN ITEM -->
-                    <li class="dropdown_item">
-                        <a class="dropdown_link" href="#projects">Projetos</a>
-                    </li>
-                    <!-- DROPDOWN ITEM -->
-                    <li class="dropdown_item">
-                        <a class="dropdown_link" href="#blog">Blog</a>
-                    </li>
-                    <!-- DROPDOWN ITEM -->
-                    <li class="dropdown_item">
-                        <a class="dropdown_link" href="#contact">Contato</a>
-                    </li>
-                 </ul>
-            </li>
-            <!-- ITEM DA LISTA -->
-            <li class="options_item">
-                <a href="#" class="option_link">
-                    <i class="fas fa-user option_icon"></i>
-                    <span class="option_title">SOBRE NÓS</span>
-                </a>
-                <!-- DROPDOWN -->
-                 <ul class="dropdown_list">
-                    <!-- DROPDOWN ITEM -->
-                    <li class="dropdown_item">
-                        <a class="dropdown_link" href="#">Sobre Nós</a>
-                    </li>
-                    <!-- DROPDOWN ITEM -->
-                    <li class="dropdown_item">
-                        <a class="dropdown_link" href="#">Serviços</a>
-                    </li>
-                    <!-- DROPDOWN ITEM -->
-                    <li class="dropdown_item">
-                        <a class="dropdown_link" href="#">História</a>
-                    </li>
-                    <!-- DROPDOWN ITEM -->
-                    <li class="dropdown_item">
-                        <a class="dropdown_link" href="#">Membros</a>
-                    </li>
-                 </ul>
-            </li>
-            <!-- ITEM DA LISTA -->
-            <li class="options_item">
-                <a href="#" class="option_link">
-                    <i class="fas fa-computer option_icon"></i>
-                    <span class="option_title">SERVIÇOS</span>
-                </a>
-                <!-- DROPDOWN -->
-                 <ul class="dropdown_list">
-                    <!-- DROPDOWN ITEM -->
-                    <li class="dropdown_item">
-                        <a class="dropdown_link" href="#">Serviços</a>
-                    </li>                
-                 </ul>
-            </li>
-            <!-- ITEM DA LISTA -->
-            <li class="options_item">
-                <a href="#" class="option_link">
-                    <i class="fas fa-file-lines option_icon"></i>
-                    <span class="option_title">Projetos</span>
-                </a>
-            </li>
-            <!-- ITEM DA LISTA -->
-            <li class="options_item">
-                <a href="#" class="option_link">
-                    <i class="fas fa-blog option_icon"></i>
-                    <span class="option_title">Blog</span>
-                </a>
-            </li>
-            <!-- ITEM DA LISTA -->
-            <li class="options_item">
-                <a href="#" class="option_link">
-                    <i class="fas fa-phone option_icon"></i>
-                    <span class="option_title">Contate</span>
-                </a>
-                 <!-- DROPDOWN -->
                 <ul class="dropdown_list">
+                    {% for dropdown in item.dropdown %}
                     <!-- DROPDOWN ITEM -->
                     <li class="dropdown_item">
-                        <a class="dropdown_link" href="#">FAQ</a>
-                    </li>                
-                    <!-- DROPDOWN ITEM -->
-                    <li class="dropdown_item">
-                        <a class="dropdown_link" href="#">Testemunho</a>
-                    </li>                
-                    <!-- DROPDOWN ITEM -->
-                    <li class="dropdown_item">
-                        <a class="dropdown_link" href="#">Contato</a>
-                    </li>                
+                        <a class="dropdown_link" href="{{ dropdown.url }}">{{ dropdown.title }}</a>
+                    </li>
+                    {% endfor %}
                 </ul>
+                {% endif %}
             </li>
+            {% endfor %}
         </ul>
     </nav>
     <!-- CONTROLS -->
@@ -130,7 +44,7 @@
             <label for="dark-mode" class="dark-mode_icon">
                 <i class="fa-solid fa-moon icon-moon"></i>
             </label>
-        
+
             <label for="dark-mode" class="dark-mode_icon">
                 <i class="fa-solid fa-sun icon-sun"></i>
             </label>
@@ -138,7 +52,7 @@
     </div>
 </header>
 <!-- HEADER MENU -->
-<div class="header_menu">
+<header class="header_menu">
     <input hidden="" class="check-icon" id="check-icon" name="check-icon" type="checkbox">
     <label class="icon-menu" for="check-icon">
         <div class="bar bar-1"></div>
@@ -148,48 +62,19 @@
     <!-- NAV MENU -->
     <nav class="menu_options">
         <ul class="options_list">
+            {% for item in navigation %}
             <!-- ITEM DA LISTA -->
             <li class="options_item">
-                <a href="{% url 'index' %}" class="option_link">
-                    <i class="fas fa-house option_icon"></i>
-                    <span class="option_title">HOME</span>
+                {% if item.url != '#' %}
+                <a href="{% url item.url %}" class="option_link">
+                {% else %}
+                <a href="{{ item.url }}" class="option_link">
+                {% endif %}
+                    <i class="{{ item.icon }} option_icon"></i>
+                    <span class="option_title">{{ item.title }}</span>
                 </a>
             </li>
-            <!-- ITEM DA LISTA -->
-            <li class="options_item">
-                <a href="#" class="option_link">
-                    <i class="fas fa-user option_icon"></i>
-                    <span class="option_title">SOBRE NÓS</span>
-                </a>
-            </li>
-            <!-- ITEM DA LISTA -->
-            <li class="options_item">
-                <a href="#" class="option_link">
-                    <i class="fas fa-computer option_icon"></i>
-                    <span class="option_title">SERVIÇOS</span>
-                </a>
-            </li>
-            <!-- ITEM DA LISTA -->
-            <li class="options_item">
-                <a href="#" class="option_link">
-                    <i class="fas fa-file-lines option_icon"></i>
-                    <span class="option_title">Projetos</span>
-                </a>
-            </li>
-            <!-- ITEM DA LISTA -->
-            <li class="options_item">
-                <a href="#" class="option_link">
-                    <i class="fas fa-blog option_icon"></i>
-                    <span class="option_title">Blog</span>
-                </a>
-            </li>
-            <!-- ITEM DA LISTA -->
-            <li class="options_item">
-                <a href="#" class="option_link">
-                    <i class="fas fa-phone option_icon"></i>
-                    <span class="option_title">Contate</span>
-                </a>
-            </li>
+            {% endfor %}
         </ul>
     </nav>
-</div>
+</header>
