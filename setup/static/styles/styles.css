@@ -7,6 +7,7 @@
 @import url(css/banner.css);
 @import url(css/about.css);
 @import url(css/services.css);
+@import url(css/projects.css);
 
 :root {
     --cor-principal:#006aff;
@@ -88,7 +89,7 @@ body {
 .container {
     position: relative;
     width: 100%;
-    min-height: 80vh;
+    min-height: 100vh;
     max-height: max-content;
     padding: 5vw 5vw;
     overflow: hidden;
@@ -118,6 +119,23 @@ body {
     color: var(--cor-principal);
 }
 
+.section_text {
+    font-family: var(--fonte-2);
+    font-size: 1.8vw;
+    position: relative;
+    white-space: nowrap;
+    display: inline-block;
+    overflow: hidden;
+    max-width: 0;
+}
+.section_text:nth-of-type(1).visible {
+    display: inline-block;
+    animation: typing 3s 1.5s steps(80, end) forwards;
+}
+.section_text:nth-of-type(2).visible {
+    display: inline-block;
+    animation: typing 3s 4s steps(80, end) forwards;
+}
 
 @media screen and (max-width:1024px) {
     .container {
@@ -128,11 +146,17 @@ body {
     .section_title h2 {
         font-size: 4vw;
     }
+    .section_text {
+        font-size: 1.8vw; 
+    }
 }
 @media screen and (max-width:600px) {
     .container {
         min-height: 90vh;
         max-height: max-content;
         padding: 1vw 1vw;
+    }
+    .section_text {
+        font-size: 1.8vw; 
     }
 }

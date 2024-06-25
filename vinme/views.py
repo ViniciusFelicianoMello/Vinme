@@ -119,10 +119,18 @@ def index(request):
         }
     ]
  
+    projects = [
+        {'id': 'tab1', 'image': 'assets/img/EmBreve1.png', 'seemore': 'Ver mais'},
+        {'id': 'tab2', 'image': 'assets/img/EmBreve2.png', 'seemore': 'Ver mais'},
+        {'id': 'tab3', 'image': 'assets/img/EmBreve3.png', 'seemore': 'Ver mais'},
+    ]
+
+
     #PATH
-    return render(request, 'vinme/index.html', 
-                  {'navigation': navigation, 
-                   'social_links': social_links,
-                   'info_boxes': info_boxes,
-                    'services': services
+    return render(request, 'vinme/index.html', {
+                    'navigation': navigation, 
+                    'social_links': social_links,
+                    'info_boxes': info_boxes,
+                    'services': services,
+                    'projects': projects
                    })

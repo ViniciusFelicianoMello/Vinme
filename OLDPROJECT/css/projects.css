@@ -36,7 +36,6 @@
 .project_title p.visible {
     display: inline-block;
     animation: typing2 2.5s 2s steps(80, end) forwards, write 1s step-end infinite;
-    border-right: 2px solid var(--cor-fonte-1);
 }
 /* PROJETOS ABAS */
 .project_tabs {
