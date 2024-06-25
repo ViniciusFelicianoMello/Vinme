@@ -210,17 +210,18 @@
         transition: 0.5s;
     }
 
-    .check-icon:checked + .icon-menu > .bar-1{
+    .check-icon:checked + .icon-menu > .bar-1 {
         transform: translateY(1.5vh) rotate(45deg);
         background: var(--cor-principal);
     }
-    .check-icon:checked + .icon-menu > .bar-2{
-        display: none;
+    .check-icon:checked + .icon-menu > .bar-2 {
+        transform: translateX(-100vw);
+        opacity: 0;
     }
-    .check-icon:checked + .icon-menu > .bar-3{
-        transform: translateY(.3vh) rotate(-45deg);
+    .check-icon:checked + .icon-menu > .bar-3 {
+        transform: translateY(-.7vh) rotate(-45deg);
         background: var(--cor-principal);
-    }
+    } 
     /* MENU OPÇÔES */
     .menu_options {
         position: absolute;
@@ -279,10 +280,6 @@
     .icon-moon {
         font-size: 9vw;
     }
-    /* MENU HAMBURGUER */
-    .check-icon:checked + .icon-menu > .bar-3{
-        transform: translateY(.5vh) rotate(-45deg);
-    }
     /* MENU OPÇÔES */
     .menu_options {
         width: 80vw;
@@ -292,4 +289,8 @@
         font-size: 5vw;
         width: 100%;
     }
+    .check-icon:checked + .icon-menu > .bar-3 {
+        transform: translateY(-.6vh) rotate(-45deg);
+        background: var(--cor-principal);
+    } 
 }

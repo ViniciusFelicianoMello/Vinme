@@ -8,11 +8,13 @@
 @import url(css/about.css);
 @import url(css/services.css);
 @import url(css/projects.css);
+@import url(css/blog.css);
+@import url(css/contact.css);
 
 :root {
     --cor-principal:#006aff;
     --cor-principal-tpt:#006aff36;
-    --cor-principal-2:#00a6ff;
+    --cor-principal-2:#009dff;
 
     --cor-fonte-1: #001437; 
 
@@ -33,9 +35,6 @@
 }
 
 [data-theme="dark"] {
-    --cor-principal:#006aff;
-    --cor-principal-2:#52efff;
-
     --cor-fonte-1: #eef5ff; 
 
     --cor-fundo-tpt: #0014374e;
@@ -103,7 +102,7 @@ body {
     overflow: hidden;
     max-width: 0;
     font-size: 2.5vw;
-    font-weight: 400;
+    font-weight: 700;
     margin-top: 1em;
 }
 .section_title.visible {
@@ -143,11 +142,11 @@ body {
         max-height: max-content;
         padding: 2vw 2vw;
     }
-    .section_title h2 {
+    .section_title {
         font-size: 4vw;
     }
     .section_text {
-        font-size: 1.8vw; 
+        font-size: 3vw; 
     }
 }
 @media screen and (max-width:600px) {
@@ -156,7 +155,10 @@ body {
         max-height: max-content;
         padding: 1vw 1vw;
     }
+    .section_title {
+        font-size: 4.5vw;
+    }
     .section_text {
-        font-size: 1.8vw; 
+        font-size: 3vw; 
     }
 }
