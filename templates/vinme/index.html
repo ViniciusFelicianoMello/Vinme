@@ -157,24 +157,84 @@
     <section class="container contact" style="background: url('{% static 'assets/img/VinmePlanet.png' %}') no-repeat center center / cover" id="contact">
         <!-- TITULO -->
         <div class="contact_title">
-            <h2 class="section_title viewport">Entre em <span>Contato</span> conosco!</h2> <br>
+            <h2 class="section_title viewport">Entre em <span>Contato</span> conosco!</h2>
         </div>
         <!-- CONTEUDO -->
          <div class="contact_content">
-            <!-- FORMULARIO -->
-            <form action="" class="contact_form">
+            <div class="contact_box">
+                <!-- FORMULARIO -->
+                <form action="" method="POST" id="contact_form" class="contact_form">
+                    <h3>Envie-nos um <span>email</span>!</h3>
+                    <!-- CONTACT FIELD -->
+                    <div class="contact_form_field">
+                        <input type="text" name="nome" id="name" required>
+                        <i class="fa-solid fa-user"></i>
+                        <label class="form_label" for="nome">Nome</label>
+                        <span class="form_span"></span>
+                    </div>
+                    <!-- CONTACT FIELD -->
+                    <div class="contact_form_field">
+                        <input type="email" name="email" id="email" required>
+                        <i class="fa-solid fa-envelope"></i>
+                        <label class="form_label" for="email">Email</label>
+                        <span></span>
+                    </div>
+                    <!-- CONTACT FIELD -->
+                    <div class="contact_form_field">
+                            <input type="text" name="subject" id="subject" required>
+                            <i class="fa-solid fa-hashtag"></i>
+                            <label class="form_label" for="subject">Assunto</label>
+                            <span></span>
+                    </div>
+                    <!-- CONTACT FIELD -->
+                    <div class="contact_form_field">
+                        <textarea name="message" id="message" required></textarea>
+                        <i class="fa-solid fa-comment"></i>
+                        <label class="form_label" for="subject">Texto</label>
+                        <span ></span>
+                    </div>
 
-            </form>
-            <!-- INFORMAÇÔES -->
-             <div class="contact_infos">
-                <!-- LIST -->
-                <ul>
-                    <!-- ITEM -->
-                    <li>
-                        
-                    </li>
-                </ul>
-             </div>
+                    <p class="contact_message" id="contact_message"></p>
+
+                    <div class="contact_form_btn">
+                        <button type="submit">
+                            <i class="fa-solid fa-eraser btn_clear"></i>
+                            <span class="btn_clear">Limpar</span>
+                        </button>
+                        <button type="submit">
+                            <i class="fa-solid fa-paper-plane btn_send"></i>
+                            <span class="btn_send">Enviar</span>
+                        </button>
+                    </div>
+                </form>
+                <!-- INFORMAÇÔES -->
+                <div class="contact_infos">
+                    <!-- LIST -->
+                    <ul>
+                        <!-- ITEM -->
+                        <li>
+                            <i class="fa-solid fa-face-laugh-squint"></i>
+                            <span>Vinicius Feliciano Mello</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>vinme.geral@gmail.com</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <span>(11) 9 7174-7781</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>São Paulo, SP, Brasil</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-clock"></i>
+                            <span>8:00 - 18:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
          </div>
     </section>
 {% endblock %}
