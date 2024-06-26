@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: center;
     height: 60vh;
+    margin-top: 5vh;
 }
 
 .contact_box {
@@ -11,12 +12,13 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    height: 50vh;
-    width: 50vw;
+    height: 0;
+    width: 0;
     box-shadow: var(--box-shadow-1);
     border-radius: 2em;
     border: 1px solid var(--cor-principal);
     backdrop-filter: blur(4px);
+    height: 0em;
 }
 .contact_box::before {
     content: '';
@@ -29,6 +31,12 @@
     opacity: 0.7;
     z-index: 0;
 }
+
+.contact_box.visible {
+    animation: openForm 1s 2s forwards;
+}
+
+
 /* FORMULARIO */
 .contact_form {
     z-index: 1;
@@ -38,7 +46,7 @@
     flex-direction: column;
     position: absolute;
     left: 2.8vw;
-    background: var(--cor-fundo-1);
+    background: var(--cor-fundo-3);
     border-radius: 1em;
     height: 80%;
     width: 40%;
@@ -51,9 +59,10 @@
 
 .contact_form h3 {
     position: relative;
-    top: 1vh;
+    top: 0;
     font-family: var(--fonte-2);
-    margin: -.5vw 0 .5vw;
+    margin: -3vh 0 2vh;
+    font-size: 1.5vw;
 }
 
 .contact_form span {
@@ -113,7 +122,7 @@
     left: 0;
     top: 0;
     padding: 0.3rem;
-    font-size: 1rem;
+    font-size: 1vw;
     color: var(--cor-um);
     transition: 0.3s;
     z-index: 10;
@@ -138,12 +147,13 @@
     transition: 0.5s;
     pointer-events: none;
     margin-bottom: -0.2em;
+    border: 1px solid var(--cor-fonte-1);
 }
 
 .contact_form_field input:valid ~ span,
 .contact_form_field input:focus ~ span {
     height: 4vh;
-    background: var(--cor-fundo-3); 
+    background: var(--cor-fundo-1); 
     box-shadow: var(--box-shadow-1);
 }
 .contact_form_field textarea:valid ~ span,
@@ -159,6 +169,8 @@
     gap: 1vw;
     justify-content: center;
     margin-top: 2vh;
+    border-top: 1px solid var(--cor-fonte-1);
+    padding-top: 2vh;
 }
 
 .contact_form_btn button{
@@ -167,7 +179,7 @@
     align-items: center;
     cursor: pointer;
     width: 100%;
-    height: 3vh;
+    height: 4vh;
     border: none;
     outline: none;
     box-shadow: var(--box-shadow-1);
@@ -178,7 +190,7 @@
     font-family: var(--fonte-2);
     letter-spacing: 0.03rem;
     background: var(--cor-fonte-1);
-    opacity: 0.7;
+    opacity: 0.8;
 }
 .contact_form_btn button:nth-of-type(2) {
     background: var(--cor-principal);
@@ -192,4 +204,248 @@
 }
 .btn_send {
     color: var(--cor-fonte-1) !important;
+}
+
+/* SVG */
+.contact_svg {
+    position: absolute;
+    opacity: 1;
+    width: 100vw;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.svg_image_cnt:nth-of-type(1) {
+    position: absolute;
+    z-index: -2;
+    bottom: 0;
+    opacity: 0;
+}
+
+.svg_image_cnt:nth-of-type(1).visible {
+    animation: slideDown 1s 0.8s ease-out forwards, opacity2 1s 0.8s ease-out forwards ;
+}
+
+.svg_image_cnt:nth-of-type(2).visible {
+    animation: slideUp 1s ease-out forwards, opacity2 1s ease-out forwards ;
+}
+
+.contact_infos {
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    right: 6vw;
+}
+
+.contact_infos ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 3vh;
+}
+
+.contact_infos ul li {
+    font-family: var(--fonte-2);
+    letter-spacing: 0.02em;
+    font-weight: bolder;
+    font-size: 1.3vw;
+}
+.contact_infos ul li a {
+    color: var(--cor-fonte-1);
+}
+.contact_infos ul li i {
+    color: var(--cor-principal);
+    border-radius: 50%;
+    border: 1px solid var(--cor-principal);
+    background: var(--cor-fundo-3);
+    padding: .5em;
+    margin-right: 0.5em;
+}
+
+@media screen and (max-width: 1024px) {
+    .contact_box.visible {
+        animation: openForm2 1s 2s forwards;
+    }
+    /* FORMULARIO */
+    .contact_form {
+        width: 60%;
+    }
+    .contact_form h3 {
+        font-size: 5vw;
+        margin: -2vh 0 2vh;
+    }
+    
+    .contact_form span {
+        color: var(--cor-principal);
+    }
+    
+    .contact_form_field input, 
+    .contact_form_field textarea {
+        padding: 0.2em 0 0.2em 1.8em;
+        font-size: 3vw;
+        transition: 0.5s;
+        z-index: 10;
+    }
+    
+    .contact_form_field label {
+        padding: 0.2em 0 0.2em 1.8em;
+        font-size: 3vw;
+    }
+    
+    .contact_form_field input:valid ~ .form_label,
+    .contact_form_field input:focus ~ .form_label,
+    .contact_form_field textarea:valid ~ .form_label,
+    .contact_form_field textarea:focus ~ .form_label {
+        font-size: 2vw;
+        transform: translateY(-4vw) translateX(-1vw);
+    }
+    
+    .contact_form_field i {
+        padding: 0.3rem;
+        font-size: 3vw;
+    }
+    .contact_form_btn {
+        display: flex;
+        width: 80%;
+        gap: 1vw;
+        justify-content: center;
+        margin-top: 2vh;
+        border-top: 1px solid var(--cor-fonte-1);
+        padding-top: 2vh;
+    }
+    
+    .contact_form_btn button{
+        height: 4vh;
+        font-size: 3vw;
+        font-weight: 700;
+    }
+    /* SVG */
+    .contact_svg {
+        position: absolute;
+        opacity: 1;
+        width: 200vw;
+        transform: translateX(-25%);
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+    }
+    
+    .svg_image_cnt:nth-of-type(1) {
+        position: absolute;
+        z-index: -2;
+        bottom: 0;
+        opacity: 0;
+        transform: scale(1.3);
+    }
+    
+    .contact_infos {
+        right: 1vw;
+    }
+    
+    .contact_infos ul li {
+        font-size: 2.5vw;
+    }
+    .contact_infos ul li a {
+        color: var(--cor-fonte-1);
+    }
+}
+@media screen and (max-width: 600px) {
+    .contact_content {
+        height: 90vh;
+    }
+    .contact_box {
+        border-radius: 1em;
+    }
+    .contact_box.visible {
+        animation: openForm3 1s 2s forwards;
+    }
+    /* FORMULARIO */
+    .contact_form {
+        width: 94%;
+        height: 60%;
+        top: 2vh;
+        border-radius: 0.8em;
+    }
+    .contact_form h3 {
+        font-size: 5vw;
+        margin: 0 0 2vh;
+    }
+    .contact_form_field input, 
+    .contact_form_field textarea {
+        font-size: 4vw;
+        transition: 0.5s;
+        z-index: 10;
+    }
+    
+    .contact_form_field label {
+        padding: 0.2em 0 0.2em 1.8em;
+        font-size: 4vw;
+    }
+    
+    .contact_form_field input:valid ~ .form_label,
+    .contact_form_field input:focus ~ .form_label,
+    .contact_form_field textarea:valid ~ .form_label,
+    .contact_form_field textarea:focus ~ .form_label {
+        font-size: 3vw;
+        transform: translateY(-4vw) translateX(-1vw);
+    }
+    
+    .contact_form_field i {
+        padding: 0.3rem;
+        font-size: 4vw;
+    }
+    .contact_form_btn {
+        display: flex;
+        width: 80%;
+        gap: 1vw;
+        justify-content: center;
+        margin-top: 2vh;
+        border-top: 1px solid var(--cor-fonte-1);
+        padding-top: 2vh;
+    }
+    
+    .contact_form_btn button{
+        height: 4vh;
+        font-size: 3vw;
+        font-weight: 700;
+    }
+    .contact_infos {
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 13vh;
+    }
+    
+    .contact_infos ul {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: 1em;
+    }
+    
+    .contact_infos ul li {
+        font-size: 3vw;
+        width: 46%;
+    }
+    .contact_infos ul li a {
+        color: var(--cor-fonte-1);
+    }
+    .contact_infos ul li i {
+        color: var(--cor-principal);
+        border-radius: 50%;
+        border: 1px solid var(--cor-principal);
+        background: var(--cor-fundo-3);
+        padding: .5em;
+        margin-right: 0.5em;
+    }
 }

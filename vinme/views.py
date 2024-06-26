@@ -125,6 +125,37 @@ def index(request):
         {'id': 'tab3', 'image': 'assets/img/EmBreve3.png', 'seemore': 'Ver mais'},
     ]
 
+    form_fields = [
+        {'type': 'text', 'name': 'nome', 'id': 'name', 'icon': 'fa-user', 'label': 'Nome'},
+        {'type': 'email', 'name': 'email', 'id': 'email', 'icon': 'fa-envelope', 'label': 'Email'},
+        {'type': 'text', 'name': 'subject', 'id': 'subject', 'icon': 'fa-hashtag', 'label': 'Assunto'},
+        {'type': 'textarea', 'name': 'message', 'id': 'message', 'icon': 'fa-comment', 'label': 'Texto'}
+    ]
+
+    contact_info = [
+        {
+            'icon': 'fa-face-laugh-squint', 
+            'text': 'Vinicius Feliciano Mello', 
+            'url': 'https://portifolio-vinicius-mello.vercel.app/'
+        },
+        {
+            'icon': 'fa-envelope', 
+            'text': 'vinme.geral@gmail.com'
+        },
+        {
+            'icon': 'fa-phone', 
+            'text': '(11) 9 7174-7781', 
+            'url': 'https://wa.me/message/66LU3HDFMEWVO1'
+        },
+        {
+            'icon': 'fa-location-dot', 
+            'text': 'São Paulo, SP, Brasil'
+        },
+        {
+            'icon': 'fa-clock', 
+            'text': '8:00 - 18:00'
+        }
+    ]
 
     #PATH
     return render(request, 'vinme/index.html', {
@@ -132,5 +163,7 @@ def index(request):
                     'social_links': social_links,
                     'info_boxes': info_boxes,
                     'services': services,
-                    'projects': projects
+                    'projects': projects,
+                    'form_fields': form_fields,
+                    'contact_info': contact_info,
                    })
