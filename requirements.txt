@@ -7,4 +7,3 @@ setuptools==70.1.0
 starkbank-ecdsa==2.2.0
 virtualenv==20.26.2
 wheel==0.43.0
-

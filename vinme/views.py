@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponseRedirect
-from django.conf import settings
-from sendgrid import SendGridAPIClient
-from sendgrid.helpers.mail import Mail
+from vinme.forms import contactForm
+#rom django.http import HttpResponseRedirect
+# from django.conf import settings
+# from sendgrid import SendGridAPIClient
+# from sendgrid.helpers.mail import Mail
 
-
-def index(request):
+def pages():
     navigation = [
         {
             'title': 'HOME',
@@ -54,11 +54,11 @@ def index(request):
         {
             'title': 'Contate',
             'icon': 'fas fa-phone',
-            'url': '#',
+            'url': 'contact',
             'dropdown': [
                 {'title': 'FAQ', 'url': '#'},
                 {'title': 'Testemunho', 'url': '#'},
-                {'title': 'Contato', 'url': '#'},
+                {'title': 'Contato', 'url': '#contact'},
             ]
         },
     ]
@@ -130,13 +130,6 @@ def index(request):
         {'id': 'tab3', 'image': 'assets/img/EmBreve3.png', 'seemore': 'Ver mais'},
     ]
 
-    form_fields = [
-        {'type': 'text', 'name': 'nome', 'id': 'name', 'icon': 'fa-user', 'label': 'Nome'},
-        {'type': 'email', 'name': 'email', 'id': 'email', 'icon': 'fa-envelope', 'label': 'Email'},
-        {'type': 'text', 'name': 'subject', 'id': 'subject', 'icon': 'fa-hashtag', 'label': 'Assunto'},
-        {'type': 'textarea', 'name': 'message', 'id': 'message', 'icon': 'fa-comment', 'label': 'Texto'}
-    ]
-
     contact_info = [
         {
             'icon': 'fa-face-laugh-squint', 
@@ -162,37 +155,36 @@ def index(request):
         }
     ]
 
+    context = {
+        'navigation': navigation, 
+        'social_links': social_links,
+        'info_boxes': info_boxes,
+        'services': services,
+        'projects': projects,
+        'contact_info': contact_info,
+    }
+    return context
+
+def process_contact_form(request, template_name):
     if request.method == 'POST':
-        subject = request.POST.get('subject', '')
-        message = request.POST.get('message', '')
-        sender_email = request.POST.get('email', '')
+        form = contactForm(request.POST)
+        if form.is_valid():
+            return redirect('thankspage')
+    else:
+        form = contactForm()
 
-        message = Mail(
-            from_email=sender_email,
-            to_emails=settings.EMAIL_HOST_USER,
-            subject=subject,
-            plain_text_content=message)
+    context = {
+        'form': form,
+        **pages()
+    }
+    return render(request, template_name, context)
 
-        try:
-            sg = SendGridAPIClient(settings.SENDGRID_API_KEY)
-            response = sg.send(message)
-            print(response.status_code)
-            print(response.body)
-            print(response.headers)
-        except Exception as e:
-            print(e)
+def index(request):
+    return process_contact_form(request, 'vinme/index.html')
 
-        return HttpResponseRedirect('/obrigado/')
+def contact(request):
+    return process_contact_form(request, 'vinme/contact.html')
 
+def thankspage(request):
+    return render(request, 'vinme/thankspage.html')
 
-
-    #PATH
-    return render(request, 'vinme/index.html', {
-                    'navigation': navigation, 
-                    'social_links': social_links,
-                    'info_boxes': info_boxes,
-                    'services': services,
-                    'projects': projects,
-                    'form_fields': form_fields,
-                    'contact_info': contact_info,
-                   })
