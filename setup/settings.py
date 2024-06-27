@@ -10,7 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
-from pathlib import Path, os    
+from pathlib import Path
+import os
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -132,13 +133,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Configuração para enviar emails usando SendGrid
-from sendgrid import SendGridAPIClient
-from sendgrid.helpers.mail import Mail
+# Configuração para enviar emails usando mailTrap
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_PORT = 587
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = 'e0cc97f60be080'
+EMAIL_HOST_PASSWORD = '0b2c22e143b302'
+EMAIL_PORT = '2525'
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'apikey' 
-EMAIL_HOST_PASSWORD = os.getenv('SENDGRID_API_KEY')
+DEFAULT_FROM_EMAIL = 'vinme.geral@gmail.com'

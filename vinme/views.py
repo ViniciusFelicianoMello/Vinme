@@ -1,9 +1,6 @@
 from django.shortcuts import render, redirect
 from vinme.forms import contactForm
-#rom django.http import HttpResponseRedirect
-# from django.conf import settings
-# from sendgrid import SendGridAPIClient
-# from sendgrid.helpers.mail import Mail
+from django.core.mail import send_mail
 
 def pages():
     navigation = [
@@ -169,6 +166,12 @@ def process_contact_form(request, template_name):
     if request.method == 'POST':
         form = contactForm(request.POST)
         if form.is_valid():
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            subject = form.cleaned_data['subject']
+            message = form.cleaned_data['message']
+            send_email(name, email, subject, message)
+
             return redirect('thankspage')
     else:
         form = contactForm()
@@ -179,6 +182,12 @@ def process_contact_form(request, template_name):
     }
     return render(request, template_name, context)
 
+def send_email(name, email, subject, message):
+    email_subject = f"{subject}"
+    email_content = f"Nome: {name}\nEmail: {email}\n\nMensagem:\n{message}"
+    send_mail(email_subject, email_content, 'vinme.geral@gmail.com', ['vinme.geral@gmail.com'])
+
+
 def index(request):
     return process_contact_form(request, 'vinme/index.html')
 
@@ -187,4 +196,3 @@ def contact(request):
 
 def thankspage(request):
     return render(request, 'vinme/thankspage.html')
-
