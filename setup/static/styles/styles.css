@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 
 @import url(css/keyFrames.css);
+@import url(css/thankspage.css);
 @import url(css/header.css);
 @import url(css/banner.css);
 @import url(css/about.css);
@@ -12,29 +13,10 @@
 @import url(css/contact.css);
 
 :root {
-    --cor-principal:#006aff;
+    --cor-principal:#006aff   ;
     --cor-principal-tpt:#006aff36;
     --cor-principal-2:#009dff;
 
-    --cor-fonte-1: #001437; 
-
-    
-    --cor-fundo-tpt: #e1edff4e;
-    --cor-fundo-1: #e1edff;
-    --cor-fundo-2: #eaf3ff;
-    --cor-fundo-3: #eef5ff;
-
-    --cor-shadow-1: #00275d5d;
-
-    --box-shadow-1: 0px 0px 6px var(--cor-shadow-1), 0 0 6px var(--cor-shadow-1);
-    --box-shadow-2: 0px 0px 6px var(--cor-principal-2), 0 0 6px var(--cor-principal-2);
-
-    --fonte-1: "Orbitron", sans-serif;
-    --fonte-2: "Share Tech", sans-serif;
-    --fonte-3: "Audiowide", sans-serif;
-}
-
-[data-theme="dark"] {
     --cor-fonte-1: #eef5ff; 
 
     --cor-fundo-tpt: #0014374e;
@@ -46,7 +28,24 @@
 
     --box-shadow-1: 0px 0px 6px var(--cor-shadow-1), 0 0 6px var(--cor-shadow-1);
     --box-shadow-2: 0px 0px 6px var(--cor-principal-2), 0 0 6px var(--cor-principal-2);
+
+    --fonte-1: "Orbitron", sans-serif;
+    --fonte-2: "Share Tech", sans-serif;
+    --fonte-3: "Audiowide", sans-serif;
 }
+
+[data-theme="dark"] {
+    --cor-fonte-1: #001437; 
+
+    
+    --cor-fundo-tpt: #e1edff4e;
+    --cor-fundo-1: #e1edff;
+    --cor-fundo-2: #eaf3ff;
+    --cor-fundo-3: #eef5ff;
+
+    --cor-shadow-1: #00275d5d;
+}
+    
 
 *{ /*reset margem */
     margin: 0;

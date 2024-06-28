@@ -137,8 +137,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
-EMAIL_HOST_USER = 'e0cc97f60be080'
-EMAIL_HOST_PASSWORD = '0b2c22e143b302'
+EMAIL_HOST_USER = os.getenv('MAILTRAP_USERNAME')
+EMAIL_HOST_PASSWORD = os.getenv('MAILTRAP_PASSWORD')
 EMAIL_PORT = '2525'
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'vinme.geral@gmail.com'

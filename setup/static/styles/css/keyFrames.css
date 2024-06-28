@@ -68,6 +68,10 @@
     0%, 50%, 100% {border-color: transparent;}
     25%, 75% { border-color: var(--cor-fonte-1);}
 }
+@keyframes blinkStar {
+    0%, 100% {opacity: 0.3;}
+    50% { opacity: 0.8;}
+}
 
 /* BUTTON HOVER */
 @keyframes btnHoverUm {
