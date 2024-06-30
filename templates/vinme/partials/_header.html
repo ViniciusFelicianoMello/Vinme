@@ -9,30 +9,65 @@
     <!-- NAVEGAÇÃO -->
     <nav class="header_options">
         <ul class="options_list">
-            {% for item in navigation %}
             <!-- ITEM DA LISTA -->
             <li class="options_item">
-                {% if item.url != '#' %}
-                <a href="{% url item.url %}" class="option_link">
-                {% else %}
-                <a href="{{ item.url }}" class="option_link">
-                {% endif %}
-                    <i class="{{ item.icon }} option_icon"></i>
-                    <span class="option_title">{{ item.title }}</span>
-                </a>
-                {% if item.dropdown %}
-                <!-- DROPDOWN -->
+                <i class="fa-solid fa-shuttle-space option_icon"></i>
+                <span class="option_title">VinMe <i class="fa-solid fa-caret-down"></i> </span>
+                <!-- DROPDOWN LIST -->
                 <ul class="dropdown_list">
-                    {% for dropdown in item.dropdown %}
                     <!-- DROPDOWN ITEM -->
-                    <li class="dropdown_item">
-                        <a class="dropdown_link" href="{{ dropdown.url }}">{{ dropdown.title }}</a>
-                    </li>
-                    {% endfor %}
+                    <a class="dropdown_link" href="{% url 'index' %}">
+                        <i class="fa-solid fa-house-chimney"></i>
+                        <strong>home</strong>
+                    </a>
+                    <!-- DROPDOWN ITEM -->
+                    <a class="dropdown_link" href="{% url 'about' %}">
+                        <i class="fa-solid fa-user-astronaut"></i>
+                        <strong>sobre nós</strong>
+                    </a>
+                    <!-- DROPDOWN ITEM -->
+                    <a class="dropdown_link" href="{% url 'services' %}">
+                        <i class="fa-solid fa-computer"></i>
+                        <strong>serviços</strong>
+                    </a>
+                    <!-- DROPDOWN ITEM -->
+                    <a class="dropdown_link" href="{% url 'projects' %}">
+                        <i class="fa-solid fa-file-lines"></i>
+                        <strong>projetos</strong>
+                    </a>
+                    <!-- DROPDOWN ITEM -->
+                    <a class="dropdown_link" href="{% url 'contact' %}">
+                        <i class="fa-solid fa-phone"></i>
+                        <strong>contato</strong>
+                    </a>
                 </ul>
-                {% endif %}
             </li>
-            {% endfor %}
+            <!-- ITEM DA LISTA -->
+            <li class="options_item">
+                <i class="fa-solid fa-earth-americas option_icon"></i>
+                <span class="option_title">Verse <i class="fa-solid fa-caret-down"></i> </span>
+                <!-- DROPDOWN LIST -->
+                <ul class="dropdown_list">
+                    <!-- DROPDOWN ITEM -->
+                    <a class="dropdown_link" href="{% url 'index' %}">
+                        <i class="fa-solid fa-blog"></i>
+                        <strong>blog</strong>
+                    </a>
+                </ul>
+            </li>
+            <!-- ITEM DA LISTA -->
+            <li class="options_item">
+                <i class="fa-solid fa-school option_icon"></i>
+                <span class="option_title">Class <i class="fa-solid fa-caret-down"></i> </span>
+                <!-- DROPDOWN LIST -->
+                <ul class="dropdown_list">
+                    <!-- DROPDOWN ITEM -->
+                    <a class="dropdown_link" href="{% url 'index' %}">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <strong>school</strong>
+                    </a>
+                </ul>
+            </li>
         </ul>
     </nav>
     <!-- CONTROLS -->
@@ -49,6 +84,25 @@
                 <i class="fa-solid fa-sun icon-sun"></i>
             </label>
         </div>
+        <div class="controls_config">
+            <input hidden="" type="checkbox" class="check_config" id="check_config" name="check_config">
+            <label for="check_config" class="config_label">
+                <i class="fa-solid fa-circle-user controls_icon"></i>  
+            </label>
+            <!-- LISTA -->
+            <ul class="controls_menu">
+                <!-- ITEM -->
+                <a href="#">
+                    <i class="fa-solid fa-user"></i>
+                    <strong>login</strong>
+                </a>
+                <!-- ITEM -->
+                <a href="#">
+                    <i class="fa-solid fa-user-plus"></i>
+                    <strong>cadastre-se</strong>
+                </a>
+            </ul>
+        </div>
     </div>
 </header>
 <!-- HEADER MENU -->
@@ -62,19 +116,7 @@
     <!-- NAV MENU -->
     <nav class="menu_options">
         <ul class="options_list">
-            {% for item in navigation %}
-            <!-- ITEM DA LISTA -->
-            <li class="options_item">
-                {% if item.url != '#' %}
-                <a href="{% url item.url %}" class="option_link">
-                {% else %}
-                <a href="{{ item.url }}" class="option_link">
-                {% endif %}
-                    <i class="{{ item.icon }} option_icon"></i>
-                    <span class="option_title">{{ item.title }}</span>
-                </a>
-            </li>
-            {% endfor %}
+    
         </ul>
     </nav>
 </header>

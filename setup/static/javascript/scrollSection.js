@@ -1,5 +1,5 @@
 // Função para rolar para uma seção com um deslocamento
-document.querySelectorAll('.dropdown_link').forEach(anchor => {
+document.querySelectorAll('.travel_link').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
 
@@ -18,7 +18,7 @@ document.querySelectorAll('.dropdown_link').forEach(anchor => {
 // Função para adicionar a classe 'active' ao link do dropdown correspondente
 function setActiveLink() {
     const sections = document.querySelectorAll('section');
-    const links = document.querySelectorAll('.dropdown_link');
+    const links = document.querySelectorAll('.travel_link');
     let currentActive = null;
 
     sections.forEach(section => {

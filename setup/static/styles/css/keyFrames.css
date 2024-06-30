@@ -53,6 +53,13 @@
     100% { transform: translateX(0);}
 }
 
+/* ROTATE */
+@keyframes rotate {
+    0% { rotate: 0; }
+    50% { rotate: 180deg; }
+    100% { rotate: 360deg; }
+}
+
 /* INFINITE SCROLL */
 @keyframes infiniteScroll {
     0% {transform: translateX(0);}

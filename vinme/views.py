@@ -3,63 +3,11 @@ from vinme.forms import contactForm
 from django.core.mail import send_mail
 
 def pages():
+    # header
     navigation = [
-        {
-            'title': 'HOME',
-            'icon': 'fas fa-house',
-            'url': 'index',
-            'dropdown': [
-                {'title': 'Banner', 'url': '#banner'},
-                {'title': 'Sobre', 'url': '#about'},
-                {'title': 'Serviços', 'url': '#services'},
-                {'title': 'Projetos', 'url': '#projects'},
-                {'title': 'Blog', 'url': '#blog'},
-                {'title': 'Contato', 'url': '#contact'},
-            ]
-        },
-        {
-            'title': 'SOBRE NÓS',
-            'icon': 'fas fa-user',
-            'url': '#',
-            'dropdown': [
-                {'title': 'Sobre Nós', 'url': '#aboutus'},
-                {'title': 'Serviços', 'url': '#services'},
-                {'title': 'História', 'url': '#history'},
-                {'title': 'Membros', 'url': '#members'},
-            ]
-        },
-        {
-            'title': 'SERVIÇOS',
-            'icon': 'fas fa-computer',
-            'url': '#',
-            'dropdown': [
-                {'title': 'Serviços', 'url': '#services'},
-            ]
-        },
-        {
-            'title': 'Projetos',
-            'icon': 'fas fa-file-lines',
-            'url': '#',
-            'dropdown': []
-        },
-        {
-            'title': 'Blog',
-            'icon': 'fas fa-blog',
-            'url': '#',
-            'dropdown': []
-        },
-        {
-            'title': 'Contate',
-            'icon': 'fas fa-phone',
-            'url': 'contact',
-            'dropdown': [
-                {'title': 'FAQ', 'url': '#'},
-                {'title': 'Testemunho', 'url': '#'},
-                {'title': 'Contato', 'url': '#contact'},
-            ]
-        },
+
     ]
- 
+    # banner
     social_links = [
         {'url': 'https://instagram.com/viinifeliciano', 'icon': 'fa-brands fa-instagram'},
         {'url': 'https://www.linkedin.com/in/vinicius-feliciano-mello', 'icon': 'fa-brands fa-linkedin-in'},
@@ -87,7 +35,7 @@ def pages():
             'title': 'Back-End'
         }
     ]
-
+    # services
     services = [
         {
             'icon': 'fa-solid fa-laptop-code',
@@ -120,13 +68,13 @@ def pages():
             'description': 'Criação de plataformas completas com diversos sistemas integrados'
         }
     ]
- 
+    #projects
     projects = [
         {'id': 'tab1', 'image': 'assets/img/EmBreve1.png', 'seemore': 'Ver mais'},
         {'id': 'tab2', 'image': 'assets/img/EmBreve2.png', 'seemore': 'Ver mais'},
         {'id': 'tab3', 'image': 'assets/img/EmBreve3.png', 'seemore': 'Ver mais'},
     ]
-
+    #contact
     contact_info = [
         {
             'icon': 'fa-face-laugh-squint', 
@@ -190,6 +138,15 @@ def send_email(name, email, subject, message):
 
 def index(request):
     return process_contact_form(request, 'vinme/index.html')
+
+def about(request):
+    return render(request, 'vinme/about.html')
+
+def services(request):
+    return process_contact_form(request, 'vinme/services.html')
+
+def projects(request):
+    return process_contact_form(request, 'vinme/projects.html')
 
 def contact(request):
     return process_contact_form(request, 'vinme/contact.html')

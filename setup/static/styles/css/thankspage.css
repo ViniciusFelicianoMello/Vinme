@@ -9,7 +9,7 @@
 .thanks_box {
     position: relative;
     overflow: hidden;
-    box-shadow: var(--box-shadow-1);
+    box-shadow: var(--box-shadow-2);
     border-radius: 2em;
     border: 1px solid var(--cor-principal);
     backdrop-filter: blur(4px);
@@ -108,7 +108,27 @@
     animation: blinkStar 2s  linear infinite;
 }
 
-.thankspage img {
+.moon {
     position: absolute;
-    width: 20vw;
+    opacity: 1;
+    width: 15vw;                                                                                                        
+    right: 10vw;
+    bottom: -10vh;
+    animation: rotate 50s linear infinite;
+}
+.planetblue {
+    position: absolute;
+    opacity: 1;
+    width: 25vw;
+    left: 2vw;
+    top: 5vh;
+    animation: rotate 80s linear infinite;
+}
+.planetred {
+    position: absolute;
+    opacity: 1;
+    width: 48vw;
+    right: -20vw;
+    top: -50vh;
+    animation: rotate 150s linear infinite;
 }

@@ -24,7 +24,7 @@
     --cor-fundo-2: #001842;
     --cor-fundo-3: #001d50;
 
-    --cor-shadow-1: #000c1d87;
+    --cor-shadow-1: #000c1d;
 
     --box-shadow-1: 0px 0px 6px var(--cor-shadow-1), 0 0 6px var(--cor-shadow-1);
     --box-shadow-2: 0px 0px 6px var(--cor-principal-2), 0 0 6px var(--cor-principal-2);
