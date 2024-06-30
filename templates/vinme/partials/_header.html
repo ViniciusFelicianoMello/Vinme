@@ -115,8 +115,97 @@
     </label>
     <!-- NAV MENU -->
     <nav class="menu_options">
-        <ul class="options_list">
-    
+        <ul class="dropdown_options_list">
+            <!-- ITEM -->
+            <li>
+                <div class="controls_config">
+                    <input hidden="" type="checkbox" class="check_config" id="check_config_drop" name="check_config_drop">
+                    <label for="check_config_drop" class="config_label">
+                        <i class="fa-solid fa-circle-user controls_icon"></i>  
+                    </label>
+                    <!-- LISTA -->
+                    <ul class="controls_menu">
+                        <!-- ITEM -->
+                        <a href="#">
+                            <i class="fa-solid fa-user"></i>
+                            <strong>login</strong>
+                        </a>
+                        <!-- ITEM -->
+                        <a href="#">
+                            <i class="fa-solid fa-user-plus"></i>
+                            <strong>cadastre-se</strong>
+                        </a>
+                    </ul>
+                </div>
+            </li>
+            <!-- ITEM -->
+            <li class="dropdown_opt_li">
+                <div class="menu_dropdown_close">
+                    <i class="fa-solid fa-shuttle-space option_icon"></i>
+                    <span class="option_title">VinMe</span>
+                    <i class="fa-solid fa-caret-down seta_dropdown_menu"></i>
+                </div>
+                <!-- DROPDOWN -->
+                <ul class="menu_dropdown_lista">
+                    <!-- DROPDOWN ITEM -->
+                    <a class="dropdown_link" href="{% url 'index' %}">
+                        <i class="fa-solid fa-house-chimney"></i>
+                        <strong>home</strong>
+                    </a>
+                    <!-- DROPDOWN ITEM -->
+                    <a class="dropdown_link" href="{% url 'about' %}">
+                        <i class="fa-solid fa-user-astronaut"></i>
+                        <strong>sobre nós</strong>
+                    </a>
+                    <!-- DROPDOWN ITEM -->
+                    <a class="dropdown_link" href="{% url 'services' %}">
+                        <i class="fa-solid fa-computer"></i>
+                        <strong>serviços</strong>
+                    </a>
+                    <!-- DROPDOWN ITEM -->
+                    <a class="dropdown_link" href="{% url 'projects' %}">
+                        <i class="fa-solid fa-file-lines"></i>
+                        <strong>projetos</strong>
+                    </a>
+                    <!-- DROPDOWN ITEM -->
+                    <a class="dropdown_link" href="{% url 'contact' %}">
+                        <i class="fa-solid fa-phone"></i>
+                        <strong>contato</strong>
+                    </a>
+                </ul>
+            </li>
+            <!-- ITEM -->
+            <li>
+                <div class="menu_dropdown_close">
+                    <i class="fa-solid fa-earth-americas option_icon"></i>
+                    <span class="option_title">Verse</span>
+                    <i class="fa-solid fa-caret-down seta_dropdown_menu"></i>
+                </div>
+                <!-- DROPDOWN -->
+                <ul class="menu_dropdown_lista">
+                    <!-- DROPDOWN ITEM -->
+                    <a class="dropdown_link" href="{% url 'index' %}">
+                        <i class="fa-solid fa-blog"></i>
+                        <strong>blog</strong>
+                    </a>
+                </ul>
+            </li>
+            <!-- ITEM -->
+            <li>
+                <div class="menu_dropdown_close">
+                    <i class="fa-solid fa-school option_icon"></i>
+                    <span class="option_title">Class</span>
+                    <i class="fa-solid fa-caret-down seta_dropdown_menu"></i>
+                </div>
+                <!-- DROPDOWN -->
+                <ul class="menu_dropdown_lista">
+                    <!-- DROPDOWN ITEM -->
+                    <a class="dropdown_link" href="{% url 'index' %}">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <strong>school</strong>
+                    </a>
+                </ul>
+            </li>
         </ul>
     </nav>
 </header>
