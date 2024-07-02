@@ -2,18 +2,13 @@
 <footer class="footer viewport">
     <div class="footer_social">
         <ul>
-            <a href="https://instagram.com/viinifeliciano" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/vinicius-feliciano-mello" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-linkedin-in"></i>
-            </a>
-            <a href="https://www.youtube.com/channel/UCPaMfm0d54sSeaX2RsCAB4A" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-youtube"></i>
-            </a>
-            <a href="https://www.behance.net/" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-behance"></i>
-            </a>
+            {% for link in social_links %}
+                <li>
+                    <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">
+                        <i class="{{ link.icon }}"></i>
+                    </a>
+                </li>
+            {% endfor %}
         </ul>
     </div>
     <div class="footer_infos">
@@ -26,32 +21,12 @@
         <div class="footer_links">
             <h2 class="footer_links_title">VINME</h2>
             <ul>
-                <!-- FOOTER ITEM -->
-                <a class="footer_link" href="{% url 'index' %}">
-                    <i class="fa-solid fa-house-chimney"></i>
-                    <strong>home</strong>
+            {% for link in vinme_links %}
+                <a class="footer_link" href="{% url link.url %}">
+                    <i class="{{ link.icon }}"></i>
+                    <strong>{{ link.name }}</strong>
                 </a>
-                <!-- FOOTER ITEM -->
-                <a class="footer_link" href="{% url 'about' %}">
-                    <i class="fa-solid fa-user-astronaut"></i>
-                    <strong>sobre nós</strong>
-                </a>
-                <!-- FOOTER ITEM -->
-                <a class="footer_link" href="{% url 'services' %}">
-                    <i class="fa-solid fa-computer"></i>
-                    <strong>serviços</strong>
-                </a>
-                <!-- FOOTER ITEM -->
-                <a class="footer_link" href="{% url 'projects' %}">
-                    <i class="fa-solid fa-file-lines"></i>
-                    <strong>projetos</strong>
-                </a>
-                <!-- FOOTER ITEM -->
-                <a class="footer_link" href="{% url 'contact' %}">
-                    <i class="fa-solid fa-phone"></i>
-                    <strong>contato</strong>
-                </a>
-            </ul>
+            {% endfor %}
         </div>
         <!-- FOOTER INFOS -->
         <div class="footer_links">
@@ -78,21 +53,13 @@
         <div class="footer_links">
             <h2 class="footer_links_title">INFOS</h2>
             <ul>
+                {% for info in contact_info %}
                 <!-- FOOTER ITEM -->
-                <a class="footer_link" href="https://portifolio-vinicius-mello.vercel.app/">
-                    <i class="fa-solid fa-face-laugh-squint"></i>
-                    <strong>vinicius feliciano mello</strong>
+                <a class="footer_link" href="{{ info.url }}">
+                    <i class="fa-solid {{ info.icon }}"></i>
+                    <strong>{{ info.text }}</strong>
                 </a>
-                <!-- FOOTER ITEM -->
-                <a class="footer_link" href="https://wa.me/message/66LU3HDFMEWVO1">
-                    <i class="fa-solid fa-phone"></i>
-                    <strong>(11) 9 7174-7781</strong>
-                </a>           
-                <!-- FOOTER ITEM -->
-                <a class="footer_link" href="{% url 'contact' %}">
-                    <i class="fa-solid fa-envelope"></i>
-                    <strong>vinme.geral@gmail.com</strong>
-                </a>           
+                {% endfor %}       
             </ul>
         </div>
     </div>

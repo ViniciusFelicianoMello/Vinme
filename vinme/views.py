@@ -3,10 +3,23 @@ from vinme.forms import contactForm
 from django.core.mail import send_mail
 
 def pages():
-    # header
-    navigation = [
-
+    # header | footer
+    vinme_links = [
+        {'url': 'index', 'icon': 'fa-solid fa-house-chimney', 'name': 'home'},
+        {'url': 'about', 'icon': 'fa-solid fa-user-astronaut', 'name': 'sobre nós'},
+        {'url': 'services', 'icon': 'fa-solid fa-computer', 'name': 'serviços'},
+        {'url': 'projects', 'icon': 'fa-solid fa-file-lines', 'name': 'projetos'},
+        {'url': 'contact', 'icon': 'fa-solid fa-phone', 'name': 'contato'},
     ]
+
+    blog_links = [
+        {'url': 'index', 'icon': 'fa-solid fa-blog', 'name': 'blog'},
+    ]
+
+    class_links = [
+        {'url': 'index', 'icon': 'fa-solid fa-graduation-cap', 'name': 'school'},
+    ]
+    
     # banner
     social_links = [
         {'url': 'https://instagram.com/viinifeliciano', 'icon': 'fa-brands fa-instagram'},
@@ -83,7 +96,8 @@ def pages():
         },
         {
             'icon': 'fa-envelope', 
-            'text': 'vinme.geral@gmail.com'
+            'text': 'vinme.geral@gmail.com',
+            'url':  'contact'
         },
         {
             'icon': 'fa-phone', 
@@ -101,7 +115,9 @@ def pages():
     ]
 
     context = {
-        'navigation': navigation, 
+        'vinme_links': vinme_links, 
+        'blog_links': blog_links, 
+        'class_links': class_links, 
         'social_links': social_links,
         'info_boxes': info_boxes,
         'services': services,

@@ -16,30 +16,12 @@
                 <!-- DROPDOWN LIST -->
                 <ul class="dropdown_list">
                     <!-- DROPDOWN ITEM -->
-                    <a class="dropdown_link" href="{% url 'index' %}">
-                        <i class="fa-solid fa-house-chimney"></i>
-                        <strong>home</strong>
-                    </a>
-                    <!-- DROPDOWN ITEM -->
-                    <a class="dropdown_link" href="{% url 'about' %}">
-                        <i class="fa-solid fa-user-astronaut"></i>
-                        <strong>sobre nós</strong>
-                    </a>
-                    <!-- DROPDOWN ITEM -->
-                    <a class="dropdown_link" href="{% url 'services' %}">
-                        <i class="fa-solid fa-computer"></i>
-                        <strong>serviços</strong>
-                    </a>
-                    <!-- DROPDOWN ITEM -->
-                    <a class="dropdown_link" href="{% url 'projects' %}">
-                        <i class="fa-solid fa-file-lines"></i>
-                        <strong>projetos</strong>
-                    </a>
-                    <!-- DROPDOWN ITEM -->
-                    <a class="dropdown_link" href="{% url 'contact' %}">
-                        <i class="fa-solid fa-phone"></i>
-                        <strong>contato</strong>
-                    </a>
+                    {% for link in vinme_links %}
+                    <a class="dropdown_link" href="{% url link.url %}">
+                        <i class="{{ link.icon }}"></i>
+                        <strong>{{ link.name }}</strong>
+                    </a>             
+                    {% endfor %}
                 </ul>
             </li>
             <!-- ITEM DA LISTA -->
@@ -49,10 +31,12 @@
                 <!-- DROPDOWN LIST -->
                 <ul class="dropdown_list">
                     <!-- DROPDOWN ITEM -->
-                    <a class="dropdown_link" href="{% url 'index' %}">
-                        <i class="fa-solid fa-blog"></i>
-                        <strong>blog</strong>
-                    </a>
+                    {% for link in blog_links %}
+                    <a class="dropdown_link" href="{% url link.url %}">
+                        <i class="{{ link.icon }}"></i>
+                        <strong>{{ link.name }}</strong>
+                    </a>             
+                    {% endfor %}
                 </ul>
             </li>
             <!-- ITEM DA LISTA -->
@@ -62,10 +46,12 @@
                 <!-- DROPDOWN LIST -->
                 <ul class="dropdown_list">
                     <!-- DROPDOWN ITEM -->
-                    <a class="dropdown_link" href="{% url 'index' %}">
-                        <i class="fa-solid fa-graduation-cap"></i>
-                        <strong>school</strong>
-                    </a>
+                    {% for link in class_links %}
+                    <a class="dropdown_link" href="{% url link.url %}">
+                        <i class="{{ link.icon }}"></i>
+                        <strong>{{ link.name }}</strong>
+                    </a>             
+                    {% endfor %}
                 </ul>
             </li>
         </ul>
@@ -116,6 +102,8 @@
         </div>
     </div>
 </header>
+
+
 <!-- HEADER MENU -->
 <header class="header_menu">
     <input hidden="" class="check-icon" id="check-icon" name="check-icon" type="checkbox">
@@ -132,20 +120,31 @@
                 <div class="controls_config">
                     <input hidden="" type="checkbox" class="check_config" id="check_config_drop" name="check_config_drop">
                     <label for="check_config_drop" class="config_label">
-                        <i class="fa-solid fa-circle-user controls_icon"></i>  
+                        {% if user.is_authenticated %}
+                        <i class="fa-solid fa-gear controls_icon"></i>
+                        {% else %}
+                        <i class="fa-solid fa-circle-user controls_icon"></i>
+                        {% endif %}
                     </label>
                     <!-- LISTA -->
                     <ul class="controls_menu">
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'account_logout' %}">
+                            <i class="fa-solid fa-user-slash"></i>
+                            <strong>logout</strong>
+                        </a>
+                        {% else %}
                         <!-- ITEM -->
-                        <a href="#">
+                        <a href="{% url 'account_login' %}">
                             <i class="fa-solid fa-user"></i>
                             <strong>login</strong>
                         </a>
                         <!-- ITEM -->
-                        <a href="#">
+                        <a href="{% url 'account_signup' %}">
                             <i class="fa-solid fa-user-plus"></i>
                             <strong>cadastre-se</strong>
                         </a>
+                        {% endif %}
                     </ul>
                 </div>
             </li>
@@ -159,30 +158,12 @@
                 <!-- DROPDOWN -->
                 <ul class="menu_dropdown_lista">
                     <!-- DROPDOWN ITEM -->
-                    <a class="dropdown_link" href="{% url 'index' %}">
-                        <i class="fa-solid fa-house-chimney"></i>
-                        <strong>home</strong>
-                    </a>
-                    <!-- DROPDOWN ITEM -->
-                    <a class="dropdown_link" href="{% url 'about' %}">
-                        <i class="fa-solid fa-user-astronaut"></i>
-                        <strong>sobre nós</strong>
-                    </a>
-                    <!-- DROPDOWN ITEM -->
-                    <a class="dropdown_link" href="{% url 'services' %}">
-                        <i class="fa-solid fa-computer"></i>
-                        <strong>serviços</strong>
-                    </a>
-                    <!-- DROPDOWN ITEM -->
-                    <a class="dropdown_link" href="{% url 'projects' %}">
-                        <i class="fa-solid fa-file-lines"></i>
-                        <strong>projetos</strong>
-                    </a>
-                    <!-- DROPDOWN ITEM -->
-                    <a class="dropdown_link" href="{% url 'contact' %}">
-                        <i class="fa-solid fa-phone"></i>
-                        <strong>contato</strong>
-                    </a>
+                    {% for link in vinme_links %}
+                    <a class="dropdown_link" href="{% url link.url %}">
+                        <i class="{{ link.icon }}"></i>
+                        <strong>{{ link.name }}</strong>
+                    </a>             
+                    {% endfor %}
                 </ul>
             </li>
             <!-- ITEM -->
@@ -195,10 +176,12 @@
                 <!-- DROPDOWN -->
                 <ul class="menu_dropdown_lista">
                     <!-- DROPDOWN ITEM -->
-                    <a class="dropdown_link" href="{% url 'index' %}">
-                        <i class="fa-solid fa-blog"></i>
-                        <strong>blog</strong>
-                    </a>
+                    {% for link in blog_links %}
+                    <a class="dropdown_link" href="{% url link.url %}">
+                        <i class="{{ link.icon }}"></i>
+                        <strong>{{ link.name }}</strong>
+                    </a>             
+                    {% endfor %}
                 </ul>
             </li>
             <!-- ITEM -->
@@ -211,10 +194,12 @@
                 <!-- DROPDOWN -->
                 <ul class="menu_dropdown_lista">
                     <!-- DROPDOWN ITEM -->
-                    <a class="dropdown_link" href="{% url 'index' %}">
-                        <i class="fa-solid fa-graduation-cap"></i>
-                        <strong>school</strong>
-                    </a>
+                    {% for link in class_links %}
+                    <a class="dropdown_link" href="{% url link.url %}">
+                        <i class="{{ link.icon }}"></i>
+                        <strong>{{ link.name }}</strong>
+                    </a>             
+                    {% endfor %}
                 </ul>
             </li>
         </ul>

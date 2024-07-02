@@ -63,7 +63,7 @@
     border-bottom: 2px solid var(--cor-principal);
     padding-bottom: 2em;
     width: 100%;
-    height: 70%;
+    height: 80%;
 }
 
 .footer_logo {
@@ -115,6 +115,7 @@
     color: var(--cor-principal-2);
     font-size: 1.2vw;
     transition: .3s;
+    text-transform: lowercase;
 }
 .footer_link strong {
     margin-left: .5em;
@@ -125,7 +126,7 @@
 }
 /* FOOTER COPY */
 .footer_copyright {
-    height: 100%;
+    height: 20%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -135,4 +136,90 @@
     font-size: 1vw;
     color: var(--cor-fixa-2);
     font-family: var(--fonte-2);
+}
+
+@media screen and (max-width:1024px) {
+    .footer {
+        height: 60vh;
+        padding: 0 2vw;
+    }
+    
+    /* FOOTER SOCIAL */
+    .footer_social {
+        width: 60vw;
+        height: 10vh;
+        border-radius: 4em;
+    }
+    
+    .footer_social ul {
+        font-size: 4vw;
+    }
+    
+    .footer_social ul a {
+        height: 7vw;
+        width: 7vw;
+    }
+    /* FOOTER INFOS */
+    .footer_infos {
+        width: 100%;
+        height: 70%;
+    }
+    
+    .footer_logo {
+        margin-top: 6vh;
+        width: 50%;
+        height: 35%;
+    }
+    
+    .footer_logo img {
+        width: 30%;
+    }
+    .footer_title {
+        font-size: 4vw;
+    }
+    .footer_links {
+        margin-top: 6vh;
+        width: 50%;
+        height: 35%;
+    }
+    .footer_links_title {
+        font-size: 2vw;
+        margin-top: 0;
+    }
+    
+    .footer_links ul {
+        gap: .8em;
+        margin-top: 1em;
+    }
+    
+    .footer_link {
+        font-size: 2.5vw;
+    }
+    /* FOOTER COPY */
+    .footer_copyright {
+        height: 30%;
+    }
+    
+    .footer_copyright span {
+        font-size: 3vw;
+        margin-top: -2em;
+    }
+}
+@media screen and (max-width:600px) {
+    .footer {
+        height: 70vh;
+    }
+    
+    /* FOOTER SOCIAL */
+    .footer_social {
+        height: 8vh;
+    }
+    /* FOOTER INFOS */
+    .footer_title {
+        font-size: 5vw;
+    }
+    
+    .footer_link {
+        font-size: 3vw;
+    }
 }
