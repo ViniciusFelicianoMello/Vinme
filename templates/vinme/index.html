@@ -51,70 +51,9 @@
         </div>
     </section>
 <!-- sobre -->
-    <section class="container about" id="about">
-        <!-- SOBRE TITULI -->
-        <div class="about_title viewport">
-            <h2 class="viewport">VINME</h2>
-            <h3 class="viewport">desenvolvimento + web + design</h3>
-        </div>
-        <div class="about_content">
-            <!-- SOBRE TEXTO -->
-            <div class="about_text">
-                <p class="viewport">Formada em 2024, a <span>Vinme</span> é uma startup fundada por um único integrante, comprometida em transformar histórias em projetos únicos. Com a missão de ajudar empresas a se destacar, entregamos <span>websites e designs exclusivos</span> para proporcionar ao usuário uma experiência incrível e inesquecível.</p>
-                <p class="viewport">Ao escolher a <span>Vinme</span>, você opta por um parceiro que valoriza uma abordagem amigável e colaborativa, focado em construir relacionamentos de longo prazo, com qualidade e inovação. Estamos sempre nos atualizando para oferecer o melhor, comprometendo-nos a atender não apenas às necessidades imediatas, mas também a contribuir para o crescimento de seus negócios. Pensamos em cada detalhe para garantir a máxima satisfação.</p>
-            </div>
-            <!-- SOBRE INFOS -->
-            <div class="about_infos">
-                <!-- INFOS BOX -->
-                <div class="about_infos_box viewport">
-                    <i class="fa-solid fa-lightbulb"></i>
-                    <span></span>
-                    <p>Nossa <span>missão</span> é transformar histórias em projetos exclusivos</p>
-                </div>
-                <!-- INFOS BOX -->
-                <div class="about_infos_box viewport">
-                    <i class="fa-solid fa-eye"></i>
-                    <p>Nossa <span>visão</span> é ser uma empresa renomada na área de tecnologia e design</p>
-                </div>
-                <!-- INFOS BOX -->
-                <div class="about_infos_box viewport">
-                    <i class="fa-solid fa-heart"></i>
-                    <p>Nossos <span>valores</span> são a qualidade, compromisso, inovação, satisfação e colaboração</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    {% include 'vinme/partials/_about.html' %}
 <!-- serviços -->
-    <section class="services" id="services">
-        <!-- SERVIÇOS TITULO -->
-        <div class="services_bg">
-            <span class="services_background viewport"></span>
-            <span class="services_background viewport"></span>
-        </div>
-        <div class="services_title">
-            <h2 class="section_title viewport">Quais os <span>Serviços</span> que fornecemos?</h2>
-        </div>
-        <!-- SERVICOS CONTEUDO -->
-        <div class="services_content">
-        {% for service in services %}
-        <!-- SERVICOS BOX -->
-        <div class="services_box viewport">
-            <i class="{{ service.icon }} services_box_icon"></i>
-            <h3>{{ service.title }}</h3>
-            <span class="vermais">Ver mais <i class="fa-solid fa-circle-right"></i></span>
-        </div>
-        <!-- MODAL -->
-        <div class="modal">
-            <div class="modal_card">
-                <span class="modal_close">&times;</span>
-                <h3>{{ service.title }}</h3>
-                <p>{{ service.description }}</p>
-                <i class="{{ service.icon }}"></i>
-            </div>
-        </div>
-        {% endfor %}
-        </div> <!-- DIV SERVICES CONTENT-->
-    </section>
+    {% include 'vinme/partials/_services.html' %}
 <!-- projetos -->
     <section class="container projects" id="projects">
         <!-- BACKGROUND -->

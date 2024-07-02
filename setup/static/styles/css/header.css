@@ -7,7 +7,7 @@
     width: 100%;
     height: 5vw;
     padding: 0 5vw;
-    background: var(--cor-fundo-1);
+    background: var(--cor-fixa-1);
     box-shadow: var(--box-shadow-1);
     opacity: 0;
 
@@ -60,7 +60,7 @@
     align-items: center;
     text-decoration: none;
     font-family: var(--fonte-2);
-    color: var(--cor-fonte-1);
+    color: var(--cor-fixa-2);
     transition: 0.5s;
     font-size: 1.1vw;
     cursor:pointer;
@@ -75,8 +75,8 @@
     flex-direction: column;
     position: absolute;
     list-style: none;
-    top: 8vh;
-    background: var(--cor-fundo-1);
+    top: 7vh;
+    background: var(--cor-fixa-1);
     gap: 0;
     border-top: 3px solid var(--cor-principal);
     visibility: hidden;
@@ -95,7 +95,7 @@
 .dropdown_link {
     position: relative;
     display: flex;
-    color: var(--cor-fonte-1);
+    color: var(--cor-fixa-2);
     font-family: var(--fonte-2);
     font-weight: 700;
     text-decoration: none;
@@ -138,7 +138,7 @@
     z-index: -1;
     opacity: 0;
     cursor: pointer;
-    color: var(--cor-fonte-1);
+    color: var(--cor-fixa-2);
     font-size: 1.5vw;
     transition: 0.5s;
 }
@@ -158,6 +158,7 @@
     font-size: 1.5vw;
     cursor: pointer;
     transition: 0.5s;
+    color: var(--cor-fixa-2);
 }
 .controls_icon:hover,
 .controls_icon:active,
@@ -172,7 +173,7 @@
     position: absolute;
     list-style: none;
     top: 7vh;
-    background: var(--cor-fundo-1);
+    background: var(--cor-fixa-1);
     border-top: 3px solid var(--cor-principal);
     transition: 1s;
     z-index: 900;
@@ -192,7 +193,7 @@
 .controls_menu a {
     position: relative;
     margin-left: 1vw;
-    color: var(--cor-fonte-1);
+    color: var(--cor-fixa-2);
     text-decoration: none;
     padding: 1vw;
 }
@@ -291,7 +292,7 @@
         margin: 0 0 0 -91vw;
         height: 100vh;
         width: 40vw;
-        background: var(--cor-fundo-1);
+        background: var(--cor-fixa-1);
         box-shadow: var(--box-shadow-1);
         transition: 1s;
         transform: translateX(-100%);
@@ -335,7 +336,7 @@
     .controls_menu a {
         position: relative;
         margin-left: 0;
-        color: var(--cor-fonte-1);
+        color: var(--cor-fixa-2);
         text-decoration: none;
         padding: 1em;
     }
@@ -371,7 +372,7 @@
         font-size: 3vw;
         margin-left: 2vw;
         gap: 2vw;
-        color: var(--cor-fonte-1);
+        color: var(--cor-fixa-2);
     }
     .menu_dropdown_open {
         display: flex;
@@ -393,7 +394,7 @@
     .menu_dropdown_lista {
         position: relative;
         margin-top: 1em;
-        border-bottom: 2px solid var(--cor-fonte-1);
+        border-bottom: 2px solid var(--cor-fixa-2);
     }
     .dropdown_link strong {
         margin-left: 2em;

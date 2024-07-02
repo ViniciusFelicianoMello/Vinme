@@ -87,20 +87,31 @@
         <div class="controls_config">
             <input hidden="" type="checkbox" class="check_config" id="check_config" name="check_config">
             <label for="check_config" class="config_label">
-                <i class="fa-solid fa-circle-user controls_icon"></i>  
+                {% if user.is_authenticated %}
+                <i class="fa-solid fa-gear controls_icon"></i>
+                {% else %}
+                <i class="fa-solid fa-circle-user controls_icon"></i>
+                {% endif %}
             </label>
             <!-- LISTA -->
             <ul class="controls_menu">
+                {% if user.is_authenticated %}
+                <a href="{% url 'account_logout' %}">
+                    <i class="fa-solid fa-user-slash"></i>
+                    <strong>logout</strong>
+                </a>
+                {% else %}
                 <!-- ITEM -->
-                <a href="#">
+                <a href="{% url 'account_login' %}">
                     <i class="fa-solid fa-user"></i>
                     <strong>login</strong>
                 </a>
                 <!-- ITEM -->
-                <a href="#">
+                <a href="{% url 'account_signup' %}">
                     <i class="fa-solid fa-user-plus"></i>
                     <strong>cadastre-se</strong>
                 </a>
+                {% endif %}
             </ul>
         </div>
     </div>

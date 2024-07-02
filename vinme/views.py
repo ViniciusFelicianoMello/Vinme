@@ -140,7 +140,7 @@ def index(request):
     return process_contact_form(request, 'vinme/index.html')
 
 def about(request):
-    return render(request, 'vinme/about.html')
+    return process_contact_form(request, 'vinme/about.html')
 
 def services(request):
     return process_contact_form(request, 'vinme/services.html')

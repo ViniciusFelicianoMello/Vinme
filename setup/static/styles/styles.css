@@ -2,15 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 
-@import url(css/keyFrames.css);
-@import url(css/thankspage.css);
 @import url(css/header.css);
+@import url(css/footer.css);
 @import url(css/banner.css);
 @import url(css/about.css);
 @import url(css/services.css);
 @import url(css/projects.css);
 @import url(css/blog.css);
 @import url(css/contact.css);
+@import url(css/keyFrames.css);
+@import url(css/thankspage.css);
 
 :root {
     --cor-principal:#006aff   ;
@@ -23,6 +24,9 @@
     --cor-fundo-1: #001437;
     --cor-fundo-2: #001842;
     --cor-fundo-3: #001d50;
+
+    --cor-fixa-1: #000837;
+    --cor-fixa-2: #f0f2ff;
 
     --cor-shadow-1: #000c1d;
 
@@ -43,7 +47,7 @@
     --cor-fundo-2: #eaf3ff;
     --cor-fundo-3: #eef5ff;
 
-    --cor-shadow-1: #00275d5d;
+    --cor-shadow-1: #00275d78;
 }
     
 
@@ -106,7 +110,7 @@ body {
 }
 .section_title.visible {
     display: inline-block;
-    animation: typing 3s steps(80, end) forwards, blink 1.5s step-end infinite;
+    animation: typing 2s steps(80, end) forwards, blink 1.5s step-end infinite;
     border-right: 2px solid var(--cor-fonte-1);
 }
 
@@ -128,11 +132,11 @@ body {
 }
 .section_text:nth-of-type(1).visible {
     display: inline-block;
-    animation: typing 3s 1.5s steps(80, end) forwards;
+    animation: typing 2s 1.2s steps(80, end) forwards;
 }
 .section_text:nth-of-type(2).visible {
     display: inline-block;
-    animation: typing 3s 4s steps(80, end) forwards;
+    animation: typing 2s 2.9s steps(80, end) forwards;
 }
 
 @media screen and (max-width:1024px) {
