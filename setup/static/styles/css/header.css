@@ -6,7 +6,7 @@
     z-index: 1000;
     width: 100%;
     height: 5vw;
-    padding: 0 5vw;
+    padding: 0 10vw;
     background: var(--cor-fixa-1);
     box-shadow: var(--box-shadow-1);
     opacity: 0;

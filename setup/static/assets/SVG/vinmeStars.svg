@@ -3,8 +3,8 @@
 <svg version="1.1" id="Camada_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1440 680" style="enable-background:new 0 0 1440 680;" xml:space="preserve">
 <style type="text/css">
-	.stars0{fill:#9A9A9A;}
-	.stars01{fill:#00C9FF;}
+	.stars0{fill:#eef5ff;}
+	.stars01{fill:#eef5ff;}
 </style>
 <path class="stars0" d="M543.3,309.9c-0.8,1.5-1.4,3.1-2.4,4.5c-3.6,4.8-7.3,9.5-11,14.2c-4.8,6.2-8.7,12.6-10,20.8
 	c-2.1,12.5-10.6,18.2-21.4,16c-7.4-1.5-13.1-8.1-13.6-15.8c-0.5-7.6,3.9-14.7,10.9-17.3c2.2-0.8,4.5-1.7,6.8-1.5

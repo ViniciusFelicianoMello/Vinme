@@ -65,7 +65,7 @@
     flex-direction: column;
     width: 40%;
     justify-content: center;
-    align-items: center;
+    align-items: end;
     gap: 2vw;
 }
 
@@ -76,7 +76,7 @@
     justify-content: center;
     align-items: center;
     height: 6vw;
-    width: 80%;
+    width: 90%;
     background: var(--cor-fundo-3);
     box-shadow: var(--box-shadow-1);
     border-radius: 1em;

@@ -1,0 +1,217 @@
+.stars {
+    position: absolute;
+    z-index: 0 !important;
+    top: 0;
+    left: 0;
+    animation: blinkStar 2s  linear infinite;
+    filter: drop-shadow(0px 0px 3px var(--cor-fonte-1));
+}
+
+.moon {
+    position: absolute;
+    opacity: 1;
+    width: 15vw;                                                                                                        
+    right: 10vw;
+    bottom: -10vh;
+    animation: rotate 50s linear infinite;
+    filter: drop-shadow(0px 0px 3px var(--cor-principal));
+    opacity: .8;
+    
+}
+.planetblue {
+    position: absolute;
+    opacity: 1;
+    width: 25vw;
+    left: 2vw;
+    top: 20vh;
+    animation: rotate 80s linear infinite reverse;
+    filter: drop-shadow(0px 0px 3px var(--cor-principal));
+    opacity: .8;
+    
+}
+.planetred {
+    position: absolute;
+    opacity: 1;
+    width: 48vw;
+    right: -20vw;
+    top: -50vh;
+    animation: rotate 150s linear infinite;
+    filter: drop-shadow(0px 0px 3px var(--cor-principal));
+    opacity: .7;
+    
+}
+
+.milkway {
+    position: absolute;
+    opacity: 1;
+    width: 19vw;
+    right: 45vw;
+    top: -10vh;
+    animation: rotate 150s linear infinite reverse;
+    filter: drop-shadow(0px 0px 3px var(--cor-principal));
+    opacity: .8;
+}
+
+.galaxy {
+    position: absolute;
+    opacity: 1;
+    width: 30vw;
+    left: 11vw;
+    bottom: -10vh;
+    transform: rotate(-20deg);
+    filter: drop-shadow(0px 0px 3px var(--cor-principal));
+    animation: rotateHalf 10s linear infinite;
+    opacity: .8;
+}
+/* NUVEM BOTTOM */
+.clouds-1 {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    bottom: -50%;
+    left: -20%;
+    transform: rotate(10deg);
+    z-index: -1;
+}
+
+.clouds-1-svg {
+    animation: infiniteScroll 50s linear infinite reverse;
+    filter: drop-shadow(0 -2px 0 var(--cor-fixa-1));
+}
+
+.clouds-1-svg:nth-of-type(2) {
+    margin-left: -.1vw;
+}
+
+.clouds-2-svg {
+    animation: infiniteScroll 90s linear infinite;
+    filter: drop-shadow(0 -2px 0 var(--cor-fixa-1));
+}
+.clouds-2-svg:nth-of-type(2) {
+    margin-left: -.1vw;
+}
+.clouds-3-svg {
+    animation: infiniteScroll 100s linear infinite reverse;
+    filter: drop-shadow(0 -2px 0 var(--cor-fixa-1));
+}
+.clouds-3-svg:nth-of-type(2) {
+    margin-left: -.1vw;
+}
+.clouds-3-svg:nth-of-type(3) {
+    margin-left: -.2vw;
+}
+/* LINE BOTTOM */
+.line-1 {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    top: 10%;
+    left: -20%;
+    transform: rotate(10deg);
+    z-index: -1;
+}
+
+.line-1-svg {
+    animation: infiniteScroll 30s linear infinite;
+}
+
+/* NUVEM TOP */
+.clouds-2 {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    top: -50%;
+    left: -20%;
+    transform: rotate(10deg);
+    z-index: -1;
+}
+
+.clouds-4-svg {
+    animation: infiniteScroll 50s linear infinite;
+    filter: drop-shadow(0 2px 0 var(--cor-fixa-1));
+}
+
+.clouds-4-svg:nth-of-type(2) {
+    margin-left: -.1vw;
+}
+
+.clouds-5-svg {
+    animation: infiniteScroll 90s linear infinite reverse;
+    filter: drop-shadow(0 2px 0 var(--cor-fixa-1));
+}
+.clouds-5-svg:nth-of-type(2) {
+    margin-left: -.1vw;
+}
+.clouds-5-svg:nth-of-type(3) {
+    margin-left: -.1vw;
+}
+.clouds-6-svg {
+    animation: infiniteScroll 100s linear infinite;
+    filter: drop-shadow(0 2px 0 var(--cor-fixa-1));
+    margin-top: -8%;
+}
+.clouds-6-svg:nth-of-type(2) {
+    margin-left: -.2vw;
+}
+/* LINE TOP */
+.line-2 {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    margin-top: 10%;
+    left: -20%;
+    transform: rotate(10deg);
+    z-index: -1;
+}
+
+.line-2-svg {
+    animation: infiniteScroll 55s linear infinite reverse;
+}
+
+/* VERSE */
+.verse_background {
+    display: flex;
+    position: absolute;
+    height: 80vh;
+    top: 20%;
+    left: 0;
+    transform: rotate(10deg);
+    z-index: -3;
+    opacity: 0.5;
+}
+.verse_background img {
+    animation: infiniteScroll 150s linear infinite reverse;
+}
+.verse_background img:nth-of-type(2) {
+    margin-left: -.4em;
+    transform: rotateY(180deg);
+}
+.verse_background img:nth-of-type(3) {
+    margin-left: -.4em;
+    transform: rotateY(180deg);
+}
+
+@media screen and (max-width:1024px) {
+    .stars {
+        transform: rotate(-90deg);
+        scale: 2;
+        top: 40vh;
+    }
+
+    .moon {
+        width: 20vw;                                                                                                  
+        right: 20vw;
+        bottom: -5vh;
+    }
+    .planetblue {
+        width: 30vw;
+        left: 2vw;
+        top: 3vh;
+    }
+    .planetred {
+        width: 65vw;
+        right: -30vw;
+        top: -20vh;
+        animation: rotate 150s linear infinite;
+    }
+}

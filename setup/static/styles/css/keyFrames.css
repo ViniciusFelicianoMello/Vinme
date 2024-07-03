@@ -59,6 +59,12 @@
     50% { rotate: 180deg; }
     100% { rotate: 360deg; }
 }
+@keyframes rotateHalf {
+    0% { rotate: 0; }
+    30% { rotate: 5deg; }
+    70% { rotate: -5deg; }
+    100% { rotate: 0 }
+}
 
 /* INFINITE SCROLL */
 @keyframes infiniteScroll {
@@ -77,7 +83,7 @@
 }
 @keyframes blinkStar {
     0%, 100% {opacity: 0.3;}
-    50% { opacity: 0.8;}
+    50% { opacity: 0.5;}
 }
 
 /* BUTTON HOVER */

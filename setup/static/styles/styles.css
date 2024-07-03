@@ -10,8 +10,9 @@
 @import url(css/projects.css);
 @import url(css/blog.css);
 @import url(css/contact.css);
-@import url(css/keyFrames.css);
 @import url(css/thankspage.css);
+@import url(css/keyFrames.css);
+@import url(css/universe.css);
 
 :root {
     --cor-principal:#006aff   ;
@@ -93,7 +94,7 @@ body {
     width: 100%;
     min-height: 100vh;
     max-height: max-content;
-    padding: 5vw 5vw;
+    padding: 5vw 10vw;
     overflow: hidden;
 }
 

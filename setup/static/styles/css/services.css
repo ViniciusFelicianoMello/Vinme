@@ -33,7 +33,7 @@
 
 /* SERVICOS TITULO */
 .services_title {
-    padding: 0 0 0 5vw;
+    padding: 0 0 0 10vw;
 }
 
 /* SERVICOS INFOS */
@@ -42,7 +42,7 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 0 5vw;
+    padding: 0 6vw;
     width: 100%;
     gap: 3em;
     margin-top: 5vh;
@@ -51,7 +51,7 @@
 .services_box {
     background: var(--cor-fundo-3);
     height: 25vh;
-    width: 25vw;
+    width: 24vw;
     box-shadow: var(--box-shadow-1);
     position: relative;
     display: flex;
