@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from vinme.forms import contactForm
 from django.core.mail import send_mail
 
+#pages
 def pages():
     # header | footer
     vinme_links = [
@@ -19,7 +20,7 @@ def pages():
     class_links = [
         {'url': 'index', 'icon': 'fa-solid fa-graduation-cap', 'name': 'school'},
     ]
-    
+
     # banner
     social_links = [
         {'url': 'https://instagram.com/viinifeliciano', 'icon': 'fa-brands fa-instagram'},
@@ -126,7 +127,13 @@ def pages():
     }
     return context
 
-def process_contact_form(request, template_name):
+def add_pages_context(context):
+    pages_context = pages()
+    context.update(pages_context)
+    return context
+
+# contact form
+def process_contact_form(request, template_name, additional_context=None):
     if request.method == 'POST':
         form = contactForm(request.POST)
         if form.is_valid():
@@ -140,10 +147,9 @@ def process_contact_form(request, template_name):
     else:
         form = contactForm()
 
-    context = {
-        'form': form,
-        **pages()
-    }
+    context = {'form': form}
+    if additional_context:
+        context.update(additional_context)
     return render(request, template_name, context)
 
 def send_email(name, email, subject, message):
@@ -153,19 +159,48 @@ def send_email(name, email, subject, message):
 
 
 def index(request):
-    return process_contact_form(request, 'vinme/index.html')
+    travel = [
+        {'url': '#banner', 'icon': 'fa-solid fa-pager', 'text': 'Banner'},
+        {'url': '#about', 'icon': 'fa-solid fa-user-astronaut', 'text': 'Sobre nós'},
+        {'url': '#services', 'icon': 'fa-solid fa-computer', 'text': 'Serviços'},
+        {'url': '#projects', 'icon': 'fa-solid fa-file-lines', 'text': 'Projetos'},
+        {'url': '#contact', 'icon': 'fa-solid fa-phone', 'text': 'Contato'},
+    ]
+    context = {'travel': travel}
+    context = add_pages_context(context)
+    return render(request, 'vinme/index.html', context)
 
 def about(request):
-    return process_contact_form(request, 'vinme/about.html')
+    travel = [
+        {'url': '#about', 'icon': 'fa-solid fa-user-astronaut', 'text': 'Sobre nós'},
+        {'url': '#histoy', 'icon': 'fa-solid fa-book-open', 'text': 'História'},
+        {'url': '#team', 'icon': 'fa-solid fa-users', 'text': 'Membros'},
+    ]
+    context = {'travel': travel}
+    context = add_pages_context(context)
+    return render(request, 'vinme/about.html', context)
 
 def services(request):
-    return process_contact_form(request, 'vinme/services.html')
+    travel = [
+        {'url': '#services', 'icon': 'fa-solid fa-computer', 'text': 'Serviços'},
+    ]
+    context = {'travel': travel}
+    context = add_pages_context(context)
+    return render(request, 'vinme/services.html', context)
 
 def projects(request):
-    return process_contact_form(request, 'vinme/projects.html')
+    context = add_pages_context({})
+    return render(request, 'vinme/projects.html', context)
 
 def contact(request):
-    return process_contact_form(request, 'vinme/contact.html')
+    travel = [
+        {'url': '#FAQ', 'icon': 'fa-solid fa-question', 'text': 'FAQ'},
+        {'url': '#testmonial', 'icon': 'fa-solid fa-comments', 'text': 'Testemunho'},
+        {'url': '#contact', 'icon': 'fa-solid fa-phone', 'text': 'Contato'},
+    ]
+    context = {'travel': travel}
+    context = add_pages_context(context)
+    return render(request, 'vinme/contact.html', context)
 
 def thankspage(request):
     return render(request, 'vinme/thankspage.html')

@@ -182,8 +182,8 @@
     overflow: scroll;
     max-height: 85vh;
     width: 20vw;
-    margin-left: -10vw;
-    transform: translateX(30vw);
+    margin-left: -3vw;
+    transform: translateX(20vw);
 }
 
 .check_config:checked ~ .controls_menu {
@@ -261,7 +261,7 @@
         position: fixed;
         z-index: 1000;
         right: 1em;
-        top: 1em;
+        top: 0em;
     }
     .bar {
         position: relative;

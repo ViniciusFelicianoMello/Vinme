@@ -11,7 +11,7 @@
         <ul class="options_list">
             <!-- ITEM DA LISTA -->
             <li class="options_item">
-                <i class="fa-solid fa-shuttle-space option_icon"></i>
+                <i class="fa-solid fa-user-astronaut option_icon"></i>
                 <span class="option_title">VinMe <i class="fa-solid fa-caret-down"></i> </span>
                 <!-- DROPDOWN LIST -->
                 <ul class="dropdown_list">
@@ -59,7 +59,7 @@
     <!-- CONTROLS -->
     <div class="header_controls">
         <div class="dark-mode-but">
-            <input id="dark-mode" name="dark-mode" class="dark_chk" type="checkbox" role="switch" value="on">
+            <input id="dark-mode" name="dark-mode" class="dark_chk" type="checkbox" style="visibility: hidden;">
             <label for="dark-mode" class="dark_label"></label>
 
             <label for="dark-mode" class="dark-mode_icon">
@@ -71,7 +71,7 @@
             </label>
         </div>
         <div class="controls_config">
-            <input hidden="" type="checkbox" class="check_config" id="check_config" name="check_config">
+            <input style="visibility: hidden;" type="checkbox" class="check_config" id="check_config" name="check_config">
             <label for="check_config" class="config_label">
                 {% if user.is_authenticated %}
                 <i class="fa-solid fa-gear controls_icon"></i>
@@ -93,7 +93,7 @@
                     <strong>login</strong>
                 </a>
                 <!-- ITEM -->
-                <a href="{% url 'account_signup' %}">
+                <a href="{% url 'account_signup' %}">   
                     <i class="fa-solid fa-user-plus"></i>
                     <strong>cadastre-se</strong>
                 </a>
@@ -106,7 +106,7 @@
 
 <!-- HEADER MENU -->
 <header class="header_menu">
-    <input hidden="" class="check-icon" id="check-icon" name="check-icon" type="checkbox">
+    <input style="visibility: hidden;" class="check-icon" id="check-icon" name="check-icon" type="checkbox">
     <label class="icon-menu" for="check-icon">
         <div class="bar bar-1"></div>
         <div class="bar bar-2"></div>
@@ -118,7 +118,7 @@
             <!-- ITEM -->
             <li>
                 <div class="controls_config">
-                    <input hidden="" type="checkbox" class="check_config" id="check_config_drop" name="check_config_drop">
+                    <input style="visibility: hidden;" type="checkbox" class="check_config" id="check_config_drop" name="check_config_drop">
                     <label for="check_config_drop" class="config_label">
                         {% if user.is_authenticated %}
                         <i class="fa-solid fa-gear controls_icon"></i>

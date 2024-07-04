@@ -26,7 +26,7 @@ function setActiveLink() {
         const height = rect.height;
         const visiblePart = Math.max(0, Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, -1000));
         
-        if (visiblePart / height >= 0.8) {
+        if (visiblePart / height >= 0.6) {
             currentActive = section.id;
         }
     });

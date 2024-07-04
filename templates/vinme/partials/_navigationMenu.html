@@ -1,0 +1,17 @@
+{% load static %}
+<div class="nav_menu">
+    <input type="checkbox" name="nav_menu" id="nav_menu" class="nav_menu_chk" style="display: none;" >
+    <label for="nav_menu" class="nav_menu_label">
+        <i class="fa-solid fa-rocket"></i>
+        <span>viagem</span>
+        <i class="fa-solid fa-caret-down nav_menu_seta"></i>
+    </label>
+    <ul class="nav_menu_dropdown">
+        {% for link in travel %}
+        <a href="{{ link.url }}" class="travel_link">
+            <i class="{{ link.icon }}"></i>
+            <span>{{ link.text }}</span>
+        </a>
+        {% endfor %}
+    </ul>
+</div>

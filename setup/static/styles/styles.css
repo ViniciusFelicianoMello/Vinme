@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 
 @import url(css/header.css);
+@import url(css/menu.css);
 @import url(css/footer.css);
 @import url(css/banner.css);
 @import url(css/about.css);
@@ -78,6 +79,10 @@
     background: linear-gradient(to bottom, var(--cor-principal-2) 0%, var(--cor-principal-2) 60%, var(--cor-principal) 100%) !important;
     transition: 0.5s;
 }
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
 
 body {
     background: var(--cor-fundo-1);
