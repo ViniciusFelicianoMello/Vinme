@@ -4,22 +4,24 @@
 {% block head_title %}
     {% trans "Verify Your Email Address" %}
 {% endblock head_title %}
+
 {% block content %}
-    {% element h1 %}
-        {% trans "Verify Your Email Address" %}
-    {% endelement %}
+    <div class="account_title">
+        <i class="fa-solid fa-envelope-circle-check"></i>
+    </div>
+
+    <span class="account_line"></span>
+
     {% url 'account_email' as email_url %}
     {% element p %}
-        {% blocktrans %}This part of the site requires us to verify that
-you are who you claim to be. For this purpose, we require that you
-verify ownership of your email address. {% endblocktrans %}
+        <div class="account_text">
+            <span>Esta parte do site requer que nós verifiquemos que você é quem você diz ser, para isso, pedimos por favor que você verifique seu endereço de email!</span>
+        </div>
     {% endelement %}
-    {% element p %}
-        {% blocktrans %}We have sent an email to you for
-verification. Please click on the link inside that email. If you do not see the verification email in your main inbox, check your spam folder. Otherwise
-contact us if you do not receive it within a few minutes.{% endblocktrans %}
-    {% endelement %}
-    {% element p %}
-        {% blocktrans %}<strong>Note:</strong> you can still <a href="{{ email_url }}">change your email address</a>.{% endblocktrans %}
-    {% endelement %}
+    <div class="account_text">
+        <span>Por favor, verifique o email que acabamos de enviar para você. Siga as instruções clicando no link e finalize o processo de cadastro! <br> Se não encontrar o email, por favor não esqueça de verificar também a caixa de spam ou entre em <a href="{% url 'contact' %}" class="account_link">contato</a> conosco!</span>
+    </div>
+    <div class="account_text">
+        <strong>Nota:</strong> <span>Você ainda pode <a class="account_link" href="{{ email_url }}">alterar seu endereço de email</a>.</span> 
+    </div>
 {% endblock content %}

@@ -11,20 +11,28 @@
 
     <span class="account_line"></span>
 
-    <form method="post" action="{% url 'account_signup' %}" class="account_form">
+    <form method="post" action="{% url 'account_signup' %}" class="account_form" onsubmit="return validatePassword()">
         {% csrf_token %}
+
+        <div class="messages">
+            {{ form.username.errors }}
+            {{ form.email.errors }}
+        </div>
+        
         <div class="account_control">
             <input type="text" name="username" id="username" class="account_input" required>
             <i class="fa-solid fa-user account_icon"></i>
             <label for="username" class="account_label">Username</label>
             <span class="account_span"></span>
         </div>
+
         <div class="account_control">
             <input type="email" name="email" id="email" class="account_input" required>
             <i class="fa-solid fa-envelope account_icon"></i>
             <label for="email" class="account_label">Email</label>
             <span class="account_span"></span>
         </div>
+
         <div class="account_control">
             <input type="password" name="password1" id="password1" class="account_input" required>
             <i class="fa-solid fa-key account_icon"></i>
@@ -32,6 +40,23 @@
             <i class="toggle-password fa fa-eye-slash" onclick="togglePassword(this)"></i>
             <span class="account_span"></span>
         </div>
+
+        <div class="messages" id="passwordLengthMessage" style="display: none;">
+            <span>As senhas precisam ter pelo menos 8 caracteres!</span>
+        </div>
+        <div class="messages" id="passwordLowercaseMessage" style="display: none;">
+            <span>As senhas precisam conter letras minúsculas!</span>
+        </div>
+        <div class="messages" id="passwordUppercaseMessage" style="display: none;">
+            <span>As senhas precisam conter letras maiúsculas!</span>
+        </div>
+        <div class="messages" id="passwordNumberMessage" style="display: none;">
+            <span>As senhas precisam conter números!</span>
+        </div>
+        <div class="messages" id="passwordSpecialCharMessage" style="display: none;">
+            <span>As senhas precisam conter caracteres especiais!</span>
+        </div>
+
         <div class="account_control">
             <input type="password" name="password2" id="password2" class="account_input" required>
             <i class="fa-solid fa-key account_icon"></i>
@@ -39,6 +64,11 @@
             <i class="toggle-password fa fa-eye-slash" onclick="togglePassword(this)"></i>
             <span class="account_span"></span>
         </div>
+
+        <div class="messages" id="passwordMismatch" style="display: none;">
+            <span>As senhas estão diferentes!</span>
+        </div>
+
         {{ redirect_field }}
         <button type="submit" class="account_btn">Cadastrar</button>
 

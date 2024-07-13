@@ -12,19 +12,43 @@
 
     <form method="post" action="{% url 'account_login' %}" class="account_form">
         {% csrf_token %}
+        {% if form.non_field_errors %}
+            <div class="messages">
+                {% for error in form.non_field_errors %}
+                    {{ error }}
+                {% endfor %}
+            </div>
+        {% endif %}
+
         <div class="account_control">
             <input type="text" name="login" id="login" class="account_input" required>
             <i class="fa-solid fa-user account_icon"></i>
             <label for="login" class="account_label">Email ou Username</label>
             <span class="account_span"></span>
+            {% if form.login.errors %}
+                <div class="alert alert-danger">
+                    {% for error in form.login.errors %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
         </div>
+
         <div class="account_control">
             <input type="password" name="password" id="password" class="account_input" required>
             <i class="fa-solid fa-key account_icon"></i>
             <label for="password" class="account_label">Senha</label>
             <i class="toggle-password fa fa-eye-slash" onclick="togglePassword(this)"></i>
             <span class="account_span"></span>
+            {% if form.password.errors %}
+                <div class="alert alert-danger">
+                    {% for error in form.password.errors %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
         </div>
+
         <div class="account_row">
             <div class="account_text">
                 <input type="checkbox" name="remember" id="remember" class="checkbox_box" style="display: none;">

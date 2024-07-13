@@ -14,6 +14,9 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 
+
+from django.contrib.messages import constants as messages
+
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -60,6 +63,15 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
 ]
+
+
+MESSAGE_TAGS = {
+    messages.DEBUG: 'debug',
+    messages.INFO: 'info',
+    messages.SUCCESS: 'success',
+    messages.WARNING: 'warning',
+    messages.ERROR: 'danger',
+}
 
 ROOT_URLCONF = 'setup.urls'
 
@@ -166,10 +178,20 @@ else:
 
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_USERNAME_REQUIRED = True
 ACCOUNT_EMAIL_NOTIFICATIONS = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 
 LOGIN_REDIRECT_URL = 'index'
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_LOGOUT_ON_GET = True
+ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 5
+ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 300
+
+ACCOUNT_LOGOUT_ON_PASSWORD_CHANGE = False
+ACCOUNT_PASSWORD_CHANGE_REDIRECT_URL = 'index'
+
+ACCOUNT_FORMS = {
+    'signup': 'users.forms.CustomSignupForm',
+}
 

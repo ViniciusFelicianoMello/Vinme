@@ -5,35 +5,44 @@
 {% block head_title %}
     {% trans "Confirm Email Address" %}
 {% endblock head_title %}
+
 {% block content %}
-    {% element h1 %}
-        {% trans "Confirm Email Address" %}
-    {% endelement %}
-    {% if confirmation %}
-        {% user_display confirmation.email_address.user as user_display %}
-        {% if can_confirm %}
-            {% element p %}
-                {% blocktrans with confirmation.email_address.email as email %}Please confirm that <a href="mailto:{{ email }}">{{ email }}</a> is an email address for user {{ user_display }}.{% endblocktrans %}
-            {% endelement %}
-            {% url 'account_confirm_email' confirmation.key as action_url %}
-            {% element form method="post" action=action_url %}
-                {% slot actions %}
-                    {% csrf_token %}
-                    {{ redirect_field }}
-                    {% element button type="submit" %}
-                        {% trans 'Confirm' %}
-                    {% endelement %}
-                {% endslot %}
-            {% endelement %}
+    <div class="account_title">
+        <i class="fa-solid fa-envelope-circle-check"></i>
+    </div>
+
+    <span class="account_line"></span>
+
+    <div class="account_form account_margin-1">
+        {% if confirmation %}
+            {% user_display confirmation.email_address.user as user_display %}
+            {% if can_confirm %}
+                {% element p %}
+                    <div class="account_text">
+                        <span>Por favor, confirme que <a class="account_link" href="mailto:{{ email }}">{{ email }}</a> é o email de uso de {{ user_display }} clicando no botão abaixo.</span>
+                    </div>
+                {% endelement %}
+                {% url 'account_confirm_email' confirmation.key as action_url %}
+                {% element form method="post" action=action_url %}
+                    {% slot actions %}
+                        {% csrf_token %}
+                        {{ redirect_field }}
+                        <button type="submit" class="account_btn">Confirmar</button>
+                    {% endslot %}
+                {% endelement %}
+            {% else %}
+                {% element p %}
+                    {% blocktrans %}Unable to confirm {{ email }} because it is already confirmed by a different account.{% endblocktrans %}
+                {% endelement %}
+                <div class="account_text">
+                    <span>Impossivel confirmar {{ email }} por que já está confirmado por uma conta diferente! Caso queira pode <a href="{% url 'account_reset_password' %}" class="account_link">redefinir uma nova senha</a>!</span>
+                </div>
+            {% endif %}
         {% else %}
-            {% element p %}
-                {% blocktrans %}Unable to confirm {{ email }} because it is already confirmed by a different account.{% endblocktrans %}
-            {% endelement %}
+            {% url 'account_email' as email_url %}
+            <div class="account_text">
+                <span>Este link de confirmação de email esta invalido ou se inspirou. Por favor <a class="account_link" href="{{ email_url }}">emita uma nova solicitação de confirmação de email!</a>.</span>
+            </div>
         {% endif %}
-    {% else %}
-        {% url 'account_email' as email_url %}
-        {% element p %}
-            {% blocktrans %}This email confirmation link expired or is invalid. Please <a href="{{ email_url }}">issue a new email confirmation request</a>.{% endblocktrans %}
-        {% endelement %}
-    {% endif %}
+    </div>
 {% endblock content %}
