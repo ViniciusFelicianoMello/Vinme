@@ -14,25 +14,33 @@
                 <div class="contact_form_field">
                     <input type="text" name="name" id="name" required>
                     <i class="fa-solid fa-user"></i>
-                    <label class="form_label" for="name">Nome</label>
+                    <label class="contact_form_label" for="name">Nome</label>
                     <span></span>
                 </div>
                 <div class="contact_form_field">
                     <input type="email" name="email" id="email" required>
                     <i class="fa-solid fa-envelope"></i>
-                    <label class="form_label" for="email">Email</label>
+                    <label class="contact_form_label" for="email">Email</label>
                     <span></span>
                 </div>
                 <div class="contact_form_field">
-                    <input type="text" name="subject" id="subject" required>
+                    <select name="subject" id="subject" required>
+                        <option value="DUVIDAS">Dúvidas</option>
+                        <option value="ORCAMENTOS">Orçamentos</option>
+                        <option value="PROJETOS">Projetos</option>
+                        <option value="FEEDBACK">Feedback</option>
+                        <option value="SUGESTAO">Sugestão</option>
+                        <option value="BUG">Bug</option>
+                        <option value="OUTROS">Outros</option>
+                    </select>
                     <i class="fa-solid fa-hashtag"></i>
-                    <label class="form_label" for="subject">Assunto</label>
+                    <label class="contact_form_label contact_form_label_active" for="subject">Assunto</label>
                     <span></span>
                 </div>
                 <div class="contact_form_field">
                     <textarea type="text" name="message" id="message" required></textarea>
                     <i class="fa-solid fa-comment"></i>
-                    <label class="form_label" for="message">Texto</label>
+                    <label class="contact_form_label" for="message">Texto</label>
                     <span></span>
                 </div>
             

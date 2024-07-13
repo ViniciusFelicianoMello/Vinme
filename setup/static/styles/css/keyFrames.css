@@ -114,3 +114,25 @@
     100% {height: 100%;}
     100% {width: 90vw;}
 }
+/* ACCOUNT FORM */
+@keyframes openFormAcc {
+    0% {width: 0;}
+    70% {width: 25vw;}
+    70% {height: 0;}
+    100% {height: 60vh;}
+    100% {width: 25vw;}
+}
+@keyframes openFormAcc2 {
+    0% {width: 0;}
+    70% {width: 60vw;}
+    70% {height: 0;}
+    100% {height: 60vh;}
+    100% {width: 60vw;}
+}
+@keyframes openFormAcc3 {
+    0% {width: 0;}
+    70% {width: 90vw;}
+    70% {height: 0;}
+    100% {height: 70%;}
+    100% {width: 90vw;}
+}

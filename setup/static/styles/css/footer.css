@@ -13,6 +13,19 @@
     color: var(--cor-fixa-2);
 }
 
+.footerAcc {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 500;
+    width: 100%;
+    height: 4vh;
+    background: var(--cor-fixa-1);
+    box-shadow: var(--box-shadow-1);
+}
+
 /* FOOTER SOCIAL */
 .footer_social {
     display: flex;
@@ -143,6 +156,11 @@
         height: 60vh;
         padding: 0 2vw;
     }
+
+    .footerAcc {
+        bottom: 2vh;
+        height: 10vh;
+    }
     
     /* FOOTER SOCIAL */
     .footer_social {
@@ -209,7 +227,10 @@
     .footer {
         height: 70vh;
     }
-    
+    .footerAcc {
+        bottom: 6vh;
+        height: 5vh;
+    }
     /* FOOTER SOCIAL */
     .footer_social {
         height: 8vh;

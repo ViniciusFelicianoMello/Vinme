@@ -1,0 +1,23 @@
+{% extends "account/base_entrance.html" %}
+{% load i18n %}
+{% load allauth %}
+{% block head_title %}
+    {% trans "Verify Your Email Address" %}
+{% endblock head_title %}
+
+{% block content %}
+    <div class="account_title">
+        <i class="fa-solid fa-envelope-open-text"></i>
+    </div>
+
+    <span class="account_line"></span>
+
+    <div class="account_form account_margin-1">
+    
+        <div class="account_text">
+            <span>Por favor, verifique o email que acabamos de enviar para você. Siga as instruções clicando no link e finalize o processo de cadastro! <br> Se não encontrar o email, por favor não esqueça de verificar também a caixa de spam ou entre em <a href="{% url 'contact' %}" class="account_link">contato</a> conosco!</span>
+        </div>
+    
+        <a href="{% url 'account_login' %}" class="account_link-1">Login</a>
+    </div>
+{% endblock content %}

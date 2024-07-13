@@ -1,0 +1,38 @@
+{% load i18n %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vinme</title>
+        {% block extra_head %}
+        <!-- Favicon -->
+        <link rel="icon" href="{% static '/favicon/favicon.ico' %}" type="image/x-icon">
+        <!-- CSS -->
+        <link rel="stylesheet" href="{% static '/styles/styles.css' %}">
+        <!-- CDN FONTE AWESOME -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        {% endblock extra_head %}
+    </head>
+    
+    <body>
+        {% block body %}
+        {% include 'allauth/layouts/partials/_headerAcc.html' %}
+        <main class="account_main">
+            {% include 'vinme/partials/_universe.html' %}
+            <div class="account_box">
+                <div class="account_content">
+                    {% block content %}{% endblock content %}
+                </div>
+            </div>
+        </main>
+        {% include 'allauth/layouts/partials/_footerAcc.html' %}
+        {% endblock body %}
+        {% block extra_body %}
+        {% endblock extra_body %}
+
+        <!-- JAVASCRIPT -->
+        <script src="{% static '/javascript/form.js' %}" defer></script>
+    </body>
+</html>

@@ -92,7 +92,8 @@
 }
 
 .contact_form_field input, 
-.contact_form_field textarea { 
+.contact_form_field textarea,
+.contact_form_field select { 
     position: relative;
     width: 100%;
     padding: 0.2em 0 0.2em 1.8em;
@@ -108,7 +109,7 @@
     resize: none;
 }
 
-.contact_form_field label {
+.contact_form_label {
     position: absolute;
     left: 0;
     top: 0;
@@ -121,10 +122,11 @@
     opacity: 0.5;
 }
 
-.contact_form_field input:valid ~ .form_label,
-.contact_form_field input:focus ~ .form_label,
-.contact_form_field textarea:valid ~ .form_label,
-.contact_form_field textarea:focus ~ .form_label {
+.contact_form_field input:valid ~ .contact_form_label,
+.contact_form_field input:focus ~ .contact_form_label,
+.contact_form_field textarea:valid ~ .contact_form_label,
+.contact_form_field textarea:focus ~ .contact_form_label,
+.contact_form_label_active {
     color: var(--cor-principal);
     opacity: 1;
     font-size: 0.8vw;
@@ -146,7 +148,8 @@
 .contact_form_field input:valid ~ i,
 .contact_form_field input:focus ~ i,
 .contact_form_field textarea:valid ~ i,
-.contact_form_field textarea:focus ~ i {
+.contact_form_field textarea:focus ~ i,
+.contact_form_field select:valid ~ i {
     color: var(--cor-principal);
 }
 
@@ -166,7 +169,8 @@
 }
 
 .contact_form_field input:valid ~ span,
-.contact_form_field input:focus ~ span {
+.contact_form_field input:focus ~ span,
+.contact_form_field select:valid ~ span {
     height: 4vh;
     background: var(--cor-fundo-1); 
     box-shadow: var(--box-shadow-1);
@@ -174,9 +178,15 @@
 .contact_form_field textarea:valid ~ span,
 .contact_form_field textarea:focus ~ span {
     height: 6.2vh;
-    background: var(--cor-fundo-3); 
+    background: var(--cor-fundo-1); 
     box-shadow: var(--box-shadow-1);
 }
+
+/* SELECT */
+.contact_form_field select {
+    color: var(--cor-principal);
+}
+/* CONTACT FORM BOTAO */
 
 .contact_form_btn {
     display: flex;
@@ -306,22 +316,24 @@
     }
     
     .contact_form_field input, 
-    .contact_form_field textarea {
+    .contact_form_field textarea,
+    .contact_form_field select {
         padding: 0.2em 0 0.2em 1.8em;
         font-size: 3vw;
         transition: 0.5s;
         z-index: 10;
     }
     
-    .contact_form_field label {
+    .contact_form_label {
         padding: 0.2em 0 0.2em 1.8em;
         font-size: 3vw;
     }
     
-    .contact_form_field input:valid ~ .form_label,
-    .contact_form_field input:focus ~ .form_label,
-    .contact_form_field textarea:valid ~ .form_label,
-    .contact_form_field textarea:focus ~ .form_label {
+    .contact_form_field input:valid ~ .contact_form_label,
+    .contact_form_field input:focus ~ .contact_form_label,
+    .contact_form_field textarea:valid ~ .contact_form_label,
+    .contact_form_field textarea:focus ~ .contact_form_label,
+    .contact_form_label_active {
         font-size: 2vw;
         transform: translateY(-4vw) translateX(-1vw);
     }
@@ -402,21 +414,23 @@
         margin: 0 0 2vh;
     }
     .contact_form_field input, 
-    .contact_form_field textarea {
+    .contact_form_field textarea,
+    .contact_form_field select {
         font-size: 4vw;
         transition: 0.5s;
         z-index: 10;
     }
     
-    .contact_form_field label {
+    .contact_form_label {
         padding: 0.2em 0 0.2em 1.8em;
         font-size: 4vw;
     }
     
-    .contact_form_field input:valid ~ .form_label,
-    .contact_form_field input:focus ~ .form_label,
-    .contact_form_field textarea:valid ~ .form_label,
-    .contact_form_field textarea:focus ~ .form_label {
+    .contact_form_field input:valid ~ .contact_form_label,
+    .contact_form_field input:focus ~ .contact_form_label,
+    .contact_form_field textarea:valid ~ .contact_form_label,
+    .contact_form_field textarea:focus ~ .contact_form_label,
+    .contact_form_label_active {
         font-size: 3vw;
         transform: translateY(-4vw) translateX(-1vw);
     }

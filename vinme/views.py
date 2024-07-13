@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from vinme.forms import contactForm
-from django.core.mail import send_mail
+from vinme.models import ContactMessage
+# from django.core.mail import send_mail
 
 #pages
 def pages():
@@ -133,30 +134,19 @@ def add_pages_context(context):
     return context
 
 # contact form
-def process_contact_form(request, template_name, additional_context=None):
+def process_contact_form(request, template_name, context=None):
     if request.method == 'POST':
         form = contactForm(request.POST)
         if form.is_valid():
-            name = form.cleaned_data['name']
-            email = form.cleaned_data['email']
-            subject = form.cleaned_data['subject']
-            message = form.cleaned_data['message']
-            send_email(name, email, subject, message)
-
+            form.save()
             return redirect('thankspage')
     else:
         form = contactForm()
 
-    context = {'form': form}
-    if additional_context:
-        context.update(additional_context)
+    if context is None:
+        context = {}
+    context['form'] = form
     return render(request, template_name, context)
-
-def send_email(name, email, subject, message):
-    email_subject = f"{subject}"
-    email_content = f"Nome: {name}\nEmail: {email}\n\nMensagem:\n{message}"
-    send_mail(email_subject, email_content, 'vinme.geral@gmail.com', ['vinme.geral@gmail.com'])
-
 
 def index(request):
     travel = [
@@ -168,7 +158,7 @@ def index(request):
     ]
     context = {'travel': travel}
     context = add_pages_context(context)
-    return render(request, 'vinme/index.html', context)
+    return process_contact_form(request, 'vinme/index.html', context)
 
 def about(request):
     travel = [
@@ -200,7 +190,7 @@ def contact(request):
     ]
     context = {'travel': travel}
     context = add_pages_context(context)
-    return render(request, 'vinme/contact.html', context)
+    return process_contact_form(request, 'vinme/contact.html', context)
 
 def thankspage(request):
     return render(request, 'vinme/thankspage.html')

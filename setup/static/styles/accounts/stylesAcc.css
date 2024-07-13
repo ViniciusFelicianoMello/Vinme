@@ -1,0 +1,61 @@
+.account_main {
+    display: flex;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.account_box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 0;
+    width: 0;
+    box-shadow: var(--box-shadow-1);
+    border-radius: 2em;
+    border: 1px solid var(--cor-principal);
+    backdrop-filter: blur(4px);
+    
+
+    animation: openFormAcc 1s .3s forwards;
+}
+.account_box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, var(--cor-fundo-3), var(--cor-fundo-1));
+    opacity: 0.7;
+    z-index: 0;
+}
+
+.account_content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    z-index: 50;
+    height: 100%;
+    width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+    .account_box {
+    animation: openFormAcc2 1s .3s forwards;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .account_box {
+    animation: openFormAcc3 1s .3s forwards;
+    }
+}

@@ -1,8 +1,10 @@
 from django import forms
-from django.core.validators import EmailValidator 
+from .models import ContactMessage
 
-class contactForm(forms.Form):
-    name = forms.CharField(max_length=100, label='Nome')
-    email = forms.EmailField(validators=[EmailValidator()], label='Email')
-    subject = forms.CharField(max_length=200, label='Assunto')
-    message = forms.CharField(widget=forms.Textarea, label='Mensagem') 
+class contactForm(forms.ModelForm):
+    class Meta:
+        model = ContactMessage
+        fields = ['name', 'email', 'subject', 'message']
+        widgets = {
+            'subject': forms.Select(choices=ContactMessage.subjectChoises)
+        }

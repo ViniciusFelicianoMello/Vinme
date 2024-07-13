@@ -1,0 +1,49 @@
+{% extends "account/base_entrance.html" %}
+{% load i18n %}
+{% load allauth account %}
+{% load static %}
+
+{% block content %}    
+    <div class="account_title">
+        <i class="fa-solid fa-user"></i>
+    </div>
+
+    <span class="account_line"></span>
+
+    <form method="post" action="{% url 'account_login' %}" class="account_form">
+        {% csrf_token %}
+        <div class="account_control">
+            <input type="text" name="login" id="login" class="account_input" required>
+            <i class="fa-solid fa-user account_icon"></i>
+            <label for="login" class="account_label">Email ou Username</label>
+            <span class="account_span"></span>
+        </div>
+        <div class="account_control">
+            <input type="password" name="password" id="password" class="account_input" required>
+            <i class="fa-solid fa-key account_icon"></i>
+            <label for="password" class="account_label">Senha</label>
+            <i class="toggle-password fa fa-eye-slash" onclick="togglePassword(this)"></i>
+            <span class="account_span"></span>
+        </div>
+        <div class="account_row">
+            <div class="account_text">
+                <input type="checkbox" name="remember" id="remember" class="checkbox_box" style="display: none;">
+                <label for="remember" class="remember_me">lembrar de mim</label>
+            </div>
+            <div class="account_text">
+                <a href="{% url 'account_reset_password' %}" class="account_link">Esqueceu a senha?</a>
+            </div>
+        </div>
+        {{ redirect_field }}
+        <button type="submit" class="account_btn">Login</button>
+
+        <span class="last_account_line"></span>
+
+        <div class="account_text">
+            <span>Não tem uma conta? <a href="{% url 'account_signup' %}" class="account_link">cadastre-se!</a></span>
+        </div>
+    </form>
+    {% if SOCIALACCOUNT_ENABLED %}
+        {% include "socialaccount/snippets/login.html" %}
+    {% endif %}
+{% endblock content %}

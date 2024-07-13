@@ -14,11 +14,15 @@
 @import url(css/thankspage.css);
 @import url(css/keyFrames.css);
 @import url(css/universe.css);
+/* ACCOUNTS */
+@import url(accounts/stylesAcc.css);
+@import url(accounts/form.css);
 
 :root {
-    --cor-principal:#006aff   ;
+    --cor-principal:#006aff;
     --cor-principal-tpt:#006aff36;
     --cor-principal-2:#009dff;
+    --cor-principal-3:#0033ce;
 
     --cor-fonte-1: #eef5ff; 
 
