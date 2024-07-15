@@ -16,12 +16,17 @@
 
 <body>
 
-    {% include 'vinme/partials/_header.html' %}
-    {% include 'vinme/partials/_navigationMenu.html' %}
-    {% block content %}{% endblock %}
-    {% include 'vinme/partials/_footer.html' %}
+    {% include "vinme/partials/_preLoading.html" %}
+    <div id="main-content">
+        {% include 'vinme/partials/_header.html' %}
+        {% include 'vinme/partials/_navigationMenu.html' %}
+        {% block content %}{% endblock %}
+        {% include 'vinme/partials/_footer.html' %}
+    </div>
     
     <!-- JAVASCRIPT -->
+    <script src="{% static '/javascript/preLoader.js' %}" defer></script>
+
     <script src="{% static '/javascript/scrollSection.js' %}" defer></script>
     <script src="{% static '/javascript/darkmode.js' %}" defer></script>
     <script src="{% static '/javascript/animationView.js' %}" defer></script>

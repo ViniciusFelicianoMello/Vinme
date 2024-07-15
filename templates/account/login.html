@@ -10,7 +10,7 @@
 
     <span class="account_line"></span>
 
-    <form method="post" action="{% url 'account_login' %}" class="account_form">
+    <form method="post" action="{% url 'account_login' %}" class="account_form account_margin-1">
         {% csrf_token %}
         {% if form.non_field_errors %}
             <div class="messages">

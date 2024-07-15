@@ -18,21 +18,27 @@
     
     <body>
         {% block body %}
-        {% include 'allauth/layouts/partials/_headerAcc.html' %}
-        <main class="account_main">
-            {% include 'vinme/partials/_universe.html' %}
-            <div class="account_box">
-                <div class="account_content">
-                    {% block content %}{% endblock content %}
+        {% include "vinme/partials/_preLoading.html" %}
+
+        <div id="main-content">
+            {% include 'allauth/layouts/partials/_headerAcc.html' %}
+            <main class="account_main">
+    
+                {% include 'vinme/partials/_universe.html' %}
+                <div class="account_box">
+                    <div class="account_content">
+                        {% block content %}{% endblock content %}
+                    </div>
                 </div>
-            </div>
-        </main>
-        {% include 'allauth/layouts/partials/_footerAcc.html' %}
-        {% endblock body %}
-        {% block extra_body %}
-        {% endblock extra_body %}
+            </main>
+            {% include 'allauth/layouts/partials/_footerAcc.html' %}
+            {% endblock body %}
+            {% block extra_body %}
+            {% endblock extra_body %}
+        </div>
 
         <!-- JAVASCRIPT -->
+        <script src="{% static '/javascript/preLoader.js' %}" defer></script>
         <script src="{% static '/javascript/form.js' %}" defer></script>
     </body>
 </html>
