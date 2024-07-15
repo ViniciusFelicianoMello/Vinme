@@ -1,6 +1,6 @@
 from django.urls import path
-# from users.views import users
+from .views import CustomPasswordChangeView
 
 urlpatterns = [
-    
+    path('password/change/', CustomPasswordChangeView.as_view(), name='account_change_password'),
 ]

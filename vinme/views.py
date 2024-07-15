@@ -22,6 +22,24 @@ def pages():
         {'url': 'index', 'icon': 'fa-solid fa-graduation-cap', 'name': 'school'},
     ]
 
+    navigation = [
+        {
+            'title': 'VinMe',
+            'icon': 'fa-solid fa-user-astronaut',
+            'links': vinme_links
+        },
+        {
+            'title': 'Verse',
+            'icon': 'fa-solid fa-earth-americas',
+            'links': blog_links
+        },
+        {
+            'title': 'Class',
+            'icon': 'fa-solid fa-school',
+            'links': class_links
+        }
+    ]
+
     # banner
     social_links = [
         {'url': 'https://instagram.com/viinifeliciano', 'icon': 'fa-brands fa-instagram'},
@@ -120,6 +138,7 @@ def pages():
         'vinme_links': vinme_links, 
         'blog_links': blog_links, 
         'class_links': class_links, 
+        'navigation': navigation, 
         'social_links': social_links,
         'info_boxes': info_boxes,
         'services': services,

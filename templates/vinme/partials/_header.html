@@ -7,53 +7,25 @@
         <span class="header_logo_title">Vinme</span>
     </a>
     <!-- NAVEGAÇÃO -->
-    <nav class="header_options">
+     <nav class="header_options">
         <ul class="options_list">
+            {% for menu in navigation %}
             <!-- ITEM DA LISTA -->
             <li class="options_item">
-                <i class="fa-solid fa-user-astronaut option_icon"></i>
-                <span class="option_title">VinMe <i class="fa-solid fa-caret-down"></i> </span>
+                <i class="{{ menu.icon }} option_icon"></i>
+                <span class="option_title">{{ menu.title }} <i class="fa-solid fa-caret-down"></i> </span>
                 <!-- DROPDOWN LIST -->
                 <ul class="dropdown_list">
                     <!-- DROPDOWN ITEM -->
-                    {% for link in vinme_links %}
+                    {% for link in menu.links %}
                     <a class="dropdown_link" href="{% url link.url %}">
                         <i class="{{ link.icon }}"></i>
                         <strong>{{ link.name }}</strong>
-                    </a>             
+                    </a>
                     {% endfor %}
                 </ul>
             </li>
-            <!-- ITEM DA LISTA -->
-            <li class="options_item">
-                <i class="fa-solid fa-earth-americas option_icon"></i>
-                <span class="option_title">Verse <i class="fa-solid fa-caret-down"></i> </span>
-                <!-- DROPDOWN LIST -->
-                <ul class="dropdown_list">
-                    <!-- DROPDOWN ITEM -->
-                    {% for link in blog_links %}
-                    <a class="dropdown_link" href="{% url link.url %}">
-                        <i class="{{ link.icon }}"></i>
-                        <strong>{{ link.name }}</strong>
-                    </a>             
-                    {% endfor %}
-                </ul>
-            </li>
-            <!-- ITEM DA LISTA -->
-            <li class="options_item">
-                <i class="fa-solid fa-school option_icon"></i>
-                <span class="option_title">Class <i class="fa-solid fa-caret-down"></i> </span>
-                <!-- DROPDOWN LIST -->
-                <ul class="dropdown_list">
-                    <!-- DROPDOWN ITEM -->
-                    {% for link in class_links %}
-                    <a class="dropdown_link" href="{% url link.url %}">
-                        <i class="{{ link.icon }}"></i>
-                        <strong>{{ link.name }}</strong>
-                    </a>             
-                    {% endfor %}
-                </ul>
-            </li>
+            {% endfor %}
         </ul>
     </nav>
     <!-- CONTROLS -->

@@ -1,8 +1,16 @@
-from django.shortcuts import render
-from django.contrib.auth.views import PasswordChangeView
-from users.forms import ChangePasswordForm
+from allauth.account.views import PasswordChangeView
+from .forms import CustomPasswordChangeForm
+from django.contrib import messages
+from django.utils.translation import gettext as _
 
 class CustomPasswordChangeView(PasswordChangeView):
-    form_class = ChangePasswordForm
-    template_name = 'account/password_change.html'
-    success_url = 'index'
+    form_class = CustomPasswordChangeForm
+
+    def form_invalid(self, form):
+        if 'oldpassword' in form.errors:
+            messages.error(self.request, _('Sua senha atual está incorreta.'))
+        return super().form_invalid(form)
+
+    def form_valid(self, form):
+        messages.success(self.request, _('Senha alterada com sucesso!'))
+        return super().form_valid(form)
