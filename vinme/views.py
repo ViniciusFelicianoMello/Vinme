@@ -68,6 +68,18 @@ def pages():
             'title': 'Back-End'
         }
     ]
+    # membros
+    members_card = [
+        {
+            'image': 'assets/img/fotografias/vinicius.png',
+            'name': 'Vinicius Mello',
+            'title': 'Fundador',
+            'skills': ['Dono', 'Designer', 'Desenvolvedor', 'Analista', 'Atendente'],
+            'portfolio_url': 'https://portifolio-vinicius-mello.vercel.app/',
+            'linkedin_url': 'https://www.linkedin.com/in/vinicius-feliciano-mello/',
+            'instagram_url': 'https://www.instagram.com/viinifeliciano',
+        },
+    ]
     # services
     services = [
         {
@@ -141,6 +153,7 @@ def pages():
         'navigation': navigation, 
         'social_links': social_links,
         'info_boxes': info_boxes,
+        'members_card': members_card,
         'services': services,
         'projects': projects,
         'contact_info': contact_info,
@@ -183,7 +196,7 @@ def about(request):
     travel = [
         {'url': '#about', 'icon': 'fa-solid fa-user-astronaut', 'text': 'Sobre nós'},
         {'url': '#histoy', 'icon': 'fa-solid fa-book-open', 'text': 'História'},
-        {'url': '#team', 'icon': 'fa-solid fa-users', 'text': 'Membros'},
+        {'url': '#membros', 'icon': 'fa-solid fa-users', 'text': 'Membros'},
     ]
     context = {'travel': travel}
     context = add_pages_context(context)

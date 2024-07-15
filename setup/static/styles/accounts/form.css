@@ -1,6 +1,12 @@
 .account_title {
     position: relative;
     top: 1em;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: .5em;
+    border-bottom: 2px solid var(--cor-principal);
+
 }
 
 .account_title i {
@@ -16,15 +22,6 @@
     height: 3vw;
     width: 3vw;
 }
-
-.account_line {
-    background: var(--cor-principal);
-    margin-top: 1.5vw;
-    height: 2px;
-    width: 80%;
-    position: relative;
-}
-
 /* INPUTS */
 .account_form {
     width: 80%;
@@ -287,3 +284,182 @@
     height: 2px;
 }
 
+@media screen and (max-width: 1024px) {
+    .account_title i {
+        padding: 3vw;
+        border: 2px solid var(--cor-principal);
+        border-radius: 50%;
+        font-size: 3vw;
+        height: 9vw;
+        width: 9vw;
+    }
+    
+    /* INPUTS */
+    .account_control {
+        margin: 4vh 0 0;
+    }
+    
+    .account_margin {
+        margin-top: 12vh;
+    }
+    
+    .account_margin-1 {
+        margin-top: 1em;
+    }
+    .account_input {
+        font-size: 3.5vw;
+    }
+    
+    .account_icon {
+        padding: .5rem;
+        font-size: 3.5vw;
+    }
+
+    .account_label {
+        font-size: 3vw;
+    }
+    
+    .account_input:valid ~ .account_label,
+    .account_input:focus ~ .account_label {
+        font-size: 2.5vw;
+        transform: translateY(-2.5vh) translateX(-2vw);
+        width: max-content;
+    }
+    
+    .account_span {
+        border-radius: 1rem;
+    }
+    
+    .messages {
+        margin-top: 1em;
+        font-size: 3vw;
+    }
+    
+    .toggle-password {
+        padding: .5rem;
+        font-size: 3.5vw;
+    }
+    
+    
+    .account_text {
+        font-size: 3vw;
+    }
+    
+    .remember_me {
+        padding-left: 1.3em;
+    }
+    
+    .remember_me::before {
+        width: 3vw;
+        height: 3vw;
+    }
+    
+    .remember_me::after {
+        width: 3.2vw;
+        height: 3.2vw;
+    }
+
+    .account_link-1 {
+        height: 5vh;
+        border-radius: 1rem;
+        font-size: 2.8vw;
+    }
+    
+    .account_btn {
+        height: 6vh;
+        border-radius: 1rem;
+        font-size: 3vw;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .account_title  {
+        margin-bottom: 1em;
+    }
+    .account_title i {
+        padding: 5vw;
+        font-size: 5vw;
+        height: 13vw;
+        width: 13vw;
+    }
+    
+    
+    /* INPUTS */
+    .account_control {
+        margin: 4vh 0 0;
+    }
+    
+    .account_margin {
+        margin-top: 12vh;
+    }
+    
+    .account_margin-1 {
+        margin-top: 1em;
+    }
+    .account_input {
+        font-size: 4vw;
+        padding: 0.2em 0 0.1em 2.2em;
+    }
+    
+    .account_icon {
+        padding: .2rem .5rem;
+        font-size: 4.5vw;
+    }
+
+    .account_label {
+        font-size: 4vw;
+        padding: 0.2em 0 0.1em 2.2em;
+    }
+    
+    .account_input:valid ~ .account_label,
+    .account_input:focus ~ .account_label {
+        font-size: 3.5vw;
+        transform: translateY(-3.5vh) translateX(-2.5vw);
+        width: max-content;
+    }
+    
+    .account_span {
+        border-radius: .5rem;
+    }
+    
+    .messages {
+        margin-top: 1.5em;
+        font-size: 5vw;
+    }
+    
+    .toggle-password {
+        padding: .2rem .5rem;
+        font-size: 4.5vw;
+    }
+    
+    
+    .account_text {
+        font-size: 4vw;
+    }
+    
+    .remember_me {
+        padding-left: 1.5em;
+    }
+    
+    .remember_me::before {
+        width: 3.5vw;
+        height: 3.5vw;
+    }
+    
+    .remember_me::after {
+        width: 4vw;
+        height: 4vw;
+    }
+
+    .account_link-1 {
+        height: 5vh;
+        border-radius: .5rem;
+        font-size: 3.5vw;
+    }
+    
+    .account_btn {
+        height: 6vh;
+        border-radius: .5rem;
+        font-size: 4vw;
+    }
+}

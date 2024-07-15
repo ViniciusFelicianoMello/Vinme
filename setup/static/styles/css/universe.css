@@ -201,17 +201,58 @@
     .moon {
         width: 20vw;                                                                                                  
         right: 20vw;
-        bottom: -5vh;
+        bottom: -4vh;
     }
     .planetblue {
         width: 30vw;
         left: 2vw;
-        top: 3vh;
+        top: 4vh;
     }
     .planetred {
         width: 65vw;
         right: -30vw;
         top: -20vh;
-        animation: rotate 150s linear infinite;
     }
+
+    .milkway {
+        width: 23vw;
+        right: 40vw;
+        top: -2vh;
+    }
+    
+    .galaxy {
+        width: 35vw;
+        left: -5vw;
+        bottom: 5vh;
+    }
+    /* NUVEM BOTTOM */
+    .clouds-1 {
+        bottom: -15%;
+        left: 5em;
+    }
+    
+    /* LINE BOTTOM */
+    .line-1 {
+        top: 10%;
+        left: -5em;
+    }
+    
+    /* NUVEM TOP */
+    .clouds-2 {
+        top: -15%;
+        left: -5em;
+    }
+    /* LINE TOP */
+    .line-2 {
+        margin-top: 40%;
+        left: 5em;
+    }
+    
+    /* VERSE */
+    .verse_background {
+        height: 100vh;
+        top: 20%;
+        left: 0;
+    }
+    
 }

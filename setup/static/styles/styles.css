@@ -2,15 +2,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 
+/* NAVS */
 @import url(css/header.css);
 @import url(css/menu.css);
 @import url(css/footer.css);
+/* BANNER */
 @import url(css/banner.css);
+/* SOBRE */
 @import url(css/about.css);
+@import url(css/team.css);
+/* SERVIÇOS */
 @import url(css/services.css);
+/* PROJETOS */
 @import url(css/projects.css);
-@import url(css/blog.css);
+/* CONTATO */
 @import url(css/contact.css);
+/* blog */
+@import url(css/blog.css);
+/* OUTROS */
 @import url(css/thankspage.css);
 @import url(css/keyFrames.css);
 @import url(css/universe.css);

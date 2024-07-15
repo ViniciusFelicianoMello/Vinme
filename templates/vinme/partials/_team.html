@@ -1,0 +1,71 @@
+<!-- MEMBROS -->
+<section class="container members" id="membros">
+    <!-- MEMBROS TITLE -->
+    <div class="team_title">
+        <h2 class="section_title viewport">Conheça os <span>membros</span> do nossos time de especialistas!</h2>
+    </div>
+     <!-- ===== SLIDER ===== -->
+    <div class="slider viewport">
+        {% for member in members_card %}
+        <div class="slider_card">
+            <div class="slide_profile">
+                <img src="{{ member.image }}" alt="person image">
+                <span>{{ member.name }}</span>
+                <p>{{ member.title }}</p>
+            </div>
+            <div class="slide_skills">
+                <span></span>
+                <span></span>
+                <ul>
+                    {% for skill in member.skills %}
+                    <li>{{ skill }}</li>
+                    {% endfor %}
+                </ul>
+                <ul>
+                    {% for skill in member.skills %}
+                    <li>{{ skill }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="slide_links">
+                <a href="{{ member.portfolio_url }}" target="_blank">
+                    <i class="fa-solid fa-image-portrait"></i>
+                    <span>Portfólio</span>
+                </a>
+                <a href="{{ member.linkedin_url }}" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <span>Linkedin</span>
+                </a>
+                <a href="{{ member.instagram_url }}" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+
+        <!-- ===== conteudo 1 ===== -->
+        <div class="slider_card">
+
+        </div>
+        <!-- ===== conteudo 1 ===== -->
+        <div class="slider_card">
+
+        </div>
+        <!-- ===== conteudo 1 ===== -->
+        <div class="slider_card">
+
+        </div>
+        <!-- ===== conteudo 1 ===== -->
+        <div class="slider_card">
+
+        </div>
+        <!-- BULLETS -->
+        <div class="bullets"></div>
+        <!-- NEXT PREV -->
+        <div>
+            <button id="prev"><i class="fa-solid fa-angle-left"></i></button>
+            <button id="next"><i class="fa-solid fa-angle-right"></i></button>
+        </div>   
+    </div>
+</section> <!-- FIM DA SEÇÂO MEMBROS -->

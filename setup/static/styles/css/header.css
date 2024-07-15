@@ -362,7 +362,7 @@
         font-size: 3vw;
         width: 35vw;
     }
-    .dropdown_opt_li {
+    .dropdown_opt_li:nth-of-type(2) {
         border-top: 2px solid var(--cor-principal);
         padding-top: 1em;
     }

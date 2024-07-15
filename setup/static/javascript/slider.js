@@ -8,7 +8,7 @@ function getTranslateXValue(stt) {
     } else if (window.matchMedia("(max-width: 1024px)").matches) {
         return `${48 * stt}vw`;
     } else {
-        return `${30 * stt}vw`;
+        return `${26 * stt}vw`;
     }
 }
 

@@ -1,10 +1,4 @@
-.members {
-    position: relative;
-    width: 100%;
-    height: max-content;
-    padding: 5vw 5vw;
-    overflow: hidden;
-}
+
 .members_title {
     position: relative;
 }
@@ -30,7 +24,6 @@
     height: 50vh;
     overflow: hidden;
     display: flex;
-    justify-content: center;
     opacity: 0;
 }
 .slider.visible {
@@ -40,13 +33,14 @@
 .slider_card {
     position: absolute;
     display: flex;
+    justify-self: start;
     flex-direction: column;
     transition: 0.5s;
     background: var(--cor-fundo-3);
     width: 23vw;
     height: 30vh;
     box-sizing: border-box;
-    margin: 2em 0;
+    margin: 2em 0 0 5em;
     box-shadow: var(--box-shadow-1);  
     border-radius: 0.8em;
     overflow: hidden;
@@ -201,10 +195,12 @@
 
 /* BULLETS */
 .bullets {
+    width: 100%;
     display: flex;
     align-items: center;
     position: absolute;
     bottom: 2em;
+    justify-content: center;
 }
 .bullet {
     width: 10px;
@@ -222,9 +218,6 @@
 }
 
 @media screen and (max-width:1024px) {
-    .members {
-        padding: 5vw 2vw;
-    }
     .members_title h2 {
         font-size: 3.2vw;
     }
@@ -236,7 +229,7 @@
     .slider_card {
         width: 43vw;
         height: 30vh;
-        margin: 2em 0;
+        margin: 2em 0 0 4em;
         border-radius: 0.5em;
     }
     /* CONTENT */
@@ -296,9 +289,6 @@
 }
 
 @media screen and (max-width:600px) {
-    .members {
-        padding: 5vw 1vw;
-    }
     .members_title h2 {
         font-size: 3.2vw;
     }
