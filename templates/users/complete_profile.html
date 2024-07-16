@@ -1,17 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Complete Your Profile</title>
-</head>
-<body>
-    <h1>Complete Your Profile</h1>
-    
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
+{% extends "account/base_entrance.html" %}
+{% load static %}
 
-        <button type="submit">Save</button>
+{% block content %}
+<body>
+    <div class="account_title">
+        <i class="fa-solid fa-id-card"></i>
+    </div>
+
+    <span class="account_line"></span>
+    
+    <form method="post" enctype="multipart/form-data" class="account_form account_margin-1">
+        {% csrf_token %}
+
+        <div class="account_row">
+            <img src="{% if form.instance.profile_picture %}{{ form.instance.profile_picture.url }}{% else %}{% static 'assets/img/fotografias/_unknown.png' %}{% endif %}" class="controls_menu_foto" id="preview_image">
+            <input type="file" name="profile_picture" id="id_profile_picture" class="account_input" style="display: none;">
+            <label for="id_profile_picture" class="account_btn">Adicionar Foto</label>
+        </div>
+
+        <div class="account_control">
+            <input type="text" name="{{ form.first_name.name }}" id="{{ form.first_name.id_for_label }}" class="account_input" value="{{ form.first_name.value }}" required>
+            <i class="fa-solid fa-user-tie account_icon"></i>
+            <label for="{{ form.first_name.id_for_label }}" class="account_label">Nome</label>
+            <span class="account_span"></span>
+        </div>
+    
+        <div class="account_control">
+            <input type="text" name="{{ form.last_name.name }}" id="{{ form.last_name.id_for_label }}" class="account_input" value="{{ form.last_name.value }}" required>
+            <i class="fa-solid fa-user-tie account_icon"></i>
+            <label for="{{ form.last_name.id_for_label }}" class="account_label">Sobrenome</label>
+            <span class="account_span"></span>
+        </div>
+    
+        <div class="account_control">
+            <input type="date" name="{{ form.birth_date.name }}" id="{{ form.birth_date.id_for_label }}" class="account_input" value="{{ form.birth_date.value|date:'Y-m-d' }}" required>
+            <i class="fa-solid fa-calendar-days account_icon account_icon_ativo"></i>
+            <label for="{{ form.birth_date.id_for_label }}" class="account_label account_label_ativo">Data de nascimento</label>
+            <span class="account_span account_span_ativo"></span>
+        </div>
+    
+        <div class="account_control">
+            <input type="text" name="{{ form.nationality.name }}" id="{{ form.nationality.id_for_label }}" class="account_input" value="{{ form.nationality.value }}" required>
+            <i class="fa-solid fa-earth-americas account_icon"></i>
+            <label for="{{ form.nationality.id_for_label }}" class="account_label">Nacionalidade</label>
+            <span class="account_span"></span>
+        </div>
+    
+        <button type="submit" class="account_btn">Salvar</button>
     </form>
 </body>
 </html>
+{% endblock %}
+

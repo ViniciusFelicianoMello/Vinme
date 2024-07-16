@@ -6,6 +6,9 @@ from django.utils.translation import gettext as _
 from .models import UserProfile
 
 class UserProfileForm(forms.ModelForm):
+    birth_date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}), required=False)
+    profile_picture = forms.ImageField(required=False)
+
     class Meta:
         model = UserProfile
         fields = ['profile_picture', 'first_name', 'last_name', 'birth_date', 'nationality']

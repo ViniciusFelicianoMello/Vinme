@@ -70,7 +70,8 @@
 }
 
 .account_input:valid ~ .account_icon,
-.account_input:focus ~ .account_icon {
+.account_input:focus ~ .account_icon,
+.account_icon_ativo {
     color: var(--cor-principal);
 }
 
@@ -87,7 +88,8 @@
 }
 
 .account_input:valid ~ .account_label,
-.account_input:focus ~ .account_label {
+.account_input:focus ~ .account_label,
+.account_label_ativo {
     color: var(--cor-principal);
     opacity: 1;
     font-size: 0.8vw;
@@ -111,10 +113,16 @@
 }
 
 .account_input:valid ~ .account_span,
-.account_input:focus ~ .account_span {
+.account_input:focus ~ .account_span,
+.account_span_ativo {
     height: 4vh;
     background: var(--cor-fundo-3);
     box-shadow: var(--box-shadow-1);
+}
+
+.account_infos {
+    position: absolute;
+    right: 0;
 }
 
 .messages {
@@ -263,6 +271,9 @@
     letter-spacing: 0.1em;
     box-shadow: 0px 7px 0px var(--cor-principal-3), var(--box-shadow-1);
     transition: .3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .account_btn:hover {

@@ -203,6 +203,8 @@
     width: 4vw;
     height: 4vw;
     border-radius: 50%;
+    border: 3px solid var(--cor-fixa-2);
+    box-shadow: var(--box-shadow-1);
     margin-top: 1em;
 }
 

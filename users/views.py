@@ -23,20 +23,17 @@ from users.models import UserProfile
 
 @login_required
 def complete_profile(request):
-    try:
-        profile = request.user.userprofile
-    except UserProfile.DoesNotExist:
-        profile = None
-    
+    user_profile, created = UserProfile.objects.get_or_create(user=request.user)
     if request.method == 'POST':
-        form = UserProfileForm(request.POST, request.FILES, instance=profile)
+        form = UserProfileForm(request.POST, request.FILES, instance=user_profile)
         if form.is_valid():
-            profile = form.save(commit=False)
-            profile.user = request.user
-            profile.save()
-            return redirect('index')
+            form.save()
+            print("Form saved successfully")
+            return redirect('complete_profile')
+        else:
+            print("Form is not valid", form.errors)
     else:
-        form = UserProfileForm(instance=profile)
+        form = UserProfileForm(instance=user_profile)
     
     return render(request, 'users/complete_profile.html', {'form': form})
 
