@@ -159,6 +159,12 @@ body {
     animation: typing 2s 2.9s steps(80, end) forwards;
 }
 
+/* CONTROLES */
+.flex_column {
+    display: flex;
+    gap: 1em;
+}
+
 @media screen and (max-width:1024px) {
     .container {
         min-height: 90vh;

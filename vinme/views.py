@@ -40,6 +40,34 @@ def pages():
         }
     ]
 
+
+    user_links = [
+            {'url': 'index', 'icon': 'fa-solid fa-bookmark', 'label': 'favoritos'},
+            {'url': 'index', 'icon': 'fa-solid fa-folder', 'label': 'arquivados'},
+            {'url': 'index', 'icon': 'fa-solid fa-mug-hot', 'label': 'atividades'},
+            {'url': 'index', 'icon': 'fa-solid fa-message', 'label': 'mensagens'},
+            {'url': 'index', 'icon': 'fa-solid fa-bell', 'label': 'notificações'},
+        ]
+    
+    user_config = [
+            {'url': 'index', 'icon': 'fa-solid fa-gear', 'label': 'configurações'},
+            {'url': 'account_logout', 'icon': 'fa-solid fa-right-from-bracket', 'label': 'logout'},
+    ]
+
+    user_controls = [
+        {
+            'title': 'Perfil',
+        },
+        {
+            'title': 'Menu',
+            'links': user_links
+        },
+        {
+            'title': 'Configurações',
+            'links': user_config
+        }
+    ]
+    
     # banner
     social_links = [
         {'url': 'https://instagram.com/viinifeliciano', 'icon': 'fa-brands fa-instagram'},
@@ -151,6 +179,9 @@ def pages():
         'blog_links': blog_links, 
         'class_links': class_links, 
         'navigation': navigation, 
+        'user_links': user_links, 
+        'user_config': user_config, 
+        'user_controls': user_controls, 
         'social_links': social_links,
         'info_boxes': info_boxes,
         'members_card': members_card,

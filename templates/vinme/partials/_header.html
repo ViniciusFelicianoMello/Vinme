@@ -54,21 +54,50 @@
             <!-- LISTA -->
             <ul class="controls_menu">
                 {% if user.is_authenticated %}
-                <a href="{% url 'account_logout' %}">
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                    <strong>logout</strong>
-                </a>
+                <li class="controls_menu_box">
+                    <div class="flex_column">
+                        <img src="{% static '/assets/img/fotografias/_unknown.png' %}" class="controls_menu_foto">
+                        <div class="text">
+                            <h2>{{ request.user.username }}</h2>
+                            <h3>{{ request.user.email }}</h3>
+                            <a href="" class="controls_menu_link">
+                                <i class="fa-solid fa-user-gear"></i>
+                                <strong>Ir ao perfil</strong>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="controls_menu_box">
+                    {% for link in user_links %}
+                    <a href="{% url link.url %}" class="controls_menu_link">
+                        <i class="{{ link.icon }}"></i>
+                        <strong>{{ link.label }}</strong>
+                    </a>
+                    {% endfor %}
+                </li>
+                <li class="controls_menu_box">
+                    {% for link in user_config %}
+                    <a href="{% url link.url %}" class="controls_menu_link">
+                        <i class="{{ link.icon }}"></i>
+                        <strong>{{ link.label }}</strong>
+                    </a>
+                    {% endfor %}
+                </li>
                 {% else %}
                 <!-- ITEM -->
-                <a href="{% url 'account_login' %}">
-                    <i class="fa-solid fa-user"></i>
-                    <strong>login</strong>
-                </a>
+                <li class="controls_menu_box">
+                    <a href="{% url 'account_login' %}" class="controls_menu_link">
+                        <i class="fa-solid fa-user"></i>
+                        <strong>login</strong>
+                    </a>
+                </li>
                 <!-- ITEM -->
-                <a href="{% url 'account_signup' %}">   
-                    <i class="fa-solid fa-user-plus"></i>
-                    <strong>cadastre-se</strong>
-                </a>
+                <li class="controls_menu_box">
+                    <a href="{% url 'account_signup' %}" class="controls_menu_link">   
+                        <i class="fa-solid fa-user-plus"></i>
+                        <strong>cadastre-se</strong>
+                    </a>
+                </li>
                 {% endif %}
             </ul>
         </div>
@@ -88,7 +117,7 @@
     <nav class="menu_options">
         <ul class="dropdown_options_list">
             <!-- ITEM -->
-            <li>
+            <li class="dropdown_options_item">
                 <div class="controls_config">
                     <input style="visibility: hidden;" type="checkbox" class="check_config" id="check_config_drop" name="check_config_drop">
                     <label for="check_config_drop" class="config_label">
@@ -101,28 +130,57 @@
                     <!-- LISTA -->
                     <ul class="controls_menu">
                         {% if user.is_authenticated %}
-                        <a href="{% url 'account_logout' %}">
-                            <i class="fa-solid fa-user-slash"></i>
-                            <strong>logout</strong>
-                        </a>
+                        <li class="controls_menu_box">
+                            <div class="flex_column">
+                                <img src="{% static '/assets/img/fotografias/_unknown.png' %}" class="controls_menu_foto">
+                                <div class="text">
+                                    <h2>User_name</h2>
+                                    <h3>email@email.com</h3>
+                                    <a href="" class="controls_menu_link">
+                                        <i class="fa-solid fa-user-gear"></i>
+                                        <strong>Ir ao perfil</strong>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="controls_menu_box">
+                            {% for link in user_links %}
+                            <a href="{% url link.url %}" class="controls_menu_link">
+                                <i class="{{ link.icon }}"></i>
+                                <strong>{{ link.label }}</strong>
+                            </a>
+                            {% endfor %}
+                        </li>
+                        <li class="controls_menu_box">
+                            {% for link in user_config %}
+                            <a href="{% url link.url %}" class="controls_menu_link">
+                                <i class="{{ link.icon }}"></i>
+                                <strong>{{ link.label }}</strong>
+                            </a>
+                            {% endfor %}
+                        </li>
                         {% else %}
                         <!-- ITEM -->
-                        <a href="{% url 'account_login' %}">
-                            <i class="fa-solid fa-user"></i>
-                            <strong>login</strong>
-                        </a>
+                        <li class="controls_menu_box">
+                            <a href="{% url 'account_login' %}" class="controls_menu_link">
+                                <i class="fa-solid fa-user"></i>
+                                <strong>login</strong>
+                            </a>
+                        </li>
                         <!-- ITEM -->
-                        <a href="{% url 'account_signup' %}">
-                            <i class="fa-solid fa-user-plus"></i>
-                            <strong>cadastre-se</strong>
-                        </a>
+                        <li class="controls_menu_box">
+                            <a href="{% url 'account_signup' %}" class="controls_menu_link">
+                                <i class="fa-solid fa-user-plus"></i>
+                                <strong>cadastre-se</strong>
+                            </a>
+                        </li>
                         {% endif %}
                     </ul>
                 </div>
             </li>
             <!-- ITEM -->
             {% for menu in navigation %}
-            <li class="dropdown_opt_li">
+            <li class="dropdown_opt_li dropdown_options_item">
                 <div class="menu_dropdown_close">
                     <i class="{{ menu.icon }} option_icon"></i>
                     <span class="option_title">{{ menu.title }}</span>

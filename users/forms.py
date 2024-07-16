@@ -3,7 +3,13 @@ from allauth.account.forms import SignupForm
 from django.contrib.auth.models import User    
 from allauth.account.forms import ChangePasswordForm
 from django.utils.translation import gettext as _
- 
+from .models import UserProfile
+
+class UserProfileForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ['profile_picture', 'first_name', 'last_name', 'birth_date', 'nationality']
+
 class CustomPasswordChangeForm(ChangePasswordForm):
     def clean_password2(self):
         password1 = self.cleaned_data.get("password1")
