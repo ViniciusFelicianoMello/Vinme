@@ -59,7 +59,7 @@ def pages():
         ]
     
     user_config = [
-            {'url': 'index', 'icon': 'fa-solid fa-gear', 'label': 'configurações'},
+            {'url': 'settings_view', 'icon': 'fa-solid fa-gear', 'label': 'configurações'},
             {'url': 'account_logout', 'icon': 'fa-solid fa-right-from-bracket', 'label': 'logout'},
     ]
 

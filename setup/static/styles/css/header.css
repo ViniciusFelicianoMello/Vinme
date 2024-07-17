@@ -200,8 +200,8 @@
 }
 
 .controls_menu_img {
-    width: 4vw;
-    height: 4vw;
+    width: 5vw;
+    height: 5vw;
     border-radius: 50%;
     border: 3px solid var(--cor-fixa-2);
     box-shadow: var(--box-shadow-1);
@@ -439,15 +439,15 @@
         margin-left: 2em;
     }
 
-    .menu_dropdown_close ~ .menu_dropdown_lista {
+    .dropdown_close ~ .dropdown_content {
         max-height: 0;
-        opacity: 0;
         visibility: hidden;
     }
-    .menu_dropdown_open ~ .menu_dropdown_lista {
+    .dropdown_open ~ .dropdown_content {
         max-height: 100vh;
-        opacity: 1;
         visibility: visible;
+        transition: 2s;
+        overflow: hidden;
     }
 }
 

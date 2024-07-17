@@ -69,14 +69,14 @@
                         </div>
                     </div>
                 </li>
-                <li class="controls_menu_box">
+                <!-- <li class="controls_menu_box">
                     {% for link in user_links %}
                     <a href="{% url link.url %}" class="controls_menu_link">
                         <i class="{{ link.icon }}"></i>
                         <strong>{{ link.label }}</strong>
                     </a>
                     {% endfor %}
-                </li>
+                </li> -->
                 <li class="controls_menu_box">
                     {% for link in user_config %}
                     <a href="{% url link.url %}" class="controls_menu_link">
@@ -147,14 +147,14 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="controls_menu_box">
+                        <!-- <li class="controls_menu_box">
                             {% for link in user_links %}
                             <a href="{% url link.url %}" class="controls_menu_link">
                                 <i class="{{ link.icon }}"></i>
                                 <strong>{{ link.label }}</strong>
                             </a>
                             {% endfor %}
-                        </li>
+                        </li> -->
                         <li class="controls_menu_box">
                             {% for link in user_config %}
                             <a href="{% url link.url %}" class="controls_menu_link">
@@ -185,13 +185,13 @@
             <!-- ITEM -->
             {% for menu in navigation %}
             <li class="dropdown_opt_li dropdown_options_item">
-                <div class="menu_dropdown_close">
+                <div class="menu_dropdown_close dropdown_close">
                     <i class="{{ menu.icon }} option_icon"></i>
                     <span class="option_title">{{ menu.title }}</span>
-                    <i class="fa-solid fa-caret-down seta_dropdown_menu"></i>
+                    <i class="fa-solid fa-caret-down seta_dropdown_menu seta_dropdown"></i>
                 </div>
                 <!-- DROPDOWN -->
-                <ul class="menu_dropdown_lista">
+                <ul class="menu_dropdown_lista dropdown_content">
                     <!-- DROPDOWN ITEM -->
                     {% for link in menu.links %}
                     <a class="dropdown_link" href="{% url link.url %}">

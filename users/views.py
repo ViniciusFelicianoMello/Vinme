@@ -47,11 +47,18 @@ def complete_profile(request):
 @login_required
 def profile_view(request, username):
     user = get_object_or_404(User, username=username)
-    try:
-        profile = user.userprofile
-    except UserProfile.DoesNotExist:
-        profile = None
-    
-    context = {'profile': profile}
+    user_profile, created = UserProfile.objects.get_or_create(user=user)
+    is_own_profile = (user == request.user)
+
+    context = {
+        'profile': user_profile,
+        'is_own_profile': is_own_profile
+    }
     context = add_pages_context(context) 
     return render(request, 'users/profile.html', context)
+
+@login_required
+def settings_view(request):
+    context = {}
+    context = add_pages_context(context)
+    return render(request, 'users/settings.html', context)

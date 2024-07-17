@@ -97,7 +97,8 @@
     width: max-content;
 }
 
-.account_span {
+.account_span,
+.account_span_text {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -118,6 +119,28 @@
     height: 4vh;
     background: var(--cor-fundo-3);
     box-shadow: var(--box-shadow-1);
+}
+.account_input:valid ~ .account_span_text, 
+.account_input:focus ~ .account_span_text {
+    height: 6.5vh;
+    background: var(--cor-fundo-3);
+    box-shadow: var(--box-shadow-1);
+}
+
+.account_menu_img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    height: 4vw;
+    width: 6vw;
+    border: 3px solid var(--cor-principal);
+    box-shadow: var(--box-shadow-1);
+    overflow: hidden;
+}
+
+.account_menu_foto {
+    width: 100%;
 }
 
 .account_infos {
@@ -148,7 +171,7 @@
 .account_row {
     display: flex;
     justify-content: space-between;
-    gap: 1em;
+    gap: 1vw;
 }
 
 .account_text {
@@ -256,10 +279,11 @@
     transform: translateY(7px);
 }
 
-.account_btn {
+.account_btn, .account_btn-1 {
     width: 100%;
     height: 6vh;
     margin-top: 1em;
+    margin-bottom: 1em;
     cursor: pointer;
     border-radius: 0.5rem;
     background: var(--cor-principal);
@@ -276,16 +300,32 @@
     align-items: center;
 }
 
+.account_btn-1 {
+    text-decoration: none;
+    background: var(--cor-fundo-3);
+    color: var(--cor-principal);
+    box-shadow: 0px 7px 0px var(--cor-fundo-1), var(--box-shadow-1);
+}
+
 .account_btn:hover {
     background: var(--cor-principal-2);
-    box-shadow: 0px 5px 0px var(--cor-principal-3), var(--box-shadow-2);
-    transform: translateY(2px);
+    box-shadow: 0px 3px 0px var(--cor-principal-3), var(--box-shadow-2);
+    transform: translateY(4px);
+}
+.account_btn-1:hover {
+    background: var(--cor-fundo-2);
+    box-shadow: 0px 3px 0px var(--cor-fundo-1), var(--box-shadow-1);
+    transform: translateY(4px);
 }
 .account_btn:active {
     box-shadow: 0px 0px 0px var(--cor-principal-3), var(--box-shadow-2);
     transform: translateY(7px);
 }
-
+.account_btn-1:active {
+    background: var(--cor-fundo-2);
+    box-shadow: 0px 0px 0px var(--cor-fundo-1), var(--box-shadow-1);
+    transform: translateY(7px);
+}
 .last_account_line {
     background: var(--cor-principal);
     position: relative;
@@ -376,7 +416,7 @@
         font-size: 2.8vw;
     }
     
-    .account_btn {
+    .account_btn, .account_btn-1 {
         height: 6vh;
         border-radius: 1rem;
         font-size: 3vw;
@@ -468,7 +508,7 @@
         font-size: 3.5vw;
     }
     
-    .account_btn {
+    .account_btn, .account_btn-1 {
         height: 6vh;
         border-radius: .5rem;
         font-size: 4vw;

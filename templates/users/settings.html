@@ -1,0 +1,50 @@
+{% extends "users/baseUsers.html" %}
+{% load static %}
+
+{% block content %}
+<div class="settings_container">
+    <div class="settings_section">
+        <h3 onclick="toggleSection(this)">Conta</h3>
+        <div class="settings_content">
+            <p>Senha</p>
+            <p>Perfil</p>
+            <p>Email</p>
+            <p>Usuário</p>
+        </div>
+    </div>
+    <div class="settings_section">
+        <h3 onclick="toggleSection(this)">Notificações</h3>
+        <div class="settings_content">
+            <p>Preferências de Notificação</p>
+            <p>Notificações por Email</p>
+        </div>
+    </div>
+    <div class="settings_section">
+        <h3 onclick="toggleSection(this)">Privacidade</h3>
+        <div class="settings_content">
+            <p>Visibilidade do Perfil</p>
+            <p>Compartilhamento de Dados</p>
+        </div>
+    </div>
+    <div class="settings_section">
+        <h3 onclick="toggleSection(this)">Blog</h3>
+        <div class="settings_content">
+            <p>Gerenciar Postagens</p>
+            <p>Comentários</p>
+        </div>
+    </div>
+    <div class="settings_section">
+        <h3 onclick="toggleSection(this)">Comunidade</h3>
+        <div class="settings_content">
+            <p>Grupos</p>
+            <p>Amigos</p>
+        </div>
+    </div>
+</div>
+<script>
+    function toggleSection(element) {
+        const content = element.nextElementSibling;
+        content.style.display = content.style.display === "none" ? "block" : "none";
+    }
+</script>
+{% endblock %}

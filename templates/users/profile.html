@@ -3,7 +3,7 @@
 
 {% block content %}
 <section class="container profile">
-    {% include 'vinme/partials/_universe.html' %}
+    
     <div class="profile_box">
         <!-- CONTENT -->
         <div class="profile_content">
@@ -12,11 +12,11 @@
                 <!-- PERFIL -->
                 <div class="profile_profile">
                     <div class="profile_img">
-                        <img src="{% if request.user.userprofile.profile_picture %}{{ request.user.userprofile.profile_picture.url }}{% else %}{% static 'assets/img/fotografias/_unknown.png' %}{% endif %}" class="profile_photo">
+                        <img src="{% if profile.profile_picture %}{{ profile.profile_picture.url }}{% else %}{% static 'assets/img/fotografias/_unknown.png' %}{% endif %}" class="profile_photo">
                     </div>
                     <!-- INFOS -->
                     <div class="profile_infos">
-                        <h2 class="profile_name">{{ request.user.username }}</h2>
+                        <h2 class="profile_name">{{ profile.user.username }}</h2>
                         <!-- NUMBER -->
                         <div class="profile_number">
                             <span class="number_pub"></span>
@@ -26,19 +26,30 @@
                     </div>
                     <!-- BUTTOn -->
                     <div class="profile_btn">
-                        <a class="profile_button" href="{% url 'complete_profile' %}">
-                            <i class="fa-solid fa-user-pen"></i>
-                            <span>Editar perfil</span>
-                        </a>
-                        <a class="profile_button">
-                            <i class="fa-solid fa-gear"></i>
-                            <span>Configurações</span>
-                        </a>
+                        {% if is_own_profile %}
+                            <a class="profile_button" href="{% url 'complete_profile' %}">
+                                <i class="fa-solid fa-user-pen"></i>
+                                <span>Editar perfil</span>
+                            </a>
+                            <a class="profile_button" href="{% url 'settings_view' %}">
+                                <i class="fa-solid fa-gear"></i>
+                                <span>Configurações</span>
+                            </a>
+                        {% else %}
+                            <a class="profile_button" href="#">
+                                <i class="fa-solid fa-user-plus"></i>
+                                <span>Adicionar aos amigos</span>
+                            </a>
+                            <a class="profile_button">
+                                <i class="fa-solid fa-ellipsis-h"></i>
+                                <span>Opções</span>
+                            </a>
+                        {% endif %}
                     </div>
                 </div>
                 <!-- BIO -->
                 <div class="profile_bio">
-                    <p>{{ request.user.biography }}</p>
+                    <p>{{ profile.biography }}</p>
                 </div>
             </div>
             <div class="profile_highlight">
@@ -46,15 +57,6 @@
                     <h3>Destaques</h3>
                 </div>
 
-                <div class="profile_highlight_box">
-
-                </div>
-                <div class="profile_highlight_box">
-
-                </div>
-                <div class="profile_highlight_box">
-
-                </div>
                 <div class="profile_highlight_box">
 
                 </div>

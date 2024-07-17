@@ -12,16 +12,19 @@
     <form method="post" enctype="multipart/form-data" class="account_form account_margin-1">
         {% csrf_token %}
 
+        <div class="messages">
+            <span></span>
+        </div>
+
         <div class="account_row">
-            <div class="controls_menu_img">
-                <img src="{% if form.instance.profile_picture %}{{ form.instance.profile_picture.url }}{% else %}{% static 'assets/img/fotografias/_unknown.png' %}{% endif %}" class="controls_menu_foto" id="preview_image">
+            <div class="account_menu_img">
+                <img src="{% if form.instance.profile_picture %}{{ form.instance.profile_picture.url }}{% else %}{% static 'assets/img/fotografias/_unknown.png' %}{% endif %}" class="account_menu_foto" id="preview_image">
             </div>
             <input type="file" name="profile_picture" id="id_profile_picture" class="account_input" style="display: none;">
             <label for="id_profile_picture" class="account_btn">Adicionar Foto</label>
         </div>
 
         <div class="account_row">
-
             <div class="account_control">
                 <input type="text" name="{{ form.first_name.name }}" id="{{ form.first_name.id_for_label }}" class="account_input" value="{{ form.first_name.value }}" required>
                 <i class="fa-solid fa-user-tie account_icon"></i>
@@ -34,18 +37,14 @@
                 <label for="{{ form.last_name.id_for_label }}" class="account_label">Sobrenome</label>
                 <span class="account_span"></span>
             </div>
-
         </div>
-
         <div class="account_control">
             <input type="date" name="{{ form.birth_date.name }}" id="{{ form.birth_date.id_for_label }}" class="account_input" value="{{ form.birth_date.value|date:'Y-m-d' }}" required>
             <i class="fa-solid fa-calendar-days account_icon account_icon_ativo"></i>
             <label for="{{ form.birth_date.id_for_label }}" class="account_label account_label_ativo">Data de nascimento</label>
             <span class="account_span account_span_ativo"></span>
         </div>
-        
         <div class="account_row">
-
             <div class="account_control">
                 <input type="text" name="{{ form.nationality.name }}" id="{{ form.nationality.id_for_label }}" class="account_input" value="{{ form.nationality.value }}" required>
                 <i class="fa-solid fa-earth-americas account_icon"></i>
@@ -55,20 +54,20 @@
             <div class="account_control">
                 <input type="text" name="{{ form.phone_number.name }}" id="{{ form.phone_number.id_for_label }}" class="account_input" value="{{ form.phone_number.value }}" required>
                 <i class="fa-solid fa-phone account_icon"></i>
-                <label for="{{ form.phone_number.id_for_label }}" class="account_label">Telefone</label>
+                <label for="{{ form.phone_number.id_for_label }}" class="account_label">DDD + Telefone</label>
                 <span class="account_span"></span>
             </div>
-
         </div>
-        
         <div class="account_control">
-            <textarea name="{{ form.biography.name }}" id="{{ form.biography.id_for_label }}" class="account_input" required>{{ form.biography.value }}</textarea>
+            <textarea name="{{ form.biography.name }}" id="{{ form.biography.id_for_label }}" class="account_input">{{ form.biography.value }}</textarea>
             <i class="fa-solid fa-comment-dots account_icon"></i>
             <label for="{{ form.biography.id_for_label }}" class="account_label">Biografia</label>
-            <span class="account_span"></span>
+            <span class="account_span_text"></span>
         </div>
-    
-        <button type="submit" class="account_btn">Salvar</button>
+        <div class="account_row">
+            <button type="submit" class="account_btn">Salvar</button>
+            <a href="{% url 'profile_view' request.user.username %}" class="account_btn-1" >Cancelar</a>
+        </div>
     </form>
 </body>
 </html>

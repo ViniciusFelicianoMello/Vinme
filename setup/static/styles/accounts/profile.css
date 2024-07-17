@@ -31,7 +31,7 @@
     right: 0;
     bottom: 0;
     background: linear-gradient(to bottom, var(--cor-fundo-3), var(--cor-fundo-1));
-    opacity: 0.7;
+    opacity: 0.8;
     z-index: 0;
 }
 
@@ -66,6 +66,7 @@
     justify-content: center;
     border-bottom: 2px solid var(--cor-principal);
     padding-bottom: 1em;
+    width: 95%;
 }
 
 .profile_infos {
@@ -127,6 +128,7 @@
     font-size: 1.2vw;
     box-shadow: 0px 7px 0px var(--cor-principal-3), var(--box-shadow-1);
     transition: .3s;
+    text-decoration: none;
 }
 
 .profile_button:hover {
@@ -193,11 +195,115 @@
 
 .profile_highlight_box {
     background: var(--cor-fundo-3);
-    width: 7vw ;
-    height: 7vw ;
+    width: 5vw ;
+    height: 5vw ;
     margin: 1em 0;
     border-radius: 50%;
-    border: 5px solid var(--cor-principal);
     box-shadow: var(--box-shadow-2);
     flex-shrink: 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .profile_box {
+        border-radius: 1em;
+        animation: openProfile 1s .3s forwards;
+    }   
+    /* PERSON */
+    .profile_person {
+        gap: 2em;
+        width: 75%;
+    }
+    
+    .profile_profile {
+        flex-direction: column;
+        gap: 1em;
+        padding-bottom: 1em;
+        width: 95%;
+    }
+    
+    .profile_img {
+        width: 20vw;
+        height: 20vw;
+    }
+    .profile_name {
+        font-size: 5vw;
+    }
+    
+    .profile_number {
+        font-size: 4vw;
+    }
+    
+    .profile_btn {
+        flex-direction: row;
+        gap: 2em;
+    }
+    
+    .profile_button {
+        width: 7vw;
+        height: 7vw;
+        font-size: 3vw;
+    }
+    
+    .profile_button span {
+        display: none;
+    }
+    
+    .profile_bio {
+        font-size: 2.5vw;
+    
+    }
+    
+    /* HIGLIGHT */
+    .profile_highlight {
+        width: 20vw;
+    }
+    
+    .highlight_title {
+        font-size: 2vw;
+    }
+    
+    .profile_highlight_box {
+        width: 10vw ;
+        height: 10vw ;
+        margin: 1em 0;
+    }
+}
+@media screen and (max-width: 600px) {
+    .profile_box {
+        border-radius: .7em;
+        animation: openProfile 1s .3s forwards;
+    }   
+    /* PERSON */
+    
+    .profile_profile {
+        gap: .5em;
+    }
+    
+    .profile_img {
+        width: 25vw;
+        height: 25vw;
+    }
+    .profile_name {
+        font-size: 5vw;
+    }
+    
+    .profile_number {
+        font-size: 4vw;
+    }
+    
+    .profile_btn {
+        flex-direction: row;
+        gap: 1em;
+    }
+    
+    .profile_button {
+        width: 7vw;
+        height: 7vw;
+        font-size: 3vw;
+    }
+    
+    .profile_bio {
+        font-size: 4vw;
+    
+    }
 }
