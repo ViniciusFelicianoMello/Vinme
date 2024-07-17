@@ -1,4 +1,70 @@
 {% extends "users/baseUsers.html" %}
 {% load static %}
 
-<h1>ola</h1>
+{% block content %}
+<section class="container profile">
+    {% include 'vinme/partials/_universe.html' %}
+    <div class="profile_box">
+        <!-- CONTENT -->
+        <div class="profile_content">
+            <!-- person -->
+            <div class="profile_person">
+                <!-- PERFIL -->
+                <div class="profile_profile">
+                    <div class="profile_img">
+                        <img src="{% if request.user.userprofile.profile_picture %}{{ request.user.userprofile.profile_picture.url }}{% else %}{% static 'assets/img/fotografias/_unknown.png' %}{% endif %}" class="profile_photo">
+                    </div>
+                    <!-- INFOS -->
+                    <div class="profile_infos">
+                        <h2 class="profile_name">{{ request.user.username }}</h2>
+                        <!-- NUMBER -->
+                        <div class="profile_number">
+                            <span class="number_pub"></span>
+                            <span class="number_follower"></span>
+                            <span class="number_following"></span>
+                        </div>
+                    </div>
+                    <!-- BUTTOn -->
+                    <div class="profile_btn">
+                        <a class="profile_button" href="{% url 'complete_profile' %}">
+                            <i class="fa-solid fa-user-pen"></i>
+                            <span>Editar perfil</span>
+                        </a>
+                        <a class="profile_button">
+                            <i class="fa-solid fa-gear"></i>
+                            <span>Configurações</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- BIO -->
+                <div class="profile_bio">
+                    <p>{{ request.user.biography }}</p>
+                </div>
+            </div>
+            <div class="profile_highlight">
+                <div class="highlight_title">
+                    <h3>Destaques</h3>
+                </div>
+
+                <div class="profile_highlight_box">
+
+                </div>
+                <div class="profile_highlight_box">
+
+                </div>
+                <div class="profile_highlight_box">
+
+                </div>
+                <div class="profile_highlight_box">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="profile_pub">
+        
+    </div>
+    
+    {% include 'allauth/layouts/partials/_footerAcc.html' %}
+</section>
+{% endblock %}

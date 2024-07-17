@@ -199,15 +199,21 @@
     flex-direction: column;
 }
 
-.controls_menu_foto {
+.controls_menu_img {
     width: 4vw;
     height: 4vw;
     border-radius: 50%;
     border: 3px solid var(--cor-fixa-2);
     box-shadow: var(--box-shadow-1);
     margin-top: 1em;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
+.controls_menu_foto {
+    width: 100%;
+}
 .text {
     display: flex;
     flex-direction: column;
@@ -367,7 +373,7 @@
         border-top: 3px solid var(--cor-principal);
     }
     
-    .controls_menu_foto {
+    .controls_menu_img {
         width: 7vw;
         height: 7vw;
     }
@@ -469,7 +475,7 @@
     .menu_options {
         width: 70vw;
     }
-    .controls_menu_foto {
+    .controls_menu_img {
         width: 12vw;
         height: 12vw;
     }

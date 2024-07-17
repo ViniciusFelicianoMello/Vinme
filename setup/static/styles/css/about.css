@@ -12,11 +12,14 @@
     animation: slideDown 1s ease-in forwards, opacity 1s ease-in-out forwards; 
 }
 
-.about_title h2 {
+.about_title h2 a {
     font-size: 2.5vw;
     letter-spacing: 0.1em;
     color: var(--cor-principal);
     font-weight: 900;
+}
+.about_title h2 a:hover {
+    color: var(--cor-principal-2);
 }
 .about_title h3 {
     font-size: 1.8vw;

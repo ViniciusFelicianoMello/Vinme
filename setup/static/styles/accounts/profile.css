@@ -1,0 +1,203 @@
+.profile {
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+.profile_box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 0;
+    width: 0;
+    box-shadow: var(--box-shadow-1);
+    border-radius: 2em;
+    border: 1px solid var(--cor-principal);
+    backdrop-filter: blur(4px);
+    margin-top: 2em;
+    
+
+    animation: openProfile 1s .3s forwards;
+}
+
+.profile_box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, var(--cor-fundo-3), var(--cor-fundo-1));
+    opacity: 0.7;
+    z-index: 0;
+}
+
+.profile_content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+/* PERSON */
+
+.profile_person {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    width: 60%;
+}
+
+.profile_profile {
+    display: flex;
+    gap: 2em;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid var(--cor-principal);
+    padding-bottom: 1em;
+}
+
+.profile_infos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile_img {
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    border: 5px solid var(--cor-principal);
+    box-shadow: var(--box-shadow-1);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.profile_photo {
+    width: 100%;
+}
+
+.profile_name {
+    font-size: 2vw;
+    letter-spacing: 0.02em;
+}
+
+.profile_number {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    font-family: var(--fonte-2);
+    font-size: 1.5vw;
+    font-weight: 700;
+}
+
+.profile_btn {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.profile_button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    width: 3vw;
+    height: 3vw;
+    background: var(--cor-principal);
+    color: var(--cor-fundo-3);
+    font-weight: 700;
+    font-size: 1.2vw;
+    box-shadow: 0px 7px 0px var(--cor-principal-3), var(--box-shadow-1);
+    transition: .3s;
+}
+
+.profile_button:hover {
+    background: var(--cor-principal-2);
+    box-shadow: 0px 5px 0px var(--cor-principal-3), var(--box-shadow-2);
+    transform: translateY(2px);
+}
+.profile_button:active {
+    box-shadow: 0px 0px 0px var(--cor-principal-3), var(--box-shadow-2);
+    transform: translateY(7px);
+}
+
+.profile_button span {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-wrap: nowrap;
+    background: var(--cor-principal);
+    font-size: 1vw;
+    font-family: var(--fonte-2);
+    color: var(--cor-fonte-1);
+    box-shadow: var(--box-shadow-1);
+    padding: 0.5em 0;
+    border-radius: .5em;
+    left: 110%;
+    transition: 0.5s;
+    width: 0;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.profile_button:hover span {
+    width: 9vw;
+    visibility: visible;
+}
+
+.profile_bio {
+    display: flex;
+    font-size: 1vw;
+    font-family: var(--fonte-2);
+
+}
+
+/* HIGLIGHT */
+.profile_highlight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    height: 80%;
+    width: 15vw;
+    overflow: scroll;
+    border-left: 2px solid var(--cor-principal);
+    border-right: 2px solid var(--cor-principal);
+}
+
+.highlight_title {
+    font-size: 1.5vw;
+    font-weight: 100;
+    padding-bottom: .3em;
+    border-bottom: 1px solid var(--cor-fonte-1);
+}
+
+.profile_highlight_box {
+    background: var(--cor-fundo-3);
+    width: 7vw ;
+    height: 7vw ;
+    margin: 1em 0;
+    border-radius: 50%;
+    border: 5px solid var(--cor-principal);
+    box-shadow: var(--box-shadow-2);
+    flex-shrink: 0;
+}

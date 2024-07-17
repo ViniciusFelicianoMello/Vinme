@@ -86,6 +86,10 @@
     overflow: hidden;
     transition: background 0.3s, color 0.3s, transform 0.3s;
 }
+
+.vermais i {  
+    transition: .3s;
+}
 /* BOX HOVER */
 .services_box:hover {
     background: var(--cor-fundo-2);
@@ -104,9 +108,14 @@
     transition: 0.5s;
 }
 .vermais:hover {
-    color: var(--cor-principal);
-    background: var(--cor-fonte-1);
+    box-shadow: var(--box-shadow-2);
+    background: var(--cor-principal-2);
     transform: translateX(0.3em);
+}
+
+.vermais:hover i {
+    transform: translateX(.3em);
+    scale: 2;
 }
 /* INFOS ANIMAÇÔES */
 .services_box:nth-of-type(1).visible {

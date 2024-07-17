@@ -27,6 +27,7 @@
 /* ACCOUNTS */
 @import url(accounts/stylesAcc.css);
 @import url(accounts/form.css);
+@import url(accounts/profile.css);
 
 :root {
     --cor-principal:#006aff;
@@ -137,8 +138,12 @@ body {
 .section_title h2 {
     font-size: 2.3vw;
 }
+.section_title a,
 .section_title span {
     color: var(--cor-principal);
+}
+.section_title a:hover {
+    color: var(--cor-principal-2);
 }
 
 .section_text {

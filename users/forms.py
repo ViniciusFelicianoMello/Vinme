@@ -11,7 +11,7 @@ class UserProfileForm(forms.ModelForm):
 
     class Meta:
         model = UserProfile
-        fields = ['profile_picture', 'first_name', 'last_name', 'birth_date', 'nationality']
+        fields = ['profile_picture', 'first_name', 'last_name', 'birth_date', 'nationality', 'phone_number', 'biography']
 
 class CustomPasswordChangeForm(ChangePasswordForm):
     def clean_password2(self):

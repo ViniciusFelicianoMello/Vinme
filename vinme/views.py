@@ -22,6 +22,10 @@ def pages():
         {'url': 'index', 'icon': 'fa-solid fa-graduation-cap', 'name': 'school'},
     ]
 
+    commu_links = [
+        {'url': 'index', 'icon': 'fa-solid fa-rss', 'name': 'feed'},
+    ]
+
     navigation = [
         {
             'title': 'VinMe',
@@ -37,7 +41,12 @@ def pages():
             'title': 'Class',
             'icon': 'fa-solid fa-school',
             'links': class_links
-        }
+        },
+        {
+            'title': 'Community',
+            'icon': 'fa-solid fa-people-group',
+            'links': commu_links
+        },
     ]
 
 
@@ -178,6 +187,7 @@ def pages():
         'vinme_links': vinme_links, 
         'blog_links': blog_links, 
         'class_links': class_links, 
+        'commu_links': commu_links, 
         'navigation': navigation, 
         'user_links': user_links, 
         'user_config': user_config, 
