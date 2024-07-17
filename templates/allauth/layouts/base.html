@@ -20,8 +20,8 @@
         {% block body %}
         {% include "vinme/partials/_preLoading.html" %}
 
+        {% include 'allauth/layouts/partials/_headerAcc.html' %}
         <div id="main-content">
-            {% include 'allauth/layouts/partials/_headerAcc.html' %}
             <main class="account_main">
     
                 {% include 'vinme/partials/_universe.html' %}
@@ -30,8 +30,8 @@
                         {% block content %}{% endblock content %}
                     </div>
                 </div>
+                {% include 'allauth/layouts/partials/_footerAcc.html' %}
             </main>
-            {% include 'allauth/layouts/partials/_footerAcc.html' %}
             {% endblock body %}
             {% block extra_body %}
             {% endblock extra_body %}

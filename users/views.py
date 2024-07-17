@@ -3,6 +3,14 @@ from .forms import CustomPasswordChangeForm
 from django.contrib import messages
 from django.utils.translation import gettext as _
 
+
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+from users.forms import UserProfileForm
+from users.models import UserProfile
+
+from vinme.views import pages, add_pages_context
+
 class CustomPasswordChangeView(PasswordChangeView):
     form_class = CustomPasswordChangeForm
 
@@ -16,10 +24,6 @@ class CustomPasswordChangeView(PasswordChangeView):
         return super().form_valid(form)
     
 
-from django.shortcuts import render, redirect
-from django.contrib.auth.decorators import login_required
-from users.forms import UserProfileForm
-from users.models import UserProfile
 
 @login_required
 def complete_profile(request):
@@ -29,7 +33,7 @@ def complete_profile(request):
         if form.is_valid():
             form.save()
             print("Form saved successfully")
-            return redirect('complete_profile')
+            return redirect('profile_view')
         else:
             print("Form is not valid", form.errors)
     else:
@@ -39,9 +43,7 @@ def complete_profile(request):
 
 @login_required
 def profile_view(request):
-    try:
-        profile = request.user.userprofile
-    except UserProfile.DoesNotExist:
-        profile = None
-    
-    return render(request, 'profile.html', {'profile': profile})
+    user_profile, created = UserProfile.objects.get_or_create(user=request.user)
+    context = {'profile': user_profile}
+    context = add_pages_context(context) 
+    return render(request, 'users/profile.html', context)
