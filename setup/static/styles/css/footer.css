@@ -147,8 +147,8 @@
 
 .footer_copyright span {
     font-size: 1vw;
-    color: var(--cor-fixa-2);
-    font-family: var(--fonte-2);
+    color: var(--cor-fixa-2);    
+    font-family: var(--fonte-3);
 }
 
 @media screen and (max-width:1024px) {

@@ -16,7 +16,8 @@
     font-size: 2.5vw;
     letter-spacing: 0.1em;
     color: var(--cor-principal);
-    font-weight: 900;
+    font-weight: 400;
+    font-family: var(--fonte-3);
 }
 .about_title h2 a:hover {
     color: var(--cor-principal-2);

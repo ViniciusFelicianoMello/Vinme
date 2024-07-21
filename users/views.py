@@ -1,17 +1,19 @@
-from allauth.account.views import PasswordChangeView
-from .forms import CustomPasswordChangeForm
+from django.shortcuts import render, redirect, get_object_or_404
+from vinme.views import pages, add_pages_context
 from django.contrib import messages
 from django.utils.translation import gettext as _
-
-
-from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+
+
+from allauth.account.views import PasswordChangeView
+from .forms import CustomPasswordChangeForm
+
+
 from users.forms import UserProfileForm
 from users.models import UserProfile
 from django.contrib.auth.models import User
-from django.shortcuts import render, get_object_or_404
+from users.forms import UsernameChangeForm
 
-from vinme.views import pages, add_pages_context
 
 class CustomPasswordChangeView(PasswordChangeView):
     form_class = CustomPasswordChangeForm
@@ -62,3 +64,18 @@ def settings_view(request):
     context = {}
     context = add_pages_context(context)
     return render(request, 'users/settings.html', context)
+
+@login_required
+def change_username(request):
+    user = request.user
+    user_profile, created = UserProfile.objects.get_or_create(user=user)
+    if request.method == 'POST':
+        form = UsernameChangeForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Seu nome de usuário foi atualizado com sucesso!')
+            return redirect('profile_view', username=user.username)
+    else:
+        form = UsernameChangeForm(instance=request.user)
+
+    return render(request, 'users/change_username.html', {'form': form})

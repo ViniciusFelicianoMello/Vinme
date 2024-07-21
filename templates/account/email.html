@@ -71,6 +71,7 @@
                 {% endslot %}
                 {% slot actions %}
                     <button type="submit" name="action_add" class="account_btn">Adicionar email</button>
+                    <a href="{% url 'profile_view' request.user.username %}" class="account_link-1 account_margin-1">Ir ao perfil</a>
                 {% endslot %}
             {% endelement %}
         {% endif %}

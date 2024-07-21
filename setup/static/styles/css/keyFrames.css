@@ -145,3 +145,12 @@
     100% {height: 50vh;}
     100% {width: 100%;}
 }
+
+/* SETTINGS BOX */
+@keyframes openSettings {
+    0% {width: 0;}
+    70% {width: 100%;}
+    70% {height: 0;}
+    100% {height: 73vh;}
+    100% {width: 100%;}
+}

@@ -122,8 +122,8 @@
     color: var(--cor-fundo-3);
     text-decoration: none;
     cursor: pointer;
-    font-weight: 700;
-    font-family: var(--fonte-1);
+    font-weight: 400;
+    font-family: var(--fonte-3);
     font-size: 1.2vw;
     box-shadow: 0px 7px 0px var(--cor-principal-3), var(--box-shadow-1);
     transition: .3s;

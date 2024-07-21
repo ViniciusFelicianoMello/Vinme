@@ -28,6 +28,7 @@
 @import url(accounts/stylesAcc.css);
 @import url(accounts/form.css);
 @import url(accounts/profile.css);
+@import url(accounts/settings.css);
 
 :root {
     --cor-principal:#006aff;
@@ -141,6 +142,8 @@ body {
 .section_title a,
 .section_title span {
     color: var(--cor-principal);
+    font-family: var(--fonte-3);
+    font-weight: 400;
 }
 .section_title a:hover {
     color: var(--cor-principal-2);

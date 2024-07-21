@@ -2,49 +2,119 @@
 {% load static %}
 
 {% block content %}
-<div class="settings_container">
-    <div class="settings_section">
-        <h3 onclick="toggleSection(this)">Conta</h3>
+<section class="container settings">
+    <div class="settings_box">
         <div class="settings_content">
-            <p>Senha</p>
-            <p>Perfil</p>
-            <p>Email</p>
-            <p>Usuário</p>
+
+            <div class="settins_title">
+                <i class="fa-solid fa-gear"></i>
+                <h2>Configurações</h2>
+            </div>
+
+            <div class="settings_section">
+                <div class="settings_dropdown_title dropdown_close seta_dropdown">
+                    <h3 class="settings_dropdown_subtitle">Conta e segurança</h3>
+                    <i class="fa-solid fa-caret-down settings_dropdown_seta"></i>
+                </div>
+                <div class="settings_dropdown_content dropdown_content">
+                    <div class="settings_subsection">
+                        <h4>Perfil</h4>
+                        <a href="{% url 'complete_profile' %}" class="account_btn-1">
+                            <i class="fa-solid fa-user-pen"></i>
+                            <span>editar</span>
+                        </a>
+                    </div>
+                    <div class="settings_subsection">
+                        <h4>Username</h4>
+                        <a href="{% url 'change_username' %}" class="account_btn-1">
+                            <i class="fa-solid fa-user-pen"></i>
+                            <span>editar</span>
+                        </a>
+                    </div>
+                    <div class="settings_subsection">
+                        <h4>Email</h4>
+                        <a href="{% url 'account_email' %}" class="account_btn-1">
+                            <i class="fa-solid fa-user-pen"></i>
+                            <span>editar</span>
+                        </a>
+                    </div>
+                    <div class="settings_subsection">
+                        <h4>Senha</h4>
+                        <a href="{% url 'account_change_password' %}" class="account_btn-1">
+                            <i class="fa-solid fa-user-pen"></i>
+                            <span>editar</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="settings_section">
+                <div class="settings_dropdown_title dropdown_close seta_dropdown">
+                    <h3 class="settings_dropdown_subtitle">Notificações</h3>
+                    <i class="fa-solid fa-caret-down settings_dropdown_seta"></i>
+                </div>
+                <div class="settings_dropdown_content dropdown_content">
+                    <div class="settings_subsection">
+                        <h4>Notificações por Email</h4>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="settings_section">
+                <div class="settings_dropdown_title dropdown_close seta_dropdown">
+                    <h3 class="settings_dropdown_subtitle">Privacidade</h3>
+                    <i class="fa-solid fa-caret-down settings_dropdown_seta"></i>
+                </div>
+                <div class="settings_dropdown_content dropdown_content">
+                    <div class="settings_subsection">
+                        <h4>Visibilidade do Perfil</h4>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="settings_section">
+                <div class="settings_dropdown_title dropdown_close seta_dropdown">
+                    <h3 class="settings_dropdown_subtitle">VinmeVerse</h3>
+                    <i class="fa-solid fa-caret-down settings_dropdown_seta"></i>
+                </div>
+                <div class="settings_dropdown_content dropdown_content">
+                    <div class="settings_subsection">
+                        <h4>Gerenciar postagens</h4>
+                    </div>
+                </div>
+                <div class="settings_dropdown_content dropdown_content">
+                    <div class="settings_subsection">
+                        <h4>Comentarios</h4>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="settings_section">
+                   <div class="settings_dropdown_title dropdown_close seta_dropdown">
+                    <h3 class="settings_dropdown_subtitle">VinmeCommunity</h3>
+                    <i class="fa-solid fa-caret-down settings_dropdown_seta"></i>
+                </div>
+                <div class="settings_dropdown_content dropdown_content">
+                    <div class="settings_subsection">
+                        <h4>Amigos</h4>
+                    </div>
+                </div>
+                <div class="settings_dropdown_content dropdown_content">
+                    <div class="settings_subsection">
+                        <h4>Grupos</h4>
+                    </div>
+                </div>
+                <div class="settings_dropdown_content dropdown_content">
+                    <div class="settings_subsection">
+                        <h4>Postagens</h4>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="settings_section">
-        <h3 onclick="toggleSection(this)">Notificações</h3>
-        <div class="settings_content">
-            <p>Preferências de Notificação</p>
-            <p>Notificações por Email</p>
-        </div>
-    </div>
-    <div class="settings_section">
-        <h3 onclick="toggleSection(this)">Privacidade</h3>
-        <div class="settings_content">
-            <p>Visibilidade do Perfil</p>
-            <p>Compartilhamento de Dados</p>
-        </div>
-    </div>
-    <div class="settings_section">
-        <h3 onclick="toggleSection(this)">Blog</h3>
-        <div class="settings_content">
-            <p>Gerenciar Postagens</p>
-            <p>Comentários</p>
-        </div>
-    </div>
-    <div class="settings_section">
-        <h3 onclick="toggleSection(this)">Comunidade</h3>
-        <div class="settings_content">
-            <p>Grupos</p>
-            <p>Amigos</p>
-        </div>
-    </div>
-</div>
-<script>
-    function toggleSection(element) {
-        const content = element.nextElementSibling;
-        content.style.display = content.style.display === "none" ? "block" : "none";
-    }
-</script>
+</section>
 {% endblock %}

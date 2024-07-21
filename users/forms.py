@@ -41,3 +41,12 @@ class CustomSignupForm(SignupForm):
             raise forms.ValidationError("Este email já está registrado. Por favor, use outro email.")
         return email
 
+class UsernameChangeForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['username']
+
+    def __init__(self, *args, **kwargs):
+        super(UsernameChangeForm, self).__init__(*args, **kwargs)
+        self.fields['username'].widget.attrs.update({
+        })

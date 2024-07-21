@@ -41,6 +41,7 @@
     white-space: nowrap;
     position: absolute;
     left: 120%;
+    font-family: var(--fonte-3);
 }
 /* HEADER NAV MENU */
 .options_list {

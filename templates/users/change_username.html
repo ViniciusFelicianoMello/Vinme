@@ -1,0 +1,13 @@
+{% extends "account/base_entrance.html" %}
+{% load static %}
+
+{% block content %}
+  <div class="">
+    <h2>Alterar Nome de Usuário</h2>
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-primary">Atualizar Nome de Usuário</button>
+    </form>
+  </div>
+{% endblock %}
