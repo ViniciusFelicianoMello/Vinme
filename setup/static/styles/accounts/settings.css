@@ -152,3 +152,69 @@
     font-family: var(--fonte-2);
 
 }
+
+@media screen and (max-width: 1024px) {
+    .settings_box {
+        border-radius: 1em;
+    }
+
+    /* TITLE */
+    .settins_title {
+        padding-bottom: .5em;
+        border-bottom: 2px solid var(--cor-principal);
+        width: 95%;
+        gap: .5em;
+        margin: 2em 0 0 2em;
+    }
+    
+    .settins_title i {
+        padding: 3vw;
+        border: 2px solid var(--cor-principal);
+        font-size: 3vw;
+        height: 9vw;
+        width: 9vw;
+    }
+    
+    .settins_title h2 {
+        font-size: 5vw;
+    }
+    
+    /* SECTION */
+    .settings_section {
+        padding-bottom: .5em;
+        width: 95%;
+        gap: .5em;
+        margin: .5em 0 0 2em;
+    }
+    
+    .settings_dropdown_title {
+        width: 50%;
+        font-size: 3vw;
+    }
+    
+    .settings_subsection {
+        padding: 0 1em;
+    }
+    
+    .settings_subsection .account_btn-1 {
+        width: 20vw;
+        scale: .8;
+    }
+    
+    .settings_subsection h4 {
+        font-size: 4vw;
+    
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    /* TITLE */
+    .settins_title {
+        width: 85%;
+    }
+    /* SECTION */
+    .settings_section {
+        width: 85%;
+    }
+}

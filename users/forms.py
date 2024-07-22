@@ -1,10 +1,27 @@
 from django import forms
 from allauth.account.forms import SignupForm
+from django.core.exceptions import ValidationError
 from django.contrib.auth.models import User    
 from allauth.account.forms import ChangePasswordForm
 from django.utils.translation import gettext as _
 from .models import UserProfile
 
+# classe email e username
+class UsernameAndEmailClean:
+    def clean_username(self):
+        username = self.cleaned_data.get('username')
+        if User.objects.filter(username=username).exists():
+            raise ValidationError("Este nome de usuário já está em uso. Por favor, escolha outro.")
+        return username
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if User.objects.filter(email=email).exists():
+            raise ValidationError("Este email já está registrado. Por favor, use outro email.")
+        return email
+
+
+# formulario completar usuario
 class UserProfileForm(forms.ModelForm):
     birth_date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}), required=False)
     profile_picture = forms.ImageField(required=False)
@@ -13,6 +30,7 @@ class UserProfileForm(forms.ModelForm):
         model = UserProfile
         fields = ['profile_picture', 'first_name', 'last_name', 'birth_date', 'nationality', 'phone_number', 'biography']
 
+# formulario de alterar a senha validações
 class CustomPasswordChangeForm(ChangePasswordForm):
     def clean_password2(self):
         password1 = self.cleaned_data.get("password1")
@@ -27,21 +45,14 @@ class CustomPasswordChangeForm(ChangePasswordForm):
             raise forms.ValidationError(_("Sua senha atual está incorreta."))
         return oldpassword
     
-    
-class CustomSignupForm(SignupForm):
-    def clean_username(self):
-        username = self.cleaned_data['username']
-        if User.objects.filter(username=username).exists():
-            raise forms.ValidationError("Este nome de usuário já está em uso. Por favor, escolha outro.")
-        return username
-
-    def clean_email(self):
-        email = self.cleaned_data['email']
-        if User.objects.filter(email=email).exists():
-            raise forms.ValidationError("Este email já está registrado. Por favor, use outro email.")
-        return email
-
-class UsernameChangeForm(forms.ModelForm):
+# formulario de cadastro validações
+class CustomSignupForm(SignupForm, UsernameAndEmailClean):
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'password1', 'password2']
+        
+# formulario de username
+class UsernameChangeForm(forms.ModelForm, UsernameAndEmailClean):
     class Meta:
         model = User
         fields = ['username']

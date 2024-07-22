@@ -2,12 +2,27 @@
 {% load static %}
 
 {% block content %}
-  <div class="">
-    <h2>Alterar Nome de Usuário</h2>
-    <form method="POST">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit" class="btn btn-primary">Atualizar Nome de Usuário</button>
-    </form>
+<div class="account_title">
+  <i class="fa-solid fa-id-card-clip"></i>
+</div>
+
+<form method="POST" class="account_form account_margin-1">
+  {% csrf_token %}
+  <div class="account_control">
+    <input type="text" name="username" id="username" class="account_input" value="{{ form.username.value|default_if_none:'' }}" required>
+    <i class="fa-solid fa-user account_icon"></i>
+    <label for="username" class="account_label">Novo username</label>
+    <span class="account_span"></span>
   </div>
+
+  <div class="messages">
+        {{ form.username.errors }}
+  </div>
+
+  <div class="account_row">
+    <button type="submit" class="account_btn">Alterar username</button>
+    <a href="{% url 'settings_view' %}" class="account_btn-1" >Cancelar</a>
+  </div>
+  
+</form>
 {% endblock %}
