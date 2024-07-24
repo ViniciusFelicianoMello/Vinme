@@ -236,7 +236,7 @@ def index(request):
 def about(request):
     travel = [
         {'url': '#about', 'icon': 'fa-solid fa-user-astronaut', 'text': 'Sobre nós'},
-        {'url': '#histoy', 'icon': 'fa-solid fa-book-open', 'text': 'História'},
+        {'url': '#history', 'icon': 'fa-solid fa-book-open', 'text': 'História'},
         {'url': '#membros', 'icon': 'fa-solid fa-users', 'text': 'Membros'},
     ]
     context = {'travel': travel}
