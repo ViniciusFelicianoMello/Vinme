@@ -47,6 +47,7 @@
     transform: translateY(-0.5em);
     color: var(--cor-principal);
     box-shadow: var(--box-shadow-2);
+    background: var(--cor-fundo-2);
 }
 .tab-button.active {
     background: var(--cor-principal);

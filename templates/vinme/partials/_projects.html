@@ -1,0 +1,31 @@
+{% load static %}
+<section class="container projects" id="projects">
+    <!-- BACKGROUND -->
+     <div class="projects_bg viewport">
+        <span class="project_background"></span>
+     </div>
+    <!-- TITULO -->
+    <div class="">
+        <h2 class="section_title viewport">Nossos <a href="{% url 'projects' %}">Projetos</a> ja realizados!</h2> <br>
+        <p class="section_text viewport">Embora sejamos uma startup, estamos trabalhando incansavelmente, dia e noite,</p> <br>
+        <p class="section_text viewport">para transformar nossos projetos e sonhos em realidade.</p>
+    </div>
+    <!-- PROJETO TABS -->
+    <div class="project_tabs">
+        <div class="tab-buttons">
+            <button class="tab-button viewport active" data-tab="tab1">Desenvolvimento Web</button>
+            <button class="tab-button viewport" data-tab="tab2">Design Gráfico</button>
+            <button class="tab-button viewport" data-tab="tab3"> Desenvolvimento Back-end</button>
+        </div>
+         <!-- ABAS CONTEUDO 1-->
+         {% for project in projects %}
+         <div class="tab-content {% if forloop.first %}active{% endif %}" id="{{ project.id }}">
+             <!-- PROJETO -->
+             <div class="project_content viewport">
+                 <div class="project_img" style="background-image: url('{% static project.image %}');"></div>
+                 <span class="vermais">{{ project.seemore }} <i class="fa-solid fa-circle-right"></i></span>
+             </div>
+         </div>
+         {% endfor %}
+    </div>
+</section>

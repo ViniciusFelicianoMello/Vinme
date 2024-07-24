@@ -1,3 +1,7 @@
+.universe {
+    background: red;
+}
+
 .stars {
     position: absolute;
     z-index: 0 !important;
@@ -67,16 +71,16 @@
 .clouds-1 {
     display: flex;
     position: absolute;
-    width: 100%;
-    bottom: -50%;
-    left: -20%;
+    width: 200vw;
+    height: auto;
+    bottom: -70%;
+    left: -5%;
     transform: rotate(10deg);
     z-index: -1;
 }
 
 .clouds-1-svg {
     animation: infiniteScroll 50s linear infinite reverse;
-    filter: drop-shadow(0 -2px 0 var(--cor-fixa-1));
 }
 
 .clouds-1-svg:nth-of-type(2) {
@@ -84,21 +88,17 @@
 }
 
 .clouds-2-svg {
-    animation: infiniteScroll 90s linear infinite;
-    filter: drop-shadow(0 -2px 0 var(--cor-fixa-1));
+    animation: infiniteScroll 80s linear infinite;
 }
 .clouds-2-svg:nth-of-type(2) {
     margin-left: -.1vw;
 }
 .clouds-3-svg {
+    margin-left: 10em;
     animation: infiniteScroll 100s linear infinite reverse;
-    filter: drop-shadow(0 -2px 0 var(--cor-fixa-1));
 }
 .clouds-3-svg:nth-of-type(2) {
     margin-left: -.1vw;
-}
-.clouds-3-svg:nth-of-type(3) {
-    margin-left: -.2vw;
 }
 /* LINE BOTTOM */
 .line-1 {
@@ -109,6 +109,7 @@
     left: -20%;
     transform: rotate(10deg);
     z-index: -1;
+    opacity: .5;
 }
 
 .line-1-svg {
@@ -119,16 +120,16 @@
 .clouds-2 {
     display: flex;
     position: absolute;
-    width: 100%;
-    top: -50%;
-    left: -20%;
+    width: 200vw;
+    height: auto;
+    top: -40%;
+    left: -5%;
     transform: rotate(10deg);
     z-index: -1;
 }
 
 .clouds-4-svg {
     animation: infiniteScroll 50s linear infinite;
-    filter: drop-shadow(0 2px 0 var(--cor-fixa-1));
 }
 
 .clouds-4-svg:nth-of-type(2) {
@@ -137,7 +138,6 @@
 
 .clouds-5-svg {
     animation: infiniteScroll 90s linear infinite reverse;
-    filter: drop-shadow(0 2px 0 var(--cor-fixa-1));
 }
 .clouds-5-svg:nth-of-type(2) {
     margin-left: -.1vw;
@@ -147,8 +147,7 @@
 }
 .clouds-6-svg {
     animation: infiniteScroll 100s linear infinite;
-    filter: drop-shadow(0 2px 0 var(--cor-fixa-1));
-    margin-top: -8%;
+    margin-top: -2%;
 }
 .clouds-6-svg:nth-of-type(2) {
     margin-left: -.2vw;
@@ -158,14 +157,15 @@
     display: flex;
     position: absolute;
     width: 100%;
-    margin-top: 10%;
-    left: -20%;
+    margin-top: 25%;
+    left: 0%;
     transform: rotate(10deg);
     z-index: -1;
+    opacity: 0.5;
 }
 
 .line-2-svg {
-    animation: infiniteScroll 55s linear infinite reverse;
+    animation: infiniteScroll 30s linear infinite reverse;
 }
 
 /* VERSE */
@@ -177,7 +177,7 @@
     left: 0;
     transform: rotate(10deg);
     z-index: -3;
-    opacity: 0.5;
+    opacity: 0.2;
 }
 .verse_background img {
     animation: infiniteScroll 150s linear infinite reverse;
@@ -227,7 +227,7 @@
     }
     /* NUVEM BOTTOM */
     .clouds-1 {
-        bottom: -15%;
+        bottom: -20%;
         left: 5em;
     }
     
@@ -239,7 +239,7 @@
     
     /* NUVEM TOP */
     .clouds-2 {
-        top: -15%;
+        top: -5%;
         left: -5em;
     }
     /* LINE TOP */
@@ -251,7 +251,7 @@
     /* VERSE */
     .verse_background {
         height: 100vh;
-        top: 20%;
+        top: 40%;
         left: 0;
     }
     

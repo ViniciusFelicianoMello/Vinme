@@ -34,17 +34,28 @@
 
 .banner_link {
     opacity: 0;
+    text-decoration: none;
 }
 
 .banner_link i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: var(--cor-principal);
     font-size: 1.3vw;
     transition: 0.3s;
+    background: var(--cor-fundo-1);
+    border-radius: 50%;
+    width: 2.5vw;
+    height: 2.5vw;
+    box-shadow: var(--box-shadow-2);
 }
 
 .banner_link:hover i {
     color: var(--cor-principal-2);
     transform: translateY(-0.2em);
+    box-shadow: var(--box-shadow-2);
+    background: var(--cor-fundo-3);
 }
 
 .banner_link:nth-of-type(1).visible {
@@ -65,6 +76,14 @@
     position: relative;
     padding: 4em;
     width: 60vw;
+}
+.banner_text_box {
+    position: relative;
+    border-radius: 1em;
+    width: 55vw;
+    padding: 1em 2em;
+    box-shadow: var(--box-shadow-1);
+    background: var(--cor-fundo-3-tpt);
 }
 .banner_text h2 {
     font-family: var(--fonte-1);
@@ -265,13 +284,22 @@
         margin: 0;
     }
 
+    .banner_text_box {
+        border-radius: 1em;
+        width: 90vw;
+        margin-left: -1em;
+        padding: 1em 2em;
+    }
+
     /* BANNER LINKS */
     .banner_links{
         justify-content: start;
         margin-top: 7vh;
     }
     .banner_link i {
-        font-size: 2em;
+        font-size: 3vw;
+        width: 6vw;
+        height: 6vw;
     }
     /* BANNER TEXT */
     .banner_text {
@@ -290,13 +318,14 @@
     /* BANNER BTN */
     .banner_text_btn {
         margin-top: 4em;
-        scale: 1.2;
         align-self: center;
-        margin-left: 15vw;
+        margin-left: 9%;
+        transform: translateX(-50%);
     }
     .banner_text_btn a {
         padding: 1em 3em;
         border-radius: 0.8em;
+        font-size: 2.5vw;
     }
     /* BANNER SVG */
     .banner_svg {
@@ -340,10 +369,18 @@
         padding: 0;
         border-radius: 1em;
     }
+    .banner_text_box {
+        border-radius: 1em;
+        width: 90vw;
+        margin-left: -.5em;
+        padding: 1em 1em;
+    }
 
     /* BANNER LINKS */
     .banner_link i {
-        font-size: 1.8em;
+        font-size: 5vw;
+        width: 9vw;
+        height: 9vw;
     }
     /* BANNER TEXT */
     .banner_text {

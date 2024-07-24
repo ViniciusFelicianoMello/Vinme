@@ -33,15 +33,20 @@
 :root {
     --cor-principal:#006aff;
     --cor-principal-tpt:#006aff36;
-    --cor-principal-2:#009dff;
+    --cor-principal-2:#00b7ff;
     --cor-principal-3:#0033ce;
+
+    --cor-secundaria: #0400ff;
+    --cor-terciaria: #ad0ec5;
 
     --cor-fonte-1: #eef5ff; 
 
     --cor-fundo-tpt: #0014374e;
     --cor-fundo-1: #001437;
-    --cor-fundo-2: #001842;
+    --cor-fundo-2: #001a46;
     --cor-fundo-3: #001d50;
+    --cor-fundo-3-tpt: #001d50ee;
+    --cor-fundo-4: #00225e;
 
     --cor-fixa-1: #000837;
     --cor-fixa-2: #f0f2ff;
@@ -59,11 +64,12 @@
 [data-theme="dark"] {
     --cor-fonte-1: #001437; 
 
-    
     --cor-fundo-tpt: #e1edff4e;
-    --cor-fundo-1: #e1edff;
-    --cor-fundo-2: #eaf3ff;
+    --cor-fundo-1: #d2dae6;
+    --cor-fundo-2: #dfe7f3;
     --cor-fundo-3: #eef5ff;
+    --cor-fundo-3-tpt: #eef5ffee;
+    --cor-fundo-4: #f7fafe;
 
     --cor-shadow-1: #00275d78;
 }

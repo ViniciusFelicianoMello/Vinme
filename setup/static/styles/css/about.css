@@ -41,6 +41,21 @@
     align-items: center;
     width: 60vw;
     gap: 1em;
+    background: var(--cor-fundo-3);
+    box-shadow: var(--box-shadow-1);
+    border-radius: 1em;
+    opacity: 0;
+    padding: 1em;
+    overflow: hidden;
+}
+.about_text:hover {
+    background: var(--cor-fundo-2);
+    box-shadow: var(--box-shadow-2); 
+    color: var(--cor-principal);
+}
+
+.about_text.visible {
+    animation: slideRight 1s 1s ease-out forwards, opacity 1s 1s ease-out forwards;   
 }
 
 .about_text p {
@@ -57,10 +72,10 @@
 }
 
 .about_text p:nth-of-type(1).visible {
-    animation: slideRight 1s 1s ease-out forwards, opacity 1s 1s ease-out forwards;   
+    animation: slideRight 1s 1.7s ease-out forwards, opacity 1s 1.7s ease-out forwards;   
 }
 .about_text p:nth-of-type(2).visible {
-    animation: slideRight 1s 1.4s ease-out forwards, opacity 1s 1.4s ease-out forwards;   
+    animation: slideRight 1s 2.4s ease-out forwards, opacity 1s 2.4s ease-out forwards;   
 }
 
 /* SOBRE INFOS */
@@ -131,10 +146,10 @@
 }
 
 .about_infos_box:nth-of-type(1).visible {
-    animation: slideLeft 1s 1.6s ease-out forwards, opacity 1s 1.6s ease-out forwards;
+    animation: slideLeft 1s 1s ease-out forwards, opacity 1s 1s ease-out forwards;
 }
 .about_infos_box:nth-of-type(2).visible {
-    animation: slideLeft 1s 2s ease-out forwards, opacity 1s 2s ease-out forwards;
+    animation: slideLeft 1s 1.7s ease-out forwards, opacity 1s 1.7s ease-out forwards;
 }
 .about_infos_box:nth-of-type(3).visible {
     animation: slideLeft 1s 2.4s ease-out forwards, opacity 1s 2.4s ease-out forwards;   
@@ -142,8 +157,8 @@
 
 @media screen and (max-width:1024px) {
     /* SOBRE TITULO */
-    .about_title h2 {
-        font-size: 8vw;
+    .about_title h2 a {
+        font-size: 6vw;
     }
     .about_title h3 {
         font-size: 4vw;
@@ -211,6 +226,8 @@
     /* SOBRE INFOS */
     .about_infos {
         display: flex;
+        justify-content: center;
+        align-items: center;
         flex-direction: column;
         width: 100%;
         gap: 2rem;
