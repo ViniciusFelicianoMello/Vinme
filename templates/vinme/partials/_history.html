@@ -15,39 +15,27 @@
         </div>
         <div class="history_content">
             <div class="history_split">
-                <div class="history_split_item history_split_item_left">
-                    <h4 class="history_split_item_title">29 / 05 / 2024</h4>
-                    <p class="history_split_item_text">Criação e planejamento</p>
-                    <i class="fa-solid fa-scroll"></i>
-                </div>
-                <div class="history_split_item history_split_item_left">
-                    <h4 class="history_split_item_title">12 / 06 / 2024</h4>
-                    <p class="history_split_item_text">Design e identidade visual</p>
-                    <i class="fa-solid fa-pen-nib"></i>
-                </div>
-                <div class="history_split_item history_split_item_left">
-                    <h4 class="history_split_item_title">07 / 08 / 2024</h4>
-                    <p class="history_split_item_text">Lançamento do site</p>
-                    <i class="fa-solid fa-rocket"></i>
-                </div>
+                {% for event in events %}
+                    {% if event.side == 'left' %}
+                        <div class="history_split_item history_split_item_left">
+                            <h4 class="history_split_item_title">{{ event.date }}</h4>
+                            <p class="history_split_item_text">{{ event.text }}</p>
+                            <i class="fa-solid {{ event.icon }}"></i>
+                        </div>
+                    {% endif %}
+                {% endfor %}
             </div>
-
+        
             <div class="history_split">
-                <div class="history_split_item history_split_item_right">
-                    <h4 class="history_split_item_title">04 / 06 / 2024</h4>
-                    <p class="history_split_item_text">Pesquisa de concorrentes e revisão</p>
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
-                <div class="history_split_item history_split_item_right">
-                    <h4 class="history_split_item_title">18 / 06 / 2024</h4>
-                    <p class="history_split_item_text">Desenvolvimento web com Front-end e Back-end</p>
-                    <i class="fa-solid fa-laptop-code"></i>
-                </div>
-                <div class="history_split_item history_split_item_right">
-                    <h4 class="history_split_item_title">11 / 08 / 2024</h4>
-                    <p class="history_split_item_text">Primeiro trabalho realizado</p>
-                    <i class="fa-solid fa-laptop-file"></i>
-                </div>
+                {% for event in events %}
+                    {% if event.side == 'right' %}
+                        <div class="history_split_item history_split_item_right">
+                            <h4 class="history_split_item_title">{{ event.date }}</h4>
+                            <p class="history_split_item_text">{{ event.text }}</p>
+                            <i class="fa-solid {{ event.icon }}"></i>
+                        </div>
+                    {% endif %}
+                {% endfor %}
             </div>
         </div>
      </div>

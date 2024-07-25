@@ -105,6 +105,15 @@ def pages():
             'title': 'Back-End'
         }
     ]
+
+    events = [
+        {'date': '29 / 05 / 2024', 'text': 'Criação e planejamento', 'icon': 'fa-scroll', 'side': 'left'},
+        {'date': '12 / 06 / 2024', 'text': 'Design e identidade visual', 'icon': 'fa-pen-nib', 'side': 'left'},
+        {'date': '07 / 08 / 2024', 'text': 'Lançamento do site', 'icon': 'fa-rocket', 'side': 'left'},
+        {'date': '04 / 06 / 2024', 'text': 'Pesquisa de concorrentes e revisão', 'icon': 'fa-magnifying-glass', 'side': 'right'},
+        {'date': '18 / 06 / 2024', 'text': 'Desenvolvimento web com Front-end e Back-end', 'icon': 'fa-laptop-code', 'side': 'right'},
+        {'date': '11 / 08 / 2024', 'text': 'Primeiro trabalho realizado', 'icon': 'fa-laptop-file', 'side': 'right'}
+    ]
     # membros
     members_card = [
         {
@@ -194,6 +203,7 @@ def pages():
         'user_controls': user_controls, 
         'social_links': social_links,
         'info_boxes': info_boxes,
+        'events': events,
         'members_card': members_card,
         'services': services,
         'projects': projects,

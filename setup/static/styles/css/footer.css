@@ -95,9 +95,7 @@
 .footer_title {
     font-size: 2vw;
     color: var(--cor-principal);
-}
-.footer_title span {
-    color: var(--cor-principal-2);
+    font-family: var(--fonte-3)
 }
 .footer_links {
     margin-top: 10vh;

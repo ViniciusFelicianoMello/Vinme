@@ -36,9 +36,9 @@
     box-shadow: var(--box-shadow-1);
     border-radius: 2em 0 0 2em;
     color: var(--cor-fonte-1);
-    font-family: var(--fonte-2);
-    font-weight: 700;
-    font-size: 1.5vw;
+    font-family: var(--fonte-3);
+    font-weight: 400;
+    font-size: 1.2vw;
     transition: 0.5s;
     letter-spacing: 0.1em;
     opacity: 0;

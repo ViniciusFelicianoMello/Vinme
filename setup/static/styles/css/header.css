@@ -92,6 +92,12 @@
     visibility: visible;
     max-height: 50vh;
 }
+.option_title i {
+    transition: .3s;
+}
+.options_item:hover .option_title i {
+    transform: rotate(-90deg);
+}
 
 .dropdown_link {
     position: relative;
@@ -422,13 +428,19 @@
         gap: 2vw;
         color: var(--cor-principal);
     }
+    .dropdown_open .seta_dropdown_menu{
+        transform: rotate(-90deg);
+    }
+
+    
     .option_title {
         position: absolute;
         margin-left: 2em;
     }
     .seta_dropdown_menu {
         position: absolute;
-        padding-left: 30vw;
+        right: 0;
+        transition: .3s;
     }
     
     .menu_dropdown_lista {
