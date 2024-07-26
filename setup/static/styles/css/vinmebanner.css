@@ -1,0 +1,27 @@
+.banner_vinme {
+    width: 100vw;
+    margin-left: -10vw;
+    margin-top: 10vh;
+    box-shadow: var(--box-shadow-1);
+}
+.desktop-banner {
+    display: block;
+}
+.mobile-banner {
+    display: none;
+}
+@media screen and (max-width:1024px) {
+    .banner_vinme {
+        width: 100vw;
+        margin-left: -2vw;
+        margin-top: 10vh;
+        margin-bottom: 10vh;
+        box-shadow: var(--box-shadow-1);
+    }
+    .mobile-banner {
+        display: block;
+    }
+    .desktop-banner {
+        display: none;
+    }
+}

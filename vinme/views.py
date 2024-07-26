@@ -162,8 +162,8 @@ def pages():
     #projects
     projects = [
         {'id': 'tab1', 'image': 'assets/img/EmBreve1.png', 'seemore': 'Ver mais'},
-        {'id': 'tab2', 'image': 'assets/img/EmBreve2.png', 'seemore': 'Ver mais'},
-        {'id': 'tab3', 'image': 'assets/img/EmBreve3.png', 'seemore': 'Ver mais'},
+        {'id': 'tab2', 'image': 'assets/SVG/VINME/VinmeIDE.svg', 'seemore': 'Ver mais'},
+        {'id': 'tab3', 'image': 'assets/img/Backend.png', 'seemore': 'Ver mais'},
     ]
     #contact
     contact_info = [
