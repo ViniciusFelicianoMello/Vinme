@@ -168,7 +168,7 @@
     background-color: var(--cor-fundo-3);
     box-shadow: var(--box-shadow-1);
     padding: 1rem;
-    border-radius: 2rem;
+    border-radius: 1rem;
     border: 2px solid var(--cor-fonte-1);
     width: 50vw;
     height: 20vh;
@@ -256,7 +256,7 @@
     
     /* MODAL */
     .modal_card {
-        border-radius: 1.2rem;
+        border-radius: .7rem;
         width: 70vw;
     }
     

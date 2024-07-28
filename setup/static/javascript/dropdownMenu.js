@@ -18,3 +18,18 @@ document.querySelectorAll('.seta_dropdown').forEach(function(seta) {
         }
     });
 });
+
+document.querySelectorAll('.faq_ask').forEach(item => {
+    item.addEventListener('click', event => {
+        const faqBox = item.closest('.faq_box');
+        const isOpen = faqBox.classList.contains('faq_dropdown_open');
+
+        document.querySelectorAll('.faq_box').forEach(box => {
+            box.classList.remove('faq_dropdown_open');
+        });
+
+        if (!isOpen) {
+            faqBox.classList.add('faq_dropdown_open');
+        }
+    });
+});

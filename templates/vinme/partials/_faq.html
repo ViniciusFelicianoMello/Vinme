@@ -1,0 +1,23 @@
+{% load static %}
+<section class="container faq" id="faq">
+     <!-- FAQ TITLE -->
+     <div class="">
+        <h2 class="section_title faq_title viewport">Quais são as <span>perguntas mais frequentes</span>?</h2>
+    </div>
+    <!-- FAQ CONTENT -->
+    <div class="faq_content">
+        <div class="faq_question">
+            {% for faq in faqs %}
+            <div class="faq_box viewport">
+                <h3 class="faq_ask dropdown_close seta_dropdown">
+                    <span>{{ faq.question }}</span>
+                    <i class="fa-solid fa-caret-down faq_dropdown_seta"></i>
+                </h3>
+                <div class="faq_answer dropdown_content">
+                    <p>{{ faq.answer }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
