@@ -12,6 +12,21 @@
     animation: slideUp 2s ease-in-out forwards;
 }
 
+.projects_bg_2 {
+    position: absolute;
+    height: 80%;
+    width: 35vw;
+    background-color: var(--cor-principal);
+    right: 0;
+    top: 0;
+    border-radius: 0 0 10em 10em;
+}
+
+.projects_bg_2.visible {
+    animation: slideDown 2s ease-in-out forwards;
+}
+
+
 /* PROJETOS ABAS */
 .project_tabs {
     position: relative;
@@ -118,11 +133,225 @@
     margin-left: 60%;
 }
 
+/* PROJECTS LIST */
+.projectList_list {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    gap: 1em;
+}
+
+.projectList_item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25vh;
+    width: 23%;
+    overflow: hidden;
+    border-radius: 1em;
+    box-shadow: var(--box-shadow-1);
+}
+.projectList_item:hover {
+    box-shadow: var(--box-shadow-2);
+}
+
+.projectList_box {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: var(--cor-fundo-3);
+    background-position: 100% 0%;
+    background-size: cover;
+    transition: 5s;
+}
+
+.projectList_box:hover {
+    background-position: 100% 100%;
+}
+
+/* PROJECTLIST MODAL */
+.projectList_modal {
+    display: grid;
+    position: fixed;
+    inset: 0;
+    backdrop-filter: blur(10px);
+    padding: 2rem 1rem;
+    background: var(--cor-fundo-tpt);
+    place-items: center;
+    z-index: 1000;
+    cursor: auto;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+.projectList_modal_close {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3vw;
+    width: 3vw;
+    font-size: 2vw;
+    top: -.5vw;
+    right: -.2vw;
+    color: var(--cor-fundo-1);
+    background: var(--cor-principal-3);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 3;
+    opacity: 0.8;
+    transition: .5s;
+}
+.projectList_modal_close:hover {
+    opacity: 1;
+    transform: translateY(.2em) translateX(-.2em) scale(1.3);
+}
+
+.projectList_carrousel {
+    width: 50vw;
+    height: 60vh;
+    position: relative;
+    display: flex;
+    border-radius: 1em;
+    overflow: hidden;
+    box-shadow: var(--box-shadow-1);
+    transition: 2s;
+    opacity: 0;
+    transform: translateY(-100%);
+}
+
+
+.modal.active-modal .projectList_carrousel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.projectList_carrousel a {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .5em 1em;
+    gap: .5em;
+    border-radius: .5em;
+    text-decoration: none;
+    bottom: 0.5em;
+    right: 1em;
+    font-family: var(--fonte-3);
+    box-shadow: var(--box-shadow-1);
+    color: var(--cor-fundo-1);
+    background: var(--cor-principal-3);
+    cursor: pointer;
+    z-index: 3;
+    opacity: 0.8;
+    transition: .5s;
+}
+
+.projectList_carrousel a:hover {
+    opacity: 1;
+    transform: translateX(.2em) scale(1.04);
+}
+
+.projectList_carrousel_item {
+    height: 100%;
+    width: 100%;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.carrousel_btn {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 65vw;
+    top: 32%;
+}
+
+.carrousel_btn button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--cor-fundo-1);
+    background: var(--cor-principal-3);
+    box-shadow: var(--box-shadow-1);
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    height: 3vw;
+    width: 3vw;
+    z-index: 3;
+    opacity: 0.8;
+    transition: .5s;
+}
+
+.carrousel_btn button:hover {
+    opacity: 1;
+    transform: translateY(.2em) translateX(-.2em) scale(1.3);
+}
+
+.projectList_carrousel_images {
+    position: relative;
+    display: flex;
+    align-self: start;
+    border-radius: 1em;
+    width: 60vw;
+    height: 20vh;
+    padding: 1em;
+    gap: 1em;
+    transition: 2s;
+    opacity: 0;
+    transform: translateY(100%);
+}
+
+.modal.active-modal .projectList_carrousel_images {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.projectList_carrousel_img {
+    position: relative;
+    display: flex;
+    align-self: start;
+    border-radius: 1em;
+    width: 30%;
+    height: 100%;
+    box-shadow: var(--box-shadow-1);
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.projectList_carrousel_img:hover {
+    transform: translateY(-0.3vh);
+    opacity: 1;
+    box-shadow: var(--box-shadow-2);
+}
+.projectList_carrousel_img.selected {
+    transform: translateY(-0.5vh);
+    opacity: 1;
+}
+
 @media screen and (max-width:1024px) {
     .projects_bg {
-        width: 45vw;
         height: 85%;
+        width: 45vw;
         border-radius: 7em 7em 0 0;
+    }
+    .projects_bg_2 {
+        height: 85%;
+        width: 45vw;
+        border-radius: 0 0 7em 7em;
     }
     /* PROJETOS ABAS */
     .tab-buttons {
@@ -149,6 +378,59 @@
         margin-left: 40%;
         font-size: 4vw;
     }
+    
+    /* PROJECTS LIST */
+    .projectList_list {
+        gap: 1em;
+        margin-bottom: 4em;
+    }
+
+    .projectList_item {
+        height: 25vh;
+        width: 48%;
+    }
+    /* PROJECTLIST MODAL */
+
+    .projectList_modal_close {
+        height: 6vw;
+        width: 6vw;
+        font-size: 4vw;
+        opacity: 1;
+    }
+    .projectList_carrousel {
+        width: 90vw;
+        height: 40vh;
+    }
+    .projectList_carrousel a {
+        padding: .5em 1em;
+        gap: .5em;
+        border-radius: .5em;
+        font-size: 2vw;
+        opacity: 1;
+    }
+    .carrousel_btn {
+        width: 95vw;
+        top: 29%;
+        opacity: 1;
+    }
+
+    .carrousel_btn button {
+        height: 6vw;
+        width: 6vw;
+        font-size: 3vw;
+    }
+
+    .projectList_carrousel_images {
+        width: 95vw;
+        height: 20vh;
+        transition: 2s;
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    .projectList_carrousel_img {
+        width: 35%;
+    }
 }
 
 @media screen and (max-width:600px) {
@@ -156,6 +438,11 @@
         width: 45vw;
         height: 85%;
         border-radius: 4em 4em 0 0;
+    }
+    .projects_bg_2 {
+        width: 45vw;
+        height: 85%;
+        border-radius: 0 0 4em 4em;
     }
     /* PROJETOS ABAS */
     .tab-button {
@@ -176,5 +463,24 @@
     .project_content .vermais {
         margin-left: 40%;
         font-size: 5vw;
+    }
+
+     /* PROJECTS LIST */
+     .projectList_list {
+        gap: .5em;
+        margin-bottom: 4em;
+    }
+
+    .projectList_item {
+        height: 25vh;
+        width: 90%;
+    }
+    
+    .carrousel_btn {
+        width: 95vw;
+        top: 29%;
+    }
+    .projectList_carrousel a {
+        font-size: 3vw;
     }
 }

@@ -15,16 +15,16 @@ botaoDark.addEventListener('change', () => {
 function changeThemeToDark() {
     document.documentElement.setAttribute('data-theme', 'dark');
     localStorage.setItem('theme', 'dark');
-    iconSun.classList.add('visible');
-    iconMoon.classList.remove('visible');
+    iconMoon.classList.add('visible');
+    iconSun.classList.remove('visible');
 }
 
 // Função para alterar o tema para claro
 function changeThemeToLight() {
     document.documentElement.setAttribute('data-theme', 'light');
     localStorage.setItem('theme', 'light');
-    iconSun.classList.remove('visible');
-    iconMoon.classList.add('visible');
+    iconMoon.classList.remove('visible');
+    iconSun.classList.add('visible');
 }
 
 // Verifica o tema salvo no localStorage ao carregar a página

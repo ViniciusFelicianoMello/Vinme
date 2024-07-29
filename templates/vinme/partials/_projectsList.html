@@ -1,0 +1,39 @@
+{% load static %}
+<section class="container projectList" id="projectsList">
+    <div class="projects_bg_2 viewport">
+        <span class="project_background"></span>
+     </div>
+
+     <ul class="projectList_list">
+        <!-- ITEM -->
+        {% for project in projectsList %}
+        <li class="projectList_item">
+            <div class="projectList_box" style="background-image: url('{% static project.background_image %}');">
+                <span class="vermais">Ver mais <i class="fa-solid fa-circle-right"></i></span>
+            </div>
+            <!-- MODAL -->
+            <div class="projectList_modal modal">
+                
+                <div class="projectList_carrousel carrousel ">
+                    <span class="modal_close projectList_modal_close">&times;</span>
+                    <div class="projectList_carrousel_item carrousel_item"></div>
+                    {% for link in project.links %}
+                    <a href="{{ link }}" target="_blank" rel="noopener noreferrer"> <i class="fa-solid fa-link"></i> Visitar</a>
+                    {% endfor %}
+                </div>
+                
+                <div class="projectList_carrousel_images">
+                    {% for image in project.images %}
+                    <div class="projectList_carrousel_img carrousel_img" style="background-image: url('{% static image %}');"></div>
+                    {% endfor %}
+                </div>
+
+                <div class="carrousel_btn">
+                    <button id="prev_carrousel"><i class="fa-solid fa-angle-left"></i></button>
+                    <button id="next_carrousel"><i class="fa-solid fa-angle-right"></i></button>
+                </div>   
+            </div>
+        </li>
+        {% endfor %}
+     </ul>
+</section>

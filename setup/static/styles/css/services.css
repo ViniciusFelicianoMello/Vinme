@@ -139,14 +139,19 @@
 }
 
 
-/* MODAL */
+/* services_modal */
 .modal.active-modal {
     opacity: 1;
     visibility: visible;
     transform: scale(1);
 }
 
-.modal {
+.modal.active-modal .modal_card {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.services_modal {
     display: grid;
     position: fixed;
     inset: 0;
@@ -160,7 +165,7 @@
     transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
 }
 
-.modal_card {
+.services_modal_card {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -174,9 +179,12 @@
     height: 20vh;
     margin-top: -10em;
     overflow: hidden;
+    transform: scale(0);
+    transition: 0.3s;
+    opacity: 0;
 }
 
-.modal_close {
+.services_modal_close {
     align-self: flex-end;
     font-size: 2vw;
     margin-top: -1.8vh;
@@ -184,22 +192,22 @@
     cursor: pointer;
     z-index: 3;
 }
-.modal_close:hover {
+.services_modal_close:hover {
     color: var(--cor-principal-2);
 }
 
-.modal_card h3 {
+.services_modal_card h3 {
     font-size: 1.5vw;
     letter-spacing: 0.1em;
 }
 
-.modal_card p {
+.services_modal_card p {
     font-family: var(--fonte-2);
     letter-spacing: 0.08em;
     font-size: 1.2vw;
 }
 
-.modal_card i {
+.services_modal_card i {
     position: absolute;
     opacity: 0.1;
     color: var(--cor-principal);
@@ -255,20 +263,20 @@
     }
     
     /* MODAL */
-    .modal_card {
+    .services_modal_card {
         border-radius: .7rem;
         width: 70vw;
     }
     
-    .modal_close {
+    .services_modal_close {
         font-size: 5vw;
         margin-top: -1.8vh;
     }
-    .modal_card h3 {
+    .services_modal_card h3 {
         font-size: 3.5vw;
     }
     
-    .modal_card p {
+    .services_modal_card p {
         font-size: 3vw;
     }
 }
@@ -301,21 +309,21 @@
         right: 1em;
         left: 1em;
     }
-    /* MODAL */
-    .modal_card {
+    /* services_modal */
+    .services_modal_card {
         border-radius: .5rem;
         width: 80vw;
     }
     
-    .modal_close {
+    .services_modal_close {
         font-size: 5vw;
         margin-top: -1.8vh;
     }
-    .modal_card h3 {
+    .services_modal_card h3 {
         font-size: 5vw;
     }
     
-    .modal_card p {
+    .services_modal_card p {
         font-size: 4vw;
     }
 }

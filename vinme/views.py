@@ -161,9 +161,27 @@ def pages():
     ]
     #projects
     projects = [
-        {'id': 'tab1', 'image': 'assets/img/EmBreve1.png', 'seemore': 'Ver mais'},
-        {'id': 'tab2', 'image': 'assets/SVG/VINME/VinmeIDE.svg', 'seemore': 'Ver mais'},
-        {'id': 'tab3', 'image': 'assets/img/Backend.png', 'seemore': 'Ver mais'},
+        {'id': 'tab1', 'image': 'assets/img/EmBreve1.png'},
+        {'id': 'tab2', 'image': 'assets/SVG/VINME/VinmeIDE.svg'},
+        {'id': 'tab3', 'image': 'assets/img/Backend.png'},
+    ]
+
+    projectsList = [
+        {
+            'background_image': 'assets/img/EmBreve1.png',
+            'links': '#',
+            'images': [
+                'assets/img/projects/vinme/vinme1.png',
+                'assets/img/projects/vinme/vinme2.png',
+                'assets/img/projects/vinme/vinme3.png',
+            ]
+        },
+        {
+        },
+        {
+        },
+        {
+        },
     ]
     #contact
     contact_info = [
@@ -246,6 +264,7 @@ def pages():
         'members_card': members_card,
         'services': services,
         'projects': projects,
+        'projectsList': projectsList,
         'contact_info': contact_info,
         'faqs': faqs,
     }
@@ -302,7 +321,12 @@ def services(request):
     return render(request, 'vinme/services.html', context)
 
 def projects(request):
-    context = add_pages_context({})
+    travel = [
+        {'url': '#projects', 'icon': 'fa-solid fa-file-lines', 'text': 'Projetos'},
+        {'url': '#projectsList', 'icon': 'fa-solid fa-file-lines', 'text': 'Todos os projetos'},
+    ]
+    context = {'travel': travel}
+    context = add_pages_context(context)
     return render(request, 'vinme/projects.html', context)
 
 def contact(request):
