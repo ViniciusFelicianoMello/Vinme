@@ -51,6 +51,7 @@ INSTALLED_APPS = [
 
     'vinme.apps.VinmeConfig',
     'users.apps.UsersConfig',
+    'blog.apps.BlogConfig',
 ]
 
 MIDDLEWARE = [

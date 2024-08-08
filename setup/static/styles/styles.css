@@ -40,7 +40,7 @@
     --cor-principal-3:#0033ce;
 
     --cor-secundaria: #00ffec;
-    --cor-terciaria: #7a0bdb;
+    --cor-terciaria: #cd00ff;
 
     --cor-fonte-1: #001437; 
 
@@ -51,6 +51,9 @@
     --cor-fundo-3-tpt: #eef5ffee;
     --cor-fundo-4: #f7fafe;
 
+    --gradient-1: linear-gradient(-135deg,#cd00ff, #00b7ff, #006aff, #cd00ff);
+    --gradient-2: linear-gradient(-135deg,#00b7ff, #cd00ff, #006aff, #00b7ff);
+
     --cor-fixa-1: #000837;
     --cor-fixa-2: #f0f2ff;
 
@@ -58,6 +61,7 @@
 
     --box-shadow-1: 0px 0px 6px var(--cor-shadow-1), 0 0 6px var(--cor-shadow-1);
     --box-shadow-2: 0px 0px 6px var(--cor-principal-2), 0 0 6px var(--cor-principal-2);
+    --neon-inset-1: inset 0 0 20px #00ffec,inset 0 0 10px #00b7ff,inset 0 0 15px #00b7ff,inset 0 0 25px #cd00ff;
 
     --fonte-1: "Orbitron", sans-serif;
     --fonte-2: "Share Tech", sans-serif;
@@ -124,7 +128,7 @@ body {
     width: 100%;
     min-height: 100vh;
     max-height: max-content;
-    padding: 5vw 10vw;
+    padding: 2vw 10vw;
     overflow: hidden;
 }
 

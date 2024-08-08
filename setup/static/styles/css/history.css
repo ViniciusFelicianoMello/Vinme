@@ -35,17 +35,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to right, var(--cor-principal), var(--cor-principal-2));
     border-radius: 50%;
     box-shadow: var(--box-shadow-1);
     font-size: 1.5vw;
-    transition: .3s;
+    transition: all .3s;
+    background: var(--gradient-1);
+    background-size: 400% 400%;
+    background-position: 0% 50%;
+    animation: btnHoverUm 10s linear infinite;
 }
 
 .history_start h3:hover {
-    box-shadow: var(--box-shadow-2);
-    scale: 1.05;
-    background: linear-gradient(to right, var(--cor-principal-2), var(--cor-principal));
+    background: var(--gradient-2);
+    background-size: 400% 100%;
+    box-shadow: var(--box-shadow-2), var(--neon-inset-1);
+    animation: btnHoverUm 10s linear infinite;
+    transform: translateY(2px);
 }
 
 .history_start_info {

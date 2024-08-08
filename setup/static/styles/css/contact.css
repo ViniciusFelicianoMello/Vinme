@@ -214,18 +214,23 @@
     font-weight: 700;
     font-family: var(--fonte-2);
     letter-spacing: 0.03rem;
-    background: var(--cor-fonte-1);
+    background: var(--cor-fundo-3);
     opacity: 0.8;
 }
 .contact_form_btn button:nth-of-type(2) {
-    background: var(--cor-principal);
+    background: var(--gradient-1);
+    background-size: 400% 400%;
+    background-position: 0% 50%;
+    animation: btnHoverUm 10s linear infinite;
 }
 .contact_form_btn button:hover {
     opacity: 1;
+    box-shadow: var(--box-shadow-2);
+    background-size: 400% 100%;
 }
 
 .btn_clear {
-    color: var(--cor-fundo-1) !important;
+    color: var(--cor-fonte-1) !important;
 }
 .btn_send {
     color: var(--cor-fonte-1) !important;

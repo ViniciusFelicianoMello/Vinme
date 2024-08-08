@@ -1,7 +1,7 @@
 .services {
     width: 100%;
     height: max-content;
-    padding: 5vw 0;
+    padding: 2vw 0;
     position: relative;
     overflow: hidden;
     min-height: 100vh;
@@ -78,13 +78,16 @@
     position: absolute;
     bottom: 1em;
     left: 1em;
-    background: var(--cor-principal);
+    background: var(--gradient-1);
+    background-size: 400% 400%;
+    background-position: 0% 50%;
+    animation: btnHoverUm 10s linear infinite;
     padding: 0.2vw 1vw;
     border-radius: 0.3em;
     cursor: pointer;
     box-shadow: var(--box-shadow-1);
     overflow: hidden;
-    transition: background 0.3s, color 0.3s, transform 0.3s;
+    transition: all .3s;
     font-family: var(--fonte-3);
 }
 
@@ -109,8 +112,11 @@
     transition: 0.5s;
 }
 .vermais:hover {
-    box-shadow: var(--box-shadow-2);
-    background: var(--cor-principal-2);
+    background: var(--gradient-2);
+    background-size: 400% 100%;
+    box-shadow: var(--box-shadow-2), var(--neon-inset-1);
+    transform: translateY(2px);
+    animation: btnHoverUm 10s linear infinite;
     transform: translateX(0.3em);
 }
 

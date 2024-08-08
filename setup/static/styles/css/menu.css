@@ -17,7 +17,9 @@
 
 .nav_menu_label {
     cursor: pointer;
-    background: var(--cor-principal);
+    background: var(--gradient-1);
+    background-size: 400% 400%;
+    background-position: 0% 50%;
     color: var(--cor-fundo-3);
     font-weight: 500;
     padding: 2vh .5vh 1vh;
@@ -28,10 +30,15 @@
     justify-content: space-evenly;
     font-size: 1vw;
     font-family: var(--fonte-3);
+    animation: btnHoverUm 10s linear infinite;
+    transition: all 0.5s ease;
 }
 
 .nav_menu_label:hover {
-    background: var(--cor-principal-2);
+    background: var(--gradient-2);
+    animation: btnHoverUm 10s linear infinite;
+    background-size: 400% 100%; 
+    box-shadow: var(--box-shadow-2), var(--neon-inset-1);
 }
 
 .nav_menu_dropdown {

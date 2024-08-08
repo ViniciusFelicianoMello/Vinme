@@ -167,7 +167,10 @@
     align-items: center;
     justify-content: center;
     color: var(--cor-fundo-1);
-    background: var(--cor-principal);
+    background: var(--gradient-1);
+    background-size: 400% 400%;
+    background-position: 0% 50%;
+    animation: btnHoverUm 10s linear infinite;
     border: none;
     border-radius: 50%;
     height: 1em;
@@ -190,6 +193,9 @@
 }
 #prev:hover,
 #next:hover{
+    background: var(--gradient-2);
+    background-size: 400% 100%;
+    animation: btnHoverUm 10s linear infinite;
     opacity: 1;
 }
 
@@ -210,10 +216,18 @@
     margin: 0 7px;
     cursor: pointer;
     box-shadow: var(--box-shadow-1);
+    transition: 0.3s ease;
+}
+
+.bullet:hover {
+    transform: translateY(-0.1em);
 }
 
 .bullet.active {
-    background: var(--cor-principal);
+    background: var(--gradient-1);
+    background-size: 400% 100%;
+    box-shadow: var(--box-shadow-2);
+    animation: btnHoverUm 10s linear infinite;
     scale: 1.05;
 }
 

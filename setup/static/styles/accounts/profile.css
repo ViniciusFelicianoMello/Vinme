@@ -122,23 +122,27 @@
     border-radius: 50%;
     width: 3vw;
     height: 3vw;
-    background: var(--cor-principal);
+    background: var(--gradient-1);
+    background-size: 400% 400%;
+    background-position: 0% 50%;
+    animation: btnHoverUm 10s linear infinite;
     color: var(--cor-fundo-3);
     font-weight: 700;
     font-size: 1.2vw;
-    box-shadow: 0px 7px 0px var(--cor-principal-3), var(--box-shadow-1);
-    transition: .3s;
+    box-shadow: var(--box-shadow-1);
+    transition: all 0.5s ease;
     text-decoration: none;
 }
 
 .profile_button:hover {
-    background: var(--cor-principal-2);
-    box-shadow: 0px 5px 0px var(--cor-principal-3), var(--box-shadow-2);
+    background: var(--gradient-2);
+    background-size: 400% 100%;
+    box-shadow: var(--box-shadow-2);
+    animation: btnHoverUm 10s linear infinite;
     transform: translateY(2px);
 }
 .profile_button:active {
-    box-shadow: 0px 0px 0px var(--cor-principal-3), var(--box-shadow-2);
-    transform: translateY(7px);
+    transform: translateY(5px);
 }
 
 .profile_button span {
@@ -147,7 +151,10 @@
     align-items: center;
     justify-content: center;
     text-wrap: nowrap;
-    background: var(--cor-principal);
+    background: var(--gradient-1);
+    background-size: 400% 400%;
+    background-position: 0% 50%;
+    animation: btnHoverUm 10s linear infinite;
     font-size: 1vw;
     font-family: var(--fonte-2);
     color: var(--cor-fonte-1);

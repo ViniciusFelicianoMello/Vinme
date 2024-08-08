@@ -3,7 +3,7 @@
     width: 100%;
     min-height: 100vh;
     max-height: max-content;
-    padding: 2vw 1vw;
+    padding: 0vw 1vw;
     overflow: hidden;
 }
 /* BANNER BOX */
@@ -135,7 +135,9 @@
     animation: slideUp1 1s 4s ease-in forwards, opacity 1s 4s ease-in forwards;
 }
 .banner_text_btn a {
-    background: var(--cor-principal);
+    background: var(--gradient-1);
+    background-size: 400% 400%;
+    background-position: 0% 50%;
     color: var(--cor-fundo-3);
     padding: 1em 3em;
     border-radius: 1em;
@@ -145,23 +147,25 @@
     font-weight: 400;
     font-family: var(--fonte-3);
     font-size: 1.2vw;
-    box-shadow: 0px 7px 0px var(--cor-principal-3), var(--box-shadow-1);
-    transition: .3s;
+    box-shadow: var(--box-shadow-1);
+    transition: all 0.5s ease;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 33vw;
+    animation: btnHoverUm 10s linear infinite;
 }
+
 .banner_text_btn:hover a {
-    background: linear-gradient(90deg, var(--cor-principal) 0%, var(--cor-principal-2) 50%, var(--cor-principal) 75%, var(--cor-principal) 100%);
-    animation: btnHoverUm 5s linear infinite;
-    background: var(--cor-principal-2);
-    box-shadow: 0px 5px 0px var(--cor-principal-3), var(--box-shadow-2);
+    background: var(--gradient-2);
+    background-size: 400% 100%;
+    box-shadow: var(--box-shadow-2), var(--neon-inset-1);
     transform: translateY(2px);
+    animation: btnHoverUm 10s linear infinite;
 }
 
 .banner_text_btn:active a {
-    box-shadow: 0px 0px 0px var(--cor-principal-3), var(--box-shadow-2);
-    transform: translateY(7px);
+    transform: translateY(5px);
 } 
 /* BANNER SVG */
 .banner_svg {
@@ -324,6 +328,7 @@
         transform: translateX(-50%);
     }
     .banner_text_btn a {
+        width: 65vw;
         padding: 1em 3em;
         border-radius: 0.8em;
         font-size: 2.5vw;

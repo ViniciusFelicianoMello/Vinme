@@ -12,7 +12,6 @@
             {% for menu in navigation %}
             <!-- ITEM DA LISTA -->
             <li class="options_item">
-                <i class="{{ menu.icon }} option_icon"></i>
                 <span class="option_title">{{ menu.title }} <i class="fa-solid fa-caret-down"></i> </span>
                 <!-- DROPDOWN LIST -->
                 <ul class="dropdown_list">
@@ -69,14 +68,14 @@
                         </div>
                     </div>
                 </li>
-                <!-- <li class="controls_menu_box">
+                <li class="controls_menu_box">
                     {% for link in user_links %}
                     <a href="{% url link.url %}" class="controls_menu_link">
                         <i class="{{ link.icon }}"></i>
                         <strong>{{ link.label }}</strong>
                     </a>
                     {% endfor %}
-                </li> -->
+                </li>
                 <li class="controls_menu_box">
                     {% for link in user_config %}
                     <a href="{% url link.url %}" class="controls_menu_link">
