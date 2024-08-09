@@ -1,6 +1,19 @@
 from django.shortcuts import render, redirect, get_object_or_404
+
 from .models import Post, Comment
-from .forms import CommentForm
+# from .forms import CommentForm
+
+from vinme.views import pages, add_pages_context
+
+def blog(request):
+    travel = [
+        {'url': '#banner', 'icon': 'fa-solid fa-pager', 'text': 'Banner'},
+        {'url': '#popular', 'icon': 'fa-solid fa-star', 'text': 'Populares'},
+        {'url': '#latest', 'icon': 'fa-solid fa-clock', 'text': 'Recentes'},
+    ]
+    context = {'travel': travel}
+    context = add_pages_context(context) 
+    return render(request, 'blog/blog.html', context)
 
 def post_detail(request, post_id):
     post = get_object_or_404(Post, id=post_id)
@@ -17,7 +30,7 @@ def post_detail(request, post_id):
 
     return render(request, 'post_detail.html', {'post': post, 'form': form})
 
-# Formulário para comentários
+
 from django import forms
 
 class CommentForm(forms.ModelForm):

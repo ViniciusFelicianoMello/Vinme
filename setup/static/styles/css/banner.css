@@ -119,7 +119,15 @@
 }
 
 .banner_text span {
-    color: var(--cor-principal);
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    background-size: 400% 100%;
+    background-position: 0% 50%;
+    animation: btnHoverUm 10s linear infinite;
+    transition: all .5s;
     font-weight: 700;
 }
 

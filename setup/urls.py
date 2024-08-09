@@ -24,4 +24,5 @@ urlpatterns = [
     path('', include('vinme.urls')),
     path('users/', include('users.urls')),
     path('accounts/', include('allauth.urls')),
+    path('blog/', include('blog.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

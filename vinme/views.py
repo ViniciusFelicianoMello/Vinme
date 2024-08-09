@@ -15,7 +15,7 @@ def pages():
     ]
 
     blog_links = [
-        {'url': 'index', 'icon': 'fa-solid fa-blog', 'name': 'blog'},
+        {'url': 'blog', 'icon': 'fa-solid fa-blog', 'name': 'blog'},
     ]
 
     class_links = [
@@ -51,7 +51,7 @@ def pages():
 
 
     user_links = [
-            {'url': 'index', 'icon': 'fa-solid fa-bookmark', 'label': 'favoritos'},
+            {'url': 'index', 'icon': 'fa-solid fa-star', 'label': 'favoritos'},
             {'url': 'index', 'icon': 'fa-solid fa-folder', 'label': 'arquivados'},
             {'url': 'index', 'icon': 'fa-solid fa-mug-hot', 'label': 'atividades'},
             {'url': 'index', 'icon': 'fa-solid fa-message', 'label': 'mensagens'},
