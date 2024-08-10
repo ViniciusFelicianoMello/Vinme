@@ -21,6 +21,7 @@ class Post(models.Model):
         ("RECEITAS", "Receitas"),
         ("FASHION", "Moda"),
         ("LIFESTYLE", "Lifestyle"),
+        ("VINME", "Vinme"),
     ]
 
     title = models.CharField(max_length=200)
@@ -41,16 +42,6 @@ class Post(models.Model):
         if ratings:
             return sum(ratings) / len(ratings)
         return 0
-    
-class Like(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    post = models.ForeignKey(Post, on_delete=models.CASCADE)
-
-    class Meta:
-        unique_together = ('user', 'post')
-
-    def __str__(self):
-        return f"{self.user.username} likes {self.post.title}"
 
 class ContentSection(models.Model):
     post = models.ForeignKey(Post, related_name='sections', on_delete=models.CASCADE)
@@ -78,9 +69,9 @@ class Media(models.Model):
 class Comment(models.Model):
     post = models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    content = models.TextField()
+    content = models.TextField(blank=True, null=True) 
     rating = models.PositiveIntegerField(
-        validators=[MinValueValidator(1), MaxValueValidator(5)]
+        validators=[MinValueValidator(1), MaxValueValidator(5)], blank=True, null=True
     )
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(auto_now=True)

@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.forms import ValidationError
-from .models import Post, ContentSection, Media, Comment, Like
+from .models import Post, ContentSection, Media, Comment
 
 class MediaInline(admin.TabularInline):
     model = Media
@@ -15,12 +15,17 @@ class ContentSectionInline(admin.StackedInline):
     inlines = [MediaInline]
 
 class PostAdmin(admin.ModelAdmin):
-    list_display = ('title', 'category', 'created_at', 'is_active', 'average_rating')
+    list_display = ('title', 'category', 'author', 'created_at', 'is_active', 'average_rating')
     list_filter = ('category', 'created_at', 'author')
     search_fields = ('title', 'caption')
     ordering = ('created_at',)
     fields = ('title','image', 'caption', 'category', 'is_active',)
     inlines = [ContentSectionInline] 
+
+    def save_model(self, request, obj, form, change):
+        if not obj.author_id:
+            obj.author = request.user
+        super().save_model(request, obj, form, change)
 
 admin.site.register(Post, PostAdmin)
 admin.site.register(ContentSection)
@@ -31,7 +36,3 @@ class CommentAdmin(admin.ModelAdmin):
     list_display = ('post', 'author', 'rating', 'created_at', 'is_active')
     list_filter = ('created_at', 'is_active', 'rating',)
     search_fields = ('content', 'author__username', 'post', 'title')
-
-@admin.register(Like)
-class LikeAdmin(admin.ModelAdmin):
-    list_display = ('user', 'post')

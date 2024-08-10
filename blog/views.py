@@ -1,9 +1,14 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.db.models import Avg
 
+from blog import models
+from .forms import CommentForm
+from django import forms
 from .models import Post, Comment
 # from .forms import CommentForm
 
 from vinme.views import pages, add_pages_context
+
 
 def blog(request):
     travel = [
@@ -11,7 +16,8 @@ def blog(request):
         {'url': '#popular', 'icon': 'fa-solid fa-star', 'text': 'Populares'},
         {'url': '#latest', 'icon': 'fa-solid fa-clock', 'text': 'Recentes'},
     ]
-    context = {'travel': travel}
+    posts = Post.objects.annotate(calculated_average_rating=Avg('comments__rating')).order_by('-calculated_average_rating')[:4]
+    context = {'travel': travel, 'posts': posts,}
     context = add_pages_context(context) 
     return render(request, 'blog/blog.html', context)
 
@@ -29,14 +35,3 @@ def post_detail(request, post_id):
         form = CommentForm()
 
     return render(request, 'post_detail.html', {'post': post, 'form': form})
-
-
-from django import forms
-
-class CommentForm(forms.ModelForm):
-    class Meta:
-        model = Comment
-        fields = ['content', 'rating']
-        widgets = {
-            'rating': forms.RadioSelect(choices=[(i, i) for i in range(1, 6)]),
-        }
