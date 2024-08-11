@@ -115,7 +115,6 @@
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    flex-shrink: 0;
     height: 0;
     width: 0;
     overflow: hidden;
@@ -128,6 +127,12 @@
 
 .blog-post_card.visible {
     animation: openFormBlogCard 1s .3s forwards;
+}
+
+@keyframes openFormBlogCard {
+    0% {width: 0; height: 0;}
+    70% {width: 23%; height: 0vh;}
+    100% {width: 23%; height: 50vh;}
 }
 
 .blog-post_card::before {
@@ -239,7 +244,7 @@
     width: 3vw;
     height: 3vw;
     border-radius: 50%;
-    border: 3px solid var(--cor-fixa-2);
+    border: 2px solid var(--cor-principal-2);
     box-shadow: var(--box-shadow-1);
     overflow: hidden;
     display: flex;
@@ -275,7 +280,7 @@
     opacity: .7;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width:1024px) {
     .banner_keyboard {
         bottom: -20em;
         right: -5em;
@@ -294,165 +299,42 @@
     .banner_vinme_blog-slogan {
         font-size: 3vw;
     }
+    
     /* BLOG POST CARD */
-    .blog-post_card {
-        overflow: hidden;
-        box-shadow: var(--box-shadow-1);
-        border-radius: 1em;
-        border: 1px solid var(--cor-principal-2);
-        backdrop-filter: blur(4px);
-        transition: all .5s;
-    }
-    
-    .blog-post_card.visible {
-        animation: openFormBlogCard2 1s .3s forwards;
-    }
-    
-    .blog-post_card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(to bottom, var(--cor-fundo-3), var(--cor-fundo-1));
-        opacity: 0.7;
-        z-index: 0;
-    }
-    
-    .blog-post_card:hover {
-        box-shadow: var(--box-shadow-2);
-        cursor: pointer;
-        transform: translateY(-.5em);
-    }
-    
-    .blog-post_card_container {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        padding: 1em;
-        width: 100%;
+    @keyframes openFormBlogCard {
+        0% {width: 0; height: 0;}
+        70% {width: 48%; height: 0vh;}
+        100% {width: 48%; height: 35vh;}
     }
     
     .blog-post_img {
-        position: relative;
-        width: 100%;
-        height: 40%;
-        background-position: center;
-        background-size: cover;
-        border-radius: 0.5em;
+        height: 50%;
     }
-    
-    .blog-post_content {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        margin: .5em 0;
-        gap: .5em;
-        border-bottom: 1px solid var(--cor-principal-2);
-        padding-bottom: 1em;
-    }
-    
     .blog-post_content span {
-        color: var(--cor-fundo-3);
-        background: var(--gradient-1);
-        background-size: 400% 400%;
-        background-position: 0% 50%;
-        animation: btnHoverUm 10s linear infinite;
-        width: max-content;
-        padding: .3em 1em;
-        border-radius: .5em ;
-        font-size: .8vw;
-        font-family: var(--fonte-3);
-    }
-    
-    .blog-post_card:hover .blog-post_content span {
-        background: var(--gradient-2);
-        background-size: 400% 100%;
-        animation: btnHoverUm 10s linear infinite;
+        font-size: 1.5vw;
     }
     
     .blog-post_content h3 {
-        font-size: 1vw;
-        color: var(--cor-principal);
+        font-size: 2.2vw;
     }
-    
-    .blog-post_card:hover .blog-post_content h3 {
-        color: var(--cor-principal-2);
-    }
-    
     .blog-post_content p {
-        font-family: var(--fonte-2);
-        font-size: 1vw;
+        font-size: 2.2vw;
     }
     
     .blog-post_info {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-family: var(--fonte-3);
-        font-size: 1vw;
+        font-size: 2.2vw;
     }
-    
-    .blog-post_info span:nth-of-type(2) {
-        background: none;
-        color: var(--cor-principal);
-    }
-    
-    .blog-post_card:hover .blog-post_info span:nth-of-type(2) {
-        background: none;
-        color: var(--cor-principal-2);
-    }
-    
-    .blog-post_author {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: start;
-        gap: .5em;
-        margin-top: 0.5em;
-    }
-    
     .blog-post_author_img {
-        width: 3vw;
-        height: 3vw;
-        border-radius: 50%;
-        border: 3px solid var(--cor-fixa-2);
-        box-shadow: var(--box-shadow-1);
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        width: 6vw;
+        height: 6vw;
     }
-    
-    .blog-post_author_foto {
-        width: 100%;
-    }
-    
-    .blog-post_author_infos {
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        justify-content: center;
-        gap: .1em;
-    }
-    
     .blog-post_author_infos span:nth-of-type(1) {
-        color: var(--cor-principal);
-        font-family: var(--fonte-3);
-        font-size: 1vw;
+        font-size: 2vw;
     }
-    .blog-post_card:hover .blog-post_author_infos span:nth-of-type(1) {
-        color: var(--cor-principal-2);
-    }
-    
     .blog-post_author_infos span:nth-of-type(2) {
-        color: var(--cor-fonte-1);
-        font-family: var(--fonte-2);
-        font-size: 1vw;
-        opacity: .7;
+        font-size: 2vw;
     }
-    
+
 }
 
 @media screen and (max-width: 600px) {
@@ -473,5 +355,40 @@
     
     .banner_vinme_blog-slogan {
         font-size: 3vw;
+    }
+    
+    /* BLOG POST CARD */
+    @keyframes openFormBlogCard {
+        0% {width: 0; height: 0;}
+        70% {width: 98%; height: 0vh;}
+        100% {width: 98%; height: 50vh;}
+    }
+    
+    .blog-post_img {
+        height: 50%;
+    }
+    .blog-post_content span {
+        font-size: 2vw;
+    }
+    
+    .blog-post_content h3 {
+        font-size: 4vw;
+    }
+    .blog-post_content p {
+        font-size: 4vw;
+    }
+    
+    .blog-post_info {
+        font-size: 4vw;
+    }
+    .blog-post_author_img {
+        width: 11vw;
+        height: 11vw;
+    }
+    .blog-post_author_infos span:nth-of-type(1) {
+        font-size: 4vw;
+    }
+    .blog-post_author_infos span:nth-of-type(2) {
+        font-size: 4vw;
     }
 }
