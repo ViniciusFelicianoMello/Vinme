@@ -1,0 +1,19 @@
+{% extends 'vinme/component.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="container">
+    <h1>Create New Post</h1>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      
+      <h2>Post Details</h2>
+      {{ post_form.as_p }}
+      
+      <h2>Content Section</h2>
+      {{ content_section_form.as_p }}
+      
+      <button type="submit" class="btn btn-primary">Create Post</button>
+    </form>
+  </div>
+{% endblock %}

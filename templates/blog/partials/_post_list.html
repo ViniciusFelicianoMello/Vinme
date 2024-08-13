@@ -22,7 +22,7 @@
         />
       </div>
       <div class="blog-post_author_infos">
-        <span>{{ post.author.username }}</span>
+        <a href="{% url 'profile_view' post.author.username %}">{{ post.author.username }}</a>
         <span>{{ post.created_at|date:"d / m / Y" }}</span>
       </div>
     </div>

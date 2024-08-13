@@ -26,7 +26,7 @@ class Post(models.Model):
 
     title = models.CharField(max_length=200)
     image = models.ImageField(upload_to='post_images/')
-    caption = models.TextField(blank=True, null=True)
+    caption = models.TextField(blank=False, null=False)
     category = models.CharField(max_length=50, choices=CATEGORIES, default='FRONT_END')
     is_active = models.BooleanField(default=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -47,23 +47,13 @@ class ContentSection(models.Model):
     post = models.ForeignKey(Post, related_name='sections', on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     text_block = models.TextField(blank=True, null=True)
-
+    images_or_videos = models.FileField(upload_to='media/', blank=True, null=True)
+    
     def __str__(self):
         return f"Section: {self.title} in {self.post.title}"
 
-
-class Media(models.Model):
-    MEDIA_TYPES = [
-        ('image', 'Image'),
-        ('video', 'Video'),
-    ]
-
-    section = models.ForeignKey(ContentSection, related_name='media', on_delete=models.CASCADE)
-    file = models.FileField(upload_to='content_media/')
-    media_type = models.CharField(max_length=50, choices=MEDIA_TYPES)
-
-    def __str__(self):
-        return f"Media in {self.section.title} ({self.media_type})"
+    class Meta:
+        verbose_name_plural = "Content Sections"
     
 
 class Comment(models.Model):

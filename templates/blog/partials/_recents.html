@@ -1,7 +1,7 @@
 {% load static %}
 <section class="container recents" id="recents">
   <!-- FILTRO POR CATEGORIA -->
-  <div class="recents_filter_box">
+  <div class="recents_filter_box viewport">
     <input type="checkbox" style="display: none;" id="filter_all" class="filter blog_filter" value="all" checked/>
     <label for="filter_all">Todos</label>
     {% for category, label in all_categories %}
@@ -12,7 +12,7 @@
     {% endfor %}
   </div>
   <!-- LISTA DE POSTS -->
-  <div class="recents_posts_box">
+  <div class="recents_posts_box viewport">
     <h2 class="section_title recent_title viewport">
       Postagens <span>recentes</span>
     </h2>
@@ -28,6 +28,18 @@
     </div>
   </div>
   <!-- PUB AND FOLLOW -->
-  <div class="recents_pub"></div>
+  <div class="recents_pub viewport">
+    <div class="recents_social_box">
+      {% for link in social_links %}
+        <!-- LINK ITEM -->
+        <a href="{{ link.url }}" class="recents_social_link viewport" target="_blank" rel="noopener noreferrer">
+            <i class="{{ link.icon }} recents_social_link_logo"></i>
+        </a>
+      {% endfor %}
+    </div>
+    <div class="recents_pub_box">
+
+    </div>
+  </div>
 </section>
 

@@ -1,18 +1,11 @@
 from django.contrib import admin
-from django.forms import ValidationError
-from .models import Post, ContentSection, Media, Comment
-
-class MediaInline(admin.TabularInline):
-    model = Media
-    extra = 1
-    fields = ('file', 'media_type')
-    max_num = 5
+from .models import Post, ContentSection, Comment
 
 class ContentSectionInline(admin.StackedInline):
     model = ContentSection
     extra = 1
-    fields = ('title', 'text_block')
-    inlines = [MediaInline]
+    fields = ('title', 'text_block', 'images_or_videos') 
+    max_num = 10
 
 class PostAdmin(admin.ModelAdmin):
     list_display = ('title', 'category', 'author', 'created_at', 'is_active', 'average_rating')
@@ -29,7 +22,6 @@ class PostAdmin(admin.ModelAdmin):
 
 admin.site.register(Post, PostAdmin)
 admin.site.register(ContentSection)
-admin.site.register(Media)
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):

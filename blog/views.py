@@ -1,13 +1,16 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.db.models import Avg
 
-from blog import models
-from .forms import CommentForm
-from django import forms
-from .models import Post, Comment
-# from .forms import CommentForm
+from django.contrib.auth.decorators import user_passes_test
+
+from .forms import CommentForm, ContentSectionForm, PostForm
+from .models import Post
 
 from vinme.views import pages, add_pages_context
+
+def superuser_required(view_func):
+    decorated_view_func = user_passes_test(lambda u: u.is_superuser)(view_func)
+    return decorated_view_func
 
 def blog(request):
     travel = [
@@ -61,4 +64,42 @@ def post_detail(request, post_id):
     else:
         form = CommentForm()
 
-    return render(request, 'post_detail.html', {'post': post, 'form': form})
+    context = {
+        'form': form,
+    }
+    context = add_pages_context(context) 
+    return render(request, 'post_detail.html', context)
+
+
+
+@superuser_required
+def create_post(request):
+    if request.method == 'POST':
+        post_form = PostForm(request.POST, request.FILES)
+        content_section_form = ContentSectionForm(request.POST, request.FILES)
+        if post_form.is_valid() and content_section_form.is_valid():
+            post = post_form.save(commit=False)
+            post.author = request.user
+            post.save()
+            
+            content_section = content_section_form.save(commit=False)
+            content_section.post = post
+            content_section.save()
+            
+            return redirect('blog')
+    else:
+        post_form = PostForm()
+        content_section_form = ContentSectionForm()
+    
+    context = {
+        'post_form': post_form,
+        'content_section_form': content_section_form,
+    }
+    context = add_pages_context(context) 
+    return render(request, 'blog/post_form.html', context)
+
+@superuser_required
+def edit_post(request, post_id):
+
+    context = add_pages_context(context) 
+    return render(request, 'blog/post_form.html', context)

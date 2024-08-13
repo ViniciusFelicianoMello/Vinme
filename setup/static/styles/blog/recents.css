@@ -2,6 +2,7 @@
     display: flex;
     gap: 1em;
     margin-bottom: 2em;
+    margin-top: -10em;
 }
 
 /* FILTROS */
@@ -20,6 +21,11 @@
     margin-top: 5em;
     font-size: .8vw;
     overflow: scroll;
+    opacity: 0;
+}
+
+.recents_filter_box.visible {
+    animation: slideRight .5s ease-out forwards, opacity .5s ease-out forwards;
 }
 
 .recents_filter_box label {
@@ -34,7 +40,7 @@
     background-size: 400% 400%;
     background-position: 0% 50%;
     animation: btnHoverUm 10s linear infinite;
-    font-size: 1.1vw;
+    font-size: 0.9vw;
     font-family: var(--fonte-3);
     border-radius: .5em;
     opacity: .6;
@@ -68,6 +74,10 @@
     padding: 1vw;
     font-size: .8vw;
     overflow: scroll;
+    opacity: 0;
+}
+.recents_posts_box.visible {
+    animation: slideDown 1.2s ease-in-out forwards, opacity 1.2s ease-in-out forwards;
 }
 
 .recents_posts_box .section_title {
@@ -116,10 +126,49 @@
     color: var(--cor-fonte-1);
 }
 
+/* RECENT PUB */
+.recents_pub {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 20%;
+    position: relative;
+    height: max-content;
+    margin-top: 4em;
+    opacity: 0;
+}
+.recents_pub.visible {
+    animation: slideLeft .5s .2s ease-in-out forwards, opacity .5s .2s ease-in-out forwards;
+}
+.recents_social_box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: var(--cor-fundo-3);
+    box-shadow: var(--box-shadow-1);
+    border-radius: .7em;
+    padding: 1vw;
+}
+
+.recents_social_link {
+    text-decoration: none;
+    font-size: 1.5vw;
+    color: var(--cor-principal);
+    transition: all .3s;
+}
+
+.recents_social_link:hover {
+    transform: translateY(-.2em);
+    color: var(--cor-principal-2);
+}
+
 @media screen and (max-width:1024px) {
     .recents {
         display: flex;
         margin-bottom: 4em;
+        margin-top: 0;
     }
     
     /* FILTROS */
@@ -132,6 +181,20 @@
         padding: 1vw 1vw;
         font-size: 2vw;
     }
+
+    /* RECENT PUB */
+    .recents_pub {
+        width: 20%;
+        margin-top: 2.5em;
+    }
+    .recents_social_box {
+        width: 100%;
+    }
+
+    .recents_social_link {
+        font-size: 2vw;
+    }
+
 }
 @media screen and (max-width:600px) {
     .recents {
@@ -161,8 +224,22 @@
 
     /* RECENTES */
     .recents_posts_box {
-        width: 80%;
+        width: 90%;
         height: 120vh;
         border-radius: 3em;
+    }
+
+    
+    /* RECENT PUB */
+    .recents_pub {
+        width: 100%;
+        margin-top: 0;
+    }
+    .recents_social_box {
+        width: 100%;
+    }
+
+    .recents_social_link {
+        font-size: 6vw;
     }
 }
