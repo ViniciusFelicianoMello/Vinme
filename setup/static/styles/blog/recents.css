@@ -1,0 +1,168 @@
+.recents {
+    display: flex;
+    gap: 1em;
+    margin-bottom: 2em;
+}
+
+/* FILTROS */
+.recents_filter_box {
+    position: relative;
+    width: 25%;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .5em;
+    background: var(--cor-fundo-3);
+    box-shadow: var(--box-shadow-1);
+    border-radius: 1em;
+    padding: 1vw;
+    margin-top: 5em;
+    font-size: .8vw;
+    overflow: scroll;
+}
+
+.recents_filter_box label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: .5vw 1vw;
+    box-shadow: var(--box-shadow-1);
+    color: var(--cor-fundo-3);
+    background: var(--gradient-1);
+    background-size: 400% 400%;
+    background-position: 0% 50%;
+    animation: btnHoverUm 10s linear infinite;
+    font-size: 1.1vw;
+    font-family: var(--fonte-3);
+    border-radius: .5em;
+    opacity: .6;
+    transition: all .3s ease;
+}
+
+.recents_filter_box label:hover {
+    transform: translateY(-.2em);
+    opacity: .8;
+}
+
+.recents_filter_box input[type="checkbox"]:checked + label {
+    opacity: 1;
+    background: var(--gradient-2);
+    box-shadow: var(--box-shadow-2);
+    background-size: 400% 100%;
+    animation: btnHoverUm 10s linear infinite;
+}
+
+/* RECENTES */
+.recents_posts_box {
+    margin-top: 5em;
+    position: relative;
+    width: 55%;
+    height: 120vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--cor-fundo-3);
+    box-shadow: var(--box-shadow-1);
+    border-radius: 1em;
+    padding: 1vw;
+    font-size: .8vw;
+    overflow: scroll;
+}
+
+.recents_posts_box .section_title {
+    margin: 0;
+}
+
+.recents_posts_content {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    min-height: 60vh;
+    max-height: max-content;
+    width: 100%;
+    gap: 1em;
+    margin-top: 14vh;
+    left: 0;
+}
+
+.recent_post_search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    margin: .5em 0;
+}
+
+.search_span {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: .5vh;
+    border-radius: 0.5rem;
+    background: var(--cor-fonte-1);
+    overflow: hidden;
+    transition: 0.5s;
+    pointer-events: none;
+    margin-bottom: -0.2em;
+    border: 1px solid var(--cor-fonte-1);
+}
+
+.account_input::placeholder {
+    color: var(--cor-fonte-1);
+}
+
+@media screen and (max-width:1024px) {
+    .recents {
+        display: flex;
+        margin-bottom: 4em;
+    }
+    
+    /* FILTROS */
+    .recents_filter_box {
+        width: 25%;
+        height: 65vh;
+    }
+    
+    .recents_filter_box label {
+        padding: 1vw 1vw;
+        font-size: 2vw;
+    }
+}
+@media screen and (max-width:600px) {
+    .recents {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 4em;
+    }
+    
+        /* FILTROS */
+    .recents_filter_box {
+        width: 100%;
+        height: 25vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
+        padding: 2vw;
+        border-radius: 3em;
+    }
+
+    .recents_filter_box label {
+        padding: 2vw 2vw;
+        font-size: 2.8vw;
+    }
+
+    /* RECENTES */
+    .recents_posts_box {
+        width: 80%;
+        height: 120vh;
+        border-radius: 3em;
+    }
+}

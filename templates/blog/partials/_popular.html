@@ -1,0 +1,15 @@
+{% load static %}
+<section class="container popular" id="popular">
+  <!-- POPULAR TITLE -->
+  <div class="">
+    <h2 class="section_title popular_title viewport">
+      Nossos posts mais <span>populares</span>
+    </h2>
+  </div>
+  <!-- POPULAR CONTENT -->
+  <div class="popular_content">
+    {% for post in popular_posts %}
+      {% include 'blog/partials/_post_list.html' %}
+    {% endfor %}
+  </div>
+</section>

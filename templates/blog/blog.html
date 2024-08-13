@@ -1,170 +1,156 @@
-{% extends 'vinme/component.html' %}
-{% load static %}
-
-{% block content %}
+{% extends 'vinme/component.html' %} {% load static %} {% block content %}
 <!-- banner -->
-    <section class="banner" id="banner">
-        <div class="banner_box viewport">
-
-            {% include 'vinme/partials/_universe.html' %}
-            <!-- banner keyboard -->
-            <div class="banner_keyboard viewport">
-                <img class="keyboardSVG" src="{% static 'assets/SVG/typing.svg' %}">
-            </div>
-            <!-- banner name -->
-            <div class="banner_vinme-name">
-                <div class="banner_vinme_letter viewport">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 109.4 100">
-                        <style type="text/css">
-                            .V_st0 {
-                                fill: var(--cor-principal);
-                                transition: fill 3s ease;
-                                stroke: var(--cor-fundo-3);
-                                stroke-width: 1px;
-                            }
-                            .banner_vinme_letter:hover .V_st0 {
-                                transition: fill 0.2s ease;
-                                fill: var(--cor-principal-2);
-                                stroke: var(--cor-secundaria);
-                                filter: drop-shadow(0px 0px 1px var(--cor-secundaria));
-                            }
-                        </style>
-                        <path class="V_st0" d="M54.7,71.1L42.2,45.5L20,0H0l46.6,95.1c0.8,1.5,1.9,2.6,3.3,3.5s3,1.3,4.7,1.3s3.3-0.4,4.8-1.3
-                            c1.5-0.9,2.5-2.1,3.3-3.5l1.9-3.8C64.6,91.3,54.7,71.1,54.7,71.1z"/>
-                        <path class="V_st0" d="M42.2,45.5L42.2,45.5l12.5,25.5C54.7,71.1,42.2,45.5,42.2,45.5z"/>
-                        <polygon class="V_st0" points="105.7,7.5 105.7,7.5 70.9,78.5 61,58.2 64.7,50.7 64.7,50.7 89.5,0 109.4,0 "/>
-                    </svg>
-                </div>
-                <div class="banner_vinme_letter viewport">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.1 100">
-                        <style type="text/css">
-                            .I_st0 {
-                                fill: var(--cor-principal);
-                                transition: fill 3s ease;
-                                stroke: var(--cor-fundo-3);
-                                stroke-width: 1px;
-                            }
-                            .banner_vinme_letter:hover .I_st0 {
-                                transition: fill 0.2s ease;
-                                fill: var(--cor-secundaria);
-                                stroke: var(--cor-terciaria);
-                                filter: drop-shadow(0px 0px 1px var(--cor-terciaria));
-                            }
-                        </style>
-                        <path class="I_st0" d="M0,0v20.9h18.1V0H0z"/>
-                        <rect y="32.7" class="I_st0" width="18.1" height="67.3"/>
-                    </svg>
-                </div>    
-                <div class="banner_vinme_letter viewport">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.2 100">
-                        <style type="text/css">
-                            .N_st0 {
-                                fill: var(--cor-principal);
-                                transition: fill 3s ease;
-                                stroke: var(--cor-fundo-3);
-                                stroke-width: 1px;
-                            }
-                            .banner_vinme_letter:hover .N_st0 {
-                                transition: fill 0.2s ease;
-                                fill: var(--cor-terciaria);
-                                stroke: var(--cor-principal-2);
-                                filter: drop-shadow(0px 0px 1px var(--cor-principal-2));
-                            }
-                        </style>
-                        <polygon class="N_st0" points="0,42.4 0,63.1 19.8,63.1 "/>
-                        <path class="N_st0" d="M81.2,0v91c0,1.3-0.2,2.5-0.7,3.6c-0.5,1.1-1.1,2.1-1.9,2.9s-1.8,1.4-2.8,1.9c-1.1,0.4-2.3,0.7-3.5,0.7
+<section class="banner" id="banner">
+  <div class="banner_box viewport">
+    {% include 'vinme/partials/_universe.html' %}
+    <!-- banner keyboard -->
+    <div class="banner_keyboard viewport">
+      <img class="keyboardSVG" src="{% static 'assets/SVG/typing.svg' %}" />
+    </div>
+    <!-- banner name -->
+    <div class="banner_vinme-name">
+      <div class="banner_vinme_letter viewport">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 109.4 100">
+          <style type="text/css">
+            .V_st0 {
+              fill: var(--cor-principal);
+              transition: fill 3s ease;
+              stroke: var(--cor-fundo-3);
+              stroke-width: 1px;
+            }
+            .banner_vinme_letter:hover .V_st0 {
+              transition: fill 0.2s ease;
+              fill: var(--cor-principal-2);
+              stroke: var(--cor-secundaria);
+              filter: drop-shadow(0px 0px 1px var(--cor-secundaria));
+            }
+          </style>
+          <path
+            class="V_st0"
+            d="M54.7,71.1L42.2,45.5L20,0H0l46.6,95.1c0.8,1.5,1.9,2.6,3.3,3.5s3,1.3,4.7,1.3s3.3-0.4,4.8-1.3
+                            c1.5-0.9,2.5-2.1,3.3-3.5l1.9-3.8C64.6,91.3,54.7,71.1,54.7,71.1z"
+          />
+          <path
+            class="V_st0"
+            d="M42.2,45.5L42.2,45.5l12.5,25.5C54.7,71.1,42.2,45.5,42.2,45.5z"
+          />
+          <polygon
+            class="V_st0"
+            points="105.7,7.5 105.7,7.5 70.9,78.5 61,58.2 64.7,50.7 64.7,50.7 89.5,0 109.4,0 "
+          />
+        </svg>
+      </div>
+      <div class="banner_vinme_letter viewport">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.1 100">
+          <style type="text/css">
+            .I_st0 {
+              fill: var(--cor-principal);
+              transition: fill 3s ease;
+              stroke: var(--cor-fundo-3);
+              stroke-width: 1px;
+            }
+            .banner_vinme_letter:hover .I_st0 {
+              transition: fill 0.2s ease;
+              fill: var(--cor-secundaria);
+              stroke: var(--cor-terciaria);
+              filter: drop-shadow(0px 0px 1px var(--cor-terciaria));
+            }
+          </style>
+          <path class="I_st0" d="M0,0v20.9h18.1V0H0z" />
+          <rect y="32.7" class="I_st0" width="18.1" height="67.3" />
+        </svg>
+      </div>
+      <div class="banner_vinme_letter viewport">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.2 100">
+          <style type="text/css">
+            .N_st0 {
+              fill: var(--cor-principal);
+              transition: fill 3s ease;
+              stroke: var(--cor-fundo-3);
+              stroke-width: 1px;
+            }
+            .banner_vinme_letter:hover .N_st0 {
+              transition: fill 0.2s ease;
+              fill: var(--cor-terciaria);
+              stroke: var(--cor-principal-2);
+              filter: drop-shadow(0px 0px 1px var(--cor-principal-2));
+            }
+          </style>
+          <polygon class="N_st0" points="0,42.4 0,63.1 19.8,63.1 " />
+          <path
+            class="N_st0"
+            d="M81.2,0v91c0,1.3-0.2,2.5-0.7,3.6c-0.5,1.1-1.1,2.1-1.9,2.9s-1.8,1.4-2.8,1.9c-1.1,0.4-2.3,0.7-3.5,0.7
                             c-1.1,0-2.2-0.2-3.3-0.6c-1-0.4-1.9-0.9-2.7-1.8c-0.1-0.1-0.2-0.2-0.3-0.2L2,30.7l-2-2V3.4l0.7,0.8l4.1,4.3l1.3,1.4l57.2,59.6V0
-                            H81.2L81.2,0z"/>
-                    </svg>
-                </div>     
-                <div class="banner_vinme_letter viewport">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 95.6 100">
-                        <style type="text/css">
-                            .M_st0 {
-                                fill: var(--cor-principal);
-                                transition: fill 3s ease;
-                                stroke: var(--cor-fundo-3);
-                                stroke-width: 1px;
-                            }
-                            .banner_vinme_letter:hover .M_st0 {
-                                transition: fill 0.2s ease;
-                                fill: var(--cor-principal-2);
-                                stroke: var(--cor-secundaria);
-                                filter: drop-shadow(0px 0px 1px var(--cor-secundaria));
-                            }
-                        </style>
-                        <path class="M_st0" d="M95.6,5.9V100H77.8V60.8L46.5,97.2c-0.8,0.9-1.8,1.6-3.2,2.1c-1.4,0.5-2.9,0.7-4.4,0.7s-3-0.2-4.3-0.7
+                            H81.2L81.2,0z"
+          />
+        </svg>
+      </div>
+      <div class="banner_vinme_letter viewport">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 95.6 100">
+          <style type="text/css">
+            .M_st0 {
+              fill: var(--cor-principal);
+              transition: fill 3s ease;
+              stroke: var(--cor-fundo-3);
+              stroke-width: 1px;
+            }
+            .banner_vinme_letter:hover .M_st0 {
+              transition: fill 0.2s ease;
+              fill: var(--cor-principal-2);
+              stroke: var(--cor-secundaria);
+              filter: drop-shadow(0px 0px 1px var(--cor-secundaria));
+            }
+          </style>
+          <path
+            class="M_st0"
+            d="M95.6,5.9V100H77.8V60.8L46.5,97.2c-0.8,0.9-1.8,1.6-3.2,2.1c-1.4,0.5-2.9,0.7-4.4,0.7s-3-0.2-4.3-0.7
                             c-1.3-0.5-2.4-1.2-3.1-2.1L0,60.8V38.2l38.9,44.7l38.9-44.7V26.9L46.5,63.3c-0.8,0.9-1.8,1.6-3.2,2.1c-1.4,0.5-2.9,0.7-4.4,0.7
                             s-3-0.2-4.3-0.7c-1.3-0.5-2.4-1.2-3.1-2.1L0,26.9V4.3L38.9,49L79,2.8c1-1.1,2.5-1.9,4.3-2.4c1.8-0.5,3.7-0.6,5.7-0.2
-                            c1.9,0.3,3.4,1,4.7,2.1C95,3.4,95.6,4.5,95.6,5.9z"/>
-                    </svg>
-                </div>
-                <div class="banner_vinme_letter viewport">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90.8 100">
-                        <style type="text/css">
-                            .E_st0 {
-                                fill: var(--cor-principal);
-                                transition: fill 3s ease;
-                                stroke: var(--cor-fundo-3);
-                                stroke-width: 1px;
-                            }
-                            .banner_vinme_letter:hover .E_st0 {
-                                transition: fill 0.2s ease;
-                                fill: var(--cor-terciaria);
-                                stroke: var(--cor-secundaria);
-                                filter: drop-shadow(0px 0px 1px var(--cor-secundaria));
-                            }
-                        </style>
-                        <path class="E_st0" d="M9.1,0C7.8,0,6.6,0.2,5.5,0.7c-1.1,0.5-2.1,1.1-2.9,2C1.8,3.5,1.2,4.4,0.7,5.6C0.2,6.7,0,7.9,0,9.1v9h90.8V0
-                            H9.1z"/>
-                        <path class="E_st0" d="M90.8,81.9V100H25.4c-2.5,0-5.3-0.4-8.2-1.3c-3-0.9-5.7-2.3-8.3-4.3c-2.5-2-4.6-4.7-6.3-7.9
-                            C0.9,83.2,0,79.2,0,74.5V40.9h60.6v18.3H18.1v15.4c0,2.4,0.6,4.2,1.9,5.4c1.3,1.2,3.1,1.9,5.5,1.9L90.8,81.9L90.8,81.9z"/>
-                    </svg>
-                </div>
+                            c1.9,0.3,3.4,1,4.7,2.1C95,3.4,95.6,4.5,95.6,5.9z"
+          />
+        </svg>
+      </div>
+      <div class="banner_vinme_letter viewport">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90.8 100">
+          <style type="text/css">
+            .E_st0 {
+              fill: var(--cor-principal);
+              transition: fill 3s ease;
+              stroke: var(--cor-fundo-3);
+              stroke-width: 1px;
+            }
+            .banner_vinme_letter:hover .E_st0 {
+              transition: fill 0.2s ease;
+              fill: var(--cor-terciaria);
+              stroke: var(--cor-secundaria);
+              filter: drop-shadow(0px 0px 1px var(--cor-secundaria));
+            }
+          </style>
+          <path
+            class="E_st0"
+            d="M9.1,0C7.8,0,6.6,0.2,5.5,0.7c-1.1,0.5-2.1,1.1-2.9,2C1.8,3.5,1.2,4.4,0.7,5.6C0.2,6.7,0,7.9,0,9.1v9h90.8V0
+                            H9.1z"
+          />
+          <path
+            class="E_st0"
+            d="M90.8,81.9V100H25.4c-2.5,0-5.3-0.4-8.2-1.3c-3-0.9-5.7-2.3-8.3-4.3c-2.5-2-4.6-4.7-6.3-7.9
+                            C0.9,83.2,0,79.2,0,74.5V40.9h60.6v18.3H18.1v15.4c0,2.4,0.6,4.2,1.9,5.4c1.3,1.2,3.1,1.9,5.5,1.9L90.8,81.9L90.8,81.9z"
+          />
+        </svg>
+      </div>
 
-                <div class="banner_vinme_blog-slogan viewport">
-                    <p>Contando histórias que vão além do universo</p>
-                </div>
-            </div>
-        </div>
-    </section>
+      <div class="banner_vinme_blog-slogan viewport">
+        <p>Contando histórias que vão além do universo</p>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- populares -->
-    <section class="container popular" id="popular">
-        <!-- POPULAR TITLE -->
-        <div class="">
-            <h2 class="section_title popular_title viewport">Nossos posts mais <span>populares</span></h2>
-        </div>
-        <!-- POPULAR CONTENT -->
-        <div class="popular_content">
-            {% for post in posts %}
-            <!-- popular card -->
-            <div class="blog-post_card viewport">
-                <div class="blog-post_card_container">
-                    <div class="blog-post_img" style="background-image: url('{{ post.image.url }}');"></div>
-                    <div class="blog-post_content">
-                        <span>{{ post.category|title }}</span>
-                        <h3>{{ post.title }}</h3>
-                        <p>{{ post.caption|truncatewords:15 }}</p>
-                        <div class="blog-post_info">
-                            <span>{{ post.calculated_average_rating|floatformat:1 }}</span>
-                            <span>{{ post.comments.count }} Comentários</span>
-                        </div>
-                    </div>
-                    <div class="blog-post_author">
-                        <div class="blog-post_author_img">
-                            <img src="{% if post.author.userprofile.profile_picture %}{{ post.author.userprofile.profile_picture.url }}{% else %}{% static 'assets/img/fotografias/_unknown.png' %}{% endif %}" class="blog-post_author_foto">
-                        </div>
-                        <div class="blog-post_author_infos">
-                            <span>{{ post.author.username }}</span>
-                            <span>{{ post.created_at|date:"d / m / Y" }}</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </section>
+{% include 'blog/partials/_popular.html' %}
 <!-- posts -->
-{% endblock %}
+{% include 'blog/partials/_recents.html' %}
 
+
+
+{% endblock %}
 

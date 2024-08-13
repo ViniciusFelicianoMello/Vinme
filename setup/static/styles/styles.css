@@ -35,6 +35,7 @@
 /* BLOG */
 @import url(blog/blog.css);
 @import url(blog/popular.css);
+@import url(blog/recents.css);
 
 
 :root {

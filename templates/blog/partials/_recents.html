@@ -1,0 +1,33 @@
+{% load static %}
+<section class="container recents" id="recents">
+  <!-- FILTRO POR CATEGORIA -->
+  <div class="recents_filter_box">
+    <input type="checkbox" style="display: none;" id="filter_all" class="filter blog_filter" value="all" checked/>
+    <label for="filter_all">Todos</label>
+    {% for category, label in all_categories %}
+    <input
+      type="checkbox" style="display: none;" id="filter_{{ category }}" class="filter blog_filter" value="{{ category }}" {% if category in selected_categories%} checked {%endif%}
+    />
+    <label for="filter_{{ category }}">{{ label }}</label>
+    {% endfor %}
+  </div>
+  <!-- LISTA DE POSTS -->
+  <div class="recents_posts_box">
+    <h2 class="section_title recent_title viewport">
+      Postagens <span>recentes</span>
+    </h2>
+    <div class="recent_post_search">
+          <input type="text" id="search-input" placeholder="Pesquisar por título" class="account_input"/>
+          <i class="fa-solid fa-magnifying-glass account_icon"></i>
+          <span class="search_span"></span>
+    </div>
+    <div class="recents_posts_content" id="posts-container">
+      {% for post in posts %}
+       {% include 'blog/partials/_post_list.html' %}
+      {% endfor %}
+    </div>
+  </div>
+  <!-- PUB AND FOLLOW -->
+  <div class="recents_pub"></div>
+</section>
+

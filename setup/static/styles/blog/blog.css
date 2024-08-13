@@ -131,8 +131,8 @@
 
 @keyframes openFormBlogCard {
     0% {width: 0; height: 0;}
-    70% {width: 23%; height: 0vh;}
-    100% {width: 23%; height: 50vh;}
+    70% {width: 19vw; height: 0vh;}
+    100% {width: 19vw; height: 50vh;}
 }
 
 .blog-post_card::before {
@@ -303,8 +303,8 @@
     /* BLOG POST CARD */
     @keyframes openFormBlogCard {
         0% {width: 0; height: 0;}
-        70% {width: 48%; height: 0vh;}
-        100% {width: 48%; height: 35vh;}
+        70% {width: 46vw; height: 0vh;}
+        100% {width: 46vw; height: 35vh;}
     }
     
     .blog-post_img {

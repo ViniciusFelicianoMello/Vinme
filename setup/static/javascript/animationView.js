@@ -13,7 +13,7 @@ function isElementInViewport(el, margin) {
 function handleScroll() {
     var animationElements = document.querySelectorAll('.viewport');
     animationElements.forEach(function(element) {
-        if (isElementInViewport(element, 100)) {
+        if (isElementInViewport(element, 500)) {
             element.classList.add('visible');
             } else {
         }
