@@ -1,19 +1,99 @@
-{% extends 'vinme/component.html' %}
+{% extends 'blog/blogBase.html' %} 
 {% load static %}
 
 {% block content %}
-  <div class="container">
-    <h1>Create New Post</h1>
-    <form method="post" enctype="multipart/form-data">
-      {% csrf_token %}
-      
-      <h2>Post Details</h2>
-      {{ post_form.as_p }}
-      
-      <h2>Content Section</h2>
-      {{ content_section_form.as_p }}
-      
-      <button type="submit" class="btn btn-primary">Create Post</button>
-    </form>
-  </div>
+<div class="post_form container">
+    <div class="post_box viewport">
+        <div class="post_form_title">
+            <i class="fa-solid fa-user"></i>
+            <h2>Adicionar post</h2>
+        </div>
+        
+        <form method="post" class="post_form_forms" enctype="multipart/form-data">
+            {% csrf_token %}
+            
+            <h3>Post</h3>
+            <div>
+                 <!-- IMAGE -->
+                <div class="account_row">
+                    <input type="file" name="image" id="imageInput" class="hidden-file-input" style="display: none;">
+                    <label class="account_btn add_picture_post_btn" for="imageInput">Adicionar Foto</label>
+                    <p id="imageStatus">Nenhuma imagem selecionada</p>
+                </div>
+                <!-- TITLE -->
+                <div class="account_control">
+                    {{ post_form.title }}
+                    <i class="fa-solid fa-font account_icon"></i>
+                    <label class="account_label" for="{{ post_form.title.id_for_label }}">Titulo</label>
+                    <span class="account_span"></span>
+                </div>
+                <!-- CATEGORY -->
+                <div class="account_control">
+                    {{ post_form.category }}
+                    <i class="fa-solid fa-list account_icon"></i>
+                    <label class="account_label" for="{{ post_form.category.id_for_label }}">Categoria</label>
+                    <span class="account_span"></span>
+                </div>
+                <!-- CAPTION -->
+                <div class="account_control">
+                    {{ post_form.caption }}
+                    <i class="fa-solid fa-align-left account_icon"></i>
+                    <label class="account_label" for="{{ post_form.caption.id_for_label }}">Legenda</label>
+                    <span class="account_span_text"></span>
+                </div>
+            </div>
+            
+            <h3>Conteúdo</h3>
+            {% for form in section_forms %}
+                <div class="section-form">
+                    <!-- TITLE -->
+                    <div class="account_control">
+                        {{ form.title }}
+                        <i class="fa-solid fa-font account_icon"></i>
+                        <label class="account_label" for="{{ form.title.id_for_label }}">Titulo</label>
+                        <span class="account_span"></span>
+                    </div>
+                    <!-- Text Block -->
+                    <div class="account_control">
+                        {{ form.text_block }}
+                        <i class="fa-solid fa-align-left account_icon"></i>
+                        <label class="account_label" for="{{ form.text_block.label_tag }}">Texto</label>
+                        <span class="account_span_text"></span>
+                    </div>
+                    <!-- IMAGENS -->
+                    <div class="account_row">
+                        {% for i in image_indices %}
+                            <div class="post_blog_item">
+                                <input type="file" name="images_or_videos{{ i }}" id="imageInput{{ i }}" class="hidden-file-input" style="display: none;">
+                                <label class="account_btn" for="imageInput{{ i }}">Adicionar Foto</label>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+           
+            <div class="button_post_form">
+                <div class="account_row">
+                    <a href="{% url 'blog' %}" type="submit" class="account_btn-1">Cancelar</a>
+                    <button type="submit" class="account_btn">Publicar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Foto solecionada
+    document.getElementById('imageInput').addEventListener('change', function() {
+        var statusText = document.getElementById('imageStatus');
+        if (this.files.length > 0) {
+            statusText.textContent = this.files[0].name;
+        } else {
+            statusText.textContent = 'Nenhuma imagem selecionada';
+        }
+    });
+</script>
+
 {% endblock %}
+
+

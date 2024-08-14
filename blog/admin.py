@@ -4,7 +4,7 @@ from .models import Post, ContentSection, Comment
 class ContentSectionInline(admin.StackedInline):
     model = ContentSection
     extra = 1
-    fields = ('title', 'text_block', 'images_or_videos') 
+    fields = ('title', 'text_block', 'images_or_videos1', 'images_or_videos2', 'images_or_videos3', 'images_or_videos4', 'images_or_videos5') 
     max_num = 10
 
 class PostAdmin(admin.ModelAdmin):
@@ -27,4 +27,4 @@ admin.site.register(ContentSection)
 class CommentAdmin(admin.ModelAdmin):
     list_display = ('post', 'author', 'rating', 'created_at', 'is_active')
     list_filter = ('created_at', 'is_active', 'rating',)
-    search_fields = ('content', 'author__username', 'post', 'title')
+    search_fields = ('content', 'author__username', 'post__title')

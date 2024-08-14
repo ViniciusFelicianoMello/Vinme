@@ -1,0 +1,106 @@
+.post_form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.post_box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 0;
+    width: 0;
+    overflow: scroll;
+    box-shadow: var(--box-shadow-1);
+    border-radius: 1em;
+    border: 1px solid var(--cor-principal-2);
+    backdrop-filter: blur(4px);
+    transition: all .5s;
+}
+
+.post_box.visible{
+    animation: openBlogPostCard 1s .3s forwards;
+}
+
+@keyframes openBlogPostCard {
+    0% {width: 0; height: 0;}
+    70% {width: 60vw; height: 0vh;}
+    100% {width: 60vw; height: 80vh;}
+}
+
+
+.post_box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, var(--cor-fundo-3), var(--cor-fundo-1));
+    opacity: 0.7;
+    z-index: 0;
+}
+
+.post_form_title {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5em;
+    border-bottom: 2px solid var(--cor-principal);
+    width: 95%;
+    gap: .5em;
+    margin: 0 2.5%;
+}
+.post_form_title i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cor-principal);
+    padding: 1vw;
+    border: 2px solid var(--cor-principal);
+    border-radius: 50%;
+    font-size: 1vw;
+    height: 3vw;
+    width: 3vw;
+}
+
+.post_form_title h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cor-principal);
+    font-size: 2vw;
+}
+
+.post_form_forms {
+    position: relative;
+    padding: 1em 1em 10%;
+    height: 90%;
+    width: 100%;
+}
+
+.post_form_forms h3 {
+    color: var(--cor-principal);
+    font-size: 1.5vw;
+}
+
+.add_picture_post_btn {
+    width: 20%;
+}
+
+#imageStatus {
+    position: absolute;
+    left: 21%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--fonte-2);
+}
+
+.button_post_form {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    position: absolute;
+    width: 60%;
+}

@@ -70,7 +70,6 @@
     border: 2px solid var(--cor-principal);
     border-radius: 50%;
     font-size: 1vw;
-    box-shadow: var(--box-shadow-1);
     height: 3vw;
     width: 3vw;
 }
@@ -81,7 +80,6 @@
     justify-content: center;
     color: var(--cor-principal);
     font-size: 2vw;
-    text-shadow: var(--box-shadow-1);
 }
 
 /* SECTION */

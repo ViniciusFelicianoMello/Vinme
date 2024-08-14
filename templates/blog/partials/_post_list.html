@@ -6,7 +6,7 @@
       style="background-image: url('{{ post.image.url }}');"
     ></div>
     <div class="blog-post_content">
-      <span>{{ post.category|title }}</span>
+      <span>{{ post.get_category_display }}</span>
       <h3>{{ post.title }}</h3>
       <p>{{ post.caption|truncatewords:15 }}</p>
       <div class="blog-post_info">

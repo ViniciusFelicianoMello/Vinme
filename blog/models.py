@@ -47,7 +47,11 @@ class ContentSection(models.Model):
     post = models.ForeignKey(Post, related_name='sections', on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     text_block = models.TextField(blank=True, null=True)
-    images_or_videos = models.FileField(upload_to='media/', blank=True, null=True)
+    images_or_videos1 = models.FileField(upload_to='media/', blank=True, null=True)
+    images_or_videos2= models.FileField(upload_to='media/', blank=True, null=True)
+    images_or_videos3 = models.FileField(upload_to='media/', blank=True, null=True)
+    images_or_videos4 = models.FileField(upload_to='media/', blank=True, null=True)
+    images_or_videos5 = models.FileField(upload_to='media/', blank=True, null=True)
     
     def __str__(self):
         return f"Section: {self.title} in {self.post.title}"

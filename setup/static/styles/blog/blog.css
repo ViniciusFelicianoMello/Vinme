@@ -126,10 +126,10 @@
 }
 
 .blog-post_card.visible {
-    animation: openFormBlogCard 1s .3s forwards;
+    animation: openBlogPostCard 1s .3s forwards;
 }
 
-@keyframes openFormBlogCard {
+@keyframes openBlogPostCard {
     0% {width: 0; height: 0;}
     70% {width: 19vw; height: 0vh;}
     100% {width: 19vw; height: 50vh;}
@@ -308,7 +308,7 @@
     }
     
     /* BLOG POST CARD */
-    @keyframes openFormBlogCard {
+    @keyframes openBlogPostCard {
         0% {width: 0; height: 0;}
         70% {width: 46vw; height: 0vh;}
         100% {width: 46vw; height: 35vh;}
@@ -365,7 +365,7 @@
     }
     
     /* BLOG POST CARD */
-    @keyframes openFormBlogCard {
+    @keyframes openBlogPostCard {
         0% {width: 0; height: 0;}
         70% {width: 98%; height: 0vh;}
         100% {width: 98%; height: 50vh;}

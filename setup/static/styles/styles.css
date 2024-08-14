@@ -34,6 +34,7 @@
 @import url(blog/blog.css);
 @import url(blog/popular.css);
 @import url(blog/recents.css);
+@import url(blog/blogForm.css);
 
 
 :root {
