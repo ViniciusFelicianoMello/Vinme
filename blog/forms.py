@@ -16,11 +16,11 @@ class ContentSectionForm(forms.ModelForm):
         widgets = {
             'title': forms.TextInput(attrs={'class': 'account_input'}),
             'text_block': forms.Textarea(attrs={'class': 'account_input'}),
-            'images_or_videos1': forms.ClearableFileInput(attrs={'class': 'account_input'}),
-            'images_or_videos2': forms.ClearableFileInput(attrs={'class': 'account_input'}),
-            'images_or_videos3': forms.ClearableFileInput(attrs={'class': 'account_input'}),
-            'images_or_videos4': forms.ClearableFileInput(attrs={'class': 'account_input'}),
-            'images_or_videos5': forms.ClearableFileInput(attrs={'class': 'account_input'}),
+            'images_or_videos1': forms.ClearableFileInput(attrs={'class': 'account_input', 'style': 'display: none;'}),
+            'images_or_videos2': forms.ClearableFileInput(attrs={'class': 'account_input', 'style': 'display: none;'}),
+            'images_or_videos3': forms.ClearableFileInput(attrs={'class': 'account_input', 'style': 'display: none;'}),
+            'images_or_videos4': forms.ClearableFileInput(attrs={'class': 'account_input', 'style': 'display: none;'}),
+            'images_or_videos5': forms.ClearableFileInput(attrs={'class': 'account_input', 'style': 'display: none;'}),
         }
 
 class PostForm(forms.ModelForm):

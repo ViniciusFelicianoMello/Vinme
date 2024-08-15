@@ -13,14 +13,14 @@
 }
 
 .popular_content .blog-post_card:nth-of-type(1) {
-    animation: openFormBlogCard 1s .3s forwards;
+    animation: openBlogPostCard 1s .3s forwards;
 }
 .popular_content .blog-post_card:nth-of-type(2) {
-    animation: openFormBlogCard 1s 1s forwards;
+    animation: openBlogPostCard 1s 1s forwards;
 }
 .popular_content .blog-post_card:nth-of-type(3) {
-    animation: openFormBlogCard 1s 1.7s forwards;
+    animation: openBlogPostCard 1s 1.7s forwards;
 }
 .popular_content .blog-post_card:nth-of-type(4) {
-    animation: openFormBlogCard 1s 2.4s forwards;
+    animation: openBlogPostCard 1s 2.4s forwards;
 }

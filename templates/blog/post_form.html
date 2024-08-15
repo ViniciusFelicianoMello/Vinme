@@ -3,97 +3,162 @@
 
 {% block content %}
 <div class="post_form container">
+    <!-- CONTENT SELECT BUTTON -->
+    <div class="post_tabs_box viewport">
+        <div class="post_tabs_btn" data-tab="post">Post</div>
+        {% for i in numbers %}
+            <div class="post_tabs_btn" data-tab="content{{ i }}">Conteúdo {{ i }}</div>
+        {% endfor %}
+    </div>
+
+    <!-- CONTENT ADD POST -->
     <div class="post_box viewport">
+        <!-- Post Form -->
         <div class="post_form_title">
             <i class="fa-solid fa-user"></i>
             <h2>Adicionar post</h2>
         </div>
         
-        <form method="post" class="post_form_forms" enctype="multipart/form-data">
+            <form method="post" class="post_form_forms" enctype="multipart/form-data">
             {% csrf_token %}
-            
-            <h3>Post</h3>
-            <div>
-                 <!-- IMAGE -->
-                <div class="account_row">
-                    <input type="file" name="image" id="imageInput" class="hidden-file-input" style="display: none;">
-                    <label class="account_btn add_picture_post_btn" for="imageInput">Adicionar Foto</label>
-                    <p id="imageStatus">Nenhuma imagem selecionada</p>
-                </div>
-                <!-- TITLE -->
-                <div class="account_control">
-                    {{ post_form.title }}
-                    <i class="fa-solid fa-font account_icon"></i>
-                    <label class="account_label" for="{{ post_form.title.id_for_label }}">Titulo</label>
-                    <span class="account_span"></span>
-                </div>
-                <!-- CATEGORY -->
-                <div class="account_control">
-                    {{ post_form.category }}
-                    <i class="fa-solid fa-list account_icon"></i>
-                    <label class="account_label" for="{{ post_form.category.id_for_label }}">Categoria</label>
-                    <span class="account_span"></span>
-                </div>
-                <!-- CAPTION -->
-                <div class="account_control">
-                    {{ post_form.caption }}
-                    <i class="fa-solid fa-align-left account_icon"></i>
-                    <label class="account_label" for="{{ post_form.caption.id_for_label }}">Legenda</label>
-                    <span class="account_span_text"></span>
-                </div>
-            </div>
-            
-            <h3>Conteúdo</h3>
-            {% for form in section_forms %}
-                <div class="section-form">
-                    <!-- TITLE -->
+                <div id="post" class="post-form post_tab_content">
+                    <h3>Post</h3>
+                    <!-- IMAGE -->
+                    <div class="account_row">
+                        <input type="file" name="image" id="imageInput" class="hidden-file-input" style="display: none;">
+                        <label class="account_btn add_picture_post_btn" for="imageInput">Adicionar Foto</label>
+                        <p id="imageStatus">Nenhuma imagem selecionada</p>
+                        </div>
+                        <!-- TITLE -->
                     <div class="account_control">
-                        {{ form.title }}
+                        {{ post_form.title }}
                         <i class="fa-solid fa-font account_icon"></i>
-                        <label class="account_label" for="{{ form.title.id_for_label }}">Titulo</label>
+                        <label class="account_label" for="{{ post_form.title.id_for_label }}">Titulo</label>
                         <span class="account_span"></span>
                     </div>
-                    <!-- Text Block -->
+                    <!-- CATEGORY -->
                     <div class="account_control">
-                        {{ form.text_block }}
+                        {{ post_form.category }}
+                        <i class="fa-solid fa-list account_icon"></i>
+                        <label class="account_label" for="{{ post_form.category.id_for_label }}">Categoria</label>
+                        <span class="account_span"></span>
+                    </div>
+                    <!-- CAPTION -->
+                    <div class="account_control">
+                        {{ post_form.caption }}
                         <i class="fa-solid fa-align-left account_icon"></i>
-                        <label class="account_label" for="{{ form.text_block.label_tag }}">Texto</label>
+                        <label class="account_label" for="{{ post_form.caption.id_for_label }}">Legenda</label>
                         <span class="account_span_text"></span>
                     </div>
-                    <!-- IMAGENS -->
-                    <div class="account_row">
-                        {% for i in image_indices %}
+                </div>
+
+                {% for form in section_forms %}
+                    <div id="content{{ forloop.counter }}" class="section-form post_tab_content">
+                        <!-- TITLE -->
+                        <div class="account_control">
+                            {{ form.title }}
+                            <i class="fa-solid fa-font account_icon"></i>
+                            <label class="account_label" for="{{ form.title.id_for_label }}">Titulo</label>
+                            <span class="account_span"></span>
+                        </div>
+                        <!-- Text Block -->
+                        <div class="account_control">
+                            {{ form.text_block }}
+                            <i class="fa-solid fa-align-left account_icon"></i>
+                            <label class="account_label">Texto</label>
+                            <span class="account_span_text"></span>
+                        </div>
+                        <!-- IMAGENS -->
+                        <div class="account_row">
                             <div class="post_blog_item">
-                                <input type="file" name="images_or_videos{{ i }}" id="imageInput{{ i }}" class="hidden-file-input" style="display: none;">
-                                <label class="account_btn" for="imageInput{{ i }}">Adicionar Foto</label>
+                                {{ form.images_or_videos1 }}
+                                <label class="account_btn" for="{{ form.images_or_videos1.id_for_label }}">Adicionar Foto</label>
+                                <p id="imageStatusContent" class="imageStatusContent">Nenhuma imagem</p>
                             </div>
-                        {% endfor %}
+                            <div class="post_blog_item">
+                                {{ form.images_or_videos2 }}
+                                <label class="account_btn" for="{{ form.images_or_videos2.id_for_label }}">Adicionar Foto</label>
+                                <p id="imageStatusContent" class="imageStatusContent">Nenhuma imagem</p>
+                            </div>
+                            <div class="post_blog_item">
+                                {{ form.images_or_videos3 }}
+                                <label class="account_btn" for="{{ form.images_or_videos3.id_for_label }}">Adicionar Foto</label>
+                                <p id="imageStatusContent" class="imageStatusContent">Nenhuma imagem</p>
+                            </div>
+                            <div class="post_blog_item">
+                                {{ form.images_or_videos4 }}
+                                <label class="account_btn" for="{{ form.images_or_videos4.id_for_label }}">Adicionar Foto</label>
+                                <p id="imageStatusContent" class="imageStatusContent">Nenhuma imagem</p>
+                            </div>
+                            <div class="post_blog_item">
+                                {{ form.images_or_videos5 }}
+                                <label class="account_btn" for="{{ form.images_or_videos5.id_for_label }}">Adicionar Foto</label>
+                                <p id="imageStatusContent" class="imageStatusContent">Nenhuma imagem</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+                <div class="button_post_form">
+                    <div class="account_row">
+                        <a href="{% url 'blog' %}" type="submit" class="account_btn-1">Cancelar</a>
+                        <button type="submit" class="account_btn">Publicar</button>
                     </div>
                 </div>
-            {% endfor %}
-           
-            <div class="button_post_form">
-                <div class="account_row">
-                    <a href="{% url 'blog' %}" type="submit" class="account_btn-1">Cancelar</a>
-                    <button type="submit" class="account_btn">Publicar</button>
-                </div>
-            </div>
-        </form>
+            </form>
     </div>
 </div>
 
 <script>
-    // Foto solecionada
-    document.getElementById('imageInput').addEventListener('change', function() {
-        var statusText = document.getElementById('imageStatus');
-        if (this.files.length > 0) {
-            statusText.textContent = this.files[0].name;
-        } else {
-            statusText.textContent = 'Nenhuma imagem selecionada';
+    document.addEventListener('DOMContentLoaded', function() {
+        // Mostrar a tab padrão
+        showTab('post');
+
+        // Adicionar evento de click ao post
+        document.querySelectorAll('.post_tabs_btn').forEach(function(tabButton) {
+            tabButton.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                showTab(tabId);
+            });
+        });
+
+        function showTab(tabId) {
+            // Esconder todas as tabs
+            document.querySelectorAll('.post_tab_content').forEach(function(tabContent) {
+                tabContent.style.display = 'none';
+            });
+
+            // Mostrar a tab selecionada
+            document.getElementById(tabId).style.display = 'block';
+
+            // Atualizar a classe da tab ativa
+            document.querySelectorAll('.post_tabs_btn').forEach(function(tabButton) {
+                tabButton.classList.remove('active');
+            });
+            document.querySelector(`.post_tabs_btn[data-tab="${tabId}"]`).classList.add('active');
         }
+        
+        // Função para atualizar o texto de status da imagem
+        function updateImageStatus(inputElement) {
+            const statusText = inputElement.nextElementSibling.nextElementSibling;
+            if (inputElement.files.length > 0) {
+                statusText.textContent = inputElement.files[0].name;
+            } else {
+                statusText.textContent = 'Nenhuma imagem selecionada';
+            }
+        }
+
+        // Adicionar evento de mudança para a imagem do post
+        document.getElementById('imageInput').addEventListener('change', function() {
+            updateImageStatus(this);
+        });
+
+        // Adicionar eventos de mudança para imagens de seções
+        document.querySelectorAll('.post_blog_item input[type="file"]').forEach(function(input) {
+            input.addEventListener('change', function() {
+                updateImageStatus(this);
+            });
+        });
     });
 </script>
-
 {% endblock %}
-
-
