@@ -50,6 +50,7 @@ def blog(request):
     else:
         return render(request, 'blog/blog.html', context)
 
+@superuser_required
 def create_post(request):
     if request.method == 'POST':
         post_form = PostForm(request.POST, request.FILES)
@@ -94,3 +95,11 @@ def edit_post(request, post_id):
 
     context = add_pages_context(context) 
     return render(request, 'blog/post_form.html', context)
+
+
+def post_page(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+    
+    context = {'post': post}
+    context = add_pages_context(context) 
+    return render(request, 'blog/post_page.html', context)

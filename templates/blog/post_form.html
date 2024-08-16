@@ -7,7 +7,7 @@
     <div class="post_tabs_box viewport">
         <div class="post_tabs_btn" data-tab="post">Post</div>
         {% for i in numbers %}
-            <div class="post_tabs_btn" data-tab="content{{ i }}">Conteúdo {{ i }}</div>
+            <div class="post_tabs_btn" data-tab="content{{ i }}"> <p>Conteúdo</p> <span>{{ i }}</span></div>
         {% endfor %}
     </div>
 
@@ -28,7 +28,7 @@
                         <input type="file" name="image" id="imageInput" class="hidden-file-input" style="display: none;">
                         <label class="account_btn add_picture_post_btn" for="imageInput">Adicionar Foto</label>
                         <p id="imageStatus">Nenhuma imagem selecionada</p>
-                        </div>
+                        </div>  
                         <!-- TITLE -->
                     <div class="account_control">
                         {{ post_form.title }}

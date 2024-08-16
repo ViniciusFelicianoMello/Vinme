@@ -13,9 +13,10 @@
   </div>
   <!-- LISTA DE POSTS -->
   <div class="recents_posts_box viewport">
-    <h2 class="section_title recent_title viewport">
-      Postagens <span>recentes</span>
-    </h2>
+    {% if user.is_superuser %}
+      <a class="add_post_btn account_btn" href="{% url 'create_post' %}">+</a>
+    {% endif %}
+    <h2 class="section_title recent_title viewport">Postagens <span>recentes</span></h2>
     <div class="recent_post_search">
           <input type="text" id="search-input" placeholder="Pesquisar por título" class="account_input"/>
           <i class="fa-solid fa-magnifying-glass account_icon"></i>
@@ -23,7 +24,7 @@
     </div>
     <div class="recents_posts_content" id="posts-container">
       {% for post in posts %}
-       {% include 'blog/partials/_post_list.html' %}
+       {% include 'blog/partials/_post_card.html' %}
       {% endfor %}
     </div>
   </div>

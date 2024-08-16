@@ -84,6 +84,16 @@
     margin: 0;
 }
 
+.add_post_btn {
+    position: absolute;
+    width: 2vw;
+    height: 2vw;
+    text-decoration: none;
+    right: 2em;
+    top: 0.5em;
+    z-index: 2;
+}
+
 .recents_posts_content {
     position: absolute;
     display: flex;
@@ -224,7 +234,7 @@
 
     /* RECENTES */
     .recents_posts_box {
-        width: 90%;
+        width: 98%;
         height: 120vh;
         border-radius: 3em;
     }

@@ -391,6 +391,11 @@
         border-radius: 1rem;
     }
 
+    .account_input:valid ~ .account_span_text, 
+    .account_input:focus ~ .account_span_text {
+        height: 100%;
+    }
+
     .account_menu_img {
         height: 14vw;
         width: 20vw;
