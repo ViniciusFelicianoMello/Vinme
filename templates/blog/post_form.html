@@ -16,98 +16,99 @@
         <!-- Post Form -->
         <div class="post_form_title">
             <i class="fa-solid fa-user"></i>
-            <h2>Adicionar post</h2>
+            <h2>{{ form_title }}</h2> <!-- Use a variável form_title para definir o título -->
         </div>
         
-            <form method="post" class="post_form_forms" enctype="multipart/form-data">
+        <form method="post" class="post_form_forms" enctype="multipart/form-data">
             {% csrf_token %}
-                <div id="post" class="post-form post_tab_content">
-                    <h3>Post</h3>
-                    <!-- IMAGE -->
-                    <div class="account_row">
-                        <input type="file" name="image" id="imageInput" class="hidden-file-input" style="display: none;">
-                        <label class="account_btn add_picture_post_btn" for="imageInput">Adicionar Foto</label>
-                        <p id="imageStatus">Nenhuma imagem selecionada</p>
-                        </div>  
-                        <!-- TITLE -->
+            <div id="post" class="post-form post_tab_content">
+                <h3>Post</h3>
+                <!-- IMAGE -->
+                <div class="account_row">
+                    <input type="file" name="image" id="imageInput" class="hidden-file-input" style="display: none;">
+                    <label class="account_btn add_picture_post_btn" for="imageInput">Adicionar Foto</label>
+                    <p id="imageStatus">{{ image_status }}</p> <!-- Adicione a variável image_status -->
+                </div>  
+                <!-- TITLE -->
+                <div class="account_control">
+                    {{ post_form.title }}
+                    <i class="fa-solid fa-font account_icon"></i>
+                    <label class="account_label" for="{{ post_form.title.id_for_label }}">Titulo</label>
+                    <span class="account_span"></span>
+                </div>
+                <!-- CATEGORY -->
+                <div class="account_control">
+                    {{ post_form.category }}
+                    <i class="fa-solid fa-list account_icon"></i>
+                    <label class="account_label" for="{{ post_form.category.id_for_label }}">Categoria</label>
+                    <span class="account_span"></span>
+                </div>
+                <!-- CAPTION -->
+                <div class="account_control">
+                    {{ post_form.caption }}
+                    <i class="fa-solid fa-align-left account_icon"></i>
+                    <label class="account_label" for="{{ post_form.caption.id_for_label }}">Legenda</label>
+                    <span class="account_span_text"></span>
+                </div>
+            </div>
+
+            {% for form in section_forms %}
+                <div id="content{{ forloop.counter }}" class="section-form post_tab_content">
+                    <!-- TITLE -->
                     <div class="account_control">
-                        {{ post_form.title }}
+                        {{ form.title }}
                         <i class="fa-solid fa-font account_icon"></i>
-                        <label class="account_label" for="{{ post_form.title.id_for_label }}">Titulo</label>
+                        <label class="account_label" for="{{ form.title.id_for_label }}">Titulo</label>
                         <span class="account_span"></span>
                     </div>
-                    <!-- CATEGORY -->
+                    <!-- Text Block -->
                     <div class="account_control">
-                        {{ post_form.category }}
-                        <i class="fa-solid fa-list account_icon"></i>
-                        <label class="account_label" for="{{ post_form.category.id_for_label }}">Categoria</label>
-                        <span class="account_span"></span>
-                    </div>
-                    <!-- CAPTION -->
-                    <div class="account_control">
-                        {{ post_form.caption }}
+                        {{ form.text_block }}
                         <i class="fa-solid fa-align-left account_icon"></i>
-                        <label class="account_label" for="{{ post_form.caption.id_for_label }}">Legenda</label>
+                        <label class="account_label">Texto</label>
                         <span class="account_span_text"></span>
                     </div>
-                </div>
-
-                {% for form in section_forms %}
-                    <div id="content{{ forloop.counter }}" class="section-form post_tab_content">
-                        <!-- TITLE -->
-                        <div class="account_control">
-                            {{ form.title }}
-                            <i class="fa-solid fa-font account_icon"></i>
-                            <label class="account_label" for="{{ form.title.id_for_label }}">Titulo</label>
-                            <span class="account_span"></span>
-                        </div>
-                        <!-- Text Block -->
-                        <div class="account_control">
-                            {{ form.text_block }}
-                            <i class="fa-solid fa-align-left account_icon"></i>
-                            <label class="account_label">Texto</label>
-                            <span class="account_span_text"></span>
-                        </div>
-                        <!-- IMAGENS -->
-                        <div class="account_row">
-                            <div class="post_blog_item">
-                                {{ form.images_or_videos1 }}
-                                <label class="account_btn" for="{{ form.images_or_videos1.id_for_label }}">Adicionar Foto</label>
-                                <p id="imageStatusContent" class="imageStatusContent">Nenhuma imagem</p>
-                            </div>
-                            <div class="post_blog_item">
-                                {{ form.images_or_videos2 }}
-                                <label class="account_btn" for="{{ form.images_or_videos2.id_for_label }}">Adicionar Foto</label>
-                                <p id="imageStatusContent" class="imageStatusContent">Nenhuma imagem</p>
-                            </div>
-                            <div class="post_blog_item">
-                                {{ form.images_or_videos3 }}
-                                <label class="account_btn" for="{{ form.images_or_videos3.id_for_label }}">Adicionar Foto</label>
-                                <p id="imageStatusContent" class="imageStatusContent">Nenhuma imagem</p>
-                            </div>
-                            <div class="post_blog_item">
-                                {{ form.images_or_videos4 }}
-                                <label class="account_btn" for="{{ form.images_or_videos4.id_for_label }}">Adicionar Foto</label>
-                                <p id="imageStatusContent" class="imageStatusContent">Nenhuma imagem</p>
-                            </div>
-                            <div class="post_blog_item">
-                                {{ form.images_or_videos5 }}
-                                <label class="account_btn" for="{{ form.images_or_videos5.id_for_label }}">Adicionar Foto</label>
-                                <p id="imageStatusContent" class="imageStatusContent">Nenhuma imagem</p>
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
-
-                <div class="button_post_form">
+                    <!-- IMAGENS -->
                     <div class="account_row">
-                        <a href="{% url 'blog' %}" type="submit" class="account_btn-1">Cancelar</a>
-                        <button type="submit" class="account_btn">Publicar</button>
+                        <div class="post_blog_item">
+                            {{ form.images_or_videos1 }}
+                            <label class="account_btn" for="{{ form.images_or_videos1.id_for_label }}">Adicionar Foto</label>
+                            <p id="imageStatusContent" class="imageStatusContent">Nenhuma imagem</p>
+                        </div>
+                        <div class="post_blog_item">
+                            {{ form.images_or_videos2 }}
+                            <label class="account_btn" for="{{ form.images_or_videos2.id_for_label }}">Adicionar Foto</label>
+                            <p id="imageStatusContent" class="imageStatusContent">Nenhuma imagem</p>
+                        </div>
+                        <div class="post_blog_item">
+                            {{ form.images_or_videos3 }}
+                            <label class="account_btn" for="{{ form.images_or_videos3.id_for_label }}">Adicionar Foto</label>
+                            <p id="imageStatusContent" class="imageStatusContent">Nenhuma imagem</p>
+                        </div>
+                        <div class="post_blog_item">
+                            {{ form.images_or_videos4 }}
+                            <label class="account_btn" for="{{ form.images_or_videos4.id_for_label }}">Adicionar Foto</label>
+                            <p id="imageStatusContent" class="imageStatusContent">Nenhuma imagem</p>
+                        </div>
+                        <div class="post_blog_item">
+                            {{ form.images_or_videos5 }}
+                            <label class="account_btn" for="{{ form.images_or_videos5.id_for_label }}">Adicionar Foto</label>
+                            <p id="imageStatusContent" class="imageStatusContent">Nenhuma imagem</p>
+                        </div>
                     </div>
                 </div>
-            </form>
+            {% endfor %}
+
+            <div class="button_post_form">
+                <div class="account_row">
+                    <a href="{% url 'blog' %}" class="account_btn-1">Cancelar</a>
+                    <button type="submit" class="account_btn">{{ button_text }}</button> <!-- Use a variável button_text para definir o texto do botão -->
+                </div>
+            </div>
+        </form>
     </div>
 </div>
+
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {

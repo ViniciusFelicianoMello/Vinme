@@ -11,8 +11,10 @@ class PostAdmin(admin.ModelAdmin):
     list_display = ('title', 'category', 'author', 'created_at', 'is_active', 'average_rating')
     list_filter = ('category', 'created_at', 'author')
     search_fields = ('title', 'caption')
-    ordering = ('created_at',)
+    ordering = ('-created_at',)
     fields = ('title','image', 'caption', 'category', 'is_active',)
+    readonly_fields = ('created_at',)
+    list_editable = ("is_active",)
     inlines = [ContentSectionInline] 
 
     def save_model(self, request, obj, form, change):

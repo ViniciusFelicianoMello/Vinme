@@ -23,15 +23,15 @@ def blog(request):
     selected_categories = request.GET.get('categories', '')
     if selected_categories:
         selected_categories = selected_categories.split(',')
-        posts = Post.objects.filter(category__in=selected_categories).annotate(
+        posts = Post.objects.filter(category__in=selected_categories, is_active=True).annotate(
             calculated_average_rating=Avg('comments__rating')
         ).order_by('-created_at')
     else:
-        posts = Post.objects.annotate(
+        posts = Post.objects.filter(is_active=True).annotate(
             calculated_average_rating=Avg('comments__rating')
         ).order_by('-created_at')
 
-    popular_posts = Post.objects.annotate(
+    popular_posts = Post.objects.filter(is_active=True).annotate(
         calculated_average_rating=Avg('comments__rating')
     ).order_by('-calculated_average_rating')[:4]
 
@@ -61,9 +61,7 @@ def create_post(request):
             post.author = request.user
             post.save()
 
-            # Itera sobre os formulários de seção
             for form in section_forms:
-                # Verifica se o formulário é válido e se contém dados significativos
                 if form.is_valid() and (
                     form.cleaned_data.get('title') or
                     form.cleaned_data.get('text_block') or
@@ -83,6 +81,9 @@ def create_post(request):
         'section_forms': section_forms,
         'image_indices': range(5),
         'numbers': range(1, 11),
+        'form_title': 'Adicionar post',
+        'button_text': 'Publicar',
+        'image_status': 'Nenhuma imagem selecionada'
     }
 
     context = add_pages_context(context)
@@ -92,8 +93,45 @@ def create_post(request):
 
 @superuser_required
 def edit_post(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
 
-    context = add_pages_context(context) 
+    if request.method == 'POST':
+        post_form = PostForm(request.POST, request.FILES, instance=post)
+        # Carregar seções existentes e adicionar novas seções se necessário
+        sections = list(post.sections.all()) + [ContentSection(post=post) for _ in range(10 - post.sections.count())]
+        section_forms = [ContentSectionForm(request.POST, request.FILES, instance=section, prefix=f'section_{i}') for i, section in enumerate(sections)]
+
+        if post_form.is_valid():
+            post_form.save()
+            for form in section_forms:
+                if form.is_valid() and (
+                    form.cleaned_data.get('title') or
+                    form.cleaned_data.get('text_block') or
+                    any(form.cleaned_data.get(f'images_or_videos{i}') for i in range(1, 6))
+                ):
+                    section = form.save(commit=False)
+                    section.post = post
+                    section.save()
+
+            return redirect('blog')
+    else:
+        post_form = PostForm(instance=post)
+        # Criar formulários para as seções existentes e adicionar novos se necessário
+        sections = list(post.sections.all()) + [ContentSection(post=post) for _ in range(10 - post.sections.count())]
+        section_forms = [ContentSectionForm(instance=section, prefix=f'section_{i}') for i, section in enumerate(sections)]
+
+    context = {
+        'post_form': post_form,
+        'section_forms': section_forms,
+        'image_indices': range(5),
+        'numbers': range(1, 11),
+        'form_title': 'Editar post',
+        'button_text': 'Atualizar',
+        'image_status': 'Imagem selecionada' if post.image else 'Nenhuma imagem selecionada'
+    }
+
+    context = add_pages_context(context)
+
     return render(request, 'blog/post_form.html', context)
 
 

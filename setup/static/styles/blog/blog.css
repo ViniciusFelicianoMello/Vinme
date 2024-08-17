@@ -247,7 +247,7 @@
     justify-content: start;
     gap: .5em;
     width: 100%;
-    bottom: 1em;
+    bottom: 1.5em;
 }
 
 .blog-post_author_img {
@@ -300,6 +300,67 @@
     opacity: .7;
 }
 
+.post_controls {
+    position: absolute;
+    bottom: .5em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.post_controls i {
+    font-size: 1vw;
+    opacity: 0.7;
+    transition: all .3s;
+}
+.post_controls i:hover {
+    transform: translateY(-.2em);
+    opacity: 1;
+}
+.post_controls .fa-star {
+    color: #f6ff00;
+}
+.post_controls .fa-paperclip {
+    color: var(--cor-terciaria);
+}
+.post_controls .fa-circle {
+    color: var(--cor-secundaria);
+}
+.post_controls .fa-pen {
+    color: var(--cor-principal-2);
+}
+.post_controls .fa-trash {
+    color: #ff0000;
+}
+
+.modal_confirm {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--cor-fundo-3);
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    top: 0;
+    transform: scale(0);
+}
+
+.modal_confirm.open {
+    transform: scale(1);
+}
+
+.modal_confirm p {
+    font-size: 1.5vw;
+    font-family: var(--fonte-2);
+    padding: 1em;
+}
+
+.btn_confirmDel {
+    padding: 1vw 2vw;
+}
 @media screen and (max-width:1024px) {
     .banner_keyboard {
         bottom: -20em;

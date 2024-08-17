@@ -188,6 +188,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    font-size: .8vw;
 }
 
 .post_blog_item .account_btn {
@@ -200,6 +201,42 @@
     position: relative;
     font-family: var(--fonte-2);
     font-size: 1vw;
+}
+
+.post_blog_item a {
+    font-family: var(--fonte-2);
+    color: var(--cor-principal);
+    font-size: .8vw;
+}
+
+.post_blog_item input {
+    display: none;
+}
+
+.post_blog_item label {
+    font-family: var(--fonte-3);
+    transition: all .2s;
+}
+
+.post_blog_item label:hover {
+    transform: translateY(0.2em);
+}
+
+.post_blog_item input:checked ~ label:nth-of-type(1) {
+    background: var(--gradient-1);
+    background-size: 400% 400%;
+    background-position: 0% 50%;
+    animation: btnHoverUm 10s linear infinite;
+    box-shadow: var(--box-shadow-2), var(--neon-inset-1);
+    scale: 1.1;
+    padding: 0.5vw 1vw;
+    border-radius: .5em;
+    margin-top: .5em;
+    color: var(--cor-fundo-1);
+}
+
+.post_blog_item label {
+    cursor: pointer;
 }
 
 @media screen and (max-width: 1024px) {

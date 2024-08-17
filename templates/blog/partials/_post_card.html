@@ -26,8 +26,72 @@
           <a href="{% url 'profile_view' post.author.username %}">{{ post.author.username }}</a>
           <span>{{ post.created_at|date:"d / m / Y" }}</span>
         </div>
+
       </div>
       
+      <div class="post_controls">
+        {% if user == post.author %}
+        <!-- DELETE BTN -->
+        <i class="fa-solid fa-trash" data-post-id="{{ post.id }}" data-modal-id="deleteModal-{{ post.id }}"></i>
+        <!-- DELETE MODAL -->
+        <div class="modal_confirm" id="deleteModal-{{ post.id }}">
+            <p>Tem certeza que deseja excluir a postagem?</p>
+            <div class="account_row">
+              <button type="button" class="account_btn-1 btn_confirmDel" data-close-id="deleteModal-{{ post.id }}">Não</button>
+              <form id="deletePostForm-{{ post.id }}" method="POST" action="">
+                {% csrf_token %}
+                <button type="submit" class="account_btn btn_confirmDel">Sim</button>
+              </form>
+            </div>
+        </div>
+        <!-- EDIT BTN -->
+        <a href="{% url 'edit_post' post.id %}">
+          <i class="fa-solid fa-pen"></i>
+        </a>
+        <!-- ACTIVE CIRCLE -->
+        <i class="fa-solid fa-circle"></i>
+        {% endif %}
+        <!-- COPY LINK -->
+        <i class="fa-solid fa-paperclip"></i>
+        <!-- FAVORITE -->
+        <i class="fa-regular fa-star"></i>
+    </div>
+    
+      
+
     </a>
   </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("Script carregado");
+
+    const deleteIcons = document.querySelectorAll('.fa-trash');
+    console.log("Ícones de exclusão encontrados:", deleteIcons.length);
+
+    deleteIcons.forEach(icon => {
+        icon.addEventListener('click', function() {
+            const modalId = this.getAttribute('data-modal-id');
+            const modal = document.getElementById(modalId);
+
+            if (modal) {
+                console.log("Modal encontrado:", modalId);
+                modal.classList.add('open');
+            } else {
+                console.log("Modal não encontrado:", modalId);
+            }
+
+            const closeButtons = modal.querySelectorAll('[data-close-id]');
+            closeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    modal.classList.remove('open');
+                });
+            });
+
+            const form = modal.querySelector('form');
+            form.action = `/delete-post/${this.getAttribute('data-post-id')}/`; // Altere para o URL correto
+        });
+    });
+});
+</script>
