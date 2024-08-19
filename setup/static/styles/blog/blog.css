@@ -277,7 +277,8 @@
     bottom: 25%;
 }
 
-.blog-post_author_infos a {
+.blog-post_author_infos a,
+.post_page_post_infos a {
     text-decoration: none;
     color: var(--cor-principal);
     font-family: var(--fonte-3);
@@ -288,12 +289,15 @@
 .blog-post_card:hover .blog-post_author_infos a {
     color: var(--cor-principal-2);
 }
-.blog-post_author_infos a:hover {
+.blog-post_author_infos a:hover,
+.post_page_post_infos a:hover {
+    color: var(--cor-principal-2);
     text-decoration: underline;
     transform: scale(1.1) translateX(.3em);
 }
 
-.blog-post_author_infos span {
+.blog-post_author_infos span,
+.post_page_post_infos span {
     color: var(--cor-fonte-1);
     font-family: var(--fonte-2);
     font-size: 1vw;

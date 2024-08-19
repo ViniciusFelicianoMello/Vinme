@@ -26,7 +26,7 @@
 }
 
 .post_tabs_box.visible {
-    animation: slideRight .8s 1s ease-in forwards, opacity .8s 1s ease-in forwards    ;
+    animation: slideRight .8s 1s ease-in forwards, opacity .8s 1s ease-in forwards;
 }
 
 .post_tabs_box::before {

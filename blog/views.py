@@ -134,6 +134,24 @@ def edit_post(request, post_id):
 
     return render(request, 'blog/post_form.html', context)
 
+@superuser_required
+def delete_post(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+    if request.method == 'POST':
+        post.delete()
+        return redirect('blog')
+    return redirect('blog') 
+
+@superuser_required
+def deactivate_post(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+    
+    if request.method == 'POST' and request.user == post.author:
+        post.is_active = False
+        post.save()
+    
+    return redirect('blog')
+
 
 def post_page(request, post_id):
     post = get_object_or_404(Post, id=post_id)

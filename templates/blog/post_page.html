@@ -2,55 +2,112 @@
 {% load static %}
 
 {% block content %}
-<div class="post-page">
-    <article class="post-content">
-        <h1>{{ post.title }}</h1>
-        <div class="post-meta">
-            <span>Por <a href="{% url 'profile_view' post.author.username %}">{{ post.author.username }}</a></span>
-            <span> | Publicado em {{ post.created_at|date:"d / m / Y" }}</span>
-        </div>
-        
-        {% if post.image %}
-        <div class="post-image">
-            <img src="{{ post.image.url }}" alt="{{ post.title }}">
-        </div>
-        {% endif %}
-        
-        
-        <div class="post-body">
-            {{ post.content|safe }}
-        </div>
-        
-        <div class="post-footer">
-            <div class="post-category">
-                <strong>Categoria: </strong>{{ post.get_category_display }}
-            </div>
-            <div class="post-tags">
-                <strong>Tags: </strong>
-                {% for tag in post.tags.all %}
-                    <span>{{ tag.name }}</span>{% if not forloop.last %}, {% endif %}
-                {% endfor %}
-            </div>
-        </div>
-    </article>
+<section class="container post_page">
+    <nav class="post_page_nav_box viewport">
+        <a href="#{{ post.title }}" class="travel_link">{{ post.title }}</a>
+        {% for section in post.sections.all %}
+        <a href="#section{{ forloop.counter }}" class="travel_link">{{ section.title }}</a>
+        {% endfor %}
+    </nav>
 
-    <section class="post-comments">
-        <h2>Comentários ({{ post.comments.count }})</h2>
-        <ul class="comment-list">
-            {% for comment in post.comments.all %}
-            <li class="comment-item">
-                <div class="comment-author">
-                    <strong>{{ comment.author.username }}</strong>
+    <div class="post_page_box viewport" id="{{ post.title }}">
+        <!-- PAGE POST -->
+        <div class="post_page_post">
+            <!-- PAGE POST IMAGE -->
+            <div class="post_page_post_img" style="background-image: url('{{ post.image.url }}');">
+                <span>{{ post.get_category_display }}</span>
+            </div>
+            <!-- PAGE POST INFORMATIONS -->
+            <div class="post_page_post_infos">    
+                <div class="blog-post_author_img">
+                    <img src="{% if post.author.userprofile.profile_picture %}{{ post.author.userprofile.profile_picture.url }}{% else %}{% static 'assets/img/fotografias/_unknown.png' %}{% endif %}" class="blog-post_author_foto"/>
                 </div>
-                <div class="comment-body">
-                    {{ comment.text }}
+                <a href="{% url 'profile_view' post.author.username %}">{{ post.author.username }}</a>
+                <span>{{ post.created_at|date:"d / m / Y" }}</span>
+            </div>
+            <!-- PAGE POST TITLE -->
+             <div class="post_page_post_title">
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.caption }}</p>
+             </div>
+        </div>
+        <!-- PAGE SECTION -->
+        {% for section in post.sections.all %}
+        <div class="post_page_sections">
+                <div class="post_page_section" id="section{{ forloop.counter }}">
+                    <!-- SECTION TITLE -->
+                    <h3 id="section{{ forloop.counter }}">{{ section.title }}</h3>  
+                    <p>{{ section.text_block }}</p>
+                    
+                    <!-- SECTION IMAGES/VIDEOS -->
+                    <div class="post_section_images">
+                        <div class="carousel">
+                            {% if section.images_or_videos1 %}
+                                <div class="carousel_item">
+                                    <img src="{{ section.images_or_videos1.url }}" alt="Image 1">
+                                </div>
+                            {% endif %}
+                            {% if section.images_or_videos2 %}
+                                <div class="carousel_item">
+                                    <img src="{{ section.images_or_videos2.url }}" alt="Image 2">
+                                </div>
+                            {% endif %}
+                            {% if section.images_or_videos3 %}
+                                <div class="carousel_item">
+                                    <img src="{{ section.images_or_videos3.url }}" alt="Image 3">
+                                </div>
+                            {% endif %}
+                            {% if section.images_or_videos4 %}
+                                <div class="carousel_item">
+                                    <img src="{{ section.images_or_videos4.url }}" alt="Image 4">
+                                </div>
+                            {% endif %}
+                            {% if section.images_or_videos5 %}
+                                <div class="carousel_item">
+                                    <img src="{{ section.images_or_videos5.url }}" alt="Image 5">
+                                </div>
+                            {% endif %}
+                        </div>
+                        <button class="carousel_prev"><i class="fa-solid fa-caret-left"></i></button>
+                        <button class="carousel_next"><i class="fa-solid fa-caret-right"></i></button>
+                    </div>
                 </div>
-                <div class="comment-date">
-                    <small>{{ comment.created_at|date:"d / m / Y H:i" }}</small>
-                </div>
-            </li>
+            </div>
             {% endfor %}
-        </ul>
-    </section>
-</div>
+
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const carousel = document.querySelector('.carousel');
+    const items = document.querySelectorAll('.carousel_item');
+    const prevButton = document.querySelector('.carousel_prev');
+    const nextButton = document.querySelector('.carousel_next');
+    let currentIndex = 0;
+    const totalItems = items.length;
+    const intervalTime = 5000;
+
+    function updateCarousel() {
+        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    function showNext() {
+        currentIndex = (currentIndex + 1) % totalItems;
+        updateCarousel();
+    }
+
+    function showPrev() {
+        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+        updateCarousel();
+    }
+
+    nextButton.addEventListener('click', showNext);
+    prevButton.addEventListener('click', showPrev);
+
+    // Auto-play
+    setInterval(showNext, intervalTime);
+});
+
+</script>
 {% endblock %}

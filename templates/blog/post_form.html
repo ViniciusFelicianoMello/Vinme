@@ -15,8 +15,8 @@
     <div class="post_box viewport">
         <!-- Post Form -->
         <div class="post_form_title">
-            <i class="fa-solid fa-user"></i>
-            <h2>{{ form_title }}</h2> <!-- Use a variável form_title para definir o título -->
+            <i class="fa-solid fa-scroll"></i>
+            <h2>{{ form_title }}</h2>
         </div>
         
         <form method="post" class="post_form_forms" enctype="multipart/form-data">
@@ -27,7 +27,7 @@
                 <div class="account_row">
                     <input type="file" name="image" id="imageInput" class="hidden-file-input" style="display: none;">
                     <label class="account_btn add_picture_post_btn" for="imageInput">Adicionar Foto</label>
-                    <p id="imageStatus">{{ image_status }}</p> <!-- Adicione a variável image_status -->
+                    <p id="imageStatus">{{ image_status }}</p> 
                 </div>  
                 <!-- TITLE -->
                 <div class="account_control">
@@ -102,7 +102,7 @@
             <div class="button_post_form">
                 <div class="account_row">
                     <a href="{% url 'blog' %}" class="account_btn-1">Cancelar</a>
-                    <button type="submit" class="account_btn">{{ button_text }}</button> <!-- Use a variável button_text para definir o texto do botão -->
+                    <button type="submit" class="account_btn">{{ button_text }}</button> 
                 </div>
             </div>
         </form>

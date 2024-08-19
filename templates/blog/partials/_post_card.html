@@ -38,10 +38,10 @@
             <p>Tem certeza que deseja excluir a postagem?</p>
             <div class="account_row">
               <button type="button" class="account_btn-1 btn_confirmDel" data-close-id="deleteModal-{{ post.id }}">Não</button>
-              <form id="deletePostForm-{{ post.id }}" method="POST" action="">
+              <form id="deletePostForm-{{ post.id }}" method="POST" action="{% url 'delete_post' post.id %}">
                 {% csrf_token %}
                 <button type="submit" class="account_btn btn_confirmDel">Sim</button>
-              </form>
+              </form>           
             </div>
         </div>
         <!-- EDIT BTN -->
@@ -49,49 +49,88 @@
           <i class="fa-solid fa-pen"></i>
         </a>
         <!-- ACTIVE CIRCLE -->
-        <i class="fa-solid fa-circle"></i>
+        <i class="fa-solid fa-circle" data-post-id="{{ post.id }}" data-modal-id="activeModal-{{ post.id }}"></i>
+        <!-- ACTIVE MODAL -->
+        <div class="modal_confirm" id="activeModal-{{ post.id }}">
+            <p>Tem certeza que deseja desativar a postagem?</p>
+            <div class="account_row">
+                <button type="button" class="account_btn-1 btn_confirmDel" data-close-id="activeModal-{{ post.id }}">Não</button>
+                <form id="deactivatePostForm-{{ post.id }}" method="POST" action="{% url 'deactivate_post' post.id %}">
+                    {% csrf_token %}
+                    <button type="submit" class="account_btn btn_confirmDel">Sim</button>
+                </form>       
+            </div>
+        </div>
         {% endif %}
         <!-- COPY LINK -->
-        <i class="fa-solid fa-paperclip"></i>
+        <i class="fa-solid fa-paperclip" id="copy-link-icon" data-link="{% url 'post_page' post.id %}"></i>
         <!-- FAVORITE -->
         <i class="fa-regular fa-star"></i>
     </div>
     
-      
-
     </a>
   </div>
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    console.log("Script carregado");
+    // Função para abrir o modal
+    function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.classList.add('open');
+        }
+    }
 
+    // Função para fechar o modal
+    function closeModal(modal) {
+        modal.classList.remove('open');
+    }
+
+    // Adiciona eventos aos ícones de exclusão
     const deleteIcons = document.querySelectorAll('.fa-trash');
-    console.log("Ícones de exclusão encontrados:", deleteIcons.length);
-
     deleteIcons.forEach(icon => {
         icon.addEventListener('click', function() {
             const modalId = this.getAttribute('data-modal-id');
+            openModal(modalId);
+        });
+    });
+
+    // Adiciona eventos aos ícones de ativação/desativação
+    const activeIcons = document.querySelectorAll('.fa-circle');
+    activeIcons.forEach(icon => {
+        icon.addEventListener('click', function() {
+            const modalId = this.getAttribute('data-modal-id');
+            openModal(modalId);
+        });
+    });
+
+    // Adiciona eventos aos botões de fechar dentro dos modais
+    const closeButtons = document.querySelectorAll('[data-close-id]');
+    closeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const modalId = this.getAttribute('data-close-id');
             const modal = document.getElementById(modalId);
-
             if (modal) {
-                console.log("Modal encontrado:", modalId);
-                modal.classList.add('open');
-            } else {
-                console.log("Modal não encontrado:", modalId);
+                closeModal(modal);
             }
+        });
+    });
 
-            const closeButtons = modal.querySelectorAll('[data-close-id]');
-            closeButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    modal.classList.remove('open');
-                });
-            });
-
-            const form = modal.querySelector('form');
-            form.action = `/delete-post/${this.getAttribute('data-post-id')}/`; // Altere para o URL correto
+    // Adiciona eventos aos formulários para fechar o modal após a submissão
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Previne o comportamento padrão de submissão
+            const formId = this.id;
+            const modalId = formId.replace('Form-', 'Modal-'); // Ajuste o ID do modal com base no ID do formulário
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                closeModal(modal);
+            }
+            this.submit(); // Envia o formulário após fechar o modal
         });
     });
 });
+
 </script>
