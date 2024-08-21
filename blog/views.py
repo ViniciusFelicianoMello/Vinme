@@ -18,8 +18,8 @@ def superuser_required(view_func):
 def blog(request):
     travel = [
         {'url': '#banner', 'icon': 'fa-solid fa-pager', 'text': 'Banner'},
-        {'url': '#popular', 'icon': 'fa-solid fa-star', 'text': 'Populares'},
         {'url': '#recents', 'icon': 'fa-solid fa-clock', 'text': 'Recentes'},
+        {'url': '#popular', 'icon': 'fa-solid fa-star', 'text': 'Populares'},
     ]
 
     selected_categories = request.GET.get('categories', '')

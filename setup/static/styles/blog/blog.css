@@ -187,6 +187,8 @@
     gap: .5em;
     border-bottom: 1px solid var(--cor-principal-2);
     padding-bottom: 1em;
+    height: 38%;
+    overflow: scroll;
 }
 
 .blog-post_content span {

@@ -10,9 +10,9 @@
         {% endfor %}
     </nav>
 
-    <div class="post_page_box viewport" id="{{ post.title }}">
+    <div class="post_page_box viewport">
         <!-- PAGE POST -->
-        <div class="post_page_post">
+        <section class="post_page_post"  id="{{ post.title }}">
             <!-- PAGE POST IMAGE -->
             <div class="post_page_post_img" style="background-image: url('{{ post.image.url }}');">
                 <span>{{ post.get_category_display }}</span>
@@ -30,50 +30,50 @@
                 <h2>{{ post.title }}</h2>
                 <p>{{ post.caption }}</p>
              </div>
-        </div>
+        </section>
         <!-- PAGE SECTION -->
         {% for section in post.sections.all %}
         <div class="post_page_sections">
-                <div class="post_page_section" id="section{{ forloop.counter }}">
-                    <!-- SECTION TITLE -->
-                    <h3 id="section{{ forloop.counter }}">{{ section.title }}</h3>  
-                    <p>{{ section.text_block }}</p>
-                    
-                    <!-- SECTION IMAGES/VIDEOS -->
-                    <div class="post_section_images">
-                        <div class="carousel">
-                            {% if section.images_or_videos1 %}
-                                <div class="carousel_item">
-                                    <img src="{{ section.images_or_videos1.url }}" alt="Image 1">
-                                </div>
-                            {% endif %}
-                            {% if section.images_or_videos2 %}
-                                <div class="carousel_item">
-                                    <img src="{{ section.images_or_videos2.url }}" alt="Image 2">
-                                </div>
-                            {% endif %}
-                            {% if section.images_or_videos3 %}
-                                <div class="carousel_item">
-                                    <img src="{{ section.images_or_videos3.url }}" alt="Image 3">
-                                </div>
-                            {% endif %}
-                            {% if section.images_or_videos4 %}
-                                <div class="carousel_item">
-                                    <img src="{{ section.images_or_videos4.url }}" alt="Image 4">
-                                </div>
-                            {% endif %}
-                            {% if section.images_or_videos5 %}
-                                <div class="carousel_item">
-                                    <img src="{{ section.images_or_videos5.url }}" alt="Image 5">
-                                </div>
-                            {% endif %}
-                        </div>
-                        <button class="carousel_prev"><i class="fa-solid fa-caret-left"></i></button>
-                        <button class="carousel_next"><i class="fa-solid fa-caret-right"></i></button>
+            <section class="post_page_section" id="section{{ forloop.counter }}">
+                <h3 id="section{{ forloop.counter }}">{{ section.title }}</h3>  
+                <p>{{ section.text_block }}</p>
+                
+                <!-- SECTION IMAGES/VIDEOS -->
+                <div class="post_section_images">
+                    <div class="carousel" id="carousel-{{ forloop.counter }}">
+                        {% if section.images_or_videos1 %}
+                            <div class="carousel_item">
+                                <img src="{{ section.images_or_videos1.url }}" alt="Image 1">
+                            </div>
+                        {% endif %}
+                        {% if section.images_or_videos2 %}
+                            <div class="carousel_item">
+                                <img src="{{ section.images_or_videos2.url }}" alt="Image 2">
+                            </div>
+                        {% endif %}
+                        {% if section.images_or_videos3 %}
+                            <div class="carousel_item">
+                                <img src="{{ section.images_or_videos3.url }}" alt="Image 3">
+                            </div>
+                        {% endif %}
+                        {% if section.images_or_videos4 %}
+                            <div class="carousel_item">
+                                <img src="{{ section.images_or_videos4.url }}" alt="Image 4">
+                            </div>
+                        {% endif %}
+                        {% if section.images_or_videos5 %}
+                            <div class="carousel_item">
+                                <img src="{{ section.images_or_videos5.url }}" alt="Image 5">
+                            </div>
+                        {% endif %}
                     </div>
+                    <button class="carousel_prev" id="prev-{{ forloop.counter }}"><i class="fa-solid fa-caret-left"></i></button>
+                    <button class="carousel_next" id="next-{{ forloop.counter }}"><i class="fa-solid fa-caret-right"></i></button>
                 </div>
-            </div>
+            </section>
+        </div>
         {% endfor %}
+
     </div>
     <!-- COMMENT SECTION -->
      <div class="post_page_comment_box viewport">
@@ -146,31 +146,36 @@
 </section>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-    const carousel = document.querySelector('.carousel');
-    const items = document.querySelectorAll('.carousel_item');
-    const prevButton = document.querySelector('.carousel_prev');
-    const nextButton = document.querySelector('.carousel_next');
-    let currentIndex = 0;
-    const totalItems = items.length;
+document.addEventListener('DOMContentLoaded', function () {
+    const carousels = document.querySelectorAll('.carousel');
+    
+    carousels.forEach((carousel, index) => {
+        const items = carousel.querySelectorAll('.carousel_item');
+        const prevButton = document.querySelector(`#prev-${index + 1}`);
+        const nextButton = document.querySelector(`#next-${index + 1}`);
+        let currentIndex = 0;
+        const totalItems = items.length;
 
-    function updateCarousel() {
-        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
+        function updateCarousel() {
+            carousel.style.transition = 'transform 0.5s ease';
+            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
 
-    function showNext() {
-        currentIndex = (currentIndex + 1) % totalItems;
-        updateCarousel();
-    }
+        function showNext() {
+            currentIndex = (currentIndex + 1) % totalItems;
+            updateCarousel();
+        }
 
-    function showPrev() {
-        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-        updateCarousel();
-    }
+        function showPrev() {
+            currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+            updateCarousel();
+        }
 
-    nextButton.addEventListener('click', showNext);
-    prevButton.addEventListener('click', showPrev);
+        nextButton.addEventListener('click', showNext);
+        prevButton.addEventListener('click', showPrev);
+    });
 });
+
 </script>
 
 <script>
