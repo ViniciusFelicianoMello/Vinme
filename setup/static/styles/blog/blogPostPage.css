@@ -18,7 +18,7 @@
     border: 1px solid var(--cor-principal-2);
     backdrop-filter: blur(4px);
     transition: all .5s;
-    padding: 1em;
+    padding: .5em;
     opacity: 0;
     margin-top: 8vh;
 }
@@ -43,7 +43,7 @@
     position: relative;
     font-family: var(--fonte-3);
     font-size: 1vw;
-    color: var(--cor-fonte);
+    color: var(--cor-fonte-1);
     text-decoration: none;
     padding: 1vw;
     border-radius: 0.5em;
@@ -54,7 +54,7 @@
     display: flex;
     flex-direction: column;
     height: max-content;
-    width: 60%;
+    width: 53.7%;
     overflow: hidden;
     box-shadow: var(--box-shadow-1);
     border-radius: 1em;
@@ -227,4 +227,319 @@
 
 .carousel_next {
     right: 10px;
+}
+
+/* COMMENT */
+.post_page_comment_box {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    height: 80vh;
+    width: 15%;
+    right: 10vw;
+    box-shadow: var(--box-shadow-1);
+    border-radius: 1em;
+    border: 1px solid var(--cor-principal-2);
+    backdrop-filter: blur(4px);
+    transition: all .5s;
+    padding: 0.5em;
+    opacity: 0;
+    margin-top: 8vh;
+}
+
+.post_page_comment_box.visible {
+    animation: slideLeft .8s 0.3s ease-in forwards, opacity .8s 0.3s ease-in forwards;
+}
+
+.post_page_comment_box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, var(--cor-fundo-3), var(--cor-fundo-1));
+    opacity: 0.7;
+    z-index: 0;
+}
+.post_page_comment_title {
+    position: relative;
+    display: flex;
+    font-size: 1vw;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% 100%;
+    background-position: 0% 50%;
+    animation: btnHoverUm 10s linear infinite;
+    transition: all .5s;
+}
+
+.form_comment {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--cor-principal-2);
+}
+
+.comment_form_btn {
+    font-size: .8vw;
+    height: 1vw;
+}
+
+.post_page_comment_rating {
+    display: flex;
+    position: relative;
+    gap: .5vw;
+}
+
+.rating_star {
+    position: relative;
+    display: inline-block;
+}
+
+.rating_star input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.rating_star .star_label {
+    display: inline-block;
+    font-size: 1em;
+    color: var(--cor-fonte-1); 
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.rating_star input[type="radio"]:checked ~ .star_label,
+.rating_star input[type="radio"]:checked ~ .star_label i {
+    color: var(--cor-principal-2); 
+}
+
+.rating_star input[type="radio"]:hover ~ .star_label,
+.rating_star input[type="radio"]:hover ~ .star_label i {
+    color: var(--cor-principal-2); 
+}
+
+.rating_star:nth-of-type(1) {
+    display: none;
+}
+
+
+.rating_star {
+    position: relative; 
+}
+
+.rating_star input[type="radio"]:checked ~ .rating_star .star_label i {
+    color: var(--cor-principal);
+}
+
+.rating_star input[type="radio"]:checked ~ .rating_star .rating_star .star_label i {
+    color: var(--cor-principal);
+}
+
+.rating_star input[type="radio"]:checked ~ .rating_star {
+    color: var(--cor-principal); 
+}
+
+.rating_star input[type="radio"]:checked ~ .rating_star i {
+    color: var(--cor-principal); 
+}
+
+.post_page_comment_item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+    width: 100%;
+}
+
+.post_page_comment_author {
+    width: 100%;
+    display: flex;
+}
+
+.comment_post_author_img {  
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    border: 2px solid var(--cor-principal-2);
+    box-shadow: var(--box-shadow-1);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.comment_post_author_foto {
+    width: 100%;
+}
+
+.comment_post_author_infos {
+    display: flex;
+    flex-direction: column;
+    margin-left: .5em;
+    justify-content: center;
+}
+
+.comment_post_author_infos a {
+    text-decoration: none;
+    color: var(--cor-principal);
+    font-family: var(--fonte-3);
+    font-size: 1vw;
+    transition: .3s;
+}
+
+.post_page_comment_item p {
+    font-family: var(--fonte-2);
+    font-size: 1vw;
+    margin-bottom: 1em;
+}
+
+.comment_post_author_controls {
+    position: relative;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    flex-direction: column;
+    gap: .5em;
+}
+
+.comment_post_author_controls i {
+    font-size: 1vw;
+    opacity: 0.7;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.comment_post_author_controls i:hover {
+    transform: translateY(-0.2em);
+    opacity: 1;
+}
+
+.comment_post_author_controls .fa-trash {
+    color: #ff0000;
+}
+
+@media screen and (max-width:1024px) {
+    .post_page {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* POST NAV */
+    .post_page_nav_box {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: scroll;
+        height: 40vh;
+        width: 100%;
+        left: 0;
+        margin-top: 1vh;
+    }
+    .post_page_nav_box a {
+        font-size: 2.5vw;
+    }
+    /* POST PAGE */
+    .post_page_box {
+        width: 100%;
+        margin: 0;
+    }  
+    .post_page_post_img {
+        height: 40vh;
+    }
+    
+    .post_page_post_img span {
+        font-size: 3.5vw;
+        margin: 2vw;
+    }
+    
+    /* INFOS */
+    .post_page_post_infos {
+        padding: 2vw 2vw;
+        margin: 0 1em;
+    }
+    
+    .post_page_post_title {
+        padding: 1em;
+        gap: .5em;
+    }
+    
+    .post_page_post_title h2 {
+        font-size: 7vw;
+    }
+    
+    .post_page_post_title p {
+        font-size: 3vw;
+    }
+    
+    /* POST SECTIONS */
+    .post_page_sections {
+        margin: -1vw 1vw 0;
+    }
+    
+    .post_page_sections h3 {
+        font-size: 4vw;
+        padding-top: 1vh;
+    }
+    
+    .post_page_sections p {
+        font-size: 3vw;
+    }
+    
+    /* IMAGES CARROUSEL */
+    .post_section_images {
+        position: relative;
+        width: 50vw;
+        height: 50vw;
+    }
+    
+    /* COMMENT */
+    .post_page_comment_box {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: scroll;
+        width: 100%;
+        right: 0;
+        margin: 0 0 8vh;
+    }
+    .post_page_comment_title {
+        font-size: 4vw;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .comment_form_btn {
+        font-size: 2vw;
+        height: 3vw;
+    }
+    .comment_post_author_img {  
+        width: 8vw;
+        height: 8vw;
+    }
+    .comment_post_author_infos a {
+        font-size: 3vw;
+    }
+
+    .post_page_comment_item p {
+        font-size: 3vw;
+    }
+
+    .comment_post_author_controls {
+        justify-content: end;
+    }
+    
+    .comment_post_author_controls i {
+        font-size: 3vw;
+    }
 }

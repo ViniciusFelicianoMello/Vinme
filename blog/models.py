@@ -61,11 +61,22 @@ class ContentSection(models.Model):
     
 
 class Comment(models.Model):
+    RATING_CHOICES = [
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5'),
+    ]
+    
     post = models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.TextField(blank=True, null=True) 
     rating = models.PositiveIntegerField(
-        validators=[MinValueValidator(1), MaxValueValidator(5)], blank=True, null=True
+        choices=RATING_CHOICES, 
+        validators=[MinValueValidator(1), MaxValueValidator(5)], 
+        blank=True, 
+        null=True
     )
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(auto_now=True)

@@ -6,7 +6,8 @@ class CommentForm(forms.ModelForm):
         model = Comment
         fields = ['content', 'rating']
         widgets = {
-            'rating': forms.RadioSelect(choices=[(i, i) for i in range(1, 6)]),
+            'content': forms.TextInput(attrs={'class': 'account_input'}),
+            'rating': forms.RadioSelect(attrs={'class': 'rating_comment'}),
         }
 
 class ContentSectionForm(forms.ModelForm):

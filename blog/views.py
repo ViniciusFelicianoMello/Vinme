@@ -5,9 +5,11 @@ from django.db.models import Avg
 from django.contrib.auth.decorators import user_passes_test
 
 from .forms import CommentForm, ContentSectionForm, PostForm
-from .models import ContentSection, Post
+from .models import ContentSection, Post, Comment
 
 from vinme.views import pages, add_pages_context
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseForbidden
 
 def superuser_required(view_func):
     decorated_view_func = user_passes_test(lambda u: u.is_superuser)(view_func)
@@ -156,6 +158,38 @@ def deactivate_post(request, post_id):
 def post_page(request, post_id):
     post = get_object_or_404(Post, id=post_id)
     
-    context = {'post': post}
-    context = add_pages_context(context) 
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.post = post
+            comment.author = request.user
+            comment.save()
+            return redirect('post_page', post_id=post.id)
+    else:
+        form = CommentForm()
+    
+    comments = post.comments.filter(is_active=True).order_by('-created_at')
+    
+    context = {
+        'post': post,
+        'form': form,
+        'comments': comments,
+    }
+    context = add_pages_context(context)
     return render(request, 'blog/post_page.html', context)
+
+#comment
+@login_required
+def delete_comment(request, comment_id):
+    comment = get_object_or_404(Comment, id=comment_id)
+    
+    if request.user != comment.author:
+        return HttpResponseForbidden("Você não tem permissão para excluir este comentário.")
+    
+    if request.method == 'POST':
+        post_id = comment.post.id
+        comment.delete()
+        return redirect('post_page', post_id=post_id)
+    
+    return HttpResponseForbidden("Método não permitido.")

@@ -14,7 +14,7 @@
         <p>{{ post.caption|truncatewords:15 }}</p>
         <div class="blog-post_info">
           <span>{{ post.calculated_average_rating|floatformat:1 }}</span>
-          <span>{{ post.comments.count }} Comentários</span>
+          <span>{{ post.comments.count }} Avaliações</span>
         </div>
       </div>
 
@@ -62,10 +62,6 @@
             </div>
         </div>
         {% endif %}
-        <!-- COPY LINK -->
-        <i class="fa-solid fa-paperclip" id="copy-link-icon" data-link="{% url 'post_page' post.id %}"></i>
-        <!-- FAVORITE -->
-        <i class="fa-regular fa-star"></i>
     </div>
     
     </a>

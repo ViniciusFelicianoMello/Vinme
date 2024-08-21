@@ -73,9 +73,76 @@
                     </div>
                 </div>
             </div>
-            {% endfor %}
-
+        {% endfor %}
     </div>
+    <!-- COMMENT SECTION -->
+     <div class="post_page_comment_box viewport">
+        <!-- TITLE -->
+        <div class="post_page_comment_title">
+            <h3>{{ post.comments.count }} Avaliações</h3>
+        </div>
+        <!-- COMMENT FORM -->
+        {% if user.is_authenticated %}
+        <form class="form_comment" method="post">
+            {% csrf_token %}
+            <div class="post_page_comment_rating">
+                <!-- RATING -->
+                {% for radio in form.rating %}
+                <div class="rating_star">
+                    {{ radio.tag }}
+                    <label for="{{ radio.id_for_label }}" class="star_label">
+                        <i class="fa fa-star"></i>
+                    </label>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="account_control">
+                {{ form.content }}
+                <i class="fa-solid fa-comment account_icon"></i>
+                <label class="account_label" for="">Titulo</label>
+                <span class="account_span"></span>
+            </div>
+
+            <button class="account_btn comment_form_btn" type="submit">Avaliar</button>
+         </form>
+         {% endif %}
+         <!-- COMMENT CONTENT -->
+         {% for comment in comments %}
+         <div class="post_page_comment_item">
+             <div class="post_page_comment_author">
+                 <div class="comment_post_author_img">
+                     <img src="{% if comment.author.userprofile.profile_picture %}{{ comment.author.userprofile.profile_picture.url }}{% else %}{% static 'assets/img/fotografias/_unknown.png' %}{% endif %}" class="comment_post_author_foto"/>
+                 </div>
+                 <div class="comment_post_author_infos">
+                     <a href="{% url 'profile_view' comment.author.username %}">{{ comment.author.username }}</a>
+                     <span>{{ comment.created_at|date:"d / m / Y" }}</span>
+                     <span>Avaliação: {{ comment.rating }}</span>
+                 </div>     
+                {% if user == comment.author %}
+                <div class="comment_post_author_controls">
+                    <!-- DELETE BTN -->
+                    <i class="fa-solid fa-trash" data-post-id="{{ post.id }}" data-modal-id="deleteModal-{{ post.id }}"></i>
+                    <!-- DELETE MODAL -->
+                    <div class="modal_confirm" id="deleteModal-{{ post.id }}">
+                        <p>Tem certeza que deseja excluir a avaliação?</p>
+                        <div class="account_row">
+                          <button type="button" class="account_btn-1 btn_confirmDel" data-close-id="deleteModal-{{ post.id }}">Não</button>
+                          <form id="deletePostForm-{{ post.id }}" method="POST" action="{% url 'delete_comment' comment.id %}">
+                            {% csrf_token %}
+                            <button type="submit" class="account_btn btn_confirmDel">Sim</button>
+                          </form>           
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+             </div>
+             <p>{{ comment.content }}</p>
+         </div>
+         {% endfor %}
+         
+     </div>
+
+
 </section>
 
 <script>
@@ -86,7 +153,6 @@
     const nextButton = document.querySelector('.carousel_next');
     let currentIndex = 0;
     const totalItems = items.length;
-    const intervalTime = 5000;
 
     function updateCarousel() {
         carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
@@ -104,10 +170,80 @@
 
     nextButton.addEventListener('click', showNext);
     prevButton.addEventListener('click', showPrev);
-
-    // Auto-play
-    setInterval(showNext, intervalTime);
 });
-
 </script>
+
+<script>
+    document.querySelectorAll('input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            // Remove a cor de todas as estrelas
+            document.querySelectorAll('.star_label i').forEach(star => {
+                star.style.color = 'var(--cor-fonte-1)';
+            });
+    
+            // Encontre o índice do input de rádio selecionado
+            const index = Array.from(document.querySelectorAll('input[type="radio"]')).indexOf(this);
+    
+            // Altere a cor das estrelas até o índice
+            document.querySelectorAll('.rating_star').forEach((star, i) => {
+                if (i <= index) {
+                    star.querySelector('.star_label i').style.color = 'var(--cor-principal)';
+                }
+            });
+        });
+    });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Função para abrir o modal
+    function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.classList.add('open');
+        }
+    }
+
+    // Função para fechar o modal
+    function closeModal(modal) {
+        modal.classList.remove('open');
+    }
+
+    // Adiciona eventos aos ícones de exclusão
+    const deleteIcons = document.querySelectorAll('.fa-trash');
+    deleteIcons.forEach(icon => {
+        icon.addEventListener('click', function() {
+            const modalId = this.getAttribute('data-modal-id');
+            openModal(modalId);
+        });
+    });
+
+    // Adiciona eventos aos botões de fechar dentro dos modais
+    const closeButtons = document.querySelectorAll('[data-close-id]');
+    closeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const modalId = this.getAttribute('data-close-id');
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                closeModal(modal);
+            }
+        });
+    });
+
+    // Adiciona eventos aos formulários para fechar o modal após a submissão
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Previne o comportamento padrão de submissão
+            const formId = this.id;
+            const modalId = formId.replace('deletePostForm-', 'deleteModal-'); // Ajusta o ID do modal com base no ID do formulário
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                closeModal(modal);
+            }
+            this.submit(); // Envia o formulário após fechar o modal
+        });
+    });
+});
+    </script>
 {% endblock %}

@@ -85,12 +85,13 @@
 
 .add_post_btn {
     position: absolute;
-    width: 2vw;
-    height: 2vw;
+    width: 2em;
+    height: 2em;
     text-decoration: none;
     right: 2em;
     top: 0.5em;
     z-index: 2;
+    font-size: 1em;
 }
 
 .recents_posts_content {
@@ -180,6 +181,13 @@
         margin-top: 0;
     }
     
+    .add_post_btn {
+        width: 5vw;
+        height: 5vw;
+        right: 0;
+        top: 0;
+        font-size: 3vw;
+    }
     /* FILTROS */
     .recents_filter_box {
         width: 25%;
