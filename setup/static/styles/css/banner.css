@@ -140,7 +140,7 @@
     opacity: 0;
 }
 .banner_text_btn.visible {
-    animation: slideUp1 1s 4s ease-in forwards, opacity 1s 4s ease-in forwards;
+    animation: slideUp1 1s 3s ease-in forwards, opacity 1s 3s ease-in forwards;
 }
 .banner_text_btn a {
     background: var(--gradient-1);
@@ -183,7 +183,7 @@
     align-self: center;
 }
 .banner_svg.visible{
-    animation: slideLeft 1s 4.2s linear forwards, opacity 1s 4.2s linear forwards;
+    animation: slideLeft 1s 3.2s linear forwards, opacity 1s 3.2s linear forwards;
 }
 .banner_svg img {
     height: 45vw;
@@ -273,13 +273,13 @@
 
 /* BANNER INFOS ANIMAÇÂO */
 .banner_infos_box:nth-of-type(1).visible {
-    animation: slideRight 1s 4.5s ease-in forwards, opacity 1s 4.5s ease-in forwards;
+    animation: slideRight 1s 3.5s ease-in forwards, opacity 1s 3.5s ease-in forwards;
 }
 .banner_infos_box:nth-of-type(2).visible {
-    animation: slideDown 1s 4.7s ease-in forwards, opacity 1s 4.7s ease-in forwards;
+    animation: slideDown 1s 3.7s ease-in forwards, opacity 1s 3.7s ease-in forwards;
 }
 .banner_infos_box:nth-of-type(3).visible {
-    animation: slideLeft 1s 4.9s ease-in forwards, opacity 1s 4.9s ease-in forwards;
+    animation: slideLeft 1s 3.9s ease-in forwards, opacity 1s 3.9s ease-in forwards;
 }
 
 @media screen and (max-width:1024px) {

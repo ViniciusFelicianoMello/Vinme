@@ -193,11 +193,11 @@ body {
 }
 .section_text:nth-of-type(1).visible {
     display: inline-block;
-    animation: typing 2s 1.2s steps(80, end) forwards;
+    animation: typing 1s 1s steps(80, end) forwards;
 }
 .section_text:nth-of-type(2).visible {
     display: inline-block;
-    animation: typing 2s 2.9s steps(80, end) forwards;
+    animation: typing 1s 1.8s steps(80, end) forwards;
 }
 
 /* CONTROLES */

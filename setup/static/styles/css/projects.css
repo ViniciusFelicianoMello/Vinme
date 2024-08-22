@@ -9,7 +9,7 @@
 }
 
 .projects_bg.visible {
-    animation: slideUp 2s ease-in-out forwards;
+    animation: slideUp 1s ease-in-out forwards;
 }
 
 .projects_bg_2 {
@@ -23,7 +23,7 @@
 }
 
 .projects_bg_2.visible {
-    animation: slideDown 2s ease-in-out forwards;
+    animation: slideDown 1s ease-in-out forwards;
 }
 
 
@@ -75,13 +75,13 @@
 }
 
 .tab-button:nth-of-type(1).visible {
-    animation: slideRight 1s 1.5s ease-in-out forwards, opacity 1s 1.5s ease-in-out forwards;
+    animation: slideRight .5s 1s ease-in-out forwards, opacity .5s 1s ease-in-out forwards;
 }
 .tab-button:nth-of-type(2).visible {
-    animation: slideRight 1s 1.8s ease-in-out forwards, opacity 1s 1.8s ease-in-out forwards;
+    animation: slideRight .5s 1.3s ease-in-out forwards, opacity .5s 1.3s ease-in-out forwards;
 }
 .tab-button:nth-of-type(3).visible {
-    animation: slideRight 1s 2.1s ease-in-out forwards, opacity 1s 2.1s ease-in-out forwards;
+    animation: slideRight .5s 1.6s ease-in-out forwards, opacity .5s 1.6s ease-in-out forwards;
 }
 
 /* TAB CONTEUDO */
@@ -111,7 +111,7 @@
     opacity: 0;
 }
 .project_content.visible {
-    animation: slideLeft 2s ease-in-out ,opacity 2s ease-out forwards;
+    animation: slideLeft 1s ease-in-out ,opacity 1s ease-out forwards;
 }
 
 .project_img {

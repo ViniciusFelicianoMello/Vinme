@@ -9,7 +9,7 @@
     margin-top: 2em;
 }
 .about_title.visible {
-    animation: slideDown 1s ease-in forwards, opacity 1s ease-in-out forwards; 
+    animation: slideDown 0.5s ease-in forwards, opacity 1s ease-in-out forwards; 
 }
 
 .about_title h2 a {
@@ -70,7 +70,7 @@
 }
 
 .about_text.visible {
-    animation: slideRight 1s 1s ease-out forwards, opacity 1s 1s ease-out forwards;   
+    animation: slideRight .5s .5s ease-out forwards, opacity .5s .5s ease-out forwards;   
 }
 
 .about_text p {
@@ -87,10 +87,10 @@
 }
 
 .about_text p:nth-of-type(1).visible {
-    animation: slideRight 1s 1.7s ease-out forwards, opacity 1s 1.7s ease-out forwards;   
+    animation: slideRight .5s 1s ease-out forwards, opacity .5s 1s ease-out forwards;   
 }
 .about_text p:nth-of-type(2).visible {
-    animation: slideRight 1s 2.4s ease-out forwards, opacity 1s 2.4s ease-out forwards;   
+    animation: slideRight .5s 1.5s ease-out forwards, opacity .5s 1.5s ease-out forwards;   
 }
 
 /* SOBRE INFOS */
@@ -161,13 +161,13 @@
 }
 
 .about_infos_box:nth-of-type(1).visible {
-    animation: slideLeft 1s 1s ease-out forwards, opacity 1s 1s ease-out forwards;
+    animation: slideLeft .5s .5s ease-out forwards, opacity .5s .5s ease-out forwards;
 }
 .about_infos_box:nth-of-type(2).visible {
-    animation: slideLeft 1s 1.7s ease-out forwards, opacity 1s 1.7s ease-out forwards;
+    animation: slideLeft .5s 1s ease-out forwards, opacity .5s 1s ease-out forwards;
 }
 .about_infos_box:nth-of-type(3).visible {
-    animation: slideLeft 1s 2.4s ease-out forwards, opacity 1s 2.4s ease-out forwards;   
+    animation: slideLeft .5s 1.5s ease-out forwards, opacity .5s 1.5s ease-out forwards;   
 }
 
 @media screen and (max-width:1024px) {

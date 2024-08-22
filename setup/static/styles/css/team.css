@@ -27,7 +27,7 @@
     opacity: 0;
 }
 .slider.visible {
-    animation: slideLeft 3s 1s ease forwards, opacity 3s 1s ease forwards;
+    animation: slideLeft 1s .5s ease forwards, opacity 1s .5s ease forwards;
 }
 /* SLIDER CARD*/
 .slider_card {
